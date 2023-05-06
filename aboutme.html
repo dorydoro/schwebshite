@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+
+  <title>About Me</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="index.html">home</a>
+      <a href="aboutme.html">about me</a>
+      <a href="myexperience.html">my experience</a>
+      <a href="myprojects.html">my projects</a>
+      <a href="connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</head>
+<body>
+ 
+    <div id="pageheader">
+    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+    <div class="bar4"></div>
+    <h2>this is a bit about me.</h2>
+    </div>
+    <br>
+
+    <div id="aboutContent">
+    <div id="aboutIMGbox">
+      <img id="selfie" src="Selfie2.png" class="aboutIMG">
+      <img id="selfieUnder" src="Selfie1.png" class="aboutIMG" style="height: auto;">
+      <br>
+      <img src="media/roboticsCaption.png" class="aboutIMG">
+      <br>
+      <img src="media/alladoy.jpg" class="aboutIMG">
+    </div>
+
+      <p class="aboutText">
+        
+        My name is Dorotea, check out the top of the page! I'm a new grad with big dreams of becoming a structural packaging designer. 
+        <br>&thinsp;<br>
+        Scratch that.
+       <br>&thinsp;<br>
+        I have become a structural packaging designer, as was established in my PPA win and 4 years of education. I am a web developer. I am a manager. I am a researcher. I am always looking to grow. 
+        <br>&thinsp;<br>
+        I am multicultural to the core. Born in Canada, raised in China, proudly Czech and Serbian, and I speak all those languages too. My stomach is also multi-cultural ;) as I love exploring Toronto food spots. 
+        <br>&thinsp;<br>
+        My interest in packaging comes from a long time fascination with combining technology with design. Growing up, my hobbies could be encapsulated in creating art and following my older brother in robotics. In high school I found the Graphic Communications Management program, offering a concentration in Packaging. It drew my attention, combining the best of both worlds graphics and engineering, and I haven't looked back since.
+        <br>&thinsp;<br>
+        Recently, I have been exploring many mediums which acumen with design methodology. From developing websites to 3D printing. I have spent time configuring how we can produce reliable packaging prototypes using Ryerson’s Creative Technology Lab. 
+        <br>&thinsp;<br>
+        My research in prototyping is still in development but my undergrad thesis isn’t. My paper discussing the potential of a circular environment for the cannabis industry addresses a small part of the gap of knowledge, and I seek to keep contributing to the discovery in this gap.
+        <br>&thinsp;<br>
+        Aside from all that, I like to skate, dye my hair green, and eat my signature breakfast creation, Eggs Aladoy.
+        <br>&thinsp;<br>
+        <br>&thinsp;<br>
+        
+        </p>
+    
+      </div>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+    
+    
+    
+    
+    
+    
+      </div>
+      <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
+    <button class="button" onclick="goBack()">back</button>
+    
+    
+    <script>
+    function goBack() {
+    window.history.back();
+    }
+    
+    function toggleTheme() {
+              // Obtains an array of all <link>
+              // elements.
+              // Select your element using indexing.
+              var theme = document.getElementsByTagName('link')[0];
+    
+              // Change the value of href attribute 
+              // to change the css sheet.
+              if (theme.getAttribute('href') == './style.css') {
+                  theme.setAttribute('href', './styleAccess.css');
+              } else {
+                  theme.setAttribute('href', './style.css');
+              }
+          }
+    </script> 
+    </body>
+    
+    <footer><br>&thinsp;<br></footer>
+    <br>&thinsp;<br>
+    
+    </html>

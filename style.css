@@ -1,0 +1,1379 @@
+@font-face {
+    font-family: 'ApercuBold';
+    src: url('fonts/Apercu-Bold.woff') format('woff'); /* Modern Browsers */
+    src: url('fonts/ApercuBold.eot'), /* IE9 Compat Modes */
+         url('fonts/ApercuBold.ttf')  format('truetype'); /* Safari, Android, iOS */
+  }
+
+ @font-face {
+    font-family: 'ApercuBoldItalic';
+    src: url('fonts/ApercuBoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('fonts/Apercu-BoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('fonts/ApercuBoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+  }
+     @font-face {
+        font-family: 'ApercuLight';
+        src: url('fonts/ApercuLight.eot'); /* IE9 Compat Modes */
+     src: url('fonts/Apercu-Light.woff') format('woff'), /* Modern Browsers */
+         url('fonts/ApercuLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+    }
+
+     @font-face {
+     font-family: 'ApercuMedium';
+      src: url('fonts/Apercu-Medium.woff') format('woff'), /* Modern Browsers */
+         url('fonts/ApercuMedium.ttf')  format('truetype'); /* Safari, Android, iOS */
+     }
+
+     @font-face {
+      font-family: 'ApercuMono';
+      src: url('fonts/Apercu-Mono.woff') format('woff'); /* Modern Browsers */
+      src: url('fonts/ApercuMono.eot'), /* IE9 Compat Modes */
+         url('fonts/ApercuMono.ttf')  format('truetype'); /* Safari, Android, iOS */
+     }
+
+    @font-face {
+        font-family: 'ApercuRegular';    
+     src: url('fonts/Apercu-Regular.woff') format('woff'), /* Modern Browsers */
+          url('fonts/ApercuRegular.ttf')  format('truetype'); /* Safari, Android, iOS */
+    
+
+     }
+ /*to set font size responsize to diff window sizes  https://www.sitepoint.com/understanding-and-using-rem-units-in-css/ */
+
+
+ h1{
+    font-family: 'ApercuBold';
+    font-size: 3vw;
+    color: #fff;
+    font-weight: normal;
+}
+    
+h2{
+    font-family: 'ApercuMono';
+    font-size: 2vw;
+    color: #c3415c;
+    font-weight: normal;
+    bottom:0;
+
+}
+
+h3{
+    font-family: 'ApercuMedium';
+    font-size: 2.65vw;
+    color: #ffff;
+    font-weight: normal;   
+    line-height: 0%; 
+}
+
+h4{
+    font-family: 'ApercuMono';
+    font-size: 1.5vw;
+    color: #c3415c;
+    font-weight: normal;  
+    margin: 4px 6px;  
+}
+p{
+    font-family: 'ApercuRegular';
+    font-size: 2vw;
+    color: #c3415c;
+    font-weight: normal;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+  }
+
+  #otext{
+    position: absolute;
+    font-family: 'ApercuMono';
+    font-size: 10vmin;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.bar1, .bar2, .bar3 {
+    width: 20px;
+    height: 3px;
+    background-color: #f37d83;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .bar4 {
+    position: relative;
+    left: 18vw;
+    width: 85vw;
+    height: 1vw;
+    background-color: #b3e554;
+    margin: 3px 0;
+  }
+
+
+
+.dropbtn {
+    background-color: #b3e554;
+    color: white;
+    padding-top: 8px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .dropbtn:hover {
+    box-shadow: 0px 8px 16px 0px #c3415c;
+  }
+
+  .dropbtn:focus {
+    background-color: #c3415c;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+  }
+
+  .dropbtn::-moz-focus-inner {
+    background-color: #b3e554;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 18vw;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px #c3415c;
+    z-index: 1;
+    left: 50px;
+    top: 5px;
+  }
+  
+  .dropdown-content a {
+    font-family: 'ApercuMono';
+    font-size: 2vw;
+    color: #c3415c;
+    font-weight: normal;
+    padding: 1vw 0vw 1vw 1vw;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #b3e554;}
+  
+  .show {display: block;}
+
+body {background-color: #f37d83;}  
+
+#pageheader{
+    position: relative;
+    display: inline;
+    left: 60px;
+}
+
+.button {
+    position: fixed;
+     float: right;
+     background-color: #b3e554;
+     border: none;
+     padding: 13px 15px;
+     text-align: center;
+     text-decoration: none;
+     bottom: 10px;
+     right: 10px;
+     font-size: 20px;
+     cursor: pointer;
+     border-radius:5px;
+     font-family: 'ApercuMono';
+     color: #c3415c;
+     font-weight: normal;    
+     z-index: 15;
+   }
+
+.button:hover {
+    box-shadow: 0px 8px 16px 0px #c3415c;
+}
+
+.button:focus {
+    background-color: #c3415c;
+    color: #b3e554;
+  }
+ 
+   .buttonA {
+     position: fixed;
+      float: left;
+      background-color: #b3e554;
+      border: none;
+       padding: 5px 5px;
+      text-align: center;
+      text-decoration: none;
+      bottom: 10px;
+      left: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius:5px;
+      font-family: 'ApercuMono';
+      color: #c3415c;
+      font-weight: normal;    
+      z-index: 15;
+    }
+
+    .buttonA:hover {
+        box-shadow: 0px 8px 16px 0px #c3415c;
+    }
+
+    .buttonA:focus {
+        background-color: #f37d83;
+        color: #c3415c;
+        border: 2px solid #b3e554;
+      }
+ 
+    .buttonA::-moz-focus-inner {
+        background-color: #b3e554;
+        color:#c3415c;
+        border: none;
+}
+
+    .eye {
+     width: 35px;
+     height: 35px;
+     fill:#c3415c;
+    }
+
+@keyframes popin {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+    }
+    90% {
+        opacity: 1;
+    }
+  }
+
+  
+@keyframes popout {
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+        stroke-width: inherit;
+    }
+    100% {
+        opacity: 0;
+        stroke-width: 0;
+    }
+  }
+
+  a{
+    color: #c3415c;
+}
+
+  #bm { 
+ /*   animation-fill-mode: forwards;
+    animation: 3.85s 1 popout; */
+    width: 100%;
+    /*height: 56.25vw;*/
+    /*margin: auto auto;*/
+    background-color:#f37d83;
+    position: absolute;
+    top: 0;  
+}
+
+div#bm path{   
+    stroke: #b3e554;
+    stroke-width: 10px;
+    /*transition: opacity 0 3.85s ease-out*/
+}
+
+#bmOver {
+    animation-fill-mode: forwards;
+    animation: 3s 1 popin;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    max-height: 100%;
+    height: 100%;
+    background-color:#f37d83;
+}
+
+#OverAnim {
+    width:100%;
+    Height: 100px;
+    color: royalblue;
+    z-index: 9;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+#bc, #cb, #cc, #dc, #ec, #ed {
+    position: absolute;
+    display: block;
+    border-style:solid;
+    border-color:#b3e554;
+    border-width:  medium;
+    width: 15.3%;
+    height: 27%;
+    z-index: 9;
+    text-align: right;
+    color: inherit;
+      display:inline-flex;
+      align-content: end;
+    
+
+}
+
+#selfie {
+   position: static;
+   width: 100%;
+   z-index: 3; 
+   width:100%;
+   height:100%;
+   top: 0%;
+   opacity: 1;
+
+}
+
+#selfie:hover {
+    opacity: 0;
+}
+
+
+#selfieUnder {
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: -3;
+    top: 0%;
+    left: 0%;
+}
+
+#selfie1 {
+    position: static;
+    z-index: 3; 
+    width:auto;
+    height:100%;
+    top: 0%;
+    opacity: 1;
+ 
+ }
+ 
+ #selfie1:hover {
+     opacity: 0;
+ }
+ 
+ 
+ #selfie1Under {
+     position: absolute;
+     width:auto;
+     height:100%;
+     z-index: -3;
+     top: 0%;
+     left: 0%;
+ }
+
+ .connecttext {
+     position: absolute;
+     top:22vw;
+ }
+/*
+#selfieUnder:hover {
+    opacity: 1;
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index: -3;
+}
+     Oringially couldnt make image appear in the right positioning, so just used z index and hot glue to fix
+*/
+.h2h {
+    color: #c3415c;
+    position: inherit;
+    bottom:0;
+    right: 0%;
+    align-self: flex-end;
+
+    float: right;
+    margin-right: 0.4em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.4em;
+    
+    
+}
+.h2h:hover {
+    color: #b3e554 ;
+    bottom:0;
+}
+
+#bc {
+    top: 36.4%;
+    left: 16.2%;
+    
+}
+#cb {
+    top: 8.8%;
+    left: 31.8%;
+}
+#cc {
+    top: 36.4%;
+    left: 31.8%;
+    object-fit: fill;
+}
+#dc {
+    top: 36.4%;
+    left: 47.4%;
+    border-right: none;
+}
+#ec {
+    top: 36.4%;
+    left: 63%;
+}
+#ed {
+    top: 64%;
+    left: 63%;
+    border-top: none;
+}
+#bd {
+    position: absolute;
+    display: block;
+    z-index: 9;
+    top: 64%;
+    left: 16%;
+    width: 50%;
+    height: 27%;
+}
+
+#cubebuttons {
+    position: absolute;
+    right: 0;
+   
+}
+
+#dc:hover{
+    background-color: #c3415c;
+    font: #b3e554 ;
+}
+#ec:hover {
+    background-color: #c3415c;
+    color: #b3e554 ;
+}
+
+#bc:hover{
+    background-color: #c3415c; 
+    color: #b3e554 ;
+}
+
+#ed:hover {
+    background-color: #c3415c;
+    
+}
+
+div.cubebuttons:hover h2{ color: #b3e554 ;    bottom:0; }
+
+#aboutContent {
+    position: relative;
+    top: 0vw;
+    left:60px;
+    width: 80vw;
+    max-width: 1080px;
+}
+
+#aboutIMGbox {
+    position:absolute;
+    display: inline-block;
+    width: 25%;
+    top: 0vw;
+    left: 10%;
+    overflow-y: visible;
+}
+.aboutIMG {
+    display: block;
+    width: 100%;
+    padding: 0vw;
+}
+
+.aboutText {
+    position:absolute;
+    display: inline-block;
+    width: 65%;
+    top: -2vw;
+    left: 40%;
+    font-family: 'ApercuRegular';
+    color: #c3415c;
+    font-weight: normal;
+}
+
+
+#expContent {
+    position: relative;
+    top: 0vw;
+    left:60px;
+    width: 80vw;
+    max-width: 1400px;    
+}
+
+
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: none;
+    border: 5px solid #b3e554;
+    position: relative;
+    display:inline-table;
+    top: -30%;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+    border-right: 5px solid #b3e554;
+    padding: 10px;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    color: #f37d83;
+    background-color: #9fd141;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    color: #c3415c;
+    background-color:#b3e554;
+    z-index: 10;
+    border-bottom: 0px;
+ 
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    background-color: #b3e554;
+  }
+
+#expTOPbox {
+    position:relative;
+    display: inline-block;
+    width: 100%;
+    top: 0vw;
+    left: 0%;
+    max-width: 1400px;  
+} 
+
+
+#expLEFTbox {
+    position:relative;
+    display: inline-block;
+    width: 30%;
+    top: auto;
+    left: 0%;
+    overflow-y: visible;
+    vertical-align: top;
+}
+
+#expLEFTbox a{
+      text-decoration: none;
+}
+
+#expRIGHTbox {
+    position:relative;
+    display: inline-block;
+    width: 69%;
+    top: 0pt;
+    left: 1%;
+    font-family: 'ApercuRegular';
+    color: #c3415c;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+.expbar {
+    width: 30px;
+    height: 5px;
+    background-color: #b3e554;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+.expTime {
+    font-family: 'ApercuMedium';
+    font-size: 1.5vw;
+    color: #c3415c;
+    font-weight: normal;
+    line-height: 50%;
+}
+
+.expRole {
+    font-family: 'ApercuMedium';
+    font-size: 1.5vw;
+    color: #fff;
+    font-weight: normal;
+    line-height: 0%;
+
+}
+
+.expPlace {
+    font-family: 'ApercuMedium';
+    font-size: 1.5vw;
+    color: #c3415c;
+    font-weight: normal;
+    line-height: 50%;
+}
+
+.expPlaceB {
+    font-family: 'ApercuMedium';
+    font-size: 1.5vw;
+    color: #c3415c;
+    font-weight: normal;
+    line-height: 50%;
+    text-decoration: none;
+}
+
+.expTimeB {
+    font-family: 'ApercuMedium';
+    font-size: 1.5vw;
+    color: #c3415c;
+    font-weight: normal;
+    line-height: 50%;
+    text-decoration: none;
+}
+
+li{
+    font-family: 'ApercuRegular';
+    font-size: 1.5vw;
+    color: #fff;
+    font-weight: normal;
+}
+
+.expList{
+    position: relative;
+    left:-1.5em;
+    top: 0em;
+}
+
+.confident{
+    line-height: 0%; 
+    margin-bottom: -1em;
+    font-size: 1.2vw;
+    color: #b3e554;
+}
+
+.tool {
+    line-height: 0%; 
+    margin-bottom: -0.5em;
+    color: #c3415c;
+}
+
+#projectContent {
+    position: relative;
+    top: 0vw;
+    left:60px;
+    width: 80vw;
+
+    max-width: 1080px;
+    object-fit: cover;
+}
+
+#projectContentC {
+    position: relative;
+    top: 0vw;
+    left:60px;
+    width: 80vw;
+    max-width: 1080px;
+    height: fit-content;
+    object-fit: cover;
+}
+
+div.category {
+    position: relative;
+    display: inline-flex;
+    width: 20vw;
+    height: 28vw;
+    object-fit: cover;
+    margin:1vw;
+
+}      
+
+.category img {
+    z-index: -1;
+    object-fit: cover;
+}
+
+div.categoryCaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 3vw;
+    width: 17vw;
+    background-color: #b3e554;
+    font-family: 'ApercuMedium';
+    font-size: 1.8vw;
+    color: #c3415c;
+    font-weight: normal;
+    text-align: center; 
+    padding: 1.25vw 1.5vw 1.25vw 1.5vw;
+
+}
+
+.projImg {
+    display: inline-flex;
+    position:absolute; 
+    object-fit: cover;
+    height:100%;
+    bottom:5.5vw;
+    clip: rect(5.5vw,20vw,60vw,0vw);
+
+}
+
+.category:hover, .category:focus {
+    border: 5px double #c3415c;
+    object-fit: none;
+  }
+
+#projectContentB {
+    position: relative;
+    top: 0vw;
+    left:60px;
+    width: 80vw;
+    max-width: 1080px;
+    object-fit: cover;
+}
+  .projGallery{
+    height: 20vw;
+    width: 100%;
+  }
+
+  .imgGallery {
+    height: 100%;
+    width: auto;
+    float: right;
+    margin:1vw;
+  }
+
+  .projGalleryS{
+    height: 14vw;
+    width: 100%;
+  }
+
+  .imgGalleryS {
+    height: 100%;
+    width: auto;
+    float: right;
+    margin:1vw;
+  }
+
+  .GalleryCaption {
+     display:flow-root;
+height: auto;
+    width:100%;
+    text-align: right;
+    line-height: 120%;
+  }
+
+  .GalleryCaption.h2 {
+      font-size: 70%;
+          bottom:0;
+        
+  }
+
+
+
+  .proto{
+    padding: 0vw 1.5vw 1.75vw 1.5vw;
+    line-height: 90%;}
+
+    .up1{
+        top: 0vw;
+    }
+
+    #connectimg  
+      {
+        
+    position: absolute;
+    display: block;
+    width: 20vw;
+    height: 20vw;
+    text-align: right;
+    color: inherit;
+    object-fit: fill;
+    }
+
+    .context {
+        color: white;
+        line-height: 95%;
+    }
+
+
+
+
+    
+
+@media screen and (min-width: 1248px) and (min-aspect-ratio: 1/1) {
+    h1{
+        font-family: 'ApercuBold';
+        font-size: 37px;
+        color: #fff;
+        font-weight: normal;
+        align-self: flex-end;
+    }
+        
+    h2{
+        font-family: 'ApercuMono';
+        font-size: 25px;
+        color: #c3415c;
+        font-weight: normal;
+     
+    }
+
+    h3{
+        font-family: 'ApercuMedium';
+        font-size: 27px;
+        color: #ffff;
+        font-weight: normal;    
+    }
+    
+    h4{@media screen
+        font-family: 'ApercuMono';
+        font-size: 13px;
+        color: #c3415c;
+        font-weight: normal;  
+    }
+    
+    p{
+        font-family: 'ApercuRegular';
+        font-size: 13px;
+        color: #c3415c;
+        font-weight: normal;
+    }
+
+    .bar4 {
+        position: relative;
+        left: 180px;
+        width: 100%;
+        height: 10px;
+        background-color: #b3e554;
+        margin: 3px 0;
+      }
+
+      #bm { 
+        height: 712px;  
+        width: 1248px; 
+        margin: auto auto;
+        background-color:#f37d83;
+        position: relative;
+      
+         
+       }
+
+    #dc {
+        border-right: solid #b3e554;
+    }
+
+       .expbar {
+        width: 30px;
+        height: 5px;
+        background-color: #b3e554;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+    
+    .expTime {
+        font-family: 'ApercuMedium';
+        font-size: 17px;
+        color: #c3415c;
+        font-weight: normal;
+        line-height: 50%;
+    }
+    
+    .expRole {
+        font-family: 'ApercuMedium';
+        font-size: 17px;
+        color: #fff;
+        font-weight: normal;
+        line-height: 0%;
+    
+    }
+    
+    .expPlace {
+        font-family: 'ApercuMedium';
+        font-size: 17px;
+        color: #c3415c;
+        font-weight: normal;
+        line-height: 50%;
+    }
+
+    .expPlaceB {
+        font-family: 'ApercuMedium';
+        font-size: 17px;
+        color: #c3415c;
+        font-weight: normal;
+        line-height: 50%;
+        text-decoration: none;
+    }
+
+    .expTimeB {
+        font-family: 'ApercuMedium';
+        font-size: 17px;
+        color: #c3415c;
+        font-weight: normal;
+        line-height: 50%;
+        text-decoration: none;
+    }
+    
+    li{
+        font-family: 'ApercuRegular';
+        font-size: 17px;
+        color: #fff;
+        font-weight: normal;
+    }
+    
+    .expList{
+        position: relative;
+        left:-1.5em;
+        top: 0em;
+    }
+    
+    .confident{
+        line-height: 0%; 
+        margin-bottom: -0.8em;
+        font-size: 13.5px;
+        color: #b3e554;
+    }
+
+    .tool {
+        line-height: 0%; 
+        margin-bottom: -0.5em;
+        color: #c3415c;
+    }
+
+    .projGallery{
+        height: 295px;
+        width: 100%;
+      }
+
+      .imgGallery{
+          height: 295px;
+          width: auto;
+          margin: 15px;
+      }
+
+      .projGalleryS{
+        height: 205px;
+        width: 100%;
+      }
+
+      .imgGalleryS{
+          height: 205px;
+          width: auto;
+          margin: 15px;
+          margin-bottom: 0%;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 190px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px #c3415c;
+        z-index: 1;
+        left: 55px;
+        top: 5px;
+      }
+      
+      .dropdown-content a {
+        font-family: 'ApercuMono';
+        font-size: 20px;
+        color: #c3415c;
+        font-weight: normal;
+        padding: 13px 0vw 13px 13px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {background-color: #b3e554;}
+  
+      .show {display: block;}
+
+      
+    
+      }
+    
+  
+
+  @media screen and (min-width: 1400px) {
+   
+    div.category {
+        position: relative;
+        display: inline-flex;
+        width: 284px;
+        height: 397px;
+        object-fit: cover;
+        margin:28px;
+    
+    }      
+    
+    .category img {
+        z-index: -1;
+        object-fit: cover;
+    }
+    
+    div.categoryCaption {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 42.6px;
+        width: 242px;
+        background-color: #b3e554;
+        font-family: 'ApercuMedium';
+        font-size: 26px;
+        color: #c3415c;
+        font-weight: normal;
+        text-align: center; 
+        padding: 17.75px 21.3px 17.75px 21.3px;
+    
+    }
+
+    .projImg {
+        display: inline-flex;
+        position:absolute; 
+        object-fit: cover;
+        height:100%;
+        bottom:78.1px;
+        clip: rect(78.1px,284px,852px,0vw);
+    
+    }
+
+    .proto{
+        padding: 0vw 21px 24px 21px;
+        line-height: 90%;}
+    
+        .up1{
+            top: 0px;
+        }
+
+        .aboutText{
+            top: 0vw;
+        }
+
+        #projectContent {
+            position: relative;
+            float: right;
+            margin-right: 10vw;
+            width: 80vw;
+            max-width: 1400px;
+            object-fit: cover;
+        }
+
+        #projectContentB {
+            position: relative;
+            float: right;
+            margin-right: 10vw;
+        
+            width: 80vw;
+            max-width: 1400px;
+            object-fit: cover;
+        }
+
+        #projectContentC {
+            position: relative;
+            margin: auto;
+            height: fit-content;
+            width: 80vw;
+            max-width: 1400px;
+            object-fit: cover;
+        }
+
+  } 
+
+  @media screen and (max-width: 750px) {
+    #bm {   
+        zoom:1.08;
+        width:108vw;
+        height: auto;
+        margin-left: -8%; 
+       }
+
+       h2 {     
+        font-size: 2vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+    }
+
+
+    }
+@media screen and (max-width: 670px) {
+    #bm {   
+        zoom:1.15;
+        width:115%;
+        margin-left: -7.5%; 
+       }
+
+       h2 {     
+        font-size: 2.05vw;
+    }
+
+    h1 {
+        font-size: 3.05vw;
+    }
+
+    .dropdown-content {
+        min-width: 120px;
+      }
+
+      .dropdown-content a {
+        font-size: 13px;
+        padding: 6.5px 0vw 6.5px 6.5px;
+
+    }
+
+    }
+
+   
+
+
+@media screen and (max-width: 500px) {
+#bm {   
+    zoom:1.3;
+    width:130%;
+    margin-left: -15%; 
+   }
+
+   #bc, #cb, #cc, #dc, #ec, #ed {
+    border-width: 0.5vw;
+        }
+
+        h2 {     
+            font-size: 2.15vw;
+        }
+    
+        h1 {
+            font-size: 3.2vw;
+        }
+
+
+ .bar1, .bar2, .bar3 {
+            width: 4vw;
+            height: 0.6vw;
+            margin: 0.6vw 0;
+            transition: 0s;
+        }
+
+        .dropbtn {
+            padding-top: 1.6vw;
+            padding-right: 2vw;
+            padding-bottom: 1.6vw;
+            padding-left: 2vw;
+            margin: 1vw;
+        }
+
+       
+
+        .button {
+             padding: 2.6vw 3vw;
+             bottom: 2vw;
+             right: 2vw;
+             font-size: 4vw;
+             border-radius:1vw;
+           }
+        
+        .button:hover {
+            box-shadow: 0px 1.6vw 3.2vw 0px #c3415c;
+        }
+        
+        .button:focus {
+            background-color: #c3415c;
+            color: #b3e554;
+          }
+         
+           .buttonA {
+               padding: 1vw 1vw;
+              bottom: 2vw;
+              left: 2vw;
+              font-size: 4vw;
+              border-radius:1vw;
+            }
+        
+            .buttonA:hover {
+                box-shadow: 0px 1.6vw 3.2vw 0px #c3415c;
+            }
+        
+            .buttonA:focus {
+                border: 0.4vw solid #b3e554;
+              }
+         
+        
+            .eye {
+             width: 7vw;
+             height: 7vw;
+            }
+            .dropdown-content {
+                min-width: 92px;
+              }
+            .dropdown-content a {
+                font-size: 10px;
+                padding: 5px 0vw 5px 5px;
+        
+            }
+}
+
+@media screen and (max-width: 350px) {
+    #bm {   
+        zoom:1.35;
+        width:135%;
+        margin-left: -18%; 
+       }
+
+    
+#bc, #cb, #cc, #dc, #ec, #ed {
+border-width: thin
+    }
+
+    h2 {     
+        font-size: 2.22vw;
+
+    } 3
+
+    h1 {
+        font-size: 3.3vw;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 14px;
+        height: 2.1px;
+        margin: 2.1px 0;
+        transition: 0s;
+    }
+
+    .dropbtn {
+        padding-top: 5.6px;
+        padding-right: 7px;
+        padding-bottom: 5.6px;
+        padding-left: 7px;
+        margin: 3.5px;
+    }
+
+
+    .button {
+         padding: 9.1px 10.5px;
+         bottom: 7px;
+         right: 7px;
+         font-size: 14px;
+         border-radius: 3.5px;
+       }
+    
+    .button:hover {
+        box-shadow: 0px 5.6px 11.2px 0px #c3415c;
+    }
+    
+    .button:focus {
+        background-color: #c3415c;
+        color: #b3e554;
+      }
+     
+       .buttonA {
+           padding: 3.5px 3.5px;
+          bottom: 7px;
+          left: 7px;
+          font-size: 14px;
+          border-radius:3.5px;
+        }
+    
+        .buttonA:hover {
+            box-shadow: 0px 5.6px 11.2px 0px #c3415c;
+        }
+    
+        .buttonA:focus {
+            border: 1.4px solid #b3e554;
+          }
+     
+    
+        .eye {
+         width: 24.5px;
+         height: 24.5px;
+        }
+
+        .dropdown-content {
+            min-width: 60px;
+          }
+
+        .dropdown-content a {
+            font-size: 7px;
+            padding: 3.5px 0vw 3.5px 3.5px;
+    
+        }
+
+        
+
+}
+
+@media screen and (min-aspect-ratio:4/3) and (max-height: 800px) {
+
+    #bm { 
+        width: 157.5vh; 
+        height: 90vh;  
+        position: relative;
+        zoom: 1.00;
+        margin-left: auto;
+        margin-right: auto;
+        top: -15vh;
+   
+    }
+
+    h1{
+        font-family: 'ApercuBold';
+        font-size: 5vh;
+        color: #fff;
+        font-weight: normal;
+    }
+        
+    h2{
+        font-family: 'ApercuMono';
+        font-size: 3.2vh;
+        color: #c3415c;
+        font-weight: normal;
+        bottom:0;
+    
+
+} 
+
+@media screen and (max-aspect-ratio:4/3) and (min-width: 750px), (max-width: 160vh) {
+    
+    #bm { 
+        left: calc(50% - 78.7vh);
+    }
+
+    
+}

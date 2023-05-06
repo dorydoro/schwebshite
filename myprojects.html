@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+
+  <title>My Projects</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="index.html">home</a>
+      <a href="aboutme.html">about me</a>
+      <a href="myexperience.html">my experience</a>
+      <a href="myprojects.html">my projects</a>
+      <a href="connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+ 
+  <div id="pageheader">
+    <a href="../index.html" style="text-decoration: none;"> <h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
+    <div class="bar4"></div>
+    <h2>this is a collection of my projects.</h2>
+    </div>
+
+    <div id="projectContentC">
+
+      <a href="media/3dprinting.html">
+    <div class="category"> 
+    <img src="media/3d1.jpg" class="projImg">
+
+      <div class="categoryCaption">
+        3D Printing
+      </div>
+    </div></a>
+    
+    <a href="media/prototypingresearch.html">
+    <div class="category"> 
+    
+      <img src="media/ctl1.jpg" class="projImg">
+  
+        <div class="categoryCaption proto">
+          Prototyping Research
+        </div>     </div></a>
+        <a href="media/photography.html">
+      <div class="category"> 
+    
+  <img src="media/photo/photo1.jpg" class="projImg">
+     <div class="categoryCaption">
+            Photography
+   </div>
+  </div></a>
+    
+  <a href="media/artwork.html">
+    <div class="category"> 
+    
+          <img src="media/artwork/art1.jpg" class="projImg">
+      
+            <div class="categoryCaption">
+              Artwork
+            </div>
+    </div>   </a>
+    
+    <a href="media/packaging.html">
+      <div class="category"> 
+            <img src="media/ppa2.jpg" class="projImg">
+          <div class="categoryCaption">
+            Packaging
+        </div>
+     </div>   </a>
+
+    <a href="media/websites.html">
+   <div class="category up1" >     
+    <img src="media/SnailNail.png" class="projImg" style="
+
+      display: inline-flex;
+    position:absolute; 
+    object-fit: cover;
+    width:100%;
+    bottom:0vw;
+    clip: rect(0vw,20vw,60vw,0vw);
+    
+    ">
+    <div class="categoryCaption">
+      Websites
+  </div></div></a>
+
+
+
+
+<a href="media/research.html">
+<div class="category"> 
+    
+  <img src="media/thesis1.jpg" class="projImg">
+
+<div class="categoryCaption">
+  Research
+</div>
+</div> </a>
+
+  </div> </div>
+  <br>&thinsp;<br>
+  <br>&thinsp;<br>
+  <br>&thinsp;<br>
+  <br>&thinsp;<br>
+  <br>&thinsp;<br>
+
+
+
+
+
+
+  </div>
+  <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+function goBack() {
+window.history.back();
+}
+
+function toggleTheme() {
+          // Obtains an array of all <link>
+          // elements.
+          // Select your element using indexing.
+          var theme = document.getElementsByTagName('link')[0];
+
+          // Change the value of href attribute 
+          // to change the css sheet.
+          if (theme.getAttribute('href') == './style.css') {
+              theme.setAttribute('href', './styleAccess.css');
+          } else {
+              theme.setAttribute('href', './style.css');
+          }
+      }
+</script> 
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

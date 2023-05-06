@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+  <link id="theme" rel="stylesheet" type="text/css" href="../style.css" />
+
+
+  <title>Artworks</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="../index.html">home</a>
+      <a href="../aboutme.html">about me</a>
+      <a href="../myexperience.html">my experience</a>
+      <a href="../myprojects.html">my projects</a>
+      <a href="../connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</head>
+<body>
+ 
+    <div id="pageheader">
+    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+    <div class="bar4"></div>
+    <h2><a href="../myprojects.html">my projects</a> > artworks
+    </h2>
+    </div>
+    <br>
+
+    <div id="projectContentB">
+        <div class="projGallery">
+          <img src="artwork/art3.jpg" class="imgGallery">
+            
+            <img src="artwork/art2.jpg" class="imgGallery">
+            <img src="artwork/art1.jpg" class="imgGallery"> 
+        </div>
+
+        <div class="GalleryCaption">
+            <br>
+            <h1>Sketchbok Pages</h1>
+            <h2 style="font-size: 120%; line-height: 20%;">2018</h2>
+            <p>Various pages from my sketchbook</p>
+            <br>
+        </div>
+    
+
+        <div class="projGallery">
+            
+            <img src="artwork/flexo (1).png" class="imgGallery">
+            <img src="artwork/flexo (2).png" class="imgGallery">
+            <img src="artwork/flexo (1).jpg" class="imgGallery">
+        </div>
+
+        <div class="GalleryCaption">
+            <br>
+            <h1>Flexo Prited Wine Label</h1>
+            <h2 style="font-size: 120%; line-height: 20%;">2019</h2>
+            <p> Two colour (Navy + Spot gloss) wine label designed for and output in GCM 800: Tags, Labels and Bags: Flexo Processes course.</p>
+            <br>
+        </div>
+        
+        <div class="projGallery">
+          <a href="https://xd.adobe.com/view/9fae240f-e6d3-410c-91e6-3515f3ccdf56-cafd/?fullscreen&hints=off" target="_blank" rel="noopener noreferrer"><img src="artwork/IkeaLink.png" class="imgGallery"></a>
+          <img src="artwork/IkeaATA (4).png" class="imgGallery">
+          <img src="artwork/IkeaATA (3).png" class="imgGallery">
+          
+          <img src="artwork/IkeaATA (2).png" class="imgGallery">
+          <video class="imgGallery" controls>
+            <source src="artwork/ÄTA_IKEA_WALKTHROUGH.mp4" type="video/mp4" ></video>
+      </div>
+
+      <div class="GalleryCaption">
+          <br>
+          <h1>Ikea ATA App Prototype</h1>
+          <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
+          <p>Created as a part of my exchange semester in Adobe Illustrator and Adobe XD. This concept was created as a way that IKEA can continue to connect with their consumers using a video call/live streaming app where users can cook together and share recipes during the pandemic, with a sprinkle of Ikea product placement. You can experience the app at this link. </p>
+          <br>
+      </div>
+
+      <div class="projGallery">
+       
+        <video class="imgGallery" controls>
+          <source src="artwork/Bajic_Dorotea_CRI300_MotionGraphic.mp4" type="video/mp4" ></video>
+    </div>
+
+    <div class="GalleryCaption">
+        <br>
+        <h1>Lyrical Motion Graphic</h1>
+        <h2 style="font-size: 120%; line-height: 20%;">2019</h2>
+        <p>Animation created in Adobe After effects to a portion of an underscores song “set u off (365)”.</p>
+        <br>
+    </div>
+
+      <div class="projGallery">
+        <img src="artwork/Poster.png" class="imgGallery">
+        <img src="artwork/doroteaPhotoshop.png" class="imgGallery">
+        
+        <img src="artwork/chonk.png" class="imgGallery">
+    </div>
+
+    <div class="GalleryCaption">
+        <br>
+        <h1>Assorted Work</h1>
+        <h2 style="font-size: 120%; line-height: 20%;">2019</h2>
+    
+        <br>
+    </div>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+
+
+
+
+
+
+    </div>
+    <button class="buttonA" onclick="toggleTheme()"><img src="eye.svg" class="eye"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+
+function toggleTheme() {
+            // Obtains an array of all <link>
+            // elements.
+            // Select your element using indexing.
+            var theme = document.getElementsByTagName('link')[0];
+  
+            // Change the value of href attribute 
+            // to change the css sheet.
+            if (theme.getAttribute('href') == '../style.css') {
+                theme.setAttribute('href', '../styleAccess.css');
+            } else {
+                theme.setAttribute('href', '../style.css');
+            }
+        }
+</script> 
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

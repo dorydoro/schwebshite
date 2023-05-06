@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+
+  <title>My Experience</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="index.html">home</a>
+      <a href="aboutme.html">about me</a>
+      <a href="myexperience.html">my experience</a>
+      <a href="myprojects.html">my projects</a>
+      <a href="connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</head>
+<body>
+ 
+    <div id="pageheader">
+    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+    <div class="bar4"></div>
+    <h2>this is my experience.</h2>
+    </div>
+    <br>
+
+    <div id="expContent">
+      <div id="expTOPbox">
+        <h3>Summary of Qualifications</h3>
+
+        <div class="tab">
+          <button class="tablinks h2h" onclick="openCity(event, 'London')" id="defaultOpen"><h4>Packaging</h4></button>
+          <button class="tablinks h2h" onclick="openCity(event, 'Paris')"><h4>Managerial</h4></button>
+          <button class="tablinks h2h" onclick="openCity(event, 'Tokyo')"><h4>Research</h4></button>
+          <div class="tabend"></div>
+        </div>
+
+
+        <div id="London" class="tabcontent">
+          <h4>
+            ∙ Proficient across wide range of fabrication methods, CAD and visual design software
+            <br>
+            ∙ Adapts easily to new challenges and excels with capturing emerging technologies
+            <br>
+            ∙ Perpetually challenging myself to innovate,  leading to create award-winning design in paper-board packaging.
+            <br>
+            ∙ Synthesized realistic renders of a variety of packaging products for a research project by learning new 3D software.  
+            
+          </h4>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+          <h4>
+            ∙ Managed teams and their creative process to deliver ground-breaking designs for international competition
+            <br>
+            ∙ Imparted knowledge upon dozens of trainees and continuously monitored them to provide constructive feedback
+            <br>
+            ∙ Surpassed personal fundraising monthly quotas by 35%
+          </h4> 
+        </div>
+
+        <div id="Tokyo" class="tabcontent" style="border-right: 0px;">
+          <h4>
+          ∙ Interpreted results to generate useful insights augmented with my perspective as a member of Gen Z   
+          <br>
+          ∙ Conducted complete independent thesis into sustainability of an emerging market
+          <br>
+          ∙ Collected and examined results where voluntary participation exceeded target by 350% 
+          </h4>
+        </div>
+<br>
+
+      </div>
+
+      <div id="expLEFTbox">
+        <h3 >Awards</h3>
+        <div class="expbar"></div>
+
+        <a href="https://www.instagram.com/p/CNIhedHA-fC/" target="_blank" rel="noopener noreferrer">
+        <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2021</p>
+        <p class="expPlaceB"style="line-height: 100%;">CTLxDFZ Grant Recipient</p>
+        </a>
+
+        <a href="https://www.ryerson.ca/fcad/news/2020/11/gcm-students-unbox-first-time-international-win-for-canada/" target="_blank" rel="noopener noreferrer">
+        <p class="expTimeB" style="line-height: 200%; margin-bottom: -1em;">2020</p>
+        <p class="expPlaceB"style="line-height: 100%;">International Paperboard Packaging Alliance Student Design Challenge First Place Winner</p>
+        </a>
+        
+        <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2019</p>
+        <p class="expPlaceB"style="line-height: 100%;">Prophecy Design Competition Winner</p>
+
+        <a href="https://www.printaction.com/ryerson-gcm-recognizes-student-talent-at-2019-awards-night/" target="_blank" rel="noopener noreferrer">
+        <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2017 - 2021</p>
+        <p class="expPlaceB"style="line-height: 100%;">Canadian Printing Industries Scholarship Trust Fund</p>
+        </a>
+
+      
+        
+              
+        
+        <h3 style="margin-top: 1.5em;">Tools</h3>
+        <div class="expbar"></div>
+        
+
+          <p class="tool"> Adobe: </p>
+          <br>
+
+          <p class="confident">HIGHLY CONFIDENT IN</p> 
+            <ul class="expList">
+              <li>Illustrator</li>
+              <li>Photoshop</li>
+              <li>InDesign</li>
+              <li>AfterEffects</li>
+              <li>DreamWeaver</li>
+            </ul> 
+
+            <p class="confident">STILL CONFIDENT IN</p> 
+            <ul class="expList">
+              <li>XD</li>
+              <li>Dimension</li>
+              <li>Lightroom</li>
+            </ul> 
+            <p class="tool">
+          
+            CAD: </p>
+            
+            <ul class="expList">
+              <li>AutoCAD</li>
+              <li>Fusion 360</li>
+              <li>ArtiosCAD</li>
+            </ul> 
+            <p class="tool">GCM Taught:</p>
+
+             
+
+            <ul class="expList">
+              <li>EFI Metrix</li>
+              <li>Esko i-cut</li>
+              <li>MailChimp</li>
+              <li>Kodak Preps & Prinergy</li>
+              <li>Xinet Webflows</li>
+              <li>EnFocus Switch & PitStop</li>
+              <li>i1 Profiler</li>              
+            </ul> 
+            <p class="tool">
+
+              <p class="tool">Coding Languages:</p>
+
+             
+
+            <ul class="expList">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>jQuery</li>
+              <li>JSON</li>  
+              <li>XML</li>          
+            </ul> 
+            <p class="tool">
+
+              <p class="tool">Spoken Languages:</p>
+
+             
+
+            <ul class="expList">
+              <li>English</li>
+              <li>Czech</li>
+              <li>Serbian</li>
+              <li>Mandarin</li>          
+            </ul> 
+            <p class="tool">       Other:</p>
+
+          <ul class="expList">
+            <li>Mac and Windows Proficient</li>
+            <li>Microsoft Office Suite</li>
+            <li>Microsoft Projects</li>
+            <li>Google Docs Suite</li>
+            <li>Advanced knowledge in AV</li>
+          </ul> 
+
+        <h3 style="margin-top: 1.5em;">Skills</h3>
+        <div class="expbar"></div>  
+          <ul class="expList">
+        <li>Problem Solver</li>
+        <li>Persuasive Communicator</li>
+        <li>Highly Adaptable</li>
+        <li>Time Management</li>
+        <li>Strategic Thinking</li>
+        <li>Quick Learner</li>
+        <li>Culturally Intelligent</li>
+        <li>Strong Under Pressure</li>
+        </ul>
+     
+
+
+
+
+      </div>
+
+      <div id="expRIGHTbox">
+        <h3>Experience</h3>
+        <div class="expbar"></div>
+        <br>
+        
+        <a href="media/prototypingresearch.html" style="text-decoration: none;">
+        <p class="expTime"> DEC 2020 -  APR 2021</p>
+        <p class="expRole">PACKAGE PROTOTYPING TEACHING ASSISSTANT</p>  
+        <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+
+          <ul>
+            <li>Output over 200 prototypes using Ricoh flatbed UV printer and Esko Kongsberg cutting table </li>
+            <li>Assisted with feedback meetings and with student engagement during scheduled classes in a virtual setting</li>
+            <li>Created efficient workflows for student communication, files and prototyping</li>
+            <li>Produced new course materials to include 3D modelling and CAD tutorials </li>
+            <li>Graded assignments for over 70 students on a quick turnaround with accurate feedback</li>
+          </ul> 
+        
+          </p>
+          <br>
+          <a href="media/packaging.html#ryepack" style="text-decoration: none;">
+          <p class="expTime"> SEP 2020 -  APR 2021</p>
+          <p class="expRole">VP OF COMPETITIONS OF RYEPACK</p>  
+          <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+
+          <p class="context">RyePack is a student group dedicated to the exploration and advancement of all things packaging, my primary role was to make the competitions accessible to all year groups (raising participation by 20% this year) and assisting with entries.</p>
+                      <ul>
+              <li>Facilitated research, production, and submission for competition teams</li>
+              <li>Helped Ryerson GCM students with packaging related projects</li>
+              <li>Planned and executed workshops to share packaging related skills with peers</li>
+              <li>Closely managed competition teams and helped propel ideas to be simultaneously commercially viable and innovative    </li>
+            </ul> 
+          
+            </p>     
+          <br>
+
+              <p class="expTime"> MAR 2019 -  AUG 2020</p>
+              <p class="expRole">FUNDRAISING TEAM LEADER</p>  
+              <p class="expPlace">PUBLIC OUTREACH  |  TORONTO, ON</p>  
+      
+                <ul>
+                  <li>Managed and trained groups of trainees to become effective and knowledgeable canvassers </li>
+                  <li>Planned routes to maximize potential donor count and minimize redundant travel time </li>
+                  <li>Led a team that repeatedly outperformed our weekly goals by 20% when fundraising for organizations such as Princess Margaret Hospital, UNICEF, CAMH and Amnesty International</li>
+                  <li>Formulated positive customer experiences with varied communication tools to successfully retain donors</li>
+                  </ul> 
+        <br>
+                
+                <p class="expTime"> MAR 2020 -  JUN 20201</p>
+                <p class="expRole">RESEARCH ASSISTANT</p>  
+                <p class="expPlace">DONNA RAZIK  |  TORONTO, ON</p>  </a>
+
+                  <ul>
+                    <li>Assisted my professor’s research on the impact of recycling labels on packaging </li>
+                    <li>Developed renders and artwork for the project using CAD and 3D rendering software</li>
+                    <li>Administered surveys via online platforms collecting 110% more responses than expected.  </li>
+                    <li>Analysed results and provided useful insight as a member of Gen Z to help
+                      draw conclusions.
+                    </li>
+                  </ul> 
+                <br>
+                  </p>
+
+                  <a href="media/packaging.html#prophecy" style="text-decoration: none;">
+                  <p class="expTime">DEC 2019 -  MAR 2020</p>
+                  <p class="expRole">PACKAGING & BRAND DESIGNER</p>  
+                  <p class="expPlace">PROPHECY BOTANICALS  |  TORONTO, ON</p>  </a>
+          
+                    <ul>
+                      <li>Through my coursework in GCM808 Package Prototyping I was selected to have the opportunity to continue working with Prophecy Botanicals. In my work I designed their logo, labels and structural framework of the primary packaging using Adobe suite.</li>
+                    </ul> 
+                  
+                    </p>
+                </p>
+                <br>
+ <h3>Education</h3>
+                <div class="expbar"></div>
+                <br>
+                
+                <a href="media/prototypingresearch.html" style="text-decoration: none;">
+                <p class="expTime"> SEPT 2017 - GRADUATING NOW</p>
+                <p class="expRole">GRAPHIC COMMUNICATIONS MANAGEMENT (B. TECH)</p>  
+                <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+                  
+                <p class="context">Currently in my fourth year in Canada’s only degree-granting program for the printing industries. The program stresses the application of theory to practical problems with a balance of technology and business management. I am within the Packaging concentration while also undertaking a minor in Advertising and Communication & Design. </p>
+
+                 
+                <br>&thinsp;<br>
+                
+                <br>&thinsp;<br>
+                
+
+                <div style="text-align: right; font-size: 150%;">
+                <p class="expTime" style="text-align: right; font-size: 110%;">Like what you see?</p>
+                  <p class="expRole" style="text-align: right; font-size: 110%;">Reach out!</p>  
+                  <p class="expPlace" style="text-align: right; font-size: 110%;"><a href="mailto:dorbajic@gmail.com">Email</a>  |  <a href="https://www.linkedin.com/in/doroteab/"> LinkedIn </a></p> 
+                </div>
+
+
+                      
+                
+      </div>
+    </div>
+
+
+      <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
+ 
+ <br>&thinsp;<br>
+ <br>&thinsp;<br>
+ <br>&thinsp;<br>
+ <br>&thinsp;<br>
+ <br>&thinsp;<br>
+
+
+
+
+
+
+ </div>
+ <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+function goBack() {
+window.history.back();
+}
+
+function toggleTheme() {
+         // Obtains an array of all <link>
+         // elements.
+         // Select your element using indexing.
+         var theme = document.getElementsByTagName('link')[0];
+
+         // Change the value of href attribute 
+         // to change the css sheet.
+         if (theme.getAttribute('href') == './style.css') {
+             theme.setAttribute('href', './styleAccess.css');
+         } else {
+             theme.setAttribute('href', './style.css');
+         }
+     }
+</script> 
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

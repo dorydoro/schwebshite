@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>index v1</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+	  	 
+  		  <script src="script/jquery-1.7.1.min.js"> </script>
+
+<div class="header">
+	  <img src="home page images/Logo-11.png" width="50%"  alt="CannaBliss"/>
+</div> 
+	
+<!-- embedding all fonts -->		
+<style> 
+	@font-face {
+ 	 font-family: "M-Bold";
+ 	 src: url("fonts/Montserrat-Bold.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-BoldItalic";
+ 	 src: url("fonts/Montserrat-BoldItalic.ttf");
+	}	
+	@font-face {
+ 	 font-family: "M-Italic";
+ 	 src: url("fonts/Montserrat-Italic.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-Light";
+ 	 src: url("fonts/Montserrat-Light.ttf");
+	}	
+	
+	@font-face {
+ 	 font-family: "M-Medium";
+ 	 src: url("fonts/Montserrat-Medium.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-MediumItalic";
+ 	 src: url("fonts/Montserrat-MediumItalic.ttf");
+	}
+		
+	@font-face {
+ 	 font-family: "M-Regular";
+ 	 src: url("fonts/Montserrat-Regular.ttf");
+	}		
+
+	@font-face {
+ 	 font-family: "M-SemiBold";
+ 	 src: url("fonts/Montserrat-SemiBold.ttf");
+	}	
+	
+	h1 { font-family: 'M-SemiBold';font-size: 36px; color: #36383A}
+	h2 { font-family: 'M-Medium';font-size: 24px; color: #696969}
+	h3 { font-family: 'M-Medium';font-size: 24px; color: #FFF}
+	h4 { font-family: 'M-Medium';font-size: 14px; color: #FFF}
+	h5 { font-family: 'M-Light';font-size: 14px; color: #FFF}
+	p { font-family: 'M-Regular';font-size: 14px; color: #0}
+	ul { font-family: 'M-Regular';font-size: 14px; color: #0}
+	a { font-family: 'M-SemiBold';font-size: 16px;}
+	table { font-family: 'M-Regular';font-size: 14px;}
+	button { font-family: 'M-SemiBold';font-size: 18px; color: #FFF}
+
+	
+</style>	
+
+<div id="navbar">	
+  <a href="index.html">Home </a>
+  <a href="page 2.html">Our Products </a>
+  <a href="page 3.html">Quiz </a>
+  <a class="active" href="page 4.html">Customize Your Product</a>
+  <a href="page 5.html">FAQ</a>
+  <a href="page 6.html" class="LL">Banners</a>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</head>
+
+<body>
+  <main>	
+	<h1 align="center" >Customize Your Product</h1>
+	  
+	<p>CannaBliss is built on the idea that no two people are the same, we all come with our own difficulties and have preferences on how to help ourselves. We want to make sure that every customer has the option to tailor our products to fit their own needs best, to follow through on that we have created a customizer to help.</p>
+	<p>Please do not skip any steps. If you happened to misclick, no worries, just start from step one again.</p>
+	<p>To learn more about our products click <a href="page 2.html" id="hyperlink">here.</a></p>
+	  
+<div id="configuratorbox">
+				
+		  <img id="satcap" src="config/SatCaps.png">
+		  <img id="satcbdcap" src="config/SatCbdCaps.png">
+          <img id="cbdcap" src="config/CbdCaps.png">
+		  <img id="indcbdcap" src="config/IndCbdCaps.png">
+		  <img id="indcap" src="config/IndCaps.png">
+            
+		  <img id="satvape" src="config/Satvape.png">
+		  <img id="satcbdvape" src="config/SatCbdvape.png">
+          <img id="cbdvape" src="config/Cbdvape.png">
+		  <img id="indcbdvape" src="config/IndCbdvape.png">
+		  <img id="indvape" src="config/Indvape.png">
+
+		  <img id="satoint" src="config/Satoint.png">
+		  <img id="satcbdoint" src="config/SatCbdoint.png">
+          <img id="cbdoint" src="config/Cbdoint.png">
+		  <img id="indcbdoint" src="config/IndCbdoint.png">
+    <img id="indoint" src="config/Indoint.png">
+				
+          <img id="replay" src="config/replay_button.png">
+
+          <button id="butt_1">Capsules</button>
+          <button id="butt_2">Vaporizer</button>
+          <button id="butt_3">Ointment</button>
+
+          <button id="butt_4">Sativa</button>
+          <button id="butt_5">Sativa CBD</button>
+          <button id="butt_6">CBD</button>
+		  <button id="butt_7">Indica CBD</button>
+		  <button id="butt_8">Indica</button>	
+				
+		  <button id="butt_9">3g</button>
+		  <button id="butt_10">5g</button>	
+
+          <a href="page 7.html" id="butt_cta">Buy Now</a>
+
+          <p id="typepricetag"></p>
+           <p id="typeprice_dollar">$</p>
+
+           <p id="componentpricetag"></p>
+           <p id="componentprice_dollar">$</p>
+
+          <h2 id="totalprice_head">Total price:</h2>
+          <h1 id="totalpricetag"></h1>
+				
+		  <p id="contentpricetag"></p>
+				
+           <h1 id="totalprice_dollar">$</h1>
+
+    <h1 id="headline">Product Designer</h1>
+    <h2 id="step1">Step 1: Pick Your Product Form</h2>
+    <h2 id="step2">Step 2: Select Your Product Strain</h2>
+		  <p>&nbsp;</p>
+	<h2 id="step3">Step 3: Chose Amount of Cannabiss Content</h2>
+	<h1 id="error" align="center">Please re-select <br> a Product Format <br> in Step 1</h1>
+
+	</div>
+
+
+    		<script type="text/javascript">
+
+             var typeprice = 20;
+             var componentprice = 10;
+			 var contentprice = 1;
+             var totalprice = (typeprice + componentprice)*contentprice;
+             document.getElementById("typepricetag").innerHTML = typeprice;
+             document.getElementById("componentpricetag").innerHTML = componentprice;
+			 document.getElementById("contentpricetag").innerHTML = contentprice;	
+             document.getElementById("totalpricetag").innerHTML = totalprice;
+
+
+  		      $("#butt_1").click(function() {
+				  $("#satcap").show();
+				  $("#satcbdcap").show();
+				  $("#cbdcap").show();
+				  $("#indcbdcap").show();
+				  $("#indcap").show();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();	
+                typeprice = 40;
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("typepricetag").innerHTML = typeprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+        
+
+  		      $("#butt_2").click(function() {
+				  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").show();
+				  $("#satcbdvape").show();
+				  $("#cbdvape").show();
+				  $("#indcbdvape").show();
+				  $("#indvape").show();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();	
+                typeprice = 30;
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("typepricetag").innerHTML = typeprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+
+  		      $("#butt_3").click(function() {
+				  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").show();
+				  $("#satcbdoint").show();
+				  $("#cbdoint").show();
+				  $("#indcbdoint").show();
+				  $("#indoint").show();	
+                typeprice = 20;
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("typepricetag").innerHTML = typeprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+
+
+            $("#butt_4").click(function() {
+				//  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				//  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				//  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();
+                componentprice = 12
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("componentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+
+            $("#butt_5").click(function() {
+				  $("#satcap").hide();
+				//  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				//  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				//  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();
+                componentprice = 10
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("componentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+				
+            $("#butt_6").click(function() {
+				  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				//  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				//  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				//  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();
+                componentprice = 8
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("componentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });		
+				
+            $("#butt_7").click(function() {
+				  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				//  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				//  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				//  $("#indcbdoint").hide();
+				  $("#indoint").hide();
+                componentprice = 10
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("componentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });
+				
+            $("#butt_8").click(function() {
+				  $("#satcap").hide();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				//  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				//  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				//  $("#indoint").hide();
+                componentprice = 12
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("componentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });	
+				
+				$("#butt_9").click(function() {	
+				contentprice = 1
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("contentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });	
+				
+				$("#butt_10").click(function() {	
+				contentprice = 1.5
+                totalprice = (typeprice + componentprice)*contentprice;
+                document.getElementById("contentpricetag").innerHTML = componentprice
+                document.getElementById("totalpricetag").innerHTML = totalprice
+            });	
+				
+            $("#replay").click(function() {
+				  $("#satcap").show();
+				  $("#satcbdcap").hide();
+				  $("#cbdcap").hide();
+				  $("#indcbdcap").hide();
+				  $("#indcap").hide();
+			 
+				  $("#satvape").hide();
+				  $("#satcbdvape").hide();
+				  $("#cbdvape").hide();
+				  $("#indcbdvape").hide();
+				  $("#indvape").hide();
+             
+				  $("#satoint").hide();
+				  $("#satcbdoint").hide();
+				  $("#cbdoint").hide();
+				  $("#indcbdoint").hide();
+				  $("#indoint").hide();
+             var typeprice = 40;
+             var componentprice = 12;
+			 var contentprice = 1;
+             var totalprice = (typeprice + componentprice)*contentprice;
+             document.getElementById("typepricetag").innerHTML = typeprice;
+             document.getElementById("componentpricetag").innerHTML = componentprice;
+			 document.getElementById("contentpricetag").innerHTML = contentprice;	
+             document.getElementById("totalpricetag").innerHTML = totalprice;
+            });
+
+  	    </script>
+<p>&nbsp; <br> &nbsp; <br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br>&nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br>  &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;<br> &nbsp;</p>
+</main>
+</body>
+
+<!-- footer -->	
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+	<footer>
+<div class="footer">
+<div class="row">
+  <div class="column">
+    <h3>Contact Us</h3>
+    <h4>Phone:</h4>
+	  <h5>+1 (647) 946-1213 </h5>
+	  <h4>Email:</h4>
+	  <h5>contact@cannabliss.com</h5>
+	  <h4>Address:</h4>
+	  <h5>3091 Dufferin Street<br>Toronto, Ontario, Canada<br> M6A 0C4</h5>
+  </div>
+  <div class="column" >
+   <div id="googleMap" style="width:80%;height:350px" align="center"></div>
+	<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(43.698690,-79.451310),
+  zoom:15,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+	 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwkjhyWKvS96KeEflUmVCTmqUDgwXT9sQ&callback=myMap"></script>
+	  
+  </div>
+</div>	
+</div>
+	</footer>	
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  
+  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+
+  <title>Dorotea Bajic</title>
+
+
+
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn" id="navigationmenu" onclick="toggleMenuVisibility()" aria-haspopup="true" aria-expanded="false">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="index.html">home</a>
+      <a href="aboutme.html">about me</a>
+      <a href="myexperience.html">my experience</a>
+      <a href="myprojects.html">my projects</a>
+      <a href="connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    
+    </script>
+
+<script>
+  window.onload = function() {
+      var anchors = document.getElementsByTagName('*');
+      for(var i = 0; i < anchors.length; i++) {
+          var anchor = anchors[i];
+          anchor.onclick = function() {
+              code = this.getAttribute('goBack');
+              eval(code);   
+          }
+      }
+  }
+  </script>
+
+</head>
+<body style="    max-width: 100%;
+max-height: 100%;
+overflow-y: hidden;
+overflow-x: hidden;">
+  <!-- Our wrapper -->
+  <div id="bm"> 
+  
+  <div id="bmOver">
+
+    <a href="aboutme.html">
+  <div id="bc" class="cubebuttons">
+    <h2 class="h2h"><br><br><br><br>about me&thinsp;</h2>
+  </div></a>
+  
+  <div id="cb"></div>
+  <div id="cc">
+    <img id="selfie" src="Selfie2.png" alt="headshot of Dorotea closed lip smile">
+    <img id="selfieUnder" src="Selfie1.png" alt="headshot of Dorotea smile with teeth">
+  </div>
+
+  <a href="myexperience.html">
+  <div id="dc" class="cubebuttons">
+    <h2 class="h2h"><br><br><br>my&thinsp;<br>experience&thinsp;</h2>
+  </div></a>
+
+  <a href="myprojects.html">
+  <div id="ec" class="cubebuttons">
+    <h2  class="h2h"><br><br><br>my&thinsp; <br>projects&thinsp;</h2>
+  </div></a>
+
+  <a href="connect.html">
+  <div id="ed" class="cubebuttons">
+    <h2 class="h2h"><br><br><br><br>connect&thinsp;</h2>
+  </div></a>
+
+
+  <div id="bd">
+    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+    <h2>this is my online portfolio.</h2>
+  </div>
+  
+ </div> 
+</div>
+  
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
+  <script>
+
+
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('bm'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      path: 'data6.json'
+    })
+
+    lottie.setSpeed(2.2) 
+
+    animation.goToAndStop(10, true)
+    
+   // animation.stop()
+   // animation.addEventListener('complete', function(){
+   // animation.destroy()
+   // })
+  </script>
+
+  <div id="OverAnim">
+    
+  </div>
+ 
+
+
+
+
+
+
+  </div>
+  <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye" alt="eye icon to change colour themes"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+
+// https://discourse.webflow.com/t/back-button-to-previous-page-unless-its-a-different-domain/103891/4
+<script>
+  
+    function backClick() {
+    if(document.referrer.indexOf('127.0.0.1:5500') >= 0) {
+        history.go(-1);
+    }
+    else {
+        window.location.href = '/'; // this might just be '/' of your site
+    }
+    return false;
+        }
+    </script>
+    
+function goBack() {
+window.history.back();
+
+// if window.history.length = just opened tab or not from this domain (dont want to send back to google)
+}
+
+function toggleTheme() {
+          // Obtains an array of all <link>
+          // elements.
+          // Select your element using indexing.
+          var theme = document.getElementsByTagName('link')[0];
+
+          // Change the value of href attribute 
+          // to change the css sheet.
+          if (theme.getAttribute('href') == './style.css') {
+              theme.setAttribute('href', './styleAccess.css');
+          } else {
+              theme.setAttribute('href', './style.css');
+          }
+      }
+</script> 
+
+
+<div id="overlay">
+  <div id="otext">pls resize window wider
+    ur screen is so smol</div>
+</div> 
+
+<script>
+
+   const outputElement = document.getElementById("overlay");
+    const smallDevice = window.matchMedia("(max-width: 170px)");
+    smallDevice.addListener(handleDeviceChange);
+
+    function handleDeviceChange(e) {
+      if (e.matches) document.getElementById("overlay").style.display = "block";
+      else document.getElementById("overlay").style.display = "none";
+    }
+    handleDeviceChange(smallDevice);
+  </script>
+
+</body>
+
+<footer></footer>
+
+
+</html>

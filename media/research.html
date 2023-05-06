@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link id="theme" rel="stylesheet" type="text/css" href="../style.css" />
+
+  <title>Research</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="../index.html">home</a>
+      <a href="../aboutme.html">about me</a>
+      <a href="../myexperience.html">my experience</a>
+      <a href="../myprojects.html">my projects</a>
+      <a href="../connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</head>
+<body>
+  
+  <div id="pageheader">
+    <a href="../myprojects.html" style="text-decoration: none;"><h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
+    <div class="bar4"></div>
+    <h2><a href="../myprojects.html">my projects</a> > research
+    </h2>
+    </div>
+    <br>
+
+    <div id="projectContentB">
+      <div class="projGallery">
+        
+        
+    
+
+        <div class="projGallery">
+          <a href="https://www.ryerson.ca/content/dam/gcm/images/Community/Thesis/2020/Bajic-Cannabis.pdf" target="_blank" rel="noopener noreferrer"><img src="artwork/Thesis.png" class="imgGallery" style="margin-right: 0vh;"></a>
+          <video class="imgGallery" controls>
+            <source src="3MT.mp4" type="video/mp4" ></video>  
+          
+          
+            <img src="thesis1.jpg" class="imgGallery">
+            
+        </div>
+
+        <div class="GalleryCaption">
+            <br>
+            <h1>Thesis on Cyclic Cannabis Packaging</h1>
+            <h2 style="font-size: 120%; line-height: 10%;">2020</h2>
+          <p>
+            My independent undergraduate thesis was “Reuse: The Canadian Cannabis Industry’s next step for Dried Cannabis Packaging”, a product of my fascination with cyclic systems and noticing that most packaging for dried cannabis was the same. In my thesis I explored all the research currently available on sustainable packaging for the cannabis industry (theres a large gap of information here) as well as research on cyclic systems and how to best implement them. 
+            <br>&thinsp;<br>
+I conducted a survey which garnered over 500 responses in order to capture consumer perceptions and desires in cannabis packaging. After analyses of my primary and secondary sources I was able to create a discussion comparing different sustainable options for dried cannabis packaging, reaching a conclusion that cyclic would still be ideal if implemented and then discussing what barriers are in implementing a reuse system and how to overcome them.
+<br>&thinsp;<br>
+In the future I seek to continue this research, I am extremely passionate about cannabis packaging as its rapid developments and innovations inspire me as well as the potential and need for more sustainable packaging solutions in this industry.
+</p>
+            <br>
+        </div>
+
+        <div class="projGallery">
+        
+          <img src="ctl1.jpg" class="imgGallery" style="margin-right: 0vh;">
+          <img src="ctl2.jpg" class="imgGallery">
+          <img src="popup1.jpg" class="imgGallery">
+         
+      </div>
+
+      <div class="GalleryCaption">
+          <br>
+          <h1>Prototying Development</h1>
+          <h2 style="font-size: 120%; line-height: 10%;">2021</h2>
+        <a href="prototypingresearch.html"><p>Click here to read more.</p></a>
+          <br>
+      </div>
+ 
+<br>
+<br>&thinsp;<br>
+<br>&thinsp;<br>
+<br>&thinsp;<br>
+<br>&thinsp;<br>
+<br>&thinsp;<br>
+
+
+
+
+
+
+</div>
+<button class="buttonA" onclick="toggleTheme()"><img src="eye.svg" class="eye"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+function goBack() {
+window.history.back();
+}
+
+function toggleTheme() {
+        // Obtains an array of all <link>
+        // elements.
+        // Select your element using indexing.
+        var theme = document.getElementsByTagName('link')[0];
+
+        // Change the value of href attribute 
+        // to change the css sheet.
+        if (theme.getAttribute('href') == '../style.css') {
+            theme.setAttribute('href', '../styleAccess.css');
+        } else {
+            theme.setAttribute('href', '../style.css');
+        }
+    }
+</script> 
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

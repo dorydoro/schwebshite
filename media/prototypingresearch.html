@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link id="theme" rel="stylesheet" type="text/css" href="../style.css" />
+
+
+  <title>Prototyping Research</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div></button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="../index.html">home</a>
+      <a href="../aboutme.html">about me</a>
+      <a href="../myexperience.html">my experience</a>
+      <a href="../myprojects.html">my projects</a>
+      <a href="../connect.html">connect</a>
+    </div>
+  </div>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</head><body>
+ 
+  <div id="pageheader">
+  <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+  <div class="bar4"></div>
+  <h2><a href="../myprojects.html">my projects</a> > prototyping research
+  </h2>
+  </div>
+  <br>
+
+  <div id="projectContentB">
+      <div class="projGallery">
+        <img src="popup1.jpg" class="imgGallery"style="margin-right: 0vh;">
+          
+          <img src="ctl2.jpg" class="imgGallery">
+          <img src="ctl1.jpg" class="imgGallery"> 
+      </div>
+
+      <div class="GalleryCaption">
+          <br>
+          <h1>Packaging Prototyping Teaching Assistant</h1>
+          <h2 style="font-size: 120%; line-height: 10%;">2021</h2>
+         <p> During the last semester of my undergrad I have had the opportunity to work with Donna Razik to launch a project in collaboration with Nestle Turtles to take place in-line with teaching students about prototyping. The new Richo flatbed UV printer and Formech vacuum former at Ryerson’s Creative Technology Lab has allowed us to explore new methods of high and low fidelity prototyping.
+                 <br>&thinsp;<br>
+                 In our tests we were able to create prototypes of printed pouches with the option of adding a zipper, vacuum formed trays, and overwrap packaging. Pictured here is a pouch without a zipper and some vacuum form tests designed in CAD. These explorations have influenced me to continue this research in prototyping with my DFZxCTL grant where I created the low fidelity pop up egg and gift pictured and plan to research displacement in vacuum forming. 
+                 <br></p>
+      </div>
+  
+
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+      <br>&thinsp;<br>
+  
+  
+  
+  
+  
+  
+      </div>
+      <button class="buttonA" onclick="toggleTheme()"><img src="eye.svg" class="eye"></button>
+  <button class="button" onclick="goBack()">back</button>
+  
+  
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  
+  function toggleTheme() {
+              // Obtains an array of all <link>
+              // elements.
+              // Select your element using indexing.
+              var theme = document.getElementsByTagName('link')[0];
+    
+              // Change the value of href attribute 
+              // to change the css sheet.
+              if (theme.getAttribute('href') == '../style.css') {
+                  theme.setAttribute('href', '../styleAccess.css');
+              } else {
+                  theme.setAttribute('href', '../style.css');
+              }
+          }
+  </script> 
+  </body>
+  
+  <footer><br>&thinsp;<br></footer>
+  <br>&thinsp;<br>
+  
+  </html>

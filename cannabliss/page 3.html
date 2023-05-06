@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>index v1</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+	
+<div class="header">
+	  <img src="home page images/Logo-11.png" width="50%"  alt="CannaBliss"/>
+</div> 
+	
+<!-- embedding all fonts -->		
+<style> 
+	@font-face {
+ 	 font-family: "M-Bold";
+ 	 src: url("fonts/Montserrat-Bold.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-BoldItalic";
+ 	 src: url("fonts/Montserrat-BoldItalic.ttf");
+	}	
+	@font-face {
+ 	 font-family: "M-Italic";
+ 	 src: url("fonts/Montserrat-Italic.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-Light";
+ 	 src: url("fonts/Montserrat-Light.ttf");
+	}	
+	
+	@font-face {
+ 	 font-family: "M-Medium";
+ 	 src: url("fonts/Montserrat-Medium.ttf");
+	}
+	
+	@font-face {
+ 	 font-family: "M-MediumItalic";
+ 	 src: url("fonts/Montserrat-MediumItalic.ttf");
+	}
+		
+	@font-face {
+ 	 font-family: "M-Regular";
+ 	 src: url("fonts/Montserrat-Regular.ttf");
+	}		
+
+	@font-face {
+ 	 font-family: "M-SemiBold";
+ 	 src: url("fonts/Montserrat-SemiBold.ttf");
+	}	
+	
+	h1 { font-family: 'M-SemiBold';font-size: 36px; color: #36383A}
+	h2 { font-family: 'M-Medium';font-size: 24px; color: #696969}
+	h3 { font-family: 'M-Medium';font-size: 24px; color: #FFF}
+	h4 { font-family: 'M-Medium';font-size: 14px; color: #FFF}
+	h5 { font-family: 'M-Light';font-size: 14px; color: #FFF}
+	p { font-family: 'M-Regular';font-size: 14px; color: #0}
+	ul { font-family: 'M-Regular';font-size: 14px; color: #0}
+	a { font-family: 'M-SemiBold';font-size: 16px;}
+	table { font-family: 'M-Regular';font-size: 14px;}
+	
+</style>	
+
+<div id="navbar">	
+  <a href="index.html">Home </a>
+  <a href="page 2.html">Our Products </a>
+  <a class="active" href="page 3.html">Quiz </a>
+  <a href="page 4.html">Customize Your Product</a>
+  <a href="page 5.html">FAQ</a>
+  <a href="page 6.html" class="LL">Banners</a>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</head>
+
+<body>
+  <main>	
+	<h1 align="center" >Quiz to find your ideal product</h1>
+	  
+	<p>Take this short quiz to find out what CannaBliss product will best fit your needs. Answer all the questions and click "Get Results" to find a suitable product for you.</p>
+	<div id="main">
+ <form id="form1">
+
+<h2>Are you searching to be more energized or sedated?</h2>
+<label for="var_string"><input type="radio" name="variable" value="-1" id="var_string" />Active</label>
+<label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Either/Or/Doesn't Matter</label>
+<label for="var_info"><input type="radio" name="variable" value="1" id="var_info" />Relaxed</label>
+
+<h2>How strong of an intoxicating effect is comfortable?</h2>
+<label for="sub_string"><input type="radio" name="sub" value="20" id="sub_string"/>Very</label>
+<label for="sub_join"><input type="radio" name="sub" value="10" id="sub_join"/>Noticably</label>
+<label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Minimally</label>
+
+<h2>Would you rather feel effects immediately but they only last a few hours or wait to feel effects for an hour but they last up to ten hours?</h2>
+<label for="cat_string"><input type="radio" name="con" value="-200" id="cat_string" />Feel effects immediately but they last shorter</label>
+<label for="cat_join"><input type="radio" name="con" value="100" id="cat_join" />Wait to feel effects but they last longer</label>
+
+<h2>Are you looking to treat a specific area or the entire body?</h2>
+<label for="if_string"><input type="radio" name="ifstate" value="100" id="if_string" />Feel effects in entire body</label>
+<label for="if_join"><input type="radio" name="ifstate" value="-100" id="if_join" />Feel effects a specific area</label>
+
+	 <br>
+<button class="button2" type="submit" value="Submit">Get Results</button>
+
+</form>
+		
+<h2>Your ideal product is: <h4><span id="grade">__</span></h4></h2>
+<p id="grade2"></p>
+
+	  </div>
+	<script>
+document.getElementById("form1").onsubmit=function() {
+       variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+	   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+	   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+	   ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+	   
+	   
+	   result = variable + sub + con + ifstate;
+	   
+	document.getElementById("grade").innerHTML = result;
+
+if (result == 19) {result2 = "Sativa Ointment <br /> <img src=image:'config/SatOint.png' width='500' />";};
+  if (result == 9) {
+	result2 = "Sativa CBD Ointment <br /> <img src='config/SatCbdOint.png' width='500' />";};
+  if (result == 0 || result ==  -1|| result ==  1) {
+	result2 = "CBD Ointment <br /> <img src='config/CbdOint.png' width='500' />";};
+  if (result == 10|| result == 11) {
+	result2 = "Indica CBD Ointment  <br /> <img src='config/IndCbdOint.png' width='500' />";};
+  if (result == 20|| result == 21) {
+	result2 = "Indica Ointment <br /> <img src='config/IndOint.png' width='500' />";};
+	
+  if (result == 219|| result == 220) {
+	result2 = "Sativa Capsules <br /> <img src='config/SatCaps.png' width='500' />";};
+  if (result == 209|| result == 210) {
+	result2 = "Sativa CBD Capsules <br /> <img src='config/SatCbdCaps.png' width='500' />";};
+  if (result == 199|| result == 200|| result == 201) {
+	result2 = "CBD Capsule <br /> <img src='config/CbdCaps.png' width='500' />s";};
+  if (result == 211) {
+	result2 = "Indica CBD Capsules <br /> <img src='config/IndCbdCaps.png' width='500' />";};
+  if (result == 221) {
+	result2 = "Indica Capsules  <br /> <img src='config/IndCaps.png' width='500' />";};	
+  if (result == -81|| result == -281|| result == -80) {
+	result2 = "Sativa Vape <br /> <img src='config/SatVape.png' width='500' />";};
+  if (result == -91|| result == -90|| result == -291) {
+	result2 = "Sativa CBD Vape <br /> <img src='config/SatCbdVape.png' width='500' />";};
+  if (result == -101|| result == -100|| result == -301|| result == -300|| result == -99|| result == -299) {
+	result2 = "CBD Vape <br /> <img src='config/CbdVape.png' width='500' />";};
+  if (result == -209|| result == -89|| result == -289) {
+	result2 = "Indica CBD Vape <br /> <img src='config/IndCbdVape.png' width='500' />";};
+  if (result == -280|| result == -79|| result == -279) {
+	result2 = "Indica Vape <br /> <img src='config/IndVape.png' width='500' />";};
+	
+document.getElementById("grade2").innerHTML = result2; 
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+<a class="button2" type="button" href="page 4.html">Customize & Buy Your Own Product</a>
+
+</main>
+</body>
+
+<!-- footer -->	
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>	
+<div class="footer">
+<div class="row">
+  <div class="column">
+    <h3>Contact Us</h3>
+    <h4>Phone:</h4>
+	  <h5>+1 (647) 946-1213 </h5>
+	  <h4>Email:</h4>
+	  <h5>contact@cannabliss.com</h5>
+	  <h4>Address:</h4>
+	  <h5>3091 Dufferin Street<br>Toronto, Ontario, Canada<br> M6A 0C4</h5>
+  </div>
+  <div class="column" >
+   <div id="googleMap" style="width:80%;height:350px" align="center"></div>
+	<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(43.698690,-79.451310),
+  zoom:15,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+	 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwkjhyWKvS96KeEflUmVCTmqUDgwXT9sQ&callback=myMap"></script>
+	  
+  </div>
+</div>	
+</div>
+	
+</html>

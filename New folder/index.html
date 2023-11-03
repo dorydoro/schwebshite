@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="./collect media/styles.css">
+</head>
+<body>
+  <div id="pageheader">
+    <button class="button" onclick="openNav()">☰</button>
+    <h1>Portfolio</h1>
+    <a class="buttonA" href="./collect media/Contact.html">Contact</a>
+  </div>
+
+  <div id="overlay" onclick="closeNav()">
+    <div id="otext">Portfolio</div>
+  </div>
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="./collect media/index.html">About</a>
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown()">Portfolio</button>
+        <div class="dropdown-content" id="dropdownContent">
+          <a href="./collect media/Photography.html">Photography</a>
+          <a href="./collect media/Design.html">Design</a>
+          <a href="./collect media/Art.html">Art</a>
+        </div>
+      </div>
+      <a href="./collect media/Blog.html">Blog</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <img src="./collect media/image1.jpg" alt="Project 1">
+      <div class="arrowcontent">
+        <h4>Title</h4>
+        <p>Project description goes here.</p>
+        <div class="GalleryCaption">
+          <img class="arrow" src="./collect media/left-arrow.png" alt="Left Arrow">
+          <img class="arrow" src="./collect media/right-arrow.png" alt="Right Arrow">
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="./collect media/image2.jpg" alt="Project 2">
+      <div class="arrowcontent">
+        <h4>Title</h4>
+        <p>Project description goes here.</p>
+        <div class="GalleryCaption">
+          <img class="arrow" src="./collect media/left-arrow.png" alt="Left Arrow">
+          <img class="arrow" src="./collect media/right-arrow.png" alt="Right Arrow">
+        </div>
+      </div>
+    </div>
+    <!-- More cards can be added here -->
+  </div>
+
+  <script src="./collect media/scripts.js"></script>
+</body>
+</html>

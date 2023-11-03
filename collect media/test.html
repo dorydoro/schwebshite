@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #backButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<button id="backButton">Back</button>
+
+<script>
+const backButton = document.getElementById('backButton');
+let clickCount = 0;
+
+backButton.addEventListener('click', () => {
+  if (clickCount === 0) {
+    if (document.referrer.includes(window.location.hostname)) {
+      history.go(-1);
+    } else {
+      backButton.textContent = "This is already where you started, are you sure you want to leave this site?";
+      clickCount++;
+    }
+  } else if (clickCount === 1) {
+    backButton.textContent = "Really?";
+    clickCount++;
+  } else if (clickCount === 2) {
+    backButton.textContent = "Fine. I'll miss you </3";
+    clickCount++;
+    setTimeout(() => {
+      window.location.href = "https://www.seznam.cz"; // Redirect after half a second
+    }, 500);
+  }
+});
+</script>
+
+</body>
+</html>

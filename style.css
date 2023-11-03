@@ -46,6 +46,7 @@
     font-size: 3vw;
     color: #fff;
     font-weight: normal;
+    margin:0.5vw
 }
     
 h2{
@@ -54,6 +55,7 @@ h2{
     color: #c3415c;
     font-weight: normal;
     bottom:0;
+    margin: 0.3vw
 
 }
 
@@ -99,6 +101,7 @@ p{
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
 
 .bar1, .bar2, .bar3 {
     width: 20px;
@@ -262,11 +265,11 @@ body {background-color: #f37d83;}
     60% {
         opacity: 0;
     }
-    }
+    
     90% {
         opacity: 1;
     }
-  }
+}
 
   
 @keyframes popout {
@@ -788,22 +791,20 @@ div.categoryCaption {
   .imgGalleryS {
     height: 100%;
     width: auto;
-    float: right;
-    margin:1vw;
+    float: left;
+    margin:0.5vw;
   }
 
   .GalleryCaption {
      display:flow-root;
-height: auto;
+    height: auto;
     width:100%;
-    text-align: right;
-    line-height: 120%;
+    text-align: left;    
   }
 
+
   .GalleryCaption.h2 {
-      font-size: 70%;
-          bottom:0;
-        
+      font-size: 60%;
   }
 
 
@@ -834,20 +835,145 @@ height: auto;
     }
 
 
-
-
+   
+    .arrowcontainer {
+        display: inline;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: visible;
+            
+    }
     
+   
+    
+    
+    .container {
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 2s all ease;
+    }
+    
+    .container.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+      /* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    position: relative;
+    left:60px;
+    height: fit-content;
+    object-fit: contain;
+    overflow-y: visible;
+  }
+  
+  .left {
+    left:50px;
+    width: 45vw;
+  }
+  
+
+
+  .column.right {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left:60px;
+    width:40vw;
+  }
+
+
+
+
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 2s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .accordion {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .arrow {
+    margin-left: 10px;
+    transition: transform 0.3s;
+    width:3vw;
+  }
+  .arrowcontent {
+    display: none;
+    margin-top: 10px;
+  }
+  .accordion.aactive + .arrowcontent,
+  .accordion:hover + .arrowcontent {
+    display: block;
+    
+  }
+  .accordion.aactive .arrow {
+    transform: rotate(180deg);
+  }
+
+  #message {
+    font-size: 24px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 0, 0);
+    padding: 20px;
+    text-align: center;
+    z-index: 999;
+  }
+    
+  @media screen and (min-width: 750px) and (min-aspect-ratio: 1/1) {
+    h1{
+        font-size: 25px;
+        margin: 3px;
+    }
+
+    h2{
+        font-size: 16px;
+        margin: 2px;
+    }
+    p{
+        font-family: 'ApercuRegular';
+        font-size: 15px;
+        color: #c3415c;
+        font-weight: normal;
+    }
+}
 
 @media screen and (min-width: 1248px) and (min-aspect-ratio: 1/1) {
-    h1{
+   
+    
+    .bd h1{
         font-family: 'ApercuBold';
         font-size: 37px;
         color: #fff;
         font-weight: normal;
         align-self: flex-end;
     }
+
+    
         
-    h2{
+    .bd h2, .cubebuttons h2{
         font-family: 'ApercuMono';
         font-size: 25px;
         color: #c3415c;
@@ -862,19 +988,15 @@ height: auto;
         font-weight: normal;    
     }
     
-    h4{@media screen
+    h4{
         font-family: 'ApercuMono';
         font-size: 13px;
         color: #c3415c;
         font-weight: normal;  
     }
     
-    p{
-        font-family: 'ApercuRegular';
-        font-size: 13px;
-        color: #c3415c;
-        font-weight: normal;
-    }
+
+    
 
     .bar4 {
         position: relative;
@@ -1124,13 +1246,16 @@ height: auto;
         margin-left: -8%; 
        }
 
-       h2 {     
+       .bd h2, .cubebuttons h2 {     
         font-size: 2vw;
     }
 
-    h1 {
+    .bd h1 {
         font-size: 3vw;
     }
+
+    
+ 
 
 
     }
@@ -1141,13 +1266,16 @@ height: auto;
         margin-left: -7.5%; 
        }
 
-       h2 {     
+       .bd h2, .cubebuttons h2 {     
         font-size: 2.05vw;
     }
 
-    h1 {
+    .bd h1 {
         font-size: 3.05vw;
     }
+
+  
+    
 
     .dropdown-content {
         min-width: 120px;
@@ -1165,7 +1293,23 @@ height: auto;
 
 
 @media screen and (max-width: 500px) {
-#bm {   
+    h1{
+        font-size: 15px;
+        margin: 3px;
+    }
+
+    h2{
+        font-size: 10px;
+        margin: 2px;
+    }
+    p{
+        font-family: 'ApercuRegular';
+        font-size: 10px;
+        color: #c3415c;
+        font-weight: normal;
+    }
+
+    #bm {   
     zoom:1.3;
     width:130%;
     margin-left: -15%; 
@@ -1175,14 +1319,14 @@ height: auto;
     border-width: 0.5vw;
         }
 
-        h2 {     
+        .bd h2, .cubebuttons h2{     
             font-size: 2.15vw;
         }
     
-        h1 {
+       .bd h1 {
             font-size: 3.2vw;
         }
-
+    
 
  .bar1, .bar2, .bar3 {
             width: 4vw;
@@ -1261,12 +1405,12 @@ height: auto;
 border-width: thin
     }
 
-    h2 {     
+    .bd h2, .cubebuttons h2 {     
         font-size: 2.22vw;
 
-    } 3
+    } 
 
-    h1 {
+    .bd h1 {
         font-size: 3.3vw;
     }
 
@@ -1341,6 +1485,7 @@ border-width: thin
 
 @media screen and (min-aspect-ratio:4/3) and (max-height: 800px) {
 
+
     #bm { 
         width: 157.5vh; 
         height: 90vh;  
@@ -1352,14 +1497,14 @@ border-width: thin
    
     }
 
-    h1{
+   .bd h1{
         font-family: 'ApercuBold';
         font-size: 5vh;
         color: #fff;
         font-weight: normal;
     }
         
-    h2{
+    .bd h2, .cubebuttons h2{
         font-family: 'ApercuMono';
         font-size: 3.2vh;
         color: #c3415c;
@@ -1367,7 +1512,7 @@ border-width: thin
         bottom:0;
     
 
-} 
+} }
 
 @media screen and (max-aspect-ratio:4/3) and (min-width: 750px), (max-width: 160vh) {
     

@@ -98,7 +98,7 @@ overflow-x: hidden;">
   </div></a>
 
 
-  <div id="bd">
+  <div id="bd" class="bd">
     <h1 > Hello, <br>I'm Dorotea Bajic</h1>
     <h2>this is my online portfolio.</h2>
   </div>
@@ -141,30 +141,33 @@ overflow-x: hidden;">
 
   </div>
   <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye" alt="eye icon to change colour themes"></button>
-<button class="button" onclick="goBack()">back</button>
+<button class="button"  id="backButton">back</button>
 
 
 <script>
 
-// https://discourse.webflow.com/t/back-button-to-previous-page-unless-its-a-different-domain/103891/4
-<script>
-  
-    function backClick() {
-    if(document.referrer.indexOf('127.0.0.1:5500') >= 0) {
-        history.go(-1);
-    }
-    else {
-        window.location.href = '/'; // this might just be '/' of your site
-    }
-    return false;
-        }
-    </script>
-    
-function goBack() {
-window.history.back();
+const backButton = document.getElementById('backButton');
+let clickCount = 0;
 
-// if window.history.length = just opened tab or not from this domain (dont want to send back to google)
-}
+backButton.addEventListener('click', () => {
+  if (clickCount === 0) {
+    if (document.referrer.includes(window.location.hostname)) {
+      history.go(-1);
+    } else {
+      backButton.textContent = "This is already where you started, are you sure you want to leave this site?";
+      clickCount++;
+    }
+  } else if (clickCount === 1) {
+    backButton.textContent = "Really?";
+    clickCount++;
+  } else if (clickCount === 2) {
+    backButton.textContent = "Fine. I'll miss you </3";
+    clickCount++;
+    setTimeout(() => {
+      window.location.href = "https://www.seznam.cz"; // Redirect after half a second
+    }, 500);
+  }
+});
 
 function toggleTheme() {
           // Obtains an array of all <link>

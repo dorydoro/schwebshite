@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+ 
+
+  <link id="theme" rel="stylesheet" type="text/css" href="../style.css" />
+
+  <title>3D Printing</title>
+
+  <style>
+
+  </style>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div></button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="../index.html">home</a>
+    <a href="../aboutme.html">about me</a>
+    <a href="../myexperience.html">my experience</a>
+    <a href="../myprojects.html">my projects</a>
+    <a href="../connect.html">connect</a>
+  </div>
+</div>
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+
+</head><body>
+
+<div id="pageheader">
+  <a href="../index.html" style="text-decoration: none;"><h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
+<div class="bar4"></div>
+<h2><a href="../myprojects.html">my projects</a> > 3d printing
+</h2>
+</div>
+<br>
+
+<div id="projectContentB">
+  <img src="3dWide.jpg" style="object-fit:cover; width:100%;">
+    <div class="projGallery">
+      <img src="3d1.jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="3dHedge.jpg" class="imgGallery">
+      <img src="3dTubby.jpg" class="imgGallery">
+        <img src="3dMe.jpg" class="imgGallery">
+        <img src="3dStar.jpg" class="imgGallery"> 
+    </div>
+
+    <div class="GalleryCaption">
+        <br>
+        <h1>3D Printing</h1>
+        <h2 style="font-size: 120%; line-height: 10%;">2019-</h2>
+          <p>
+          <br>&thinsp;<br>
+          My introduction to 3D printing was during a summer intensive course at GCM. This format really allowed me to give the course all my attention which led to a strong understanding of 3D printing technologies and strategies of creation. Features here are some of the prints I have.
+          <br>&thinsp;<br>
+          The dancing star is the first model I have created from scratch. I used varying depths of the shapes to convey the 2D sketch in 3D and maintain the character of the illustration. To the right of that is a 3D printed scan of myself doing the ‘whoa’. Since it's all one colour it was important to create details using form, like choosing a denim button dress which would have defined rigid curves prime for handheld scanning. 
+          <br>&thinsp;<br>
+          More recently I have been focused on technical creativity, which has led me to create the teal fuzzy teletubby which was altered to collect and hold the priming lines created by the Ender 3 printer I was using at the time. It makes for cute desk decoration where I can also track my growth. The reaper teletubby was not printed by me, but through it I got to learn about SLS printing.
+          <br>&thinsp;<br>
+          Currently I am In the middle of my hedgehog project. I sculpted the hedgehog using Meshmixer and watching the entire Sex In The City film series (I'm a Samantha). I taught myself Fusion to engineer the inner workings and additional pieces. I’ll update this page soon to showcase how I intend to have the quills (or pencils) pop out of the body.
+          </p>
+        <br>
+    </div>
+
+    <div class="projGallery">
+      <img src="duolingoprint.gif" class="imgGallery" style="margin-right: 0vh;">
+      <img src="duolingored.jpg" class="imgGallery">
+        <img src="duolngoblack.jpg" class="imgGallery">
+        <img src="duolingo.gif" class="imgGallery"> 
+    </div>
+
+    <div class="GalleryCaption">
+        <br>
+        <h1>Duolingo Owl</h1>
+        <h2 style="font-size: 120%; line-height: 10%;">2019</h2>
+        <p> This piece was created as a final project in my 3D printing course.
+           Inspired by the then-recent ‘Evil Duolingo’ trend, my partner and I created this shakeable owl 
+           printed using CAD and meshmixer and output using a dual extruder 3D printer using white and green
+           PLA which was later hand painted to this final fun product. 
+    </div>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+
+
+
+
+
+
+    </div>
+    <button class="buttonA" onclick="toggleTheme()"><img src="eye.svg" class="eye"></button>
+<button class="button" onclick="goBack()">back</button>
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+
+function toggleTheme() {
+            // Obtains an array of all <link>
+            // elements.
+            // Select your element using indexing.
+            var theme = document.getElementsByTagName('link')[0];
+  
+            // Change the value of href attribute 
+            // to change the css sheet.
+            if (theme.getAttribute('href') == '../style.css') {
+                theme.setAttribute('href', '../styleAccess.css');
+            } else {
+                theme.setAttribute('href', '../style.css');
+            }
+        }
+</script> 
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

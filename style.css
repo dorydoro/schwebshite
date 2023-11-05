@@ -846,6 +846,8 @@ div.categoryCaption {
     margin: 0.5vw;
 }
 
+
+
 .GalleryCaption {
     display: flow-root;
     height: auto;
@@ -889,8 +891,8 @@ div.categoryCaption {
 
 .arrowcontainer {
     display: inline;
-    flex-direction: row;
-    overflow-x: auto;
+    flex-direction: row-reverse;
+    overflow-x: visible;
     overflow-y: visible;
 
 }
@@ -912,29 +914,40 @@ div.categoryCaption {
 
 /* Create two unequal columns that floats next to each other */
 .column {
-    float: left;
+    float:right;
     position: relative;
-    left: 60px;
     height: fit-content;
     object-fit: contain;
     overflow-y: visible;
+    flex-direction: column-reverse;
 }
 
 .left {
-    left: 50px;
     width: 45vw;
+   
 }
 
 
-
-.column.right {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    left: 60px;
+.right {
     width: 40vw;
+    margin-left: 2vw;
 }
 
+.fillimgrow {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    width: min(100%, 465px);
+    max-width: min(100%, 465px); /* Set the maximum width to be 100px or 465px, whichever is lesser */
+  }
+  
+  .fillimgrow img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 0.25vw;
+    margin-bottom: 0.25vw;
+  }
+ 
 
 
 

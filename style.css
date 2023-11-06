@@ -939,14 +939,19 @@ div.categoryCaption {
     float: right;
     width: min(100%, 465px);
     max-width: min(100%, 465px); /* Set the maximum width to be 100px or 465px, whichever is lesser */
+    margin-bottom: 0.25vw;
   }
   
   .fillimgrow img {
     max-width: 100%;
     height: auto;
-    margin-right: 0.25vw;
-    margin-bottom: 0.25vw;
+    
+
   }
+
+  .fillimgrow img:not(:last-child){
+    margin-right: 0.25vw;
+}
  
 
 

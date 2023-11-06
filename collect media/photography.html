@@ -725,17 +725,43 @@ function toggleTheme() {
   // Add more calls to animateRightColumn for additional right columns as needed
 </script>
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 function updateImageSizes() {
   $('.fillimgrow').each(function() {
     var containerWidth = $(this).width();
-    var imageCount = $(this).find('img').length;
-    var totalMarginWidth = (imageCount - 1) * parseFloat($(this).find('img').css('margin-right'));
-    var availableWidth = containerWidth - totalMarginWidth;
-    var imageWidth = availableWidth / imageCount;
-    $(this).find('img').css('width', imageWidth + 'px');
-    $(this).find('img').css('height', 'auto');
+    var totalMarginWidth = ($(this).find('img').length - 1) * parseFloat($(this).find('img').css('margin-right'));
+    var totalImageWidth = 0;
+
+    $(this).find('img').each(function() {
+      totalImageWidth += this.naturalWidth;
+    });
+
+    
+    // Calculate the average aspect ratio for images
+    var totalAspectRatio = 0;
+    $(this).find('img').each(function() {
+      totalAspectRatio += this.naturalHeight / this.naturalWidth;
+    });
+
+    var averageAspectRatio = totalAspectRatio / $(this).find('img').length;
+
+    // Calculate the rowHeight based on the individual image calculations
+    var rowHeight = 0;
+    $(this).find('img').each(function() {
+      rowHeight += this.naturalWidth * (1+(averageAspectRatio - (this.naturalHeight / this.naturalWidth)));
+    });
+
+    rowHeight = (rowHeight + totalMarginWidth) / containerWidth;
+
+    // Apply the calculated height to all images
+    $(this).find('img').each(function() {
+      var originalWidth = this.naturalWidth;
+      var newWidth = originalWidth * rowHeight / this.naturalHeight;
+      $(this).css('width', newWidth + 'px');
+      $(this).css('height', rowHeight + 'px');
+    });
   });
 }
 
@@ -747,6 +773,12 @@ $(document).ready(function() {
   });
 });
 </script>
+
+
+
+
+
+
 
 
 

@@ -734,26 +734,21 @@ function updateImageSizes() {
     var totalMarginWidth = ($(this).find('img').length - 1) * parseFloat($(this).find('img').css('margin-right'));
     var totalImageWidth = 0;
 
+
     $(this).find('img').each(function() {
       totalImageWidth += this.naturalWidth;
     });
 
+    var availcontainerWidth = containerWidth - totalMarginWidth;
     
     // Calculate the average aspect ratio for images
-    var totalAspectRatio = 0;
+    var totalInverseAspectRatio = 0;
     $(this).find('img').each(function() {
-      totalAspectRatio += this.naturalHeight / this.naturalWidth;
+      totalInverseAspectRatio += this.naturalWidth / this.naturalHeight;
     });
-
-    var averageAspectRatio = totalAspectRatio / $(this).find('img').length;
 
     // Calculate the rowHeight based on the individual image calculations
-    var rowHeight = 0;
-    $(this).find('img').each(function() {
-      rowHeight += this.naturalWidth * (1+(averageAspectRatio - (this.naturalHeight / this.naturalWidth)));
-    });
-
-    rowHeight = (rowHeight + totalMarginWidth) / containerWidth;
+    var rowHeight = availcontainerWidth / ( totalInverseAspectRatio / 1 );
 
     // Apply the calculated height to all images
     $(this).find('img').each(function() {

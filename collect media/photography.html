@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--  Meta  -->
   <meta charset="UTF-8" />
@@ -10,763 +11,1043 @@
 
   <title>Photography</title>
 
+ 
 
-
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="../index.html">home</a>
-      <a href="../aboutme.html">about me</a>
-      <a href="../myexperience.html">my experience</a>
-      <a href="../myprojects.html">my projects</a>
-      <a href="../connect.html">connect</a>
+  <nav role="navigation">
+    <div id="menuToggle">
+  
+      <input type="checkbox"/>
+      <div class="dropbtn">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </div>
+      
+      <ul id="menu">
+      
+        <a href="../index.html"><li>Home</li></a>
+        <a href="../aboutme.html"><li>About Me</li></a>
+        <a href="../myexperience.html"><li>My experience</li></a>
+        <a href="../myprojects.html"><li>My Projects</li></a>
+        <a href="../connect.html"><li>Connect</li></a>
+        <a href="https://www.linkedin.com/in/doroteab/" target="_blank"><li>LinkedIn</li></a>
+     
+        <div class="cubepointer"><p> Click on this cube to change themes!</p></div>
 
+      </ul>
 
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    </script>
+    </div>
+  </nav>
 
+  <br><br><br>
 </head>
+
 <body style="    max-width: 100%;
 max-height: 100%;
 overflow-x: hidden;">
 
 
 
-<script>
-  function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
+  <script>
+    function reveal() {
+ var cards = document.querySelectorAll(".card");
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 100;
+cards.forEach(function(card) {
+    var reveals = card.querySelectorAll(".reveal");
+    var isActive = false;
 
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            isActive = true;
+        } else {
+            reveals[i].classList.remove("active");
+        }
     }
-  }
+
+    // Add or remove the inactive class based on active state
+    if (!isActive) {
+        card.classList.add("inactive");
+    } else {
+        card.classList.remove("inactive");
+    }
+});
 }
 
-
-// Add this code to trigger the reveal function on page load
+// Event listeners
 window.addEventListener("scroll", reveal);
 window.addEventListener("resize", reveal);
-
-// Trigger reveal for elements already in the viewport on page load
-window.addEventListener("load", function() {
-  reveal();
-});
-
-</script>
+window.addEventListener("load", reveal);
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const arrowContainers = document.querySelectorAll('.arrowcontainer');
-  
-  function toggleAccordion(accordion) {
-    accordion.classList.toggle('aactive');
-  }
-
-  function toggleContentState(content) {
-    const accordion = content.previousElementSibling;
-    accordion.classList.toggle('aactive');
-  }
-
-  document.addEventListener('click', function(event) {
-    const accordion = event.target.closest('.accordion');
-    if (accordion) {
-      toggleAccordion(accordion);
-    }
-
-    const content = event.target.closest('.arrowcontent');
-    if (content) {
-      toggleContentState(content);
-    }
-  });
-
-  arrowContainers.forEach(container => {
-    const accordions = container.querySelectorAll('.accordion');
-    accordions.forEach(accordion => {
-      accordion.addEventListener('touchstart', function(event) {
-        toggleAccordion(accordion);
-        event.preventDefault(); // Prevent touch events from triggering both touchstart and click
-      });
-    });
-
-    const arrowContents = container.querySelectorAll('.arrowcontent');
-    arrowContents.forEach(content => {
-      content.addEventListener('click', function(event) {
-        toggleContentState(content);
-        event.stopPropagation(); // Prevent the click from reaching the section click listener
-      });
-    });
-  });
-});
 
   </script>
 
- 
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const arrowContainers = document.querySelectorAll('.arrowcontainer');
+
+      function toggleAccordion(accordion) {
+        accordion.classList.toggle('aactive');
+      }
+
+      function toggleContentState(content) {
+        const accordion = content.previousElementSibling;
+        accordion.classList.toggle('aactive');
+      }
+
+      document.addEventListener('click', function (event) {
+        const accordion = event.target.closest('.accordion');
+        if (accordion) {
+          toggleAccordion(accordion);
+        }
+
+        const content = event.target.closest('.arrowcontent');
+        if (content) {
+          toggleContentState(content);
+        }
+      });
+
+      arrowContainers.forEach(container => {
+        const accordions = container.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+          accordion.addEventListener('touchstart', function (event) {
+            toggleAccordion(accordion);
+            event.preventDefault(); // Prevent touch events from triggering both touchstart and click
+          });
+        });
+
+        const arrowContents = container.querySelectorAll('.arrowcontent');
+        arrowContents.forEach(content => {
+          content.addEventListener('click', function (event) {
+            toggleContentState(content);
+            event.stopPropagation(); // Prevent the click from reaching the section click listener
+          });
+        });
+      });
+    });
+
+  </script>
+
+
 
 
   <div id="pageheader">
-    <a href="../index.html" style="text-decoration: none;"><h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
-  <div class="bar4"></div>
-  <h2><a href="../myprojects.html">my projects</a> > photography
-  </h2>
+    <a href="../index.html" style="text-decoration: none;">
+      <h1> Hello, <br>I'm Dorotea Bajic</h1>
+    </a>
+    <div class="bar4"></div>
+    <h2><a href="../myprojects.html">my projects</a> > photography
+    </h2>
   </div>
 
 
 
-<div  class="arrowcontainer row">
+  <div class="arrowcontainer row">
 
-  <div class="column right right-column-1" style="background-color:#bbb;">
-    <div class="container reveal textbox1">
-        <p>Before I was aware that packaging was a potential field of interest I was confident that I would be doing something within advertising, coming up with the concepts to communicate a message. I found it really fascinating how the creators calculate their designs to influence the viewer. My interest in photography started from social media, the most calculating medium of them all</p>
-        </div>
-      <div class="container reveal textbox2" >
-        <p>In early 2015 I started my book blogging instagram, I spent most of my time reading then and through book clubs on goodreads I discovered #bookstagram and its aesthetic reading marvels. A few months later I was enrolled in my first photography class, one of three visual art courses my highschool offered, and I took them all and honed my skills with my bookish photos.</p>
-      </div><div class="container reveal textbox3" >
-        <p>Everyone has a teacher that has shaped them in unforeseen ways, in high school for me was Mrs. Papak. She introduced me to photoshop, composition, lighting and other visual elements that would forever shift how i perceive. 
+    <div class="column right right-column-1" style="background-color:#bbb;">
+      <div class="container reveal textbox1">
+        <p>Before I was aware that packaging was a potential field of interest I was confident that I would be doing
+          something within advertising, coming up with the concepts to communicate a message. I found it really
+          fascinating how the creators calculate their designs to influence the viewer. My interest in photography
+          started from social media, the most calculating medium of them all</p>
+      </div>
+      <div class="container reveal textbox2">
+        <p>In early 2015 I started my book blogging instagram, I spent most of my time reading then and through book
+          clubs on goodreads I discovered #bookstagram and its aesthetic reading marvels. A few months later I was
+          enrolled in my first photography class, one of three visual art courses my highschool offered, and I took them
+          all and honed my skills with my bookish photos.</p>
+      </div>
+      <div class="container reveal textbox3">
+        <p>Everyone has a teacher that has shaped them in unforeseen ways, in high school for me was Mrs. Papak. She
+          introduced me to photoshop, composition, lighting and other visual elements that would forever shift how i
+          perceive.
         </p>
-      </div><div class="container reveal textbox4" >
-        <p>I became so excited to practise and learn more that within a few months I was teaching her tricks in photoshop. Mrs.Papak was one of the first to curate a space I felt free to be wholly myself and create in, she encouraged me to explore and express (and still does!). My mind was ecstatic in that eclectic classroom. She had a rack of old scissors and an Emily Strange poster, both symbols holding strong in my personal aesthetic.</p>
-      </div><div class="container reveal textbox5" >
-        <p>We really focused on the basic principles and elements, and we could really submit anything as long as we communicated how we could describe where that piece plays in our work, enabling us to delve into personal styles and exploration proving ideas on how to make it an actuality and I soon found myself executing multiple ideas and projects simultaneously, sometimes compiling into one shoot to use for a few weeks of assignments and trying other creations inbetween.
-        </div>
-        <div class="container reveal textbox6" >
-           <p> Scanography was one of the assignments and I really fell in love with the medium with its contrast and sense of depth, ease of publication and accessibility in use. You found a photocopier aka horizontal photobooth and some knicknacks? Time for some quick selfies. I find myself going to the office printer, imagine im in a sitcom and let some energy out in this instant gratification medium. The page comes out and I look into myself and previous scans come to vision in my mind archives and I ponder to when I first picked this up.</p>
-       </div>
-       </div>
-       
-    <div class="column left left-column-1"  style="background-color:#aaa;">
-      <div  class="imgbox1" data-textbox=".textbox1">
-      <div class="container reveal">
-       <div class="fillimgrow">
+      </div>
+      <div class="container reveal textbox4">
+        <p>I became so excited to practise and learn more that within a few months I was teaching her tricks in
+          photoshop. Mrs.Papak was one of the first to curate a space I felt free to be wholly myself and create in, she
+          encouraged me to explore and express (and still does!). My mind was ecstatic in that eclectic classroom. She
+          had a rack of old scissors and an Emily Strange poster, both symbols holding strong in my personal aesthetic.
+        </p>
+      </div>
+      <div class="container reveal textbox5">
+        <p>We really focused on the basic principles and elements, and we could really submit anything as long as we
+          communicated how we could describe where that piece plays in our work, enabling us to delve into personal
+          styles and exploration proving ideas on how to make it an actuality and I soon found myself executing multiple
+          ideas and projects simultaneously, sometimes compiling into one shoot to use for a few weeks of assignments
+          and trying other creations inbetween.
+      </div>
+      <div class="container reveal textbox6">
+        <p> Scanography was one of the assignments and I really fell in love with the medium with its contrast and sense
+          of depth, ease of publication and accessibility in use. You found a photocopier aka horizontal photobooth and
+          some knicknacks? Time for some quick selfies. I find myself going to the office printer, imagine im in a
+          sitcom and let some energy out in this instant gratification medium. The page comes out and I look into myself
+          and previous scans come to vision in my mind archives and I ponder to when I first picked this up.</p>
+      </div>
+    </div>
 
-        <img src="../media/photo/fishthatreads (1).jpg" >
-        <img src="../media/photo/fishthatreads (3).jpg" >
-        <img src="../media/photo/fishthatreads (4).jpg" >
+    <div class="column left left-column-1" style="background-color:#aaa;">
+      <div class="card invisible">
+      <div class="imgbox1" data-textbox=".textbox1">
+        <div class="container reveal">
+          <div class="fillimgrow">
+
+            <img src="../media/photo/fishthatreads (1).jpg">
+            <img src="../media/photo/fishthatreads (3).jpg">
+            <img src="../media/photo/fishthatreads (4).jpg">
+          </div>
+        </div>
+
+        <div class="container reveal">
+          <div class="fillimgrow">
+            <img src="../media/photo/fishthatreads (1).jpg">
+            <img src="photo/scanography/Scan 22.jpeg">
+            <img src="../media/photo/fishthatreads (1).jpg">
+            <img src="../media/photo/fishthatreads (3).jpg">
+            <img src="photo/highschool/grad feet.jpg">
+          </div>
+        </div>
+
+
+
+        <div class="container reveal">
+          <div class="fillimgrow">
+          <img src="../media/photo/fishthatreads (5).jpg"  >
+          <img src="../media/photo/fishthatreads (7).jpg"  >
+          <img src="../media/photo/fishthatreads (8).jpg"  >
+        </div>
+      </div></div>
+
+      <div class="imgbox2" data-textbox=".textbox2">
+        <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="../media/photo/fishthatreads (9).jpg"  >
+          <img src="../media/photo/fishthatreads (11).jpg"  >
+          <img src="../media/photo/fishthatreads (12).jpg"  >
+        </div>
+
+
+       
+          <div class="GalleryCaption accordion">
+            <h1 style="margin-top:0.1vw; margin-bottom: 0;">FishThatReads Instagram</h1>
+            <div class="right-content">
+            <h2 style="margin:0.1vw;  text-align: right;">2017-19</h2>
+            <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div>
+           </div>
+          
+          
+          
+          
+          </div>
+          
+          <div class="arrowcontent">
+            <p style="margin:0;">These are some sample photographs from the (now defunct) FishThatReads Instagram feed
+              which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched
+              the blog identity.</p>
+            <br>
+          </div></div>
+        </div></div>
+      
+
+
+
+      <div class="card invisible">
+      <div class="imgbox3" data-textbox=".textbox3">
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="../media/photo/bwfilm (3).jpg" >
+          <img src="../media/photo/bwfilm (2).jpg"  >
+          <img src="../media/photo/bwfilm (1).jpg"  >
+        </div>
+
+        <div class="GalleryCaption accordion">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">B/W Film</h1>
+          <div class="right-content">
+          <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> An early exploration of black and white 35mm photography.</p>
+          <br>
+        </div>
+      </div></div>
+    </div>
+
+
+
+    <div class="card  invisible">
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="../media/photo/expirefilm (1).jpg" >
+          <img src="../media/photo/expirefilm (2).jpg"  >
+          <img src="../media/photo/expirefilm (3).jpg"  >
+        </div>
+
+        <div class="GalleryCaption accordion imgbox4" data-textbox=".textbox4">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Self-Expiration</h1>
+          <div class="right-content">
+          <h2 style="margin:0.1vw;  text-align: right;">2018</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;">Self-portraits shot using expired 35mm film.</p>
+          <br>
+        </div>
       </div>
-      </div>
+    </div>
+
+
+
+    <div class="card invisible">
 
       <div class="container reveal">
         <div class="fillimgrow">
-          <img src="../media/photo/fishthatreads (1).jpg" >
-         <img src="photo/scanography/Scan 22.jpeg" >
-         <img src="../media/photo/fishthatreads (1).jpg" >
-         <img src="../media/photo/fishthatreads (3).jpg" >
-         <img src="photo/highschool/grad feet.jpg" >
-       </div>
-       </div>
-       
-
-      
-      <div class="projGalleryS container reveal">
-        <img src="../media/photo/fishthatreads (5).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (7).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (8).jpg" class="imgGalleryS">
-      </div></div>
-      
-      <div class="container reveal" >
-      <div class="projGalleryS">
-        <img src="../media/photo/fishthatreads (9).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (11).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (12).jpg" class="imgGalleryS">
-     </div>
-     
-
-     <div  class="imgbox2" data-textbox=".textbox2">
-    <div class="GalleryCaption accordion" >
-      <h1 style="margin-top:0.1vw; margin-bottom: 0;">FishThatReads Instagram</h1>
-       <h2 style="margin:0.1vw;  text-align: right;">2017-19</h2>
-       <img class="arrow" src="arrow.png" alt="Arrow">
+          <img src="../media/photo/czech (1).jpg" >
+          <img src="../media/photo/czech (2).jpg"  >
+          <img src="../media/photo/czech (3).jpg"  >
+          <img src="../media/photo/czech (4).jpg"  >
         </div>
-        <div class="arrowcontent" >
-          <p style="margin:0;">These are some sample photographs from the (now defunct) FishThatReads Instagram feed which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched the blog identity.</p>
-          <br>
-        </div></div></div>
-     
-    
-   
 
-      
-        <div class="container reveal" >
-          <div class="projGalleryS imgbox3" data-textbox=".textbox3" >
-          <img src="../media/photo/bwfilm (3).jpg" class="imgGalleryS"style="margin-right: 0vh;">
-          <img src="../media/photo/bwfilm (2).jpg" class="imgGalleryS">
-          <img src="../media/photo/bwfilm (1).jpg" class="imgGalleryS">
-          </div>
-          
-          <div class="GalleryCaption accordion">
-            <h1  style="margin-top:0.1vw; margin-bottom: 0;">B/W Film</h1>
-            <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
-            <img class="arrow" src="arrow.png" alt="Arrow">
-          </div>
-          <div class="arrowcontent">
-            <p style="margin:0;">  An early exploration of black and white 35mm photography.</p>
-            <br>
-          </div></div>
 
-    
-
-  <div class="container reveal" >
-    <div class="projGalleryS" >
-    <img src="../media/photo/expirefilm (1).jpg" class="imgGalleryS"style="margin-right: 0vh;">
-    <img src="../media/photo/expirefilm (2).jpg" class="imgGalleryS">
-    <img src="../media/photo/expirefilm (3).jpg" class="imgGalleryS">
-  </div>
-
-  <div class="GalleryCaption accordion imgbox4" data-textbox=".textbox4">
-    <h1 style="margin-top:0.1vw; margin-bottom: 0;">Self-Expiration</h1>
-        <h2 style="margin:0.1vw;  text-align: right;">2018</h2>
-        <img class="arrow" src="arrow.png" alt="Arrow">
-      </div>
-      <div class="arrowcontent">
-        <p style="margin:0;">Self-portraits shot using expired 35mm film.</p>
-        <br>
-      </div></div>
-  
-      <div class="container reveal" >
-        <div class="projGalleryS">
-        <img src="../media/photo/czech (1).jpg" class="imgGalleryS"style="margin-right: 0vh;">
-        <img src="../media/photo/czech (2).jpg" class="imgGalleryS">
-        <img src="../media/photo/czech (3).jpg" class="imgGalleryS">
-        <img src="../media/photo/czech (4).jpg" class="imgGalleryS">
-        </div>
-        
-          
         <div class="GalleryCaption accordion imgbox5" data-textbox=".textbox5">
-          <h1  style="margin-top:0.1vw; margin-bottom: 0;">Bohemia</h1>
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Bohemia</h1>
+          <div class="right-content">
           <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
-          <img class="arrow" src="arrow.png" alt="Arrow">
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
         </div>
         <div class="arrowcontent">
-          <p style="margin:0;"> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand painted photographs and a fresh spring feel to these photographs.</p>
+          <p style="margin:0;"> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand
+            painted photographs and a fresh spring feel to these photographs.</p>
           <br>
-        </div></div>
-
-  <div class="container reveal" >
-   <div class="projGalleryS">
-          <img src="photo/highschool/yearbooks.jpg" class="imgGalleryS">
-          <img src="photo/highschool/BajicDory_Candles.jpg" class="imgGalleryS">
-          <img src="photo/highschool/grad feet.jpg" class="imgGalleryS">
-   </div>
-
-   <div class="GalleryCaption accordion" >
-    <h1  style="margin-top:0.1vw; margin-bottom: 0;">Re-application</h1>
-    <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
-    <img class="arrow" src="arrow.png" alt="Arrow">
-  </div>
-  <div class="arrowcontent">
-    <p style="margin:0;"> For both grade 11 & 12, my art has been repurposed for the schools yearbook cover. Here is the Warhol inspired take on the mascot from my senior yearbook. A photo I took for the "Candles" prompt has also made it to the graduation ceremony booklet cover. </p>
-    <br>
-  </div></div>
-
-  <div class="container reveal" >
-  <div class="projGalleryS" >
-     <img src="photo/scanography/Scan 13.jpeg" class="imgGalleryS">
-     <img src="photo/scanography/Scan 22.jpeg" class="imgGalleryS">
-     <img src="photo/scanography/green scan_Page_1.png" class="imgGalleryS">
-     <img src="photo/scanography/note selfie.png" class="imgGalleryS">
-  </div>
-  <div class="imgbox6" data-textbox=".textbox6"></div>
-  <div class="GalleryCaption accordion ">
-    <h1  style="margin-top:0.1vw; margin-bottom: 0;">Scanography</h1>
-    <h2 style="margin:0.1vw;  text-align: right;">2016-Now</h2>
-    <img class="arrow" src="arrow.png" alt="Arrow">
-  </div>
-  <div class="arrowcontent">
-    <p style="margin:0;">  Early and recent expeditions in scanography. I really love playing with the appearance of fingers and hands, multiplying and distorting simply with movement during exposure. The eerie feel draws me to repeat, posing with odd objects 
-    I just think this is a rad medium with its accessibility and unique lighting. Recently I have been tossing my head in the office copier for a little dose of absurd creativity which really helps with the tenser days, before returning to the dark void which is reality. </p>
-    <br>
-  </div></div>
- 
-  <div class="container reveal ">
-
-      <h2>Pic of cameras and with sara on studio floor, 
-        find shighschool grad thing with candle feet pics</h2>
-      <p>Some text..</p>
-    </div>
-    
+        </div>
+      </div>
     </div>
 
 
 
+    <div class="card invisible">
 
- </div>
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="photo/highschool/yearbooks.jpg"  >
+          <img src="photo/highschool/BajicDory_Candles.jpg"  >
+          <img src="photo/highschool/grad feet.jpg"  >
+        </div>
 
- <br>  <br>  <br>  <br><br>  <br>  <br>  <br><br>  <br>  <br>  <br><br>  <br>  <br>  <br>
+        <div class="GalleryCaption accordion">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Re-application</h1>
+          <div class="right-content">
+          <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> For both grade 11 & 12, my art has been repurposed for the schools yearbook cover. Here
+            is the Warhol inspired take on the mascot from my senior yearbook. A photo I took for the "Candles" prompt
+            has also made it to the graduation ceremony booklet cover. </p>
+          <br>
+        </div>
+      </div></div>
 
 
-  <br>  <br>  <br>  <br><br>  <br>  <br>  <br><br>  <br>  <br>  <br><br>  <br>  <br>  <br>
+
+      <div class="card  invisible">
+
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="photo/scanography/Scan 13.jpeg"  >
+          <img src="photo/scanography/Scan 22.jpeg"  >
+          <img src="photo/scanography/green scan_Page_1.png"  >
+          <img src="photo/scanography/note selfie.png"  >
+        </div>
+        <div class="imgbox6" data-textbox=".textbox6"></div>
+        <div class="GalleryCaption accordion ">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Scanography</h1>
+          <div class="right-content">
+          <h2 style="margin:0.1vw;  text-align: right;">2016-Now</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> Early and recent expeditions in scanography. I really love playing with the appearance
+            of fingers and hands, multiplying and distorting simply with movement during exposure. The eerie feel draws
+            me to repeat, posing with odd objects
+            I just think this is a rad medium with its accessibility and unique lighting. Recently I have been tossing
+            my head in the office copier for a little dose of absurd creativity which really helps with the tenser days,
+            before returning to the dark void which is reality. </p>
+          <br>
+        </div>
+      </div>
+    </div>
 
 
-  <div  class="arrowcontainer row">
-    <div class="column left left-column-2"  style="background-color:#aaa;">
-      <div  class="imgbox7" data-textbox=".textbox7">
-      <div class="projGalleryS container reveal">
-       
 
-        <img src="../media/photo/fishthatreads (1).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (3).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (4).jpg" class="imgGalleryS">
+    <div class="card  invisible">
+
+      <div class="container reveal ">
+
+        <h2>Pic of cameras and with sara on studio floor,
+          find shighschool grad thing with candle feet pics</h2>
+        <p>Some text..</p>
+      </div></div>
+
+    </div></div>
+  </div>
+
+
+
+  </div>
+
+  <br> <br> <br> <br><br> <br> <br> <br><br> <br> <br> <br><br> <br> <br> <br>
+
+
+  <br> <br> <br> <br><br> <br> <br> <br><br> <br> <br> <br><br> <br> <br> <br>
+
+
+  <div class="arrowcontainer row">
+    <div class="column left left-column-2" style="background-color:#aaa;">
+      <div class="imgbox7" data-textbox=".textbox7">
+        <div class="projGalleryS container reveal">
+
+
+          <img src="../media/photo/fishthatreads (1).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (3).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (4).jpg" class="imgGalleryS">
+        </div>
+
+
+        <div class="projGalleryS container reveal">
+          <img src="../media/photo/fishthatreads (5).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (7).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (8).jpg" class="imgGalleryS">
+        </div>
       </div>
 
-      
-      <div class="projGalleryS container reveal">
-        <img src="../media/photo/fishthatreads (5).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (7).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (8).jpg" class="imgGalleryS">
-      </div></div>
-      
-      <div class="container reveal" >
-      <div class="projGalleryS">
-        <img src="../media/photo/fishthatreads (9).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (11).jpg" class="imgGalleryS">
-        <img src="../media/photo/fishthatreads (12).jpg" class="imgGalleryS">
-     </div>
-     
-
-     <div  class="imgbox8" data-textbox=".textbox8">
-    <div class="GalleryCaption accordion" >
-      <h1 style="margin-top:0.1vw; margin-bottom: 0;">FishThatReads Instagram</h1>
-       <h2 style="margin:0.1vw;  text-align: right;">2017-19</h2>
-       <img class="arrow" src="arrow.png" alt="Arrow">
+      <div class="container reveal">
+        <div class="projGalleryS">
+          <img src="../media/photo/fishthatreads (9).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (11).jpg" class="imgGalleryS">
+          <img src="../media/photo/fishthatreads (12).jpg" class="imgGalleryS">
         </div>
-        <div class="arrowcontent" >
-          <p style="margin:0;">These are some sample photographs from the (now defunct) FishThatReads Instagram feed which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched the blog identity.</p>
-          <br>
-        </div></div></div>
-     
-    
-   
 
-      
-        <div class="container reveal" >
-          <div class="projGalleryS imgbox9" data-textbox=".textbox9" >
-                
-          <img src="../media/photo/Joy (2).jpg" class="imgGalleryS"style="margin-right: 0vh;">
+
+        <div class="imgbox8" data-textbox=".textbox8">
+          <div class="GalleryCaption accordion">
+            <h1 style="margin-top:0.1vw; margin-bottom: 0;">FishThatReads Instagram</h1>
+            <h2 style="margin:0.1vw;  text-align: right;">2017-19</h2>
+            <img class="arrow" src="arrow.svg" alt="Arrow">
+          </div>
+          <div class="arrowcontent">
+            <p style="margin:0;">These are some sample photographs from the (now defunct) FishThatReads Instagram feed
+              which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched
+              the blog identity.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="container reveal">
+        <div class="projGalleryS imgbox9" data-textbox=".textbox9">
+
+          <img src="../media/photo/Joy (2).jpg" class="imgGalleryS" style="margin-right: 0vh;">
           <img src="../media/photo/Joy (4).jpg" class="imgGalleryS">
           <img src="../media/photo/Joy (1).jpg" class="imgGalleryS">
           <img src="../media/photo/Joy (5).jpg" class="imgGalleryS">
         </div>
-          
-          <div class="GalleryCaption accordion">
-            <h1  style="margin-top:0.1vw; margin-bottom: 0;">Joy</h1>
-            <h2 style="margin:0.1vw;  text-align: right;">2020</h2>
-            <img class="arrow" src="arrow.png" alt="Arrow">
-          </div>
-          <div class="arrowcontent">
-            <p style="margin:0;"> "Joy" prompt from exchange semester at Hochschule der Medien. Photo series created using RGB lighting, makeup artistry and intended to be reminiscent of a magical midnight party.</p>
-            <br>
-          </div></div>
 
-    
-
-  <div class="container reveal" >
-    <div class="projGalleryS" >
-    <img src="../media/photo/expirefilm (1).jpg" class="imgGalleryS"style="margin-right: 0vh;">
-    <img src="../media/photo/expirefilm (2).jpg" class="imgGalleryS">
-    <img src="../media/photo/expirefilm (3).jpg" class="imgGalleryS">
-  </div>
-
-  <div class="GalleryCaption accordion imgbox10" data-textbox=".textbox10">
-    <h1 style="margin-top:0.1vw; margin-bottom: 0;">Self-Expiration</h1>
-        <h2 style="margin:0.1vw;  text-align: right;">2018</h2>
-        <img class="arrow" src="arrow.png" alt="Arrow">
-      </div>
-      <div class="arrowcontent">
-        <p style="margin:0;">Self-portraits shot using expired 35mm film.</p>
-        <br>
-      </div></div>
-  
-      <div class="container reveal" >
-        <div class="projGalleryS">
-        <img src="../media/photo/czech (1).jpg" class="imgGalleryS"style="margin-right: 0vh;">
-        <img src="../media/photo/czech (2).jpg" class="imgGalleryS">
-        <img src="../media/photo/czech (3).jpg" class="imgGalleryS">
-        <img src="../media/photo/czech (4).jpg" class="imgGalleryS">
-        </div>
-        
-          
-        <div class="GalleryCaption accordion imgbox11" data-textbox=".textbox11">
-          <h1  style="margin-top:0.1vw; margin-bottom: 0;">Bohemia</h1>
-          <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
-          <img class="arrow" src="arrow.png" alt="Arrow">
+        <div class="GalleryCaption accordion">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Joy</h1>
+          <h2 style="margin:0.1vw;  text-align: right;">2020</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div>
         </div>
         <div class="arrowcontent">
-          <p style="margin:0;"> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand painted photographs and a fresh spring feel to these photographs.</p>
+          <p style="margin:0;"> "Joy" prompt from exchange semester at Hochschule der Medien. Photo series created using
+            RGB lighting, makeup artistry and intended to be reminiscent of a magical midnight party.</p>
           <br>
-        </div></div>
+        </div>
+      </div>
 
-  <div class="container reveal" >
-   <div class="projGalleryS">
+
+
+      <div class="container reveal">
+        <div class="projGalleryS">
+          <img src="../media/photo/expirefilm (1).jpg" class="imgGalleryS" style="margin-right: 0vh;">
+          <img src="../media/photo/expirefilm (2).jpg" class="imgGalleryS">
+          <img src="../media/photo/expirefilm (3).jpg" class="imgGalleryS">
+        </div>
+
+        <div class="GalleryCaption accordion imgbox10" data-textbox=".textbox10">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Self-Expiration</h1>
+          <h2 style="margin:0.1vw;  text-align: right;">2018</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;">Self-portraits shot using expired 35mm film.</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="container reveal">
+        <div class="projGalleryS">
+          <img src="../media/photo/czech (1).jpg" class="imgGalleryS" style="margin-right: 0vh;">
+          <img src="../media/photo/czech (2).jpg" class="imgGalleryS">
+          <img src="../media/photo/czech (3).jpg" class="imgGalleryS">
+          <img src="../media/photo/czech (4).jpg" class="imgGalleryS">
+        </div>
+
+
+        <div class="GalleryCaption accordion imgbox11" data-textbox=".textbox11">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Bohemia</h1>
+          <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
+          
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="arrow" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand
+            painted photographs and a fresh spring feel to these photographs.</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="container reveal">
+        <div class="projGalleryS">
           <img src="photo/highschool/yearbooks.jpg" class="imgGalleryS">
           <img src="photo/highschool/BajicDory_Candles.jpg" class="imgGalleryS">
           <img src="photo/highschool/grad feet.jpg" class="imgGalleryS">
-   </div>
-
-   <div class="GalleryCaption accordion" >
-    <h1  style="margin-top:0.1vw; margin-bottom: 0;">Re-application</h1>
-    <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
-    <img class="arrow" src="arrow.png" alt="Arrow">
-  </div>
-  <div class="arrowcontent">
-    <p style="margin:0;"> For both grade 11 & 12, my art has been repurposed for the schools yearbook cover. Here is the Warhol inspired take on the mascot from my senior yearbook. A photo I took for the "Candles" prompt has also made it to the graduation ceremony booklet cover. </p>
-    <br>
-  </div></div>
-
-  <div class="container reveal" >
-  <div class="projGalleryS" >
-     <img src="photo/scanography/Scan 13.jpeg" class="imgGalleryS">
-     <img src="photo/scanography/Scan 22.jpeg" class="imgGalleryS">
-     <img src="photo/scanography/green scan_Page_1.png" class="imgGalleryS">
-     <img src="photo/scanography/note selfie.png" class="imgGalleryS">
-  </div>
-  <div class="imgbox12" data-textbox=".textbox12"></div>
-  <div class="GalleryCaption accordion ">
-    <h1  style="margin-top:0.1vw; margin-bottom: 0;">Scanography</h1>
-    <h2 style="margin:0.1vw;  text-align: right;">2016-Now</h2>
-    <img class="arrow" src="arrow.png" alt="Arrow">
-  </div>
-  <div class="arrowcontent">
-    <p style="margin:0;">  Early and recent expeditions in scanography. I really love playing with the appearance of fingers and hands, multiplying and distorting simply with movement during exposure. The eerie feel draws me to repeat, posing with odd objects 
-    I just think this is a rad medium with its accessibility and unique lighting. Recently I have been tossing my head in the office copier for a little dose of absurd creativity which really helps with the tenser days, before returning to the dark void which is reality. </p>
-    <br>
-  </div></div>
- 
-  <div class="container reveal ">
-
-      <h2>Pic of cameras and with sara on studio floor, 
-        find shighschool grad thing with candle feet pics</h2>
-      <p>Some text..</p>
-    </div>
-    
-    </div>
-
-
-
-<div class="column right right-column-2" style="background-color:#bbb;">
-  <div class="container reveal textbox7">
-    <p>I spent a lot of time in that class exploring the studio and retired darkroom. There were so many old cameras in there which the students used to use, I was obsessed with taking these apart, cleaning out where the batteries leaked and learning how mechanical photography functioned. My interest led to me taking six of these cameras home (only three work) along with an Emily Strange sweater she found in her garage (my style still is greatly influenced by my obsession with this mall goth character)</p>  
-  </div>
-    <div class="container reveal textbox8" >
-    <p>Mrs. Papak even inspired me to have photography at Toronto MetU as my 2nd choice program, following in her footsteps as she once went there. But she encouraged me to make my own way too, so GCM was 1st as my calling to packaging was so strong.</p>
-      </div><div class="container reveal textbox9" >
-        <p> My passion for all things print and packaging really took over, I stopped updating my bookstagram a few months into the program. I didn't really get the chance to pick up and play with a camera until 2020 when I was enrolled into a photography course as a part of my German exchange program. If you haven't calculated from the date already, then let me tell you myself that yeah that exchange didn't really happen.</p>
-    </div><div class="container reveal textbox10" >
-      <p> I was intended to do a very hands- on course so for the last minute transition to a virtual semester I was enrolled into my third choice program, a full circle moment back into Advertising. The photography classes quickly became my favourite as the teacher curated similar phenomenal vibes, providing us with an outlet for the frustration we were all going through. Another pleasant surprise from the program shift was another course in web design, providing me with the foundation of skills which allowed me to create this website.</p>
-    </div><div class="container reveal textbox11" >
-    <p>Two years after graduation, I have yet to encounter someone else with a Bachelors in Technology without being from the same program. Looking back, I was always more interested in the technical details of creation rather than the creation itself. </p>
         </div>
-      <div class="container reveal textbox12" >
-    <p>While I wasn't composing photos from youth, I sure did pick apart every camera my parents had, trying out all the functions, playing with the zoom and motion, testing their limits. Much like when my campus got a new printer with greater capacities and I tested the mediums we could work with to help create accurate prototypes. Just some of the many reasons why a B.Tech suits me so well
-    </p> 
+
+        <div class="GalleryCaption accordion">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Re-application</h1>
+          <h2 style="margin:0.1vw;  text-align: right;">2017</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> For both grade 11 & 12, my art has been repurposed for the schools yearbook cover. Here
+            is the Warhol inspired take on the mascot from my senior yearbook. A photo I took for the "Candles" prompt
+            has also made it to the graduation ceremony booklet cover. </p>
+          <br>
+        </div>
       </div>
-     </div>
- </div>
+
+      <div class="container reveal">
+        <div class="projGalleryS">
+          <img src="photo/scanography/Scan 13.jpeg" class="imgGalleryS">
+          <img src="photo/scanography/Scan 22.jpeg" class="imgGalleryS">
+          <img src="photo/scanography/green scan_Page_1.png" class="imgGalleryS">
+          <img src="photo/scanography/note selfie.png" class="imgGalleryS">
+        </div>
+        <div class="imgbox12" data-textbox=".textbox12"></div>
+        <div class="GalleryCaption accordion ">
+          <h1 style="margin-top:0.1vw; margin-bottom: 0;">Scanography</h1>
+          <h2 style="margin:0.1vw;  text-align: right;">2016-Now</h2>
+          
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div>
+        </div>
+        <div class="arrowcontent">
+          <p style="margin:0;"> Early and recent expeditions in scanography. I really love playing with the appearance
+            of fingers and hands, multiplying and distorting simply with movement during exposure. The eerie feel draws
+            me to repeat, posing with odd objects
+            I just think this is a rad medium with its accessibility and unique lighting. Recently I have been tossing
+            my head in the office copier for a little dose of absurd creativity which really helps with the tenser days,
+            before returning to the dark void which is reality. </p>
+          <br>
+        </div>
+      </div>
+
+      <div class="container reveal ">
+
+        <h2>Pic of cameras and with sara on studio floor,
+          find shighschool grad thing with candle feet pics</h2>
+        <p>Some text..</p>
+      </div>
+
+    </div>
+  </div>
+
+
+    <div class="column right right-column-2" style="background-color:#bbb;">
+      <div class="container reveal textbox7">
+        <p>I spent a lot of time in that class exploring the studio and retired darkroom. There were so many old cameras
+          in there which the students used to use, I was obsessed with taking these apart, cleaning out where the
+          batteries leaked and learning how mechanical photography functioned. My interest led to me taking six of these
+          cameras home (only three work) along with an Emily Strange sweater she found in her garage (my style still is
+          greatly influenced by my obsession with this mall goth character)</p>
+      </div>
+      <div class="container reveal textbox8">
+        <p>Mrs. Papak even inspired me to have photography at Toronto MetU as my 2nd choice program, following in her
+          footsteps as she once went there. But she encouraged me to make my own way too, so GCM was 1st as my calling
+          to packaging was so strong.</p>
+      </div>
+      <div class="container reveal textbox9">
+        <p> My passion for all things print and packaging really took over, I stopped updating my bookstagram a few
+          months into the program. I didn't really get the chance to pick up and play with a camera until 2020 when I
+          was enrolled into a photography course as a part of my German exchange program. If you haven't calculated from
+          the date already, then let me tell you myself that yeah that exchange didn't really happen.</p>
+      </div>
+      <div class="container reveal textbox10">
+        <p> I was intended to do a very hands- on course so for the last minute transition to a virtual semester I was
+          enrolled into my third choice program, a full circle moment back into Advertising. The photography classes
+          quickly became my favourite as the teacher curated similar phenomenal vibes, providing us with an outlet for
+          the frustration we were all going through. Another pleasant surprise from the program shift was another course
+          in web design, providing me with the foundation of skills which allowed me to create this website.</p>
+      </div>
+      <div class="container reveal textbox11">
+        <p>Two years after graduation, I have yet to encounter someone else with a Bachelors in Technology without being
+          from the same program. Looking back, I was always more interested in the technical details of creation rather
+          than the creation itself. </p>
+      </div>
+      <div class="container reveal textbox12">
+        <p>While I wasn't composing photos from youth, I sure did pick apart every camera my parents had, trying out all
+          the functions, playing with the zoom and motion, testing their limits. Much like when my campus got a new
+          printer with greater capacities and I tested the mediums we could work with to help create accurate
+          prototypes. Just some of the many reasons why a B.Tech suits me so well
+        </p>
+      </div>
+    </div>
+  </div>
 
 
 
-YEOLDE
+  YEOLDE
 
 
 
-    <div id="pageheader" class="reveal active">
-      <a href="../index.html" style="text-decoration: none;"><h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
+  <div id="pageheader" class="reveal active">
+    <a href="../index.html" style="text-decoration: none;">
+      <h1> Hello, <br>I'm Dorotea Bajic</h1>
+    </a>
     <div class="bar4"></div>
     <h2><a href="../myprojects.html">my projects</a> > photography
     </h2>
-    </div>
-    <br>
+  </div>
+  <br>
 
-    <div id="projectContentB">
-        <div class="projGallery" class="reveal active">
-          <img src="../media/photo/ppap (3).jpg" class="imgGallery"style="margin-right: 0vh;">
-          <img src="../media/photo/PPAP (2).jpg" class="imgGallery">
-          <img src="../media/photo/PPAP (4).jpg" class="imgGallery">
-          <img src="../media/photo/PPAP (1).jpg" class="imgGallery">
-           
-        </div>
+  <div id="projectContentB">
+    <div class="projGallery" class="reveal active">
+      <img src="../media/photo/ppap (3).jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="../media/photo/PPAP (2).jpg" class="imgGallery">
+      <img src="../media/photo/PPAP (4).jpg" class="imgGallery">
+      <img src="../media/photo/PPAP (1).jpg" class="imgGallery">
 
-        <div class="GalleryCaption" class="reveal">
-            <br>
-            <h1>PPAP</h1>
-            <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
-            <p>‘Pen Pineapple Apple Pen’ inspired self-portraits created for 'Song' photo series assignment from German Exchange semester.</p>
-            <br>
-        </div>
-    
-
-        <div class="projGallery" class="reveal">
-          <img src="../media/photo/Catfish (5 of 6).jpg" class="imgGallery"style="margin-right: 0vh;">
-          <img src="../media/photo/Catfish (3 of 6).jpg" class="imgGallery">
-          <img src="../media/photo/Catfish (4 of 6).jpg" class="imgGallery">
-          <img src="../media/photo/Catfish (2 of 6).jpg" class="imgGallery">
-          <img src="../media/photo/Catfish (6 of 6).jpg" class="imgGallery">
-          <img src="../media/photo/Catfish (1 of 6).jpg" class="imgGallery" style="margin-left: 0vh;">
-        </div>
-
-        <div class="GalleryCaption" class="reveal">
-            <br>
-            <h1>Catfish</h1>
-            <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
-          <p>With the prompt 'Catfish', I was inspired by the elements women often exaggerate when they catfish online. I took these elements to the extreme using photoshop and a vivid colour palette that delivers an unsettling effect.</p>
-            <br>
-        </div>
-        
-        <div class="projGallery" class="reveal">
-          <img src="../media/photo/QRoutine (1).jpg" class="imgGallery"style="margin-right: 0vh;">
-          <img src="../media/photo/QRoutine (2).jpg" class="imgGallery">
-          <img src="../media/photo/QRoutine (3).jpg" class="imgGallery"style="margin-right: 0vh;">
-          <img src="../media/photo/QRoutine (4).jpg" class="imgGallery">
-         
-      </div>
-
-      <div class="GalleryCaption" class="reveal">
-          <br>
-          <h1>Quarantine Routine</h1>
-          <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
-          <p>One of the first projects on my exchange photography course was to photograph a series inspired by COVID. This was in May when most accepted that this was the new reality and daily routines specific to the era were established. Using multiple exposures I wanted to showcase this repetition of steps that may be the only things that gets us through that day, and onto the next. Subjects are myself and friends. </p>
-          <br>
-      </div>
-      
-      
-      <div class="projGallery" class="reveal">
-      <img src="../media/photo/Joy (2).jpg" class="imgGallery"style="margin-right: 0vh;">
-      <img src="../media/photo/Joy (4).jpg" class="imgGallery">
-      <img src="../media/photo/Joy (1).jpg" class="imgGallery">
-      <img src="../media/photo/Joy (5).jpg" class="imgGallery">
-      
     </div>
 
     <div class="GalleryCaption" class="reveal">
-        <br>
-        <h1>Joy</h1>
-        <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
-        <p>"Joy" prompt from exchange semester at Hochschule der Medien. Photo series created using RGB lighting, makeup artistry and intended to be reminiscent of a magical midnight party.</p>
-        <br>
+      <br>
+      <h1>PPAP</h1>
+      <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
+      <p>‘Pen Pineapple Apple Pen’ inspired self-portraits created for 'Song' photo series assignment from German
+        Exchange semester.</p>
+      <br>
+    </div>
+
+
+    <div class="projGallery" class="reveal">
+      <img src="../media/photo/Catfish (5 of 6).jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="../media/photo/Catfish (3 of 6).jpg" class="imgGallery">
+      <img src="../media/photo/Catfish (4 of 6).jpg" class="imgGallery">
+      <img src="../media/photo/Catfish (2 of 6).jpg" class="imgGallery">
+      <img src="../media/photo/Catfish (6 of 6).jpg" class="imgGallery">
+      <img src="../media/photo/Catfish (1 of 6).jpg" class="imgGallery" style="margin-left: 0vh;">
+    </div>
+
+    <div class="GalleryCaption" class="reveal">
+      <br>
+      <h1>Catfish</h1>
+      <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
+      <p>With the prompt 'Catfish', I was inspired by the elements women often exaggerate when they catfish online. I
+        took these elements to the extreme using photoshop and a vivid colour palette that delivers an unsettling
+        effect.</p>
+      <br>
+    </div>
+
+    <div class="projGallery" class="reveal">
+      <img src="../media/photo/QRoutine (1).jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="../media/photo/QRoutine (2).jpg" class="imgGallery">
+      <img src="../media/photo/QRoutine (3).jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="../media/photo/QRoutine (4).jpg" class="imgGallery">
+
+    </div>
+
+    <div class="GalleryCaption" class="reveal">
+      <br>
+      <h1>Quarantine Routine</h1>
+      <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
+      <p>One of the first projects on my exchange photography course was to photograph a series inspired by COVID. This
+        was in May when most accepted that this was the new reality and daily routines specific to the era were
+        established. Using multiple exposures I wanted to showcase this repetition of steps that may be the only things
+        that gets us through that day, and onto the next. Subjects are myself and friends. </p>
+      <br>
+    </div>
+
+
+    <div class="projGallery" class="reveal">
+      <img src="../media/photo/Joy (2).jpg" class="imgGallery" style="margin-right: 0vh;">
+      <img src="../media/photo/Joy (4).jpg" class="imgGallery">
+      <img src="../media/photo/Joy (1).jpg" class="imgGallery">
+      <img src="../media/photo/Joy (5).jpg" class="imgGallery">
+
+    </div>
+
+    <div class="GalleryCaption" class="reveal">
+      <br>
+      <h1>Joy</h1>
+      <h2 style="font-size: 120%; line-height: 20%;">2020</h2>
+      <p>"Joy" prompt from exchange semester at Hochschule der Medien. Photo series created using RGB lighting, makeup
+        artistry and intended to be reminiscent of a magical midnight party.</p>
+      <br>
     </div>
 
 
 
-<br>&thinsp;<br>
-<br>&thinsp;<br>
-<br>&thinsp;<br>
-<br>&thinsp;<br>
-<br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
+    <br>&thinsp;<br>
 
 
 
 
 
 
-</div>
-<button class="buttonA" onclick="toggleTheme()"><img src="eye.svg" class="eye"></button>
-<button class="button" id="backButton">Back</button>
-<div id="message">
-  <p id="messageText">Are you sure you want to leave this site?</p>
-</div>
-
+  </div>
+  <button class="buttonA" onclick="toggleTheme()"><div id="cube">
+    <div class="face cubefront"></div>
+    <div class="face cubeback"></div>
+    <div class="face cuberight"></div>
+    <div class="face cubeleft"></div>
+    <div class="face cubetop"></div>
+    <div class="face cubebottom"></div>
+</div></button>
+  <button class="button" id="backButton">Back</button>
+  <div id="message">
+    <p id="messageText">Are you sure you want to leave this site?</p>
+  </div>
 <script>
-const backButton = document.getElementById("backButton");
-const message = document.getElementById("message");
-const messageText = document.getElementById("messageText");
+  const cube = document.getElementById('cube');
 
-let clicks = 0;
-
-backButton.addEventListener("click", () => {
-  clicks++;
-
-  if (clicks === 1) {
-    const referrer = document.referrer;
-    const currentDomain = window.location.hostname;
-    const referrerDomain = new URL(referrer).hostname;
-
-    if (referrerDomain === currentDomain) {
-      history.back();
-    } else {
-      backButton.style.display = "none";
-      message.style.display = "block";
-    }
-  } else if (clicks === 2) {
-    messageText.innerText = "Really?";
-  } else if (clicks === 3) {
-    messageText.innerText = "Fine.";
-    backButton.disabled = true;
-    setTimeout(() => {
-      window.location.href = "https://www.seznam.cz"; // Redirect to seznam.cz
-    }, 1000);
-  }
+window.addEventListener('scroll', () => {
+    const rotation = window.pageYOffset * 0.1;
+    cube.style.transform = `rotateX(${40-(2*rotation)}deg) rotateY(${0-(1.5*rotation)}deg) rotateZ(${70-(0.7*rotation)}deg)`;
+    
 });
-
-window.addEventListener("popstate", () => {
-  clicks = 0;
-  messageText.innerText = "Are you sure you want to leave this site?";
-  backButton.disabled = false;
-  backButton.style.display = "block";
-  message.style.display = "none";
-});
-
-window.addEventListener("beforeunload", (event) => {
-  if (clicks > 0) {
-    event.returnValue = "Are you sure you want to leave this site?";
-  }
-});
-
 </script>
 
+  <script>
+    const backButton = document.getElementById("backButton");
+    const message = document.getElementById("message");
+    const messageText = document.getElementById("messageText");
 
-<script>
+    let clicks = 0;
 
+    backButton.addEventListener("click", () => {
+      clicks++;
 
-function toggleTheme() {
-        // Obtains an array of all <link>
-        // elements.
-        // Select your element using indexing.
-        var theme = document.getElementsByTagName('link')[0];
+      if (clicks === 1) {
+        const referrer = document.referrer;
+        const currentDomain = window.location.hostname;
+        const referrerDomain = new URL(referrer).hostname;
 
-        // Change the value of href attribute 
-        // to change the css sheet.
-        if (theme.getAttribute('href') == '../style.css') {
-            theme.setAttribute('href', '../styleAccess.css');
+        if (referrerDomain === currentDomain) {
+          history.back();
         } else {
-            theme.setAttribute('href', '../style.css');
+          backButton.style.display = "none";
+          message.style.display = "block";
         }
+      } else if (clicks === 2) {
+        messageText.innerText = "Really?";
+      } else if (clicks === 3) {
+        messageText.innerText = "Fine.";
+        backButton.disabled = true;
+        setTimeout(() => {
+          window.location.href = "https://www.seznam.cz"; // Redirect to seznam.cz
+        }, 1000);
+      }
+    });
+
+    window.addEventListener("popstate", () => {
+      clicks = 0;
+      messageText.innerText = "Are you sure you want to leave this site?";
+      backButton.disabled = false;
+      backButton.style.display = "block";
+      message.style.display = "none";
+    });
+
+    window.addEventListener("beforeunload", (event) => {
+      if (clicks > 0) {
+        event.returnValue = "Are you sure you want to leave this site?";
+      }
+    });
+
+  </script>
+
+
+  <script>
+
+
+    function toggleTheme() {
+      // Obtains an array of all <link>
+      // elements.
+      // Select your element using indexing.
+      var theme = document.getElementsByTagName('link')[0];
+
+      // Change the value of href attribute 
+      // to change the css sheet.
+      if (theme.getAttribute('href') == '../style.css') {
+        theme.setAttribute('href', '../styleAccess.css');
+      } else {
+        theme.setAttribute('href', '../style.css');
+      }
     }
-</script> 
+  </script>
+
+  
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
 <script>
-  // Include the GSAP library
   gsap.registerPlugin(ScrollTrigger);
 
-    // Function to animate right column textboxes and handle pinning
-    function animateRightColumn(rightColumnClass, leftColumnClass, totalTextboxElements) {
-    const rightColumn = document.querySelector(`.${rightColumnClass}`);
-    const leftColumn = document.querySelector(`.${leftColumnClass}`);
-    const rightColumnHeight = rightColumn.getBoundingClientRect().height;
-    const leftColumnHeight = leftColumn.getBoundingClientRect().height;
-    const viewportHeight = window.innerHeight;
-
+  function animateTextboxesWithImgbox(rightColumnClass, leftColumnClass, totalTextboxElements) {
+    // Animate each textbox when its associated imgbox comes into view
     for (let i = 1; i <= totalTextboxElements; i++) {
       const textbox = document.querySelector(`.${rightColumnClass} .textbox${i}`);
-      const imgbox = document.querySelector(`.imgbox${i}`);
+      const imgbox = document.querySelector(`.${leftColumnClass} .imgbox${i}`);
 
-      // Animate the textbox# elements to reveal them when their associated imgbox is in view
-      gsap.to(textbox, {
-        opacity: 1,
-        y: 0, // Use "y" to control the vertical translation
-        duration: 0.1, // Specify the animation duration
-        ease: "elastic", // Specify the animation ease
-        scrollTrigger: {
-          trigger: imgbox,
-          start: "bottom 90%", // Adjust as needed for your design
-          toggleActions: "play none none restart",
-        },
-      });
+      if (textbox && imgbox) {
+        gsap.fromTo(textbox, { opacity: 0, y: 30 }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: imgbox,
+            start: "top bottom",
+            toggleActions: "play none none none",
+          },
+        });
+        console.log(`Animation set for textbox ${i}`);
+      }
     }
+  }
+
+  function setupDynamicPinning(rightColumnClass, leftColumnClass) {
+    const rightColumn = document.querySelector(`.${rightColumnClass}`);
+    const leftColumn = document.querySelector(`.${leftColumnClass}`);
+    const viewportHeight = window.innerHeight;
+    let initialPinPosition = null;
+    let lastScrollY = window.scrollY;
+
+    function calculateTextboxLoad() {
+  let loadedHeight = 0;
+  document.querySelectorAll(`.${rightColumnClass} .container.reveal.active`).forEach(container => {
+    // Get the opacity of the container
+    const computedStyle = window.getComputedStyle(container);
+    const opacity = computedStyle.opacity;
+
+    // Process each p element within the container
+    container.querySelectorAll('p').forEach(p => {
+      const rect = p.getBoundingClientRect();
+      // Check if the p element is within the viewport
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        // If the container is fully opaque, add its height to loadedHeight
+        if (opacity === "1") {
+          loadedHeight += visibleHeight;
+        } 
+      }
+    });
+  });
+
+  const effectiveHeight = loadedHeight;
+  const percentageVisible = (effectiveHeight / viewportHeight) * 100;
+  console.log(`Effective visible height of p elements: ${effectiveHeight}px, which is ${percentageVisible}% of the viewport`);
+  return percentageVisible;
+}
+
+
+function refreshPinning() {
+      const percentageVisible = calculateTextboxLoad();
+      const isShorterThanViewport = rightColumn.offsetHeight < viewportHeight;
+      console.log(`Refreshing pinning at scroll position: ${window.scrollY}, percentage visible: ${percentageVisible}%`);
+
+      if (!isShorterThanViewport && percentageVisible >= 60) {
+        if (initialPinPosition === null) {
+          initialPinPosition = window.scrollY;
+          console.log(`Initial pin position for ${rightColumnClass} set at: ${initialPinPosition}`);
+        } else {
+          const scrollDelta = window.scrollY - lastScrollY;
+          if (scrollDelta > 0) {
+           // Calculate the new top position
+        let newTop = parseInt(rightColumn.style.top || 0) - scrollDelta;
+        // Calculate the maximum top value to keep the bottom of right column aligned with the bottom of the left column
+        const maxTop = leftColumn.offsetHeight - rightColumn.offsetHeight;
+        // Limit the new top position to the maximum allowable value
+        newTop = Math.min(newTop, maxTop);
+        rightColumn.style.top = `${newTop}px`;
+        console.log(`Adjusted pin position to: ${rightColumn.style.top}`);
+      }
+        }
+      } 
+      lastScrollY = window.scrollY;
+    }
+
+    window.addEventListener('scroll', refreshPinning);
+  }
+
+  function setupInitialPinning(rightColumnClass, leftColumnClass) {
+    const rightColumn = document.querySelector(`.${rightColumnClass}`);
+    const leftColumn = document.querySelector(`.${leftColumnClass}`);
+    const isShorterThanViewport = rightColumn.offsetHeight < window.innerHeight;
+
+    // Initial static pinning setup
     ScrollTrigger.create({
       trigger: rightColumn,
       start: "top top",
-      endTrigger: leftColumn, // Use the left column as the end trigger
-      end: () => {
-      const isShorterThanViewport = rightColumnHeight < viewportHeight;
-      if (isShorterThanViewport) {
-      // When shorter, pin until bottom with a little offset
-      return "bottom 90%";
-    } else {
-      // When taller, pin until 10% from the top and 95% of the viewport's current height
-      const currentViewportHeight = window.innerHeight * 1.5; // Adjust the percentage if needed
-      return `${currentViewportHeight}px 90%`;
-    }
-       },
-      pin: true, // Pin the right column to allow content to scroll
-      anticipatePin: 1, // Helps ensure proper pinning
+      endTrigger: leftColumn,
+      end: isShorterThanViewport ? "bottom 90%" : `+=${leftColumn.offsetHeight}`,
+      pin: true,
+      pinSpacing: false,
       markers: true,
     });
-  }
+    // Calculate and log the initial pin position in pixels
+  const initialPinPositionPx = rightColumn.getBoundingClientRect().top + window.scrollY;
+  console.log(`Initial pinning set for ${rightColumnClass} at ${initialPinPositionPx}px`);
+}
 
+  // Initialize animations, dynamic pinning, and initial pinning for each column pair
+  animateTextboxesWithImgbox("right-column-1", "left-column-1", 6);
+  setupDynamicPinning("right-column-1", "left-column-1");
+  setupInitialPinning("right-column-1", "left-column-1");
 
-  // Animate the textboxes in the first right column (right-column-1) with the corresponding left column (left-column-1)
-  animateRightColumn("right-column-1", "left-column-1", 6);
-
-  // Animate the textboxes in the second right column (right-column-2) with the corresponding left column (left-column-2)
-  animateRightColumn("right-column-2", "left-column-2", 6);
-
-  // Add more calls to animateRightColumn for additional right columns as needed
+  animateTextboxesWithImgbox("right-column-2", "left-column-2", 6);
+  setupDynamicPinning("right-column-2", "left-column-2");
+  setupInitialPinning("right-column-2", "left-column-2");
 </script>
+
+
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-function updateImageSizes() {
-  $('.fillimgrow').each(function() {
-    var containerWidth = $(this).width();
-    var totalMarginWidth = ($(this).find('img').length - 1) * parseFloat($(this).find('img').css('margin-right'));
-    var totalImageWidth = 0;
+    function updateImageSizes() {
+      $('.fillimgrow').each(function () {
+        var containerWidth = $(this).width();
+        var totalMarginWidth = ($(this).find('img').length - 1) * parseFloat($(this).find('img').css('margin-right'));
+        var totalImageWidth = 0;
 
 
-    $(this).find('img').each(function() {
-      totalImageWidth += this.naturalWidth;
+        $(this).find('img').each(function () {
+          totalImageWidth += this.naturalWidth;
+        });
+
+        var availcontainerWidth = containerWidth - totalMarginWidth;
+
+        // Calculate the average aspect ratio for images
+        var totalInverseAspectRatio = 0;
+        $(this).find('img').each(function () {
+          totalInverseAspectRatio += this.naturalWidth / this.naturalHeight;
+        });
+
+        // Calculate the rowHeight based on the individual image calculations
+        var rowHeight = availcontainerWidth / (totalInverseAspectRatio / 1);
+
+        // Apply the calculated height to all images
+        $(this).find('img').each(function () {
+          var originalWidth = this.naturalWidth;
+          var newWidth = originalWidth * rowHeight / this.naturalHeight;
+          $(this).css('width', newWidth + 'px');
+          $(this).css('height', rowHeight + 'px');
+        });
+      });
+    }
+
+    $(document).ready(function () {
+      updateImageSizes();
+
+      $(window).on('resize', function () {
+        updateImageSizes();
+      });
     });
-
-    var availcontainerWidth = containerWidth - totalMarginWidth;
-    
-    // Calculate the average aspect ratio for images
-    var totalInverseAspectRatio = 0;
-    $(this).find('img').each(function() {
-      totalInverseAspectRatio += this.naturalWidth / this.naturalHeight;
-    });
-
-    // Calculate the rowHeight based on the individual image calculations
-    var rowHeight = availcontainerWidth / ( totalInverseAspectRatio / 1 );
-
-    // Apply the calculated height to all images
-    $(this).find('img').each(function() {
-      var originalWidth = this.naturalWidth;
-      var newWidth = originalWidth * rowHeight / this.naturalHeight;
-      $(this).css('width', newWidth + 'px');
-      $(this).css('height', rowHeight + 'px');
-    });
-  });
-}
-
-$(document).ready(function() {
-  updateImageSizes();
-
-  $(window).on('resize', function() {
-    updateImageSizes();
-  });
-});
 </script>
 
 
@@ -780,7 +1061,9 @@ $(document).ready(function() {
 
 
 
-  
+
+
+
 </body>
 
 <footer><br>&thinsp;<br></footer>

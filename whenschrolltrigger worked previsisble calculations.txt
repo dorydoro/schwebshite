@@ -1,0 +1,93 @@
+The goal is to set up a ScrollTrigger for each right column that pins when it reaches the top of the viewport. When the percentage of visible text exceeds 61%, we want to release the pin so that the column scrolls with the content. If the percentage of visible text decreases below 35% while scrolling down, we want to re-pin the column at its current position. Additionally, we'll ensure that the column does not pin above its original position when scrolling back up.
+
+below is the code to start with, please make sure to maintain the following attributes
+ for (let i = 1; i <= totalTextboxElements; i++) {
+      const textbox = document.querySelector(`.${rightColumnClass} .textbox${i}`);
+      const imgbox = document.querySelector(`.imgbox${i}`);
+end: () => {
+      const isShorterThanViewport = rightColumnHeight < viewportHeight;
+      if (isShorterThanViewport) {
+      // When shorter, pin until bottom with a little offset
+      return "bottom 90%";
+here is some code i found to work with calculating the textbox loaded height
+
+    // Function to calculate the percentage of textboxes loaded
+    function calculateTextboxLoad() {
+      if (!initialPinningComplete) return;
+
+      const textboxes = rightColumn.querySelectorAll(".container.reveal.active p");
+      let loadedHeight = 0;
+      textboxes.forEach((textbox) => {
+        const rect = textbox.getBoundingClientRect();
+        const textboxHeight = rect.height;
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const visibleHeight = Math.min(textboxHeight, (rect.bottom - Math.max(0, rect.top)));
+          loadedHeight += visibleHeight;
+        }
+      });
+
+      const percentageLoaded = (loadedHeight / viewportHeight) * 100;
+      console.log(`Percentage of textboxes loaded: ${percentageLoaded.toFixed(2)}%`);
+
+and here is the code i want you to work with
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  // Include the GSAP library
+  gsap.registerPlugin(ScrollTrigger);
+
+    // Function to animate right column textboxes and handle pinning
+    function animateRightColumn(rightColumnClass, leftColumnClass, totalTextboxElements) {
+    const rightColumn = document.querySelector(`.${rightColumnClass}`);
+    const leftColumn = document.querySelector(`.${leftColumnClass}`);
+    const rightColumnHeight = rightColumn.getBoundingClientRect().height;
+    const leftColumnHeight = leftColumn.getBoundingClientRect().height;
+    const viewportHeight = window.innerHeight;
+
+    for (let i = 1; i <= totalTextboxElements; i++) {
+      const textbox = document.querySelector(`.${rightColumnClass} .textbox${i}`);
+      const imgbox = document.querySelector(`.imgbox${i}`);
+
+      // Animate the textbox# elements to reveal them when their associated imgbox is in view
+      gsap.to(textbox, {
+        opacity: 1,
+        y: 0, // Use "y" to control the vertical translation
+        duration: 0.1, // Specify the animation duration
+        ease: "elastic", // Specify the animation ease
+        scrollTrigger: {
+          trigger: imgbox,
+          start: "bottom 90%", // Adjust as needed for your design
+          toggleActions: "play none none restart",
+        },
+      });
+    }
+    ScrollTrigger.create({
+      trigger: rightColumn,
+      start: "top top",
+      endTrigger: leftColumn, // Use the left column as the end trigger
+      end: () => {
+      const isShorterThanViewport = rightColumnHeight < viewportHeight;
+      if (isShorterThanViewport) {
+      // When shorter, pin until bottom with a little offset
+      return "bottom 90%";
+    } else {
+      // When taller, pin until 10% from the top and 95% of the viewport's current height
+      const currentViewportHeight = window.innerHeight * 1.5; // Adjust the percentage if needed
+      return `${currentViewportHeight}px 90%`;
+    }
+       },
+      pin: true, // Pin the right column to allow content to scroll
+      anticipatePin: 1, // Helps ensure proper pinning
+      markers: true,
+    });
+  }
+
+
+  // Animate the textboxes in the first right column (right-column-1) with the corresponding left column (left-column-1)
+  animateRightColumn("right-column-1", "left-column-1", 6);
+
+  // Animate the textboxes in the second right column (right-column-2) with the corresponding left column (left-column-2)
+  animateRightColumn("right-column-2", "left-column-2", 6);
+
+  // Add more calls to animateRightColumn for additional right columns as needed
+</script>

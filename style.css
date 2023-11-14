@@ -67,6 +67,11 @@ h1 {
     margin: 0.5vw
 }
 
+.accordion h1 {
+    font-size: calc(1em * 0.95);
+    /* 75% of the inherited size */
+}
+
 h2 {
     font-family: 'ApercuMono';
     font-size: 2vw;
@@ -114,6 +119,7 @@ p {
     /* Specify a stack order in case you're using a different order for other elements */
 }
 
+
 #otext {
     position: absolute;
     font-family: 'ApercuMono';
@@ -124,16 +130,159 @@ p {
     transform: translate(-50%, -50%);
 }
 
+ .cd__main{
+    min-height: 450px;
+ }
+ body{
+   font-family: "Avenir Next", "Avenir", sans-serif;
+ }
+ 
+ #menuToggle
+ {
+   display: block;
+   position: fixed;
+   top: 1vw;
+   z-index: 1;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 43px;
+   height: 43px;
+   position: absolute;
+   top: -5px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ 
 
-.bar1,
-.bar2,
-.bar3 {
-    width: 20px;
-    height: 3px;
-    background-color: #f37d83;
-    margin: 3px 0;
-    transition: 0.4s;
-}
+  
+ #menuToggle .dropbtn span
+ {
+   display: block;
+   width: 23px;
+   height: 3px;
+   margin-top: 3px;
+   margin-bottom: 3px;
+   position: relative;
+   
+   background-color: #f37d83;
+   border-radius: 1px;
+   
+   z-index: 1;
+   
+   transform-origin: 20px 20px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle .dropbtn span:first-child
+ {
+   transform-origin: 100% 0%;
+ }
+ 
+ #menuToggle .dropbtn span:nth-last-child(2)
+ {
+   transform-origin: 50% 100%;
+ }
+
+ #menuToggle input:checked ~ .dropbtn span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-15px, 6px);
+   background: #f37d83;
+ }
+ 
+
+ #menuToggle input:checked ~ .dropbtn span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ 
+ #menuToggle input:checked ~ .dropbtn span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(2px, 0px);
+ }
+ 
+ 
+ #menu
+ {
+    display: inline;
+   box-sizing: border-box;
+   position: fixed;
+   top: 0;
+   width: 300px;
+   height: 100%;
+   padding: 50px;
+   padding-top: 125px;
+   background-color: #b3e554;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   left: -300px;
+   transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   margin-top: 0%;
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ #menuToggle input:checked ~ ul
+ {
+   transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   left: 0;
+ }
+
+ #menu li:hover {
+    color: #b30054;
+  }
+
+  .cubepointer {
+    position: fixed;
+    bottom: 5px;
+    text-align:end;
+    color: #b30054;
+    margin-left: 5px;
+  
+  }
+
+  .cubepointer p {
+    font-size: 80%;
+  }
+
+
 
 .bar4 {
     position: relative;
@@ -148,16 +297,14 @@ p {
 
 .dropbtn {
     background-color: #b3e554;
-    color: white;
-    padding-top: 8px;
+    padding-top: 10px;
     padding-right: 10px;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
     padding-left: 10px;
-    font-size: 16px;
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    margin: 5px;
+
 }
 
 .dropbtn:hover {
@@ -168,41 +315,12 @@ p {
     background-color: #c3415c;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 10;
-}
 
 .dropbtn::-moz-focus-inner {
     background-color: #b3e554;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 18vw;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px #c3415c;
-    z-index: 1;
-    left: 50px;
-    top: 5px;
-}
 
-.dropdown-content a {
-    font-family: 'ApercuMono';
-    font-size: 2vw;
-    color: #c3415c;
-    font-weight: normal;
-    padding: 1vw 0vw 1vw 1vw;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-    background-color: #b3e554;
-}
 
 .show {
     display: block;
@@ -248,21 +366,18 @@ body {
 
 .buttonA {
     position: fixed;
-    float: left;
     background-color: #b3e554;
     border: none;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    padding-left: 6px;
+    padding-right: 5px;
     bottom: 10px;
-    left: 10px;
-    font-size: 20px;
+  
     cursor: pointer;
-    border-radius: 5px;
-    font-family: 'ApercuMono';
-    color: #c3415c;
-    font-weight: normal;
+    border-radius: 50%;
     z-index: 15;
+
 }
 
 .buttonA:hover {
@@ -281,11 +396,7 @@ body {
     border: none;
 }
 
-.eye {
-    width: 35px;
-    height: 35px;
-    fill: #c3415c;
-}
+
 
 @keyframes popin {
     0% {
@@ -849,15 +960,23 @@ div.categoryCaption {
 
 
 .GalleryCaption {
-    display: flow-root;
+    display: flex;
+    float: right;
+    flex-direction: row;
     height: auto;
-    width: 100%;
-    text-align: left;
+    width: min(100%, 465px);
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+
+
 }
 
 
 .GalleryCaption.h2 {
     font-size: 60%;
+    text-align: right;
+
 }
 
 
@@ -901,10 +1020,11 @@ div.categoryCaption {
 
 
 .container {
+    display: block;
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: 2s all ease;
+    transition: 2s ease-out;
 }
 
 .container.active {
@@ -914,7 +1034,7 @@ div.categoryCaption {
 
 /* Create two unequal columns that floats next to each other */
 .column {
-    float:right;
+    float: right;
     position: relative;
     height: fit-content;
     object-fit: contain;
@@ -923,8 +1043,8 @@ div.categoryCaption {
 }
 
 .left {
-    width: 45vw;
-   
+    width: 46vw;
+
 }
 
 
@@ -938,21 +1058,22 @@ div.categoryCaption {
     justify-content: space-between;
     float: right;
     width: min(100%, 465px);
-    max-width: min(100%, 465px); /* Set the maximum width to be 100px or 465px, whichever is lesser */
+    max-width: 465px;
+    /* Set the maximum width to be 100px or 465px, whichever is lesser */
     margin-bottom: 0.25vw;
-  }
-  
-  .fillimgrow img {
+}
+
+.fillimgrow img {
     max-width: 100%;
     height: auto;
-    
 
-  }
 
-  .fillimgrow img:not(:last-child){
+}
+
+.fillimgrow img:not(:last-child) {
     margin-right: 0.25vw;
 }
- 
+
 
 
 
@@ -960,7 +1081,7 @@ div.categoryCaption {
     position: relative;
     transform: translateY(150px);
     opacity: 0;
-    transition: 2s all ease;
+    transition: 1.5s ease-out;
 }
 
 .reveal.active {
@@ -980,28 +1101,130 @@ div.categoryCaption {
     cursor: pointer;
     display: flex;
     align-items: center;
+    transition: 0.3s;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
 }
 
 .arrow {
     margin-left: 10px;
     transition: transform 0.3s;
-    width: 3vw;
+    width: 1.5vw;
+    height: 0.8vw;
+    text-align: center;
+    fill: none;
+    stroke: #b30054;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-width: 85px;
+
+
 }
+
+
 
 .arrowcontent {
     display: none;
     margin-top: 10px;
+    transition: 0.6s ease-in-out;
 }
+
+.arrowcontent p {
+    margin: 0.25vw;
+}
+
+
 
 .accordion.aactive+.arrowcontent,
 .accordion:hover+.arrowcontent {
     display: block;
 
+
 }
 
 .accordion.aactive .arrow {
+    transform-origin: 50% 50%;
+    /* Or other values as needed */
     transform: rotate(180deg);
 }
+
+.card {
+    background-color: #b3e554;
+    padding: 0.5vw;
+    opacity: 1;
+    float: right;
+    width: min(100%, (465px));
+    transition: background-colour 0.05s ease-out 0s,
+        opacity 0.5s ease-in 1s;
+
+}
+
+.card:hover {
+    background-color: #b30054;
+
+}
+
+
+.card.inactive {
+    opacity: 0;
+
+}
+
+#cube {
+    position: relative;
+    margin: 8px 8px;
+    width: 16px;
+    height: 16px;
+    transform-style: preserve-3d;
+    transform:  rotateX(40deg) rotateY(0deg) rotateZ(70deg);
+    text-align: center;
+    transform-origin: center;
+    
+}
+
+.face {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #b3e554;
+    border: 2px solid #b30054;
+    border-radius: 4px;
+}
+
+.cubefront {
+    transform: rotateY(0deg) translateZ(8px);
+}
+
+.cubeback {
+    transform: rotateY(180deg) translateZ(8px);
+}
+
+.cuberight {
+    transform: rotateY(90deg) translateZ(8px);
+}
+
+.cubeleft {
+    transform: rotateY(-90deg) translateZ(8px);
+}
+
+.cubetop {
+    transform: rotateX(90deg) translateZ(8px);
+}
+
+.cubebottom {
+    transform: rotateX(-90deg) translateZ(8px);
+}
+
+.eye {
+    width: 35px;
+    height: 35px;
+    fill: #c3415c;
+}
+
+
 
 #message {
     font-size: 24px;
@@ -1457,7 +1680,7 @@ div.categoryCaption {
     }
 
     .buttonA {
-        padding: 1vw 1vw;
+        padding: 1.1vw 1.1vw;
         bottom: 2vw;
         left: 2vw;
         font-size: 4vw;

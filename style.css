@@ -62,7 +62,7 @@
 h1 {
     font-family: 'ApercuBold';
     font-size: 3vw;
-    color: #fff;
+    color: #301540;
     font-weight: normal;
     margin: 0.5vw
 }
@@ -75,7 +75,7 @@ h1 {
 h2 {
     font-family: 'ApercuMono';
     font-size: 2vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     bottom: 0;
     margin: 0.3vw
@@ -84,7 +84,7 @@ h2 {
 h3 {
     font-family: 'ApercuMedium';
     font-size: 2.65vw;
-    color: #ffff;
+    color: #301540;
     font-weight: normal;
     line-height: 0%;
 }
@@ -92,7 +92,7 @@ h3 {
 h4 {
     font-family: 'ApercuMono';
     font-size: 1.5vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     margin: 4px 6px;
 }
@@ -100,7 +100,7 @@ h4 {
 p {
     font-family: 'ApercuRegular';
     font-size: 2vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
 }
 
@@ -124,7 +124,7 @@ p {
     position: absolute;
     font-family: 'ApercuMono';
     font-size: 10vmin;
-    color: white;
+    color: #301540;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -152,15 +152,10 @@ p {
  #menuToggle a
  {
    text-decoration: none;
-   color: #232323;
-   
    transition: color 0.3s ease;
  }
  
- #menuToggle a:hover
- {
-   color: tomato;
- }
+
  
  
  #menuToggle input
@@ -192,7 +187,7 @@ p {
    margin-bottom: 3px;
    position: relative;
    
-   background-color: #f37d83;
+   background-color: #301540;
    border-radius: 1px;
    
    z-index: 1;
@@ -218,7 +213,7 @@ p {
  {
    opacity: 1;
    transform: rotate(45deg) translate(-15px, 6px);
-   background: #f37d83;
+   background: #301540;
  }
  
 
@@ -245,12 +240,13 @@ p {
    height: 100%;
    padding: 50px;
    padding-top: 125px;
-   background-color: #b3e554;
+   background-color: #966D99;
    list-style-type: none;
    -webkit-font-smoothing: antialiased;
-   left: -300px;
+   left: -316px;
    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
    margin-top: 0%;
+   box-shadow: 0px 0px 20px 0px #B52C56;
  }
  
  #menu li
@@ -266,20 +262,21 @@ p {
  }
 
  #menu li:hover {
-    color: #b30054;
+    color: #B52C56;
   }
 
   .cubepointer {
     position: fixed;
-    bottom: 5px;
+    bottom: -3px;
     text-align:end;
-    color: #b30054;
-    margin-left: 5px;
+    
+    margin-left: 11px;
   
   }
 
   .cubepointer p {
-    font-size: 80%;
+    color: #301540;
+    font-size: 75%;
   }
 
 
@@ -289,14 +286,14 @@ p {
     left: 18vw;
     width: 85vw;
     height: 1vw;
-    background-color: #b3e554;
+    background-color: #966D99;
     margin: 3px 0;
 }
 
 
 
 .dropbtn {
-    background-color: #b3e554;
+    background-color: #966D99;
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -307,19 +304,9 @@ p {
 
 }
 
-.dropbtn:hover {
-    box-shadow: 0px 8px 16px 0px #c3415c;
+#menuToggle:hover .dropbtn {
+    box-shadow: 0px 8px 16px 0px #B52C56;
 }
-
-.dropbtn:focus {
-    background-color: #c3415c;
-}
-
-
-.dropbtn::-moz-focus-inner {
-    background-color: #b3e554;
-}
-
 
 
 .show {
@@ -327,7 +314,7 @@ p {
 }
 
 body {
-    background-color: #f37d83;
+    background-color: #E5E5E5;
 }
 
 #pageheader {
@@ -339,7 +326,7 @@ body {
 .button {
     position: fixed;
     float: right;
-    background-color: #b3e554;
+    background-color: #966D99;
     border: none;
     padding: 13px 15px;
     text-align: center;
@@ -350,49 +337,46 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-family: 'ApercuMono';
-    color: #c3415c;
+    color: #301540;
     font-weight: normal;
     z-index: 15;
 }
 
 .button:hover {
-    box-shadow: 0px 8px 16px 0px #c3415c;
+    box-shadow: 0px 8px 16px 0px #B52C56;
 }
 
+
+
 .button:focus {
-    background-color: #c3415c;
-    color: #b3e554;
+    background-color: #B52C56;
+    color: #966D99;
 }
 
 .buttonA {
     position: fixed;
-    background-color: #b3e554;
+    background-color: #966D99;
     border: none;
     padding-bottom: 6px;
     padding-top: 5px;
     padding-left: 6px;
     padding-right: 5px;
     bottom: 10px;
-  
     cursor: pointer;
     border-radius: 50%;
     z-index: 15;
-
 }
 
 .buttonA:hover {
-    box-shadow: 0px 8px 16px 0px #c3415c;
+    box-shadow: 0px 8px 16px 0px #B52C56;
 }
 
 .buttonA:focus {
-    background-color: #f37d83;
-    color: #c3415c;
-    border: 2px solid #b3e554;
+    background-color: #966D99;
 }
 
 .buttonA::-moz-focus-inner {
-    background-color: #b3e554;
-    color: #c3415c;
+    background-color: #966D99;
     border: none;
 }
 
@@ -430,7 +414,7 @@ body {
 }
 
 a {
-    color: #c3415c;
+    color: #B52C56;
 }
 
 #bm {
@@ -439,13 +423,13 @@ a {
     width: 100%;
     /*height: 56.25vw;*/
     /*margin: auto auto;*/
-    background-color: #f37d83;
+    background-color: #E5E5E5;
     position: absolute;
     top: 0;
 }
 
 div#bm path {
-    stroke: #b3e554;
+    stroke: #966D99;
     stroke-width: 10px;
     /*transition: opacity 0 3.85s ease-out*/
 }
@@ -458,7 +442,7 @@ div#bm path {
     margin: 0 auto;
     max-height: 100%;
     height: 100%;
-    background-color: #f37d83;
+    background-color: #E5E5E5;
 }
 
 #OverAnim {
@@ -481,7 +465,7 @@ div#bm path {
     position: absolute;
     display: block;
     border-style: solid;
-    border-color: #b3e554;
+    border-color: #966D99;
     border-width: medium;
     width: 15.3%;
     height: 27%;
@@ -559,7 +543,7 @@ div#bm path {
      Oringially couldnt make image appear in the right positioning, so just used z index and hot glue to fix
 */
 .h2h {
-    color: #c3415c;
+    color: #B52C56;
     position: inherit;
     bottom: 0;
     right: 0%;
@@ -574,7 +558,7 @@ div#bm path {
 }
 
 .h2h:hover {
-    color: #b3e554;
+    color: #966D99;
     bottom: 0;
 }
 
@@ -629,27 +613,27 @@ div#bm path {
 }
 
 #dc:hover {
-    background-color: #c3415c;
-    font: #b3e554;
+    background-color: #B52C56;
+    font: #966D99;
 }
 
 #ec:hover {
-    background-color: #c3415c;
-    color: #b3e554;
+    background-color: #B52C56;
+    color: #966D99;
 }
 
 #bc:hover {
-    background-color: #c3415c;
-    color: #b3e554;
+    background-color: #B52C56;
+    color: #966D99;
 }
 
 #ed:hover {
-    background-color: #c3415c;
+    background-color: #B52C56;
 
 }
 
 div.cubebuttons:hover h2 {
-    color: #b3e554;
+    color: #966D99;
     bottom: 0;
 }
 
@@ -683,7 +667,7 @@ div.cubebuttons:hover h2 {
     top: -2vw;
     left: 40%;
     font-family: 'ApercuRegular';
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
 }
 
@@ -703,7 +687,7 @@ div.cubebuttons:hover h2 {
 .tab {
     overflow: hidden;
     background-color: none;
-    border: 5px solid #b3e554;
+    border: 5px solid #966D99;
     position: relative;
     display: inline-table;
     top: -30%;
@@ -718,20 +702,20 @@ div.cubebuttons:hover h2 {
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
-    border-right: 5px solid #b3e554;
+    border-right: 5px solid #966D99;
     padding: 10px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    color: #f37d83;
-    background-color: #9fd141;
+    color: #E5E5E5;
+    background-color: #301540;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    color: #c3415c;
-    background-color: #b3e554;
+    color: #B52C56;
+    background-color: #966D99;
     z-index: 10;
     border-bottom: 0px;
 
@@ -741,7 +725,7 @@ div.cubebuttons:hover h2 {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    background-color: #b3e554;
+    background-color: #966D99;
 }
 
 #expTOPbox {
@@ -775,7 +759,7 @@ div.cubebuttons:hover h2 {
     top: 0pt;
     left: 1%;
     font-family: 'ApercuRegular';
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     vertical-align: top;
 }
@@ -783,7 +767,7 @@ div.cubebuttons:hover h2 {
 .expbar {
     width: 30px;
     height: 5px;
-    background-color: #b3e554;
+    background-color: #966D99;
     margin: 3px 0;
     transition: 0.4s;
 }
@@ -791,7 +775,7 @@ div.cubebuttons:hover h2 {
 .expTime {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     line-height: 50%;
 }
@@ -799,7 +783,7 @@ div.cubebuttons:hover h2 {
 .expRole {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #fff;
+    color: #301540;
     font-weight: normal;
     line-height: 0%;
 
@@ -808,7 +792,7 @@ div.cubebuttons:hover h2 {
 .expPlace {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     line-height: 50%;
 }
@@ -816,7 +800,7 @@ div.cubebuttons:hover h2 {
 .expPlaceB {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     line-height: 50%;
     text-decoration: none;
@@ -825,7 +809,7 @@ div.cubebuttons:hover h2 {
 .expTimeB {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     line-height: 50%;
     text-decoration: none;
@@ -834,7 +818,7 @@ div.cubebuttons:hover h2 {
 li {
     font-family: 'ApercuRegular';
     font-size: 1.5vw;
-    color: #fff;
+    color: #301540;
     font-weight: normal;
 }
 
@@ -848,13 +832,13 @@ li {
     line-height: 0%;
     margin-bottom: -1em;
     font-size: 1.2vw;
-    color: #b3e554;
+    color: #966D99;
 }
 
 .tool {
     line-height: 0%;
     margin-bottom: -0.5em;
-    color: #c3415c;
+    color: #B52C56;
 }
 
 #projectContent {
@@ -898,10 +882,10 @@ div.categoryCaption {
     right: 0;
     height: 3vw;
     width: 17vw;
-    background-color: #b3e554;
+    background-color: #966D99;
     font-family: 'ApercuMedium';
     font-size: 1.8vw;
-    color: #c3415c;
+    color: #B52C56;
     font-weight: normal;
     text-align: center;
     padding: 1.25vw 1.5vw 1.25vw 1.5vw;
@@ -920,7 +904,7 @@ div.categoryCaption {
 
 .category:hover,
 .category:focus {
-    border: 5px double #c3415c;
+    border: 5px double #B52C56;
     object-fit: none;
 }
 
@@ -1002,7 +986,7 @@ div.categoryCaption {
 }
 
 .context {
-    color: white;
+    color: #fff;
     line-height: 95%;
 }
 
@@ -1101,69 +1085,104 @@ div.categoryCaption {
     cursor: pointer;
     display: flex;
     align-items: center;
-    transition: 0.3s;
+    transition: all 0.6s ease-in-out;
 }
+
+.accordion h1 {
+    margin-top:0.1vw;
+    margin-bottom: 0;
+    margin-left:-0.1vw;
+}
+
+
 
 .right-content {
     display: flex;
     align-items: center;
 }
 
+.right-content h2 {
+    font-size: calc(1em * 0.9);
+    color: #E5E5E5;
+    margin:0.1vw;  
+    text-align: right;
+}
+
 .arrow {
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content (if needed) */
+  }
+
+
+.arrow svg {
     margin-left: 10px;
-    transition: transform 0.3s;
     width: 1.5vw;
     height: 0.8vw;
-    text-align: center;
+    vertical-align: middle;
     fill: none;
-    stroke: #b30054;
+    stroke: #E5E5E5;
     stroke-linecap: butt;
     stroke-linejoin: round;
     stroke-width: 85px;
-
+    align-content: space-around;
+    transition: 0.3s;
 
 }
 
 
 
 .arrowcontent {
-    display: none;
-    margin-top: 10px;
-    transition: 0.6s ease-in-out;
+    display: table-caption;
+    vertical-align: top;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease-in-out, 
+    visibility 0.6s ease-in-out, 
+    opacity 0.6s ease-in-out;
+    width: fit-content;
 }
 
 .arrowcontent p {
-    margin: 0.25vw;
+    font-size: calc(1em * 0.8);
+    color: #E5E5E5;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 
 
 .accordion.aactive+.arrowcontent,
 .accordion:hover+.arrowcontent {
-    display: block;
-
-
+    max-height: 300px; /* Adjust this value based on the content size */
+    visibility: visible;
+    opacity: 1;
 }
 
-.accordion.aactive .arrow {
-    transform-origin: 50% 50%;
-    /* Or other values as needed */
+
+.accordion.aactive .arrow svg {
+    transform-origin: center center;
     transform: rotate(180deg);
+  
 }
 
 .card {
-    background-color: #b3e554;
+    background-color: #966D99;
     padding: 0.5vw;
     opacity: 1;
     float: right;
     width: min(100%, (465px));
-    transition: background-colour 0.05s ease-out 0s,
+    transition: 
+        background-color 0.25s ease-out 0.1s,
         opacity 0.5s ease-in 1s;
 
 }
 
 .card:hover {
-    background-color: #b30054;
+    background-color: #B52C56;
 
 }
 
@@ -1189,8 +1208,8 @@ div.categoryCaption {
     position: absolute;
     width: 15px;
     height: 15px;
-    background-color: #b3e554;
-    border: 2px solid #b30054;
+    background-color: #966D99;
+    border: 2px solid #301540;
     border-radius: 4px;
 }
 
@@ -1221,8 +1240,156 @@ div.categoryCaption {
 .eye {
     width: 35px;
     height: 35px;
-    fill: #c3415c;
+    fill: #B52C56;
+    transition: all 0.5s ease; /* Smooth transition for the roll out */
 }
+
+#themeButtonsContainer {
+    position: fixed;
+    bottom: 10px;
+    left: 52px; /* Adjust as needed */
+    display: flex;
+    z-index: 14;
+    /* other styling */
+  }
+  
+  .themeButton {
+    cursor: pointer;
+    margin-left: 3px;
+    margin-bottom: 15px;
+    height: 16px;
+    width: 16px;
+    background-color: #301540;
+    border: 2px solid #B52C56;
+    border-radius: 5px;
+    pointer-events: none; /* Disable click events initially */
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    
+  }
+
+  .rolledOut .themeButton {
+    pointer-events: auto; 
+    opacity: 1; /* Make buttons visible when rolled out */
+  }
+
+  .rolledOut .themeButton.D:hover {
+    -webkit-box-shadow: 0 0 5px 2px #B52C56;
+    -moz-box-shadow: 0 0 5px 2px #B52C56;
+    box-shadow: 0 0 4px 2px #B52C56;
+}
+
+.rolledOut .themeButton.O:hover {
+    -webkit-box-shadow: 0 0 5px 2px #444B68;
+    -moz-box-shadow: 0 0 5px 2px #444B68;
+    box-shadow: 0 0 4px 2px #444B68;
+}
+.rolledOut .themeButton.R:hover {
+    -webkit-box-shadow: 0 0 5px 2px #E9C895;
+    -moz-box-shadow: 0 0 5px 2px #E9C895;
+    box-shadow: 0 0 4px 2px #E9C895;
+}
+.rolledOut .themeButton.T:hover {
+    -webkit-box-shadow: 0 0 5px 2px #7B2800;
+    -moz-box-shadow: 0 0 5px 2px #7B2800;
+    box-shadow: 0 0 4px 2px #7B2800;
+}
+.rolledOut .themeButton.E:hover {
+    -webkit-box-shadow: 0 0 5px 2px #FCC662;
+    -moz-box-shadow: 0 0 5px 2px #FCC662;
+    box-shadow: 0 0 4px 2px #FCC662;
+}
+.rolledOut .themeButton.A:hover {
+    -webkit-box-shadow: 0 0 5px 2px #F6BE8F;
+    -moz-box-shadow: 0 0 5px 2px #F6BE8F;
+    box-shadow: 0 0 4px 2px #F6BE8F;
+}
+.rolledOut .themeButton.B:hover {
+    -webkit-box-shadow: 0 0 5px 2px #E5C6A7;
+    -moz-box-shadow: 0 0 5px 2px #E5C6A7;
+    box-shadow: 0 0 4px 2px #E5C6A7;
+}
+.rolledOut .themeButton.J:hover {
+    -webkit-box-shadow: 0 0 5px 2px #BEBB74;
+    -moz-box-shadow: 0 0 5px 2px #BEBB74;
+    box-shadow: 0 0 4px 2px #BEBB74;
+}
+.rolledOut .themeButton.I:hover {
+    -webkit-box-shadow: 0 0 5px 2px #801738;
+    -moz-box-shadow: 0 0 5px 2px #801738;
+    box-shadow: 0 0 4px 2px #801738;
+}
+.rolledOut .themeButton.C:hover {
+    -webkit-box-shadow: 0 0 5px 2px #324C85;
+    -moz-box-shadow: 0 0 5px 2px #324C85;
+    box-shadow: 0 0 4px 2px #324C85;
+}
+.rolledOut .themeButton.W:hover {
+    -webkit-box-shadow: 0 0 5px 2px #F8E6B8;
+    -moz-box-shadow: 0 0 5px 2px #F8E6B8;
+    box-shadow: 0 0 4px 2px #F8E6B8;
+}
+
+  
+#themeButtonsContainer .themeButton.D { 
+    background-color: #E5E5E5;
+    border: 2px solid #966D99;
+    transform: translateX(-50px); 
+}
+
+#themeButtonsContainer .themeButton.O { 
+    background-color: #ECB9B8;
+    border: 2px solid #E3739B;
+     transform: translateX(-66px); }
+
+#themeButtonsContainer .themeButton.R { 
+    background-color: #4347C5;
+    border: 2px solid #D86586;
+     transform: translateX(-82px); }
+
+#themeButtonsContainer .themeButton.T { 
+    background-color: #FBE5D0;
+    border: 2px solid #B83C00;
+     transform: translateX(-98px); }
+
+#themeButtonsContainer .themeButton.E { 
+    background-color: #831636;
+    border: 2px solid #F45F5B;
+     transform: translateX(-114px); }
+
+#themeButtonsContainer .themeButton.A { 
+    background-color: #2B1100;
+    border: 2px solid #F37004;
+     transform: translateX(-130px); }
+
+#themeButtonsContainer .themeButton.B {  
+    background-color: #222656;
+    border: 2px solid #B9A2BE;
+    transform: translateX(-146px); }
+
+    #themeButtonsContainer .themeButton.J {  
+        background-color: #010004;
+        border: 2px solid #59924D;
+        transform: translateX(-162px); }
+
+        #themeButtonsContainer .themeButton.I {  
+            background-color: #FCEAAC;
+            border: 2px solid #A2C970;
+            transform: translateX(-178px); }
+
+
+            #themeButtonsContainer .themeButton.C {  
+                background-color: #D0E1FD;
+                border: 2px solid #AB3334;
+                transform: translateX(-194px); }
+
+
+                #themeButtonsContainer .themeButton.W {  
+                    background-color: #584036;
+                    border: 2px solid #889E5D;
+                    transform: translateX(-210px); }
+ 
+
 
 
 
@@ -1254,7 +1421,7 @@ div.categoryCaption {
     p {
         font-family: 'ApercuRegular';
         font-size: 15px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
     }
 }
@@ -1265,7 +1432,7 @@ div.categoryCaption {
     .bd h1 {
         font-family: 'ApercuBold';
         font-size: 37px;
-        color: #fff;
+        color: #301540;
         font-weight: normal;
         align-self: flex-end;
     }
@@ -1276,7 +1443,7 @@ div.categoryCaption {
     .cubebuttons h2 {
         font-family: 'ApercuMono';
         font-size: 25px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
 
     }
@@ -1284,14 +1451,14 @@ div.categoryCaption {
     h3 {
         font-family: 'ApercuMedium';
         font-size: 27px;
-        color: #ffff;
+        color: #301540;
         font-weight: normal;
     }
 
     h4 {
         font-family: 'ApercuMono';
         font-size: 13px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
     }
 
@@ -1303,7 +1470,7 @@ div.categoryCaption {
         left: 180px;
         width: 100%;
         height: 10px;
-        background-color: #b3e554;
+        background-color: #966D99;
         margin: 3px 0;
     }
 
@@ -1311,20 +1478,20 @@ div.categoryCaption {
         height: 712px;
         width: 1248px;
         margin: auto auto;
-        background-color: #f37d83;
+        background-color: #E5E5E5;
         position: relative;
 
 
     }
 
     #dc {
-        border-right: solid #b3e554;
+        border-right: solid #966D99;
     }
 
     .expbar {
         width: 30px;
         height: 5px;
-        background-color: #b3e554;
+        background-color: #966D99;
         margin: 3px 0;
         transition: 0.4s;
     }
@@ -1332,7 +1499,7 @@ div.categoryCaption {
     .expTime {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         line-height: 50%;
     }
@@ -1340,7 +1507,7 @@ div.categoryCaption {
     .expRole {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #fff;
+        color: #301540;
         font-weight: normal;
         line-height: 0%;
 
@@ -1349,7 +1516,7 @@ div.categoryCaption {
     .expPlace {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         line-height: 50%;
     }
@@ -1357,7 +1524,7 @@ div.categoryCaption {
     .expPlaceB {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         line-height: 50%;
         text-decoration: none;
@@ -1366,7 +1533,7 @@ div.categoryCaption {
     .expTimeB {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         line-height: 50%;
         text-decoration: none;
@@ -1375,7 +1542,7 @@ div.categoryCaption {
     li {
         font-family: 'ApercuRegular';
         font-size: 17px;
-        color: #fff;
+        color: #301540;
         font-weight: normal;
     }
 
@@ -1389,13 +1556,13 @@ div.categoryCaption {
         line-height: 0%;
         margin-bottom: -0.8em;
         font-size: 13.5px;
-        color: #b3e554;
+        color: #966D99;
     }
 
     .tool {
         line-height: 0%;
         margin-bottom: -0.5em;
-        color: #c3415c;
+        color: #B52C56;
     }
 
     .projGallery {
@@ -1420,14 +1587,14 @@ div.categoryCaption {
         margin: 15px;
         margin-bottom: 0%;
     }
-
+/* 
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #f1f1f1;
         min-width: 190px;
         overflow: auto;
-        box-shadow: 0px 8px 16px 0px #c3415c;
+        box-shadow: 0px 8px 16px 0px #B52C56;
         z-index: 1;
         left: 55px;
         top: 5px;
@@ -1436,7 +1603,7 @@ div.categoryCaption {
     .dropdown-content a {
         font-family: 'ApercuMono';
         font-size: 20px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         padding: 13px 0vw 13px 13px;
         text-decoration: none;
@@ -1444,8 +1611,8 @@ div.categoryCaption {
     }
 
     .dropdown a:hover {
-        background-color: #b3e554;
-    }
+        background-color: #966D99;
+    } */
 
     .show {
         display: block;
@@ -1480,10 +1647,10 @@ div.categoryCaption {
         right: 0;
         height: 42.6px;
         width: 242px;
-        background-color: #b3e554;
+        background-color: #966D99;
         font-family: 'ApercuMedium';
         font-size: 26px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         text-align: center;
         padding: 17.75px 21.3px 17.75px 21.3px;
@@ -1614,7 +1781,7 @@ div.categoryCaption {
     p {
         font-family: 'ApercuRegular';
         font-size: 10px;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
     }
 
@@ -1671,12 +1838,12 @@ div.categoryCaption {
     }
 
     .button:hover {
-        box-shadow: 0px 1.6vw 3.2vw 0px #c3415c;
+        box-shadow: 0px 1.6vw 3.2vw 0px #B52C56;
     }
 
     .button:focus {
-        background-color: #c3415c;
-        color: #b3e554;
+        background-color: #B52C56;
+        color: #966D99;
     }
 
     .buttonA {
@@ -1685,15 +1852,14 @@ div.categoryCaption {
         left: 2vw;
         font-size: 4vw;
         border-radius: 1vw;
+       
     }
 
     .buttonA:hover {
-        box-shadow: 0px 1.6vw 3.2vw 0px #c3415c;
+        box-shadow: 0px 1.6vw 3.2vw 0px #B52C56;
     }
 
-    .buttonA:focus {
-        border: 0.4vw solid #b3e554;
-    }
+   
 
 
     .eye {
@@ -1756,6 +1922,8 @@ div.categoryCaption {
         margin: 3.5px;
     }
 
+   
+
 
     .button {
         padding: 9.1px 10.5px;
@@ -1766,12 +1934,12 @@ div.categoryCaption {
     }
 
     .button:hover {
-        box-shadow: 0px 5.6px 11.2px 0px #c3415c;
+        box-shadow: 0px 5.6px 11.2px 0px #B52C56;
     }
 
     .button:focus {
-        background-color: #c3415c;
-        color: #b3e554;
+        background-color: #B52C56;
+        color: #966D99;
     }
 
     .buttonA {
@@ -1783,14 +1951,10 @@ div.categoryCaption {
     }
 
     .buttonA:hover {
-        box-shadow: 0px 5.6px 11.2px 0px #c3415c;
+        box-shadow: 0px 5.6px 11.2px 0px #B52C56;
     }
 
-    .buttonA:focus {
-        border: 1.4px solid #b3e554;
-    }
-
-
+   
     .eye {
         width: 24.5px;
         height: 24.5px;
@@ -1827,7 +1991,7 @@ div.categoryCaption {
     .bd h1 {
         font-family: 'ApercuBold';
         font-size: 5vh;
-        color: #fff;
+        color: #301540;
         font-weight: normal;
     }
 
@@ -1835,7 +1999,7 @@ div.categoryCaption {
     .cubebuttons h2 {
         font-family: 'ApercuMono';
         font-size: 3.2vh;
-        color: #c3415c;
+        color: #B52C56;
         font-weight: normal;
         bottom: 0;
 

@@ -3,6 +3,8 @@ themeD {
     CubeColour: #966D99; 
     Header:  #301540; 
     Text:  #B52C56; 
+    background-color: rgba(48, 21, 64, 0.95);
+    background-color: rgba(150, 109, 153, 0.6);
 }
 
 themeO {
@@ -10,6 +12,8 @@ themeO {
     CubeColour:  #E3739B; 
     Header:  #2F2756; 
     Text:  #444B68; 
+    background-color: rgba(47, 39, 86, 0.95);
+    background-color: rgba(227, 115, 155, 0.6);
 }
 
 themeR {
@@ -17,6 +21,8 @@ themeR {
     CubeColour:  #D86586; 
     Header:  #9EC680; 
     Text:  #E9C895; 
+    background-color: rgba(158, 198, 128, 0.95);
+    background-color: rgba(216, 101, 134, 0.6);
 }
 
 themeT {
@@ -24,6 +30,8 @@ themeT {
     CubeColour:  #B83C00; 
     Header:  #F47F3C; 
     Text:  #7B2800; 
+    background-color: rgba(244, 127, 60, 0.95);
+    background-color: rgba(184, 60, 0, 0.6);
 }
 
 themeE {
@@ -31,6 +39,8 @@ themeE {
     CubeColour:  #F45F5B; 
     Header:  #9ECB70; 
     Text:  #FCC662; 
+    background-color: rgba(158, 208, 112, 0.95);
+    background-color: rgba(244, 95, 91, 0.6);
 }
 
 themeA {
@@ -38,6 +48,8 @@ themeA {
     CubeColour:  #F37004; 
     Header:  #456EE0; 
     Text:  #F6BE8F; 
+    background-color: rgba(69, 110, 224, 0.95);
+    background-color: rgba(243, 112, 4, 0.6);
 }
 
 themeB {
@@ -45,6 +57,8 @@ themeB {
     CubeColour:  #B9A2BE; 
     Header:  #DF6510; 
     Text:  #E5C6A7; 
+    background-color: rgba(223, 101, 16, 0.95);
+    background-color: rgba(185, 162, 190, 0.6);
 }
 
 themeJ {
@@ -52,6 +66,8 @@ themeJ {
     CubeColour:  #59924D; 
     Header:  #CA4A2D; 
     Text:  #BEBB74; 
+    background-color: rgba(202, 74, 45, 0.95);
+    background-color: rgba(89, 146, 77, 0.6);
 }
 
 themeI {
@@ -59,6 +75,8 @@ themeI {
     CubeColour:  #A2C970; 
     Header:  #E7524C; 
     Text:  #801738; 
+    background-color: rgba(231, 82, 76, 0.95);
+    background-color: rgba(162, 201, 112, 0.6);
 }
 
 themeC {
@@ -66,6 +84,8 @@ themeC {
     CubeColour:  #AB3334; 
     Header:  #181B20; 
     Text:  #324C85; 
+    background-color: rgba(24, 27, 32, 0.95);
+    background-color: rgba(171, 51, 52, 0.6);
 }
 
 themeW {
@@ -73,4 +93,6 @@ themeW {
     CubeColour:  #889E5D; 
     Header:  #F49F4F; 
     Text:  #F8E6B8; 
+    background-color: rgba(244, 159, 79, 0.95);
+    background-color: rgba(136, 158, 93, 0.6);
 }

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lightbox Gallery</title>
+    <!-- Add your CSS styles here -->
+    <style>
+    
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    text-align: center;
+    overflow: auto;
+  }
+
+  #lightbox-main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+#lightbox-content {
+  max-width: 60%;
+  max-height: 70vh;
+}
+
+#lightbox-text-content {
+  max-width: 40%;
+  color: #fff;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+#lightbox-image {
+  max-width: 100%;
+  max-height: 70%;
+}
+
+#lightbox-details {
+  max-width: 30%; /* Adjust as necessary */
+  color: #fff;
+  margin-left: 20px; /* Space between image and details */
+  text-align: left;
+}
+
+.thumbnail-strip {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Optional background */
+}
+
+  
+
+  
+  #lightbox-caption {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  #close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  #prev-button,
+  #next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #prev-button {
+    left: 10px;
+  }
+  
+  #next-button {
+    right: 10px;
+  }
+  
+  /* Thumbnail Strip Styles */
+    
+  .thumbnail-strip img {
+    max-height: 100px; /* Adjust the max height as needed */
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .thumbnail-strip img:hover {
+    transform: scale(1.2);
+  }
+  
+
+
+.fillimgrow {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    width: min(100%, 465px);
+    max-width: 465px;
+    /* Set the maximum width to be 100px or 465px, whichever is lesser */
+    margin-bottom: 0.25vw;
+}
+
+.fillimgrow img {
+    max-width: 100%;
+    height: auto;
+
+
+}
+
+.fillimgrow img:not(:last-child) {
+    margin-right: 0.25vw;
+}
+
+
+
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+
+    transition: 1.5s ease-out;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.accordion {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.accordion h1 {
+    margin-top: 0.1vw;
+    margin-bottom: 0;
+    margin-left: -0.1vw;
+}
+
+
+
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.right-content h2 {
+    font-size: calc(1em * 0.9);
+    color: #E5E5E5;
+    margin: 0.1vw;
+    text-align: right;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    /* Vertically centers the content */
+    justify-content: center;
+    /* Horizontally centers the content (if needed) */
+}
+
+
+.arrow svg {
+    margin-left: 10px;
+    width: 1.5vw;
+    height: 0.8vw;
+    vertical-align: middle;
+    fill: none;
+    stroke: #E5E5E5;
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-width: 85px;
+    align-content: space-around;
+    transition: 0.3s;
+
+}
+
+
+
+.arrowcontent {
+    display: table-caption;
+    vertical-align: top;
+
+    overflow: hidden;
+    visibility: hidden;
+  transition: max-height 0.6s ease-in-out,
+        visibility 0.6s ease-in-out,
+        opacity 0.6s ease-in-out;
+    width: fit-content;
+}
+
+.arrowcontent p {
+    font-size: calc(1em * 0.8);
+    color: #E5E5E5;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
+.accordion.aactive+.arrowcontent,
+.accordion:hover+.arrowcontent {
+    max-height: 300px;
+    /* Adjust this value based on the content size */
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.accordion.aactive .arrow svg {
+    transform-origin: center center;
+    transform: rotate(180deg);
+
+}
+
+.card {
+    background-color: #966D99;
+    padding: 0.5vw;
+    opacity: 1;
+    float: right;
+    width: min(100%, (465px));
+    transition:
+        background-color 0.25s ease-out 0.1s,
+        opacity 0.5s ease-in 1s;
+
+}
+
+.card:hover {
+    background-color: #B52C56;
+
+}
+
+
+.card.inactive {
+    opacity: 0;
+
+}
+    </style>
+</head>
+<body>
+
+<!-- Image Cards -->
+<div class="card invisible">
+    <div class="imgbox1" data-textbox=".textbox1">
+      <div class="container reveal">
+        <div class="fillimgrow">
+
+          <img src="../media/photo/fishthatreads (1).jpg" alt="Image 1" class="lightbox-trigger">
+          <img src="../media/photo/fishthatreads (3).jpg" alt="Image 2" class="lightbox-trigger">
+          <img src="../media/photo/fishthatreads (4).jpg" alt="Image 3" class="lightbox-trigger">
+        </div>
+      </div>
+
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="../media/photo/fishthatreads (1).jpg" alt="Image 4" class="lightbox-trigger">
+          <img src="photo/scanography/Scan 22.jpeg" alt="Image 11" class="lightbox-trigger">
+          <img src="../media/photo/fishthatreads (1).jpg" alt="Image 1gfd" class="lightbox-trigger">
+          <img src="../media/photo/fishthatreads (3).jpg" alt="Image 1d" class="lightbox-trigger">
+          <img src="photo/highschool/grad feet.jpg" alt="Image 1ew" class="lightbox-trigger">
+        </div>
+      </div>
+
+
+
+      <div class="container reveal">
+        <div class="fillimgrow">
+        <img src="../media/photo/fishthatreads (5).jpg" alt="Image sh1" class="lightbox-trigger" >
+        <img src="../media/photo/fishthatreads (7).jpg" alt="Image 1sd" class="lightbox-trigger" >
+        <img src="../media/photo/fishthatreads (8).jpg" alt="Image bderf1" class="lightbox-trigger" >
+      </div>
+    </div></div>
+
+    <div class="imgbox2" data-textbox=".textbox2">
+      <div class="container reveal">
+      <div class="fillimgrow">
+        <img src="../media/photo/fishthatreads (9).jpg" alt="Image hgyj1" class="lightbox-trigger" >
+        <img src="../media/photo/fishthatreads (11).jpg" alt="Image 1sed" class="lightbox-trigger" >
+        <img src="../media/photo/fishthatreads (12).jpg" alt="Image fs1" class="lightbox-trigger" >
+      </div>
+
+
+     
+        <div class="GalleryCaption accordion">
+          <h1>FishThatReads Instagram</h1>
+          <div class="right-content">
+          <h2>2017-19</h2>
+          <div class="arrow">
+            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                              <g id="Layer_1-2" data-name="Layer 1">
+                <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+              </g>
+            </svg>
+          </div>
+        </div>      
+        
+        </div>
+        
+        <div class="arrowcontent">
+          <p>These are some sample photographs from the (now defunct) FishThatReads Instagram feed
+            which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched
+            the blog identity.</p>
+        </div></div>
+      </div></div>
+    
+
+
+
+    <div class="card invisible">
+    <div class="imgbox3" data-textbox=".textbox3">
+    <div class="container reveal">
+      <div class="fillimgrow">
+        <img src="../media/photo/bwfilm (3).jpg" alt="Image 1ae" class="lightbox-trigger">
+        <img src="../media/photo/bwfilm (2).jpg" alt="Image 133bg" class="lightbox-trigger" >
+        <img src="../media/photo/bwfilm (1).jpg" alt="Image 1rsf" class="lightbox-trigger" >
+      </div>
+      
+      
+
+      <div class="GalleryCaption accordion">
+        <h1>B/W Film</h1>
+        <div class="right-content">
+        <h2>2017</h2>
+        <div class="arrow">
+            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                              <g id="Layer_1-2" data-name="Layer 1">
+                <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+              </g>
+            </svg>
+          </div></div>
+      </div>
+      <div class="arrowcontent">
+        <p> An early exploration of black and white 35mm photography.</p>
+      </div>
+    </div></div>
+  </div>
+
+
+
+  <div class="card  invisible">
+    <div class="container reveal">
+      <div class="fillimgrow">
+        <img src="../media/photo/expirefilm (1).jpg" alt="Image swetf1" class="lightbox-trigger" >
+        <img src="../media/photo/expirefilm (2).jpg" alt="Image e1" class="lightbox-trigger" >
+        <img src="../media/photo/expirefilm (3).jpg" alt="Image 1reg" class="lightbox-trigger" >
+      </div>
+
+      <div class="GalleryCaption accordion imgbox4" data-textbox=".textbox4">
+        <h1>Self-Expiration</h1>
+        <div class="right-content">
+        <h2>2018</h2>
+        <div class="arrow">
+            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                              <g id="Layer_1-2" data-name="Layer 1">
+                <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+              </g>
+            </svg>
+          </div></div>
+      </div>
+      <div class="arrowcontent">
+        <p>Self-portraits shot using expired 35mm film.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="card invisible">
+
+    <div class="container reveal">
+      <div class="fillimgrow">
+        <img src="../media/photo/czech (1).jpg" alt="Image 4567y1" class="lightbox-trigger">
+        <img src="../media/photo/czech (2).jpg"  alt="Image 51" class="lightbox-trigger">
+        <img src="../media/photo/czech (3).jpg" alt="Image ht5r1"  class="lightbox-trigger">
+        <img src="../media/photo/czech (4).jpg" alt="Image jd1" class="lightbox-trigger" >
+      </div>
+
+
+      <div class="GalleryCaption accordion imgbox5" data-textbox=".textbox5">
+        <h1>Bohemia</h1>
+        <div class="right-content">
+        <h2>2017</h2>
+        <div class="arrow">
+            <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                              <g id="Layer_1-2" data-name="Layer 1">
+                <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+              </g>
+            </svg>
+          </div></div>
+      </div>
+      <div class="arrowcontent">
+        <p> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand
+          painted photographs and a fresh spring feel to these photographs.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Repeat for additional cards... -->
+
+<!-- Lightbox Structure -->
+<div id="lightbox">
+  <span id="close-button">Close</span>
+  <span id="prev-button">Previous</span>
+  <span id="next-button">Next</span>
+  <div id="lightbox-main-content">
+      <div id="lightbox-content">
+          <img id="lightbox-image" src="" alt="">
+      </div>
+      <div id="lightbox-text-content">
+          <p id="lightbox-caption"></p>
+          <div id="lightbox-details">
+              <div id="lightbox-gallery-caption"></div>
+              <div id="lightbox-arrow-content"></div>
+          </div>
+      </div>
+  </div>
+  <div class="thumbnail-strip"></div>
+</div>
+
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$(document).ready(function() {
+  var lightbox = $('#lightbox');
+  var lightboxImage = $('#lightbox-image');
+  var lightboxCaption = $('#lightbox-caption');
+  var closeButton = $('#close-button');
+  var prevButton = $('#prev-button');
+  var nextButton = $('#next-button');
+  var currentImageIndex;
+  var currentCard;
+  var allCards = $('.card'); // Reference to all cards
+
+  console.log("Lightbox script initialized.");
+
+  // Function to find the card that contains an image with a matching src
+  function findCardByImageSrc(imgSrc) {
+    var foundCard;
+    allCards.each(function() {
+      if ($(this).find('.lightbox-trigger[src="' + imgSrc + '"]').length > 0) {
+        foundCard = $(this);
+        return false; // Break the loop
+      }
+    });
+    return foundCard;
+  }
+
+  function openLightbox(index, card) {
+    console.log("Opening lightbox for image at index:", index, "Card:", card);
+    currentImageIndex = index;
+    currentCard = card;
+
+    var imgSrc = currentCard.find('.lightbox-trigger').eq(index).attr('src');
+    var imgAlt = currentCard.find('.lightbox-trigger').eq(index).attr('alt');
+    lightboxImage.attr('src', imgSrc);
+    lightboxImage.attr('alt', imgAlt);
+    lightboxCaption.text(imgAlt);
+
+    var galleryCaptionHTML = currentCard.find('.GalleryCaption').html();
+    var arrowContentHTML = currentCard.find('.arrowcontent').html();
+    $('#lightbox-gallery-caption').html(galleryCaptionHTML);
+    $('#lightbox-arrow-content').html(arrowContentHTML);
+
+    if (currentCard.find('.lightbox-trigger').length <= 1) {
+      prevButton.hide();
+      nextButton.hide();
+    } else {
+      prevButton.show();
+      nextButton.show();
+    }
+
+    lightbox.show();
+    updateThumbnailStrip();
+  }
+
+  function updateThumbnailStrip() {
+    console.log("Updating thumbnail strip for the current card.");
+    var thumbnails = currentCard.find('.lightbox-trigger').clone();
+    $('.thumbnail-strip').empty().append(thumbnails);
+  }
+
+  // Delegated event handler for clicking on an image to open the lightbox
+  $(document).on('click', '.lightbox-trigger', function() {
+    var card = $(this).closest('.card');
+    var allImagesInCard = card.find('.lightbox-trigger');
+    var index = allImagesInCard.index(this);
+    console.log("Image clicked. Card:", card, "Index:", index);
+    openLightbox(index, card);
+  });
+
+  closeButton.click(function() { 
+    console.log("Closing lightbox.");
+    lightbox.hide(); 
+  });
+
+  prevButton.click(function() {
+    if (currentImageIndex > 0) {
+      console.log("Showing previous image.");
+      openLightbox(currentImageIndex - 1, currentCard);
+    }
+  });
+
+  nextButton.click(function() {
+    if (currentImageIndex < currentCard.find('.lightbox-trigger').length - 1) {
+      console.log("Showing next image.");
+      openLightbox(currentImageIndex + 1, currentCard);
+    }
+  });
+
+  lightbox.click(function(e) {
+    if ($(e.target).is('#lightbox, #lightbox-main-content, #lightbox-details')) {
+      console.log("Lightbox background clicked, closing lightbox.");
+      lightbox.hide();
+    }
+  });
+
+  // Delegated event handler for thumbnail strip image clicks
+  $(document).on('click', '.thumbnail-strip img', function() {
+    var clickedThumbnailSrc = $(this).attr('src');
+    var cardContainingThumbnail = findCardByImageSrc(clickedThumbnailSrc);
+    if (cardContainingThumbnail) {
+      var allImagesInCard = cardContainingThumbnail.find('.lightbox-trigger');
+      var index = allImagesInCard.index(allImagesInCard.filter('[src="' + clickedThumbnailSrc + '"]'));
+      console.log("Thumbnail clicked. Found Card:", cardContainingThumbnail, "Index:", index);
+      openLightbox(index, cardContainingThumbnail);
+    } else {
+      console.log("Error: Card containing clicked thumbnail not found.");
+    }
+  });
+});
+
+
+</script>
+
+</body>
+</html>

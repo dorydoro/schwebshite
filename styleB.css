@@ -62,7 +62,7 @@
 h1 {
     font-family: 'ApercuBold';
     font-size: 3vw;
-    color: #301540;
+    color: #DF6510;
     font-weight: normal;
     margin: 0.5vw
 }
@@ -75,7 +75,7 @@ h1 {
 h2 {
     font-family: 'ApercuMono';
     font-size: 2vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     bottom: 0;
     margin: 0.3vw
@@ -84,7 +84,7 @@ h2 {
 h3 {
     font-family: 'ApercuMedium';
     font-size: 2.65vw;
-    color: #301540;
+    color: #DF6510;
     font-weight: normal;
     line-height: 0%;
 }
@@ -92,7 +92,7 @@ h3 {
 h4 {
     font-family: 'ApercuMono';
     font-size: 1.5vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     margin: 4px 6px;
 }
@@ -100,7 +100,7 @@ h4 {
 p {
     font-family: 'ApercuRegular';
     font-size: 2vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
 }
 
@@ -113,7 +113,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(48, 21, 64, 0.95);
+    background-color: rgba(223, 101, 16, 0.95);
     /* Black background with opacity */
     z-index: 999;
     /* Specify a stack order in case you're using a different order for other elements */
@@ -125,7 +125,7 @@ p {
     top: 20%;
     font-family: 'ApercuMono';
     font-size: min(20vh, 9vw);
-    color: #B52C56;
+    color: #E5C6A7;
     text-align: center;
   
 }
@@ -185,7 +185,7 @@ body {
     margin-bottom: 3px;
     position: relative;
 
-    background-color: #301540;
+    background-color: #DF6510;
     border-radius: 1px;
 
     z-index: 1;
@@ -208,7 +208,7 @@ body {
 #menuToggle input:checked~.dropbtn span {
     opacity: 1;
     transform: rotate(45deg) translate(-15px, 6px);
-    background: #301540;
+    background: #DF6510;
 }
 
 
@@ -232,13 +232,13 @@ body {
     height: 100%;
     padding: 50px;
     padding-top: 125px;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     left: -326px;
     transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
     margin-top: 0%;
-    box-shadow: 0px 0px 20px 0px #B52C56;
+    box-shadow: 0px 0px 20px 0px #E5C6A7;
 }
 
 #menu li {
@@ -252,7 +252,7 @@ body {
 }
 
 #menu li:hover {
-    color: #B52C56;
+    color: #E5C6A7;
 }
 
 .cubepointer {
@@ -265,7 +265,7 @@ body {
 }
 
 .cubepointer p {
-    color: #301540;
+    color: #DF6510;
     font-size: 75%;
 }
 
@@ -276,14 +276,14 @@ body {
     left: 18vw;
     width: 85vw;
     height: 1vw;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     margin: 3px 0;
 }
 
 
 
 .dropbtn {
-    background-color: #966D99;
+    background-color: #B9A2BE;
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -295,7 +295,7 @@ body {
 }
 
 #menuToggle:hover .dropbtn {
-    box-shadow: 0px 8px 16px 0px #B52C56;
+    box-shadow: 0px 8px 16px 0px #E5C6A7;
 }
 
 
@@ -304,7 +304,7 @@ body {
 }
 
 body {
-    background-color: #E5E5E5;
+    background-color: #222656;
 }
 
 #pageheader {
@@ -316,7 +316,7 @@ body {
 .button {
     position: fixed;
     float: right;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     border: none;
     padding-bottom: 2.66px;
     padding-top: 6px;
@@ -330,20 +330,20 @@ body {
     cursor: pointer;
     border-radius: 50%;
     font-family: 'ApercuMono';
-    color: #301540;
+    color: #DF6510;
     font-weight: normal;
     z-index: 15;
 }
 
 .button:hover {
-    box-shadow: 0px 8px 16px 0px #B52C56;
+    box-shadow: 0px 8px 16px 0px #E5C6A7;
 }
 
 
 
 .buttonA {
     position: fixed;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     border: none;
     padding-bottom: 6px;
     padding-top: 5px;
@@ -356,15 +356,15 @@ body {
 }
 
 .buttonA:hover {
-    box-shadow: 0px 8px 16px 0px #B52C56;
+    box-shadow: 0px 8px 16px 0px #E5C6A7;
 }
 
 .buttonA:focus {
-    background-color: #966D99;
+    background-color: #B9A2BE;
 }
 
 .buttonA::-moz-focus-inner {
-    background-color: #966D99;
+    background-color: #B9A2BE;
     border: none;
 }
 
@@ -402,7 +402,7 @@ body {
 }
 
 a {
-    color: #B52C56;
+    color: #E5C6A7;
 }
 
 #bm {
@@ -411,13 +411,13 @@ a {
     width: 100%;
     /*height: 56.25vw;*/
     /*margin: auto auto;*/
-    background-color: #E5E5E5;
+    background-color: #222656;
     position: absolute;
     top: 0;
 }
 
 div#bm path {
-    stroke: #966D99;
+    stroke: #B9A2BE;
     stroke-width: 10px;
     /*transition: opacity 0 3.85s ease-out*/
 }
@@ -430,7 +430,7 @@ div#bm path {
     margin: 0 auto;
     max-height: 100%;
     height: 100%;
-    background-color: #E5E5E5;
+    background-color: #222656;
 }
 
 #OverAnim {
@@ -453,7 +453,7 @@ div#bm path {
     position: absolute;
     display: block;
     border-style: solid;
-    border-color: #966D99;
+    border-color: #B9A2BE;
     border-width: medium;
     width: 15.3%;
     height: 27%;
@@ -531,7 +531,7 @@ div#bm path {
      Oringially couldnt make image appear in the right positioning, so just used z index and hot glue to fix
 */
 .h2h {
-    color: #B52C56;
+    color: #E5C6A7;
     position: inherit;
     bottom: 0;
     right: 0%;
@@ -546,7 +546,7 @@ div#bm path {
 }
 
 .h2h:hover {
-    color: #966D99;
+    color: #B9A2BE;
     bottom: 0;
 }
 
@@ -601,27 +601,27 @@ div#bm path {
 }
 
 #dc:hover {
-    background-color: #B52C56;
-    color: #966D99;
+    background-color: #E5C6A7;
+    color: #B9A2BE;
 }
 
 #ec:hover {
-    background-color: #B52C56;
-    color: #966D99;
+    background-color: #E5C6A7;
+    color: #B9A2BE;
 }
 
 #bc:hover {
-    background-color: #B52C56;
-    color: #966D99;
+    background-color: #E5C6A7;
+    color: #B9A2BE;
 }
 
 #ed:hover {
-    background-color: #B52C56;
+    background-color: #E5C6A7;
 
 }
 
 div.cubebuttons:hover h2 {
-    color: #966D99;
+    color: #B9A2BE;
     bottom: 0;
 }
 
@@ -655,7 +655,7 @@ div.cubebuttons:hover h2 {
     top: -2vw;
     left: 40%;
     font-family: 'ApercuRegular';
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
 }
 
@@ -674,7 +674,7 @@ div.cubebuttons:hover h2 {
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 5px solid #966D99;
+    border: 5px solid #B9A2BE;
     position: relative;
     display: inline-table;
     top: -30%;
@@ -689,20 +689,20 @@ div.cubebuttons:hover h2 {
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
-    border-right: 5px solid #966D99;
+    border-right: 5px solid #B9A2BE;
     padding: 10px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    color: #E5E5E5;
-    background-color: #301540;
+    color: #222656;
+    background-color: #DF6510;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    color: #B52C56;
-    background-color: #966D99;
+    color: #E5C6A7;
+    background-color: #B9A2BE;
     z-index: 10;
     border-bottom: 0px;
 
@@ -712,7 +712,7 @@ div.cubebuttons:hover h2 {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    background-color: #966D99;
+    background-color: #B9A2BE;
 }
 
 #expTOPbox {
@@ -746,7 +746,7 @@ div.cubebuttons:hover h2 {
     top: 0pt;
     left: 1%;
     font-family: 'ApercuRegular';
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     vertical-align: top;
 }
@@ -754,7 +754,7 @@ div.cubebuttons:hover h2 {
 .expbar {
     width: 30px;
     height: 5px;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     margin: 3px 0;
     transition: 0.4s;
 }
@@ -762,7 +762,7 @@ div.cubebuttons:hover h2 {
 .expTime {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     line-height: 50%;
 }
@@ -770,7 +770,7 @@ div.cubebuttons:hover h2 {
 .expRole {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #301540;
+    color: #DF6510;
     font-weight: normal;
     line-height: 0%;
 
@@ -779,7 +779,7 @@ div.cubebuttons:hover h2 {
 .expPlace {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     line-height: 50%;
 }
@@ -787,7 +787,7 @@ div.cubebuttons:hover h2 {
 .expPlaceB {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     line-height: 50%;
     text-decoration: none;
@@ -796,7 +796,7 @@ div.cubebuttons:hover h2 {
 .expTimeB {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     line-height: 50%;
     text-decoration: none;
@@ -805,7 +805,7 @@ div.cubebuttons:hover h2 {
 li {
     font-family: 'ApercuRegular';
     font-size: 1.5vw;
-    color: #301540;
+    color: #DF6510;
     font-weight: normal;
 }
 
@@ -819,13 +819,13 @@ li {
     line-height: 0%;
     margin-bottom: -1em;
     font-size: 1.2vw;
-    color: #966D99;
+    color: #B9A2BE;
 }
 
 .tool {
     line-height: 0%;
     margin-bottom: -0.5em;
-    color: #B52C56;
+    color: #E5C6A7;
 }
 
 #projectContent {
@@ -869,10 +869,10 @@ div.categoryCaption {
     right: 0;
     height: 3vw;
     width: 17vw;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     font-family: 'ApercuMedium';
     font-size: 1.8vw;
-    color: #B52C56;
+    color: #E5C6A7;
     font-weight: normal;
     text-align: center;
     padding: 1.25vw 1.5vw 1.25vw 1.5vw;
@@ -891,7 +891,7 @@ div.categoryCaption {
 
 .category:hover,
 .category:focus {
-    border: 5px double #B52C56;
+    border: 5px double #E5C6A7;
     object-fit: none;
 }
 
@@ -1092,7 +1092,7 @@ div.categoryCaption {
 
 .right-content h2 {
     font-size: calc(1em * 0.9);
-    color: #E5E5E5;
+    color: #222656;
     margin: 0.1vw;
     text-align: right;
 }
@@ -1112,7 +1112,7 @@ div.categoryCaption {
     height: 0.8vw;
     vertical-align: middle;
     fill: none;
-    stroke: #E5E5E5;
+    stroke: #222656;
     stroke-linecap: butt;
     stroke-linejoin: round;
     stroke-width: 85px;
@@ -1138,7 +1138,7 @@ div.categoryCaption {
 
 .arrowcontent p {
     font-size: calc(1em * 0.8);
-    color: #E5E5E5;
+    color: #222656;
     margin-top: 0px;
     margin-bottom: 5px;
     cursor: pointer;
@@ -1162,7 +1162,7 @@ div.categoryCaption {
 }
 
 .card {
-    background-color: #966D99;
+    background-color: #B9A2BE;
     padding: 0.5vw;
     opacity: 1;
     float: right;
@@ -1174,7 +1174,7 @@ div.categoryCaption {
 }
 
 .card:hover {
-    background-color: #B52C56;
+    background-color: #E5C6A7;
 
 }
 
@@ -1200,8 +1200,8 @@ div.categoryCaption {
     position: absolute;
     width: 15px;
     height: 15px;
-    background-color: #966D99;
-    border: 2px solid #301540;
+    background-color: #B9A2BE;
+    border: 2px solid #DF6510;
     border-radius: 4px;
 }
 
@@ -1232,7 +1232,7 @@ div.categoryCaption {
 .eye {
     width: 35px;
     height: 35px;
-    fill: #B52C56;
+    fill: #E5C6A7;
     transition: all 0.5s ease;
     /* Smooth transition for the roll out */
 }
@@ -1253,8 +1253,8 @@ div.categoryCaption {
     margin-bottom: 15px;
     height: 16px;
     width: 16px;
-    background-color: #301540;
-    border: 2px solid #B52C56;
+    background-color: #DF6510;
+    border: 2px solid #E5C6A7;
     border-radius: 5px;
     pointer-events: none;
     /* Disable click events initially */
@@ -1271,8 +1271,8 @@ div.categoryCaption {
 }
 
 .rolledOut .themeButton.D:hover {
-    -webkit-box-shadow: 0 0 5px 2px #B52C56;
-    box-shadow: 0 0 4px 2px #B52C56;
+    -webkit-box-shadow: 0 0 5px 2px #E5C6A7;
+    box-shadow: 0 0 4px 2px #E5C6A7;
 }
 
 .rolledOut .themeButton.O:hover {
@@ -1327,8 +1327,8 @@ div.categoryCaption {
 
 
 #themeButtonsContainer .themeButton.D {
-    background-color: #E5E5E5;
-    border: 2px solid #966D99;
+    background-color: #222656;
+    border: 2px solid #B9A2BE;
     transform: translateX(-50px);
 }
 
@@ -1401,7 +1401,7 @@ div.categoryCaption {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(48, 21, 64, 0.95);
+    background-color: rgba(223, 101, 16, 0.95);
     z-index: 9999;
     text-align: center;
     overflow: auto;
@@ -1450,20 +1450,20 @@ div.categoryCaption {
 }
 
 #lightbox-gallery-caption h1 {
-    color: #966D99;
+    color: #B9A2BE;
 }
 
 #lightbox-gallery-caption h2 {
-    color: #B52C56;
+    color: #E5C6A7;
 }
 
 #lightbox-arrow-content p {
     font-family: 'ApercuLight';
-    color: #E5E5E5;
+    color: #222656;
 }
 
 #lightbox-caption {
-    color: #e5e5e5;
+    color: #222656;
     font-size: 16px;
     margin-top: 10px;
 }
@@ -1489,7 +1489,7 @@ div.categoryCaption {
     margin-bottom: 3px;
     position: relative;
 
-    background-color: #301540;
+    background-color: #DF6510;
     border-radius: 1px;
 
     z-index: 1;
@@ -1517,7 +1517,7 @@ div.categoryCaption {
     display: flex;
     justify-content: center;
     cursor: pointer;
-    background-color: #966D99;
+    background-color: #B9A2BE;
     border: none;
     width: 43px;
     height: 43px;
@@ -1536,7 +1536,7 @@ div.categoryCaption {
     height: 16px;
 
     fill: none;
-    stroke: #301540;
+    stroke: #DF6510;
     stroke-linecap: butt;
     stroke-linejoin: round;
     stroke-width: 100px;
@@ -1563,7 +1563,7 @@ div.categoryCaption {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(150, 109, 153, 0.6);
+    background-color: rgba(185, 162, 190, 0.6);
     padding: 5px 0;
     overflow: hidden;
 
@@ -1641,7 +1641,7 @@ div.categoryCaption {
     p {
         font-family: 'ApercuRegular';
         font-size: 15px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
     }
 }
@@ -1652,7 +1652,7 @@ div.categoryCaption {
     .bd h1 {
         font-family: 'ApercuBold';
         font-size: 37px;
-        color: #301540;
+        color: #DF6510;
         font-weight: normal;
         align-self: flex-end;
     }
@@ -1663,7 +1663,7 @@ div.categoryCaption {
     .cubebuttons h2 {
         font-family: 'ApercuMono';
         font-size: 25px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
 
     }
@@ -1671,14 +1671,14 @@ div.categoryCaption {
     h3 {
         font-family: 'ApercuMedium';
         font-size: 27px;
-        color: #301540;
+        color: #DF6510;
         font-weight: normal;
     }
 
     h4 {
         font-family: 'ApercuMono';
         font-size: 13px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
     }
 
@@ -1690,7 +1690,7 @@ div.categoryCaption {
         left: 180px;
         width: 100%;
         height: 10px;
-        background-color: #966D99;
+        background-color: #B9A2BE;
         margin: 3px 0;
     }
 
@@ -1698,20 +1698,20 @@ div.categoryCaption {
         height: 712px;
         width: 1248px;
         margin: auto auto;
-        background-color: #E5E5E5;
+        background-color: #222656;
         position: relative;
 
 
     }
 
     #dc {
-        border-right: solid #966D99;
+        border-right: solid #B9A2BE;
     }
 
     .expbar {
         width: 30px;
         height: 5px;
-        background-color: #966D99;
+        background-color: #B9A2BE;
         margin: 3px 0;
         transition: 0.4s;
     }
@@ -1719,7 +1719,7 @@ div.categoryCaption {
     .expTime {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         line-height: 50%;
     }
@@ -1727,7 +1727,7 @@ div.categoryCaption {
     .expRole {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #301540;
+        color: #DF6510;
         font-weight: normal;
         line-height: 0%;
 
@@ -1736,7 +1736,7 @@ div.categoryCaption {
     .expPlace {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         line-height: 50%;
     }
@@ -1744,7 +1744,7 @@ div.categoryCaption {
     .expPlaceB {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         line-height: 50%;
         text-decoration: none;
@@ -1753,7 +1753,7 @@ div.categoryCaption {
     .expTimeB {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         line-height: 50%;
         text-decoration: none;
@@ -1762,7 +1762,7 @@ div.categoryCaption {
     li {
         font-family: 'ApercuRegular';
         font-size: 17px;
-        color: #301540;
+        color: #DF6510;
         font-weight: normal;
     }
 
@@ -1776,13 +1776,13 @@ div.categoryCaption {
         line-height: 0%;
         margin-bottom: -0.8em;
         font-size: 13.5px;
-        color: #966D99;
+        color: #B9A2BE;
     }
 
     .tool {
         line-height: 0%;
         margin-bottom: -0.5em;
-        color: #B52C56;
+        color: #E5C6A7;
     }
 
     .projGallery {
@@ -1815,7 +1815,7 @@ div.categoryCaption {
         background-color: #f1f1f1;
         min-width: 190px;
         overflow: auto;
-        box-shadow: 0px 8px 16px 0px #B52C56;
+        box-shadow: 0px 8px 16px 0px #E5C6A7;
         z-index: 1;
         left: 55px;
         top: 5px;
@@ -1824,7 +1824,7 @@ div.categoryCaption {
     .dropdown-content a {
         font-family: 'ApercuMono';
         font-size: 20px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         padding: 13px 0vw 13px 13px;
         text-decoration: none;
@@ -1832,7 +1832,7 @@ div.categoryCaption {
     }
 
     .dropdown a:hover {
-        background-color: #966D99;
+        background-color: #B9A2BE;
     } */
 
     .show {
@@ -1868,10 +1868,10 @@ div.categoryCaption {
         right: 0;
         height: 42.6px;
         width: 242px;
-        background-color: #966D99;
+        background-color: #B9A2BE;
         font-family: 'ApercuMedium';
         font-size: 26px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         text-align: center;
         padding: 17.75px 21.3px 17.75px 21.3px;
@@ -2030,7 +2030,7 @@ div.categoryCaption {
     p {
         font-family: 'ApercuRegular';
         font-size: 10px;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
     }
 
@@ -2087,12 +2087,12 @@ div.categoryCaption {
     }
 
     .Backbutton:hover {
-        box-shadow: 0px 1.6vw 3.2vw 0px #B52C56;
+        box-shadow: 0px 1.6vw 3.2vw 0px #E5C6A7;
     }
 
     .Backbutton:focus {
-        background-color: #B52C56;
-        color: #e5e5e5;
+        background-color: #E5C6A7;
+        color: #222656;
     }
  {
         padding: 1.1vw 1.1vw;
@@ -2104,7 +2104,7 @@ div.categoryCaption {
     }
 
     .buttonA:hover {
-        box-shadow: 0px 1.6vw 3.2vw 0px #B52C56;
+        box-shadow: 0px 1.6vw 3.2vw 0px #E5C6A7;
     }
  */
 
@@ -2194,12 +2194,12 @@ div.categoryCaption {
     }
 
     .button:hover {
-        box-shadow: 0px 5.6px 11.2px 0px #B52C56;
+        box-shadow: 0px 5.6px 11.2px 0px #E5C6A7;
     }
 
     .button:focus {
-        background-color: #B52C56;
-        color: #966D99;
+        background-color: #E5C6A7;
+        color: #B9A2BE;
     } */
 
     /* .buttonA {
@@ -2211,7 +2211,7 @@ div.categoryCaption {
     }
 
     .buttonA:hover {
-        box-shadow: 0px 5.6px 11.2px 0px #B52C56;
+        box-shadow: 0px 5.6px 11.2px 0px #E5C6A7;
     } */
 
 
@@ -2251,7 +2251,7 @@ div.categoryCaption {
     .bd h1 {
         font-family: 'ApercuBold';
         font-size: 5vh;
-        color: #301540;
+        color: #DF6510;
         font-weight: normal;
     }
 
@@ -2259,7 +2259,7 @@ div.categoryCaption {
     .cubebuttons h2 {
         font-family: 'ApercuMono';
         font-size: 3.2vh;
-        color: #B52C56;
+        color: #E5C6A7;
         font-weight: normal;
         bottom: 0;
 

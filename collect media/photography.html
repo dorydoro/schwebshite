@@ -30,7 +30,6 @@
         <a href="../myexperience.html"><li>My experience</li></a>
         <a href="../myprojects.html"><li>My Projects</li></a>
         <a href="../connect.html"><li>Connect</li></a>
-        <a href="https://www.linkedin.com/in/doroteab/" target="_blank"><li>LinkedIn</li></a>
      
         <div class="cubepointer"><p> Click on this cube to change themes!</p></div>
 
@@ -1008,29 +1007,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-  
 </script>
 
 
-  <script>
-
-
-    function toggleTheme() {
-      // Obtains an array of all <link>
-      // elements.
-      // Select your element using indexing.
-      var theme = document.getElementsByTagName('link')[0];
-
-      // Change the value of href attribute 
-      // to change the css sheet.
-      if (theme.getAttribute('href') == '../style.css') {
-        theme.setAttribute('href', '../styleAccess.css');
-      } else {
-        theme.setAttribute('href', '../style.css');
-      }
-    }
-  </script>
+  
 
   
 
@@ -1159,11 +1139,6 @@ function refreshPinning() {
   setupDynamicPinning("right-column-2", "left-column-2");
   setupInitialPinning("right-column-2", "left-column-2");
 </script>
-
-
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

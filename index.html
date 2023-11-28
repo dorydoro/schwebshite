@@ -7,68 +7,49 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
   
-  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+  <link id="theme" rel="stylesheet" type="text/css" href="./styleW.css" />
 
   <title>Dorotea Bajic</title>
 
-
-
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn" id="navigationmenu" onclick="toggleMenuVisibility()" aria-haspopup="true" aria-expanded="false">  <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="index.html">home</a>
-      <a href="aboutme.html">about me</a>
-      <a href="myexperience.html">my experience</a>
-      <a href="myprojects.html">my projects</a>
-      <a href="connect.html">connect</a>
+  <nav role="navigation">
+    <div id="menuToggle">
+  
+      <input type="checkbox"/>
+      <div class="dropbtn">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </div>
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    
-    </script>
+      
+      <ul id="menu">
+      
+        <a href="../index.html"><li>Home</li></a>
+        <a href="../aboutme.html"><li>About Me</li></a>
+        <a href="../myexperience.html"><li>My experience</li></a>
+        <a href="../myprojects.html"><li>My Projects</li></a>
+        <a href="../connect.html"><li>Connect</li></a>
+     
+        <div class="cubepointer"><p> Click on this cube to change themes!</p></div>
 
-<script>
-  window.onload = function() {
-      var anchors = document.getElementsByTagName('*');
-      for(var i = 0; i < anchors.length; i++) {
-          var anchor = anchors[i];
-          anchor.onclick = function() {
-              code = this.getAttribute('goBack');
-              eval(code);   
-          }
-      }
-  }
-  </script>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
 
 </head>
 <body style="    max-width: 100%;
 max-height: 100%;
-overflow-y: hidden;
+
 overflow-x: hidden;">
   <!-- Our wrapper -->
   <div id="bm"> 
-  
+    <div id="bmLottie"></div> 
+    <div id="productionBox" >
+      <object type="image/svg+xml" data="productionbox1-01.svg" id="mySVG" ></object>
+    </div>
   <div id="bmOver">
 
     <a href="aboutme.html">
@@ -76,14 +57,14 @@ overflow-x: hidden;">
     <h2 class="h2h"><br><br><br><br>about me&thinsp;</h2>
   </div></a>
   
-  <div id="cb"></div>
+  <div id="cb" style="cursor: pointer;" title="Click here to see a production carton" ></div>
   <div id="cc">
     <img id="selfie" src="Selfie2.png" alt="headshot of Dorotea closed lip smile">
     <img id="selfieUnder" src="Selfie1.png" alt="headshot of Dorotea smile with teeth">
   </div>
 
   <a href="myexperience.html">
-  <div id="dc" class="cubebuttons">
+  <div id="dc" class="cubebuttons" >
     <h2 class="h2h"><br><br><br>my&thinsp;<br>experience&thinsp;</h2>
   </div></a>
 
@@ -93,18 +74,21 @@ overflow-x: hidden;">
   </div></a>
 
   <a href="connect.html">
-  <div id="ed" class="cubebuttons">
+  <div id="ed" class="cubebuttons" style="z-index: 8">
     <h2 class="h2h"><br><br><br><br>connect&thinsp;</h2>
   </div></a>
 
 
   <div id="bd" class="bd">
+    <br>
     <h1 > Hello, <br>I'm Dorotea Bajic</h1>
     <h2>this is my online portfolio.</h2>
   </div>
   
- </div> 
+ 
 </div>
+</div>
+
   
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
@@ -112,98 +96,465 @@ overflow-x: hidden;">
 
 
     var animation = bodymovin.loadAnimation({
-      container: document.getElementById('bm'),
+      container: document.getElementById('bmLottie'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'data6.json'
+      
+      path: 'boxunfolding.json'
     })
 
-    lottie.setSpeed(2.2) 
-
-    animation.goToAndStop(10, true)
+    lottie.setSpeed(1.5) 
     
-   // animation.stop()
-   // animation.addEventListener('complete', function(){
-   // animation.destroy()
-   // })
+    
+
   </script>
 
-  <div id="OverAnim">
-    
-  </div>
- 
+
+   
 
 
+  <button class="buttonA" onclick="toggleThemeRollout()" ondblclick="toggleRandomTheme()">
+    <div id="cube" class="spinningObject">
+       <div class="face cubefront"></div>
+       <div class="face cubeback"></div>
+       <div class="face cuberight"></div>
+       <div class="face cubeleft"></div>
+       <div class="face cubetop"></div>
+       <div class="face cubebottom"></div>
+   </div></button>
+   
+   <div id="themeButtonsContainer" >
+     <button class="themeButton D" data-translate-x="-50" onclick="changeTheme('../styleD.css')"></button>
+     <button class="themeButton O" data-translate-x="-66" onclick="changeTheme('../styleO.css')"></button>
+     <button class="themeButton R" data-translate-x="-82" onclick="changeTheme('../styleR.css')"></button>
+     <button class="themeButton T" data-translate-x="-98" onclick="changeTheme('../styleT.css')"></button>
+     <button class="themeButton E" data-translate-x="-114" onclick="changeTheme('../styleE.css')"></button>
+     <button class="themeButton A" data-translate-x="-130" onclick="changeTheme('../styleA.css')"></button>
+     <button class="themeButton B" data-translate-x="-146" onclick="changeTheme('../styleB.css')"></button>
+     <button class="themeButton J" data-translate-x="-162" onclick="changeTheme('../styleJ.css')"></button>
+     <button class="themeButton I" data-translate-x="-178" onclick="changeTheme('../styleI.css')"></button>
+     <button class="themeButton C" data-translate-x="-194" onclick="changeTheme('../styleC.css')"></button>
+     <button class="themeButton W" data-translate-x="-210" onclick="changeTheme('../styleW.css')"></button>
+   </div>
+   
+   
+   <div id="overlay">
+     <div class="otext" id="overlay-message"></div>
+     <audio id="background-music" loop>
+       <source src="the-salami-lid-wont-fit.mp3" type="audio/mpeg">
+   </audio>
+   
+   </div> 
 
+   <div id="aspectRatioWarning" style="display: none;"><h2>Sorry, the production lines might not fit unless you resize the window or zoom out</h2></div>
 
+   
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+   <script>
+   
+    function toggleThemeRollout() {
+        const container = document.getElementById('themeButtonsContainer');
+        const isRolledOut = container.classList.contains('rolledOut');
+        console.log("Before toggle: isRolledOut =", isRolledOut);
 
-  </div>
-  <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye" alt="eye icon to change colour themes"></button>
-<button class="button"  id="backButton">back</button>
+        container.classList.toggle('rolledOut');
+        console.log("After toggle: isRolledOut =", container.classList.contains('rolledOut'));
 
-
-<script>
-
-const backButton = document.getElementById('backButton');
-let clickCount = 0;
-
-backButton.addEventListener('click', () => {
-  if (clickCount === 0) {
-    if (document.referrer.includes(window.location.hostname)) {
-      history.go(-1);
-    } else {
-      backButton.textContent = "This is already where you started, are you sure you want to leave this site?";
-      clickCount++;
+        document.querySelectorAll('.themeButton').forEach((button, index) => {
+            if (isRolledOut) {
+                // Stack the buttons to their initial positions
+                const initialX = button.getAttribute('data-translate-x');
+                console.log("Stacking button", index, "to", initialX);
+                button.style.transform = `translateX(${initialX}px)`;
+            } else {
+                // Roll out the buttons
+                console.log("Rolling out button", index);
+                button.style.transform = `translateX(5px)`; // Adjust the multiplier as needed for spacing
+            }
+        });
     }
-  } else if (clickCount === 1) {
-    backButton.textContent = "Really?";
-    clickCount++;
-  } else if (clickCount === 2) {
-    backButton.textContent = "Fine. I'll miss you </3";
-    clickCount++;
-    setTimeout(() => {
-      window.location.href = "https://www.seznam.cz"; // Redirect after half a second
-    }, 500);
-  }
+
+    function toggleRandomTheme() {
+        const themes = ['styleD.css', 'styleO.css', 'styleR.css', 'styleT.css', 'styleE.css', 'styleA.css', 'styleB.css', 'styleJ.css', 'styleI.css', 'styleC.css', 'styleW.css']; // ... other themes
+        const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+        console.log("Random theme selected:", randomTheme);
+        changeTheme(randomTheme);
+    }
+
+    function changeTheme(themePath) {
+        var theme = document.getElementsByTagName('link')[0];
+        console.log("Changing theme to:", themePath);
+        theme.setAttribute('href', themePath);
+    }
+
+</script>
+
+   
+   <script>
+   
+   const overlayElement = document.getElementById("overlay");
+     const overlayMessageElement = document.getElementById("overlay-message");
+     const backgroundMusic = document.getElementById("background-music");
+     
+     const smallHeight = window.matchMedia("(max-height: 200px)");
+     const smallWidth = window.matchMedia("(max-width: 250px)");
+     
+     smallHeight.addListener(handleDeviceChange);
+     smallWidth.addListener(handleDeviceChange);
+     
+     function handleDeviceChange() {
+       if (smallHeight.matches) {
+         showOverlay("pls use a taller window ur screen is so smol", "short");
+       } else if (smallWidth.matches) {
+         showOverlay("pls use a wider window ur screen is so smol", "skinny");
+       } else {
+         hideOverlay();
+       }
+     }
+     
+     function showOverlay(message, className) {
+       overlayElement.style.display = "block";
+       overlayMessageElement.textContent = message;
+       overlayElement.classList.remove("short", "skinny");
+       overlayElement.classList.add(className);
+       backgroundMusic.play();
+     }
+     
+     function hideOverlay() {
+       overlayElement.style.display = "none";
+       backgroundMusic.pause();
+       backgroundMusic.currentTime = 0; // Reset the audio to the start
+     }
+     
+     // Initial check
+     handleDeviceChange();
+     
+     
+   </script>
+   
+   
+   
+     <button class="button" id="backButton">
+       <svg id="backButtonSVG" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="none" viewBox="0 0 24 24">
+         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 18h3.75a5.25 5.25 0 100-10.5H5M7.5 4L4 7.5 7.5 11"/>
+       </svg>
+       <span id="messageText" style="display: none;">This is where you started. <br> Are you sure you want to leave?</span>
+   </button>
+     
+   <script>
+     const cube = document.getElementById('cube');
+   
+   window.addEventListener('scroll', () => {
+       const rotation = window.pageYOffset * 0.1;
+       cube.style.transform = `rotateX(${40-(2*rotation)}deg) rotateY(${0-(1.5*rotation)}deg) rotateZ(${70-(0.7*rotation)}deg)`;
+       
+   });
+   let resizeTimer;
+let rotationIncrement = 5; // Degrees to rotate on each resize event
+
+window.addEventListener('resize', function() {
+  const objects = document.querySelectorAll('.spinningObject');
+
+  clearTimeout(resizeTimer);
+
+  objects.forEach(function(object) {
+    const currentTransform = getTransformComponents(object.style.transform);
+    const newYRotation = (parseFloat(currentTransform.rotateY) + rotationIncrement) % 160;
+
+    object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}deg) rotateZ(${currentTransform.rotateZ})`;
+  });
+
+  resizeTimer = setTimeout(function() {
+    // Reset the rotation to the last value after resizing stops
+    objects.forEach(function(object) {
+      const currentTransform = getTransformComponents(object.style.transform);
+      object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}) rotateZ(${currentTransform.rotateZ})`;
+    });
+  }, 150);
 });
 
-function toggleTheme() {
-          // Obtains an array of all <link>
-          // elements.
-          // Select your element using indexing.
-          var theme = document.getElementsByTagName('link')[0];
+function getTransformComponents(transformString) {
+  const defaultTransform = { rotateX: '40deg', rotateY: '0deg', rotateZ: '70deg' };
+  if (!transformString || transformString === 'none') return defaultTransform;
 
-          // Change the value of href attribute 
-          // to change the css sheet.
-          if (theme.getAttribute('href') == './style.css') {
-              theme.setAttribute('href', './styleAccess.css');
-          } else {
-              theme.setAttribute('href', './style.css');
-          }
-      }
-</script> 
+  const transformComponents = transformString.match(/rotate[XYZ]\(([^)]+)\)/g);
+  const transform = { ...defaultTransform };
+
+  transformComponents.forEach((component) => {
+    const match = component.match(/rotate([XYZ])\(([^)]+)\)/);
+    if (match && match[1] && match[2]) {
+      transform[`rotate${match[1]}`] = match[2];
+    }
+  });
+
+  return transform;
+}
 
 
-<div id="overlay">
-  <div id="otext">pls resize window wider
-    ur screen is so smol</div>
-</div> 
+   </script>
+   
+   
+   
+   <script>
+   document.addEventListener("DOMContentLoaded", function() {
+       const backButton = document.getElementById("backButton");
+       const messageText = document.getElementById("messageText");
+       const svg = document.getElementById("backButtonSVG");
+       let clicks = 0;
+   
+       console.log("Initial state:", {
+           backButtonVisible: backButton.style.display,
+           messageTextVisible: messageText.style.display,
+           svgVisible: svg.style.display
+       });
+   
+       backButton.addEventListener("click", () => {
+           clicks++;
+           console.log("Click count:", clicks);
+   
+           try {
+               const referrer = document.referrer;
+               const currentDomain = window.location.hostname;
+               // Ensure referrer is a non-empty string before constructing URL
+               const referrerDomain = referrer ? new URL(referrer).hostname : '';
+   
+               console.log("Referrer Domain:", referrerDomain, "Current Domain:", currentDomain);
+   
+               if (referrerDomain !== currentDomain) {
+                   svg.style.display = "none";
+                   messageText.style.display = "inline";
+                   backButton.classList.add("messageShown");
+                   console.log("Condition met: Different domain. SVG hidden, message shown.");
+               } else {
+                   history.back();
+                   console.log("Condition met: Same domain. Going back in history.");
+               }
+           } catch (error) {
+               console.error("Error processing URL:", error);
+               // Handle the error or fallback behavior here if needed
+           }
+   
+           if (clicks === 2) {
+               messageText.innerText = "Really?";
+               console.log("Message changed to 'Really?'");
+           } else if (clicks === 3) {
+               messageText.innerText = "Fine.";
+               backButton.disabled = true;
+               console.log("Message changed to 'Fine.', button disabled.");
+               setTimeout(() => {
+                   window.location.href = "https://www.seznam.cz";
+                   console.log("Redirecting to seznam.cz");
+               }, 1000);
+           }
+       });
+   
+       window.addEventListener("popstate", () => {
+           clicks = 0;
+           messageText.innerText = "This is where you started. <br> Are you sure you want to leave?";
+           messageText.style.display = "none";
+           svg.style.display = "inline";
+           backButton.classList.remove("messageShown");
+           console.log("popstate event: Resetting to initial state.");
+       });
+   });
+   
+   </script>
+   
+   
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('menuToggle').querySelector('input[type="checkbox"]').checked = false;
+  });
+</script>
 
 <script>
 
-   const outputElement = document.getElementById("overlay");
-    const smallDevice = window.matchMedia("(max-width: 170px)");
-    smallDevice.addListener(handleDeviceChange);
 
-    function handleDeviceChange(e) {
-      if (e.matches) document.getElementById("overlay").style.display = "block";
-      else document.getElementById("overlay").style.display = "none";
+
+document.addEventListener('DOMContentLoaded', function() {
+    var productionBox = document.getElementById('productionBox');
+    var bd = document.getElementById('bd');
+    var divs = document.querySelectorAll('#bc, #cb, #cc, #dc, #ec, #ed');
+    var svgObject = document.getElementById('mySVG'); // SVG object
+
+    function checkAspectRatioAndToggleMessage() {
+    var aspectRatioThreshold = 10 / 7;
+    var productionBox = document.getElementById('productionBox');
+    var warningMessage = document.getElementById('aspectRatioWarning');
+    var zoomLevel = window.devicePixelRatio || 1; // Fallback to 1 if devicePixelRatio is not available
+
+    if ((window.innerWidth / window.innerHeight) > aspectRatioThreshold 
+        && productionBox.style.display === 'block' 
+        && zoomLevel >= 1) {
+      warningMessage.style.display = 'block';
+    } else {
+      warningMessage.style.display = 'none';
     }
-    handleDeviceChange(smallDevice);
-  </script>
+  }
 
+  // Call the function on initial load, on window resize, and when showing/hiding the productionBox
+  checkAspectRatioAndToggleMessage();
+  window.addEventListener('resize', checkAspectRatioAndToggleMessage);
+
+    function showProductionBox() {
+        console.log("Showing productionBox");
+        productionBox.style.display = 'block';
+        bd.style.opacity = '0';
+        divs.forEach(div => {
+            div.style.borderColor = '#584036';
+            checkAspectRatioAndToggleMessage();
+        });
+        
+    }
+
+    function hideProductionBox() {
+        console.log("Hiding productionBox");
+        productionBox.style.display = 'none';
+        bd.style.opacity = '1';
+        divs.forEach(div => {
+          
+            div.style.borderColor = '#889E5D';
+            checkAspectRatioAndToggleMessage();
+        })
+        
+        // function updateDivColor() {
+        //   var div = document.querySelector('.cc');
+        //   div.style.backgroundColor = '#889E5D';
+        // }
+        
+        ;
+    }
+
+    // Event listener for #cb
+    document.getElementById('cb').addEventListener('click', function(event) {
+        console.log("Clicked #cb");
+        event.stopPropagation(); // Prevent click from bubbling to document
+        showProductionBox();
+    });
+
+    // Event listener for productionBox
+    productionBox.addEventListener('click', function(event) {
+        console.log("Clicked inside productionBox");
+        hideProductionBox();
+
+        
+    });
+
+     
+
+
+    // Event listener for the SVG object inside productionBox
+    svgObject.addEventListener('load', function() {
+        var svgDoc = svgObject.contentDocument;
+        if (svgDoc) {
+            svgDoc.addEventListener('click', function(event) {
+                console.log("Clicked inside SVG");
+                hideProductionBox();
+            });
+        }
+    });
+
+    // Event listener for document
+    document.addEventListener('click', function(event) {
+        console.log("Clicked document");
+        if (productionBox.style.display === 'block' && event.target !== productionBox && event.target !== document.getElementById('cb')) {
+            hideProductionBox();
+        }
+    });
+
+   
+    
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateSVGContent();
+  window.addEventListener('resize', updateSVGContent);
+});
+
+function updateSVGContent() {
+  var svgObject = document.getElementById('mySVG');
+  var targetDiv = document.getElementById('cc');
+  var targetWidth = targetDiv ? targetDiv.offsetWidth : 0;
+
+  if (svgObject.contentDocument) {
+    updateSVGStyles(svgObject.contentDocument, targetWidth);
+    updateSVGText(svgObject.contentDocument, targetWidth);
+  } else {
+    svgObject.addEventListener('load', function() {
+      updateSVGStyles(svgObject.contentDocument, targetWidth);
+      updateSVGText(svgObject.contentDocument, targetWidth);
+    });
+  }
+}
+
+function updateSVGText(svgDoc, targetWidth) {
+  // Define the settings for groups that need text updates
+  var textSettings = {
+    '#_100px': 0.50,
+    '#_50px': 0.25,
+    '#_30px': 0.15,
+    '#_200px': 1.00,
+    '#_330px': 1.65,
+    '#_430px': 2.15,
+    // Add more groups if needed
+  };
+
+  Object.keys(textSettings).forEach(groupId => {
+    var newText = (targetWidth * textSettings[groupId]).toFixed(0) + 'mm';
+    var textElements = svgDoc.querySelectorAll(groupId + ' text');
+    textElements.forEach(element => {
+      element.textContent = newText;
+    });
+  });
+}
+
+function updateSVGStyles(svgDoc, targetWidth) {
+  // Define selectors for different element types
+  var selectors = {
+    textSelector: 'text',
+    pathSelector: 'path',
+    lineSelector: 'line',
+    polylineSelector: 'polyline'
+    // Add more if needed
+  };
+
+  Object.keys(selectors).forEach(key => {
+    var elements = svgDoc.querySelectorAll(selectors[key]);
+    elements.forEach(element => {
+      applyColorStyles(element);
+    });
+  });
+}
+
+function applyColorStyles(element) {
+  var computedStyle = getComputedStyle(element);
+
+  var textColor = computedStyle.getPropertyValue('--text-color').trim();
+  var fillColor = computedStyle.getPropertyValue('--fill-color').trim();
+  var strokeColor = computedStyle.getPropertyValue('--stroke-color').trim();
+  var polylineColor = computedStyle.getPropertyValue('--polyline-color').trim();
+
+
+  if (textColor) element.style.fill = textColor;
+  if (fillColor) element.style.fill = fillColor;
+  if (strokeColor) element.style.stroke = strokeColor;
+  if (polylineColor) element.style.stroke = polylineColor;
+
+
+}
+
+
+
+
+
+
+</script>
 </body>
 
 <footer></footer>

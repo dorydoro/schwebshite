@@ -93,8 +93,8 @@ themeW {
     CubeColour:  #889E5D; 
     Header:  #F49F4F; 
     Text:  #F8E6B8; 
-    Bleed: #3A627D
-    Varnish: #65A6AB
+    Bleed: #3A627D;
+    Varnish: #65A6AB;
     background-color: rgba(244, 159, 79, 0.95);
     background-color: rgba(136, 158, 93, 0.6);
 }

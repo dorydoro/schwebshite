@@ -1,112 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width" />
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+  <link id="theme" rel="stylesheet" type="text/css" href="./styleW.css" />
 
   <title>Connect</title>
 
-  <style>
 
-  </style>
 
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="index.html">home</a>
-      <a href="aboutme.html">about me</a>
-      <a href="myexperience.html">my experience</a>
-      <a href="myprojects.html">my projects</a>
-      <a href="connect.html">connect</a>
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+      <div class="dropbtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="menu">
+
+        <a href="../index.html">
+          <li>Home</li>
+        </a>
+        <a href="../aboutme.html">
+          <li>About Me</li>
+        </a>
+        <a href="../myexperience.html">
+          <li>My experience</li>
+        </a>
+        <a href="../myprojects.html">
+          <li>My Projects</li>
+        </a>
+        <a href="../connect.html">
+          <li>Connect</li>
+        </a>
+
+        <div class="cubepointer">
+          <p> Click on this cube to change themes!</p>
+        </div>
+
+      </ul>
+
     </div>
+  </nav>
+
+
+</head>
+
+<body style="overflow-x:hidden;">
+
+  <div id="pageheader">
+    <a href="../index.html" style="text-decoration: none; ">
+      <h1> Hello, <br>I'm Dorotea Bajic</h1>
+    </a>
+    <div class="bar4"></div>
+    <h2>> <a href="../myprojects.html">connect</a> > 
+    </h2>
   </div>
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
+
+
+
+  <div id="connectContent">
+
+    <h1 style="align-self: flex-end; width: 90%;"> Connect with me!</h1>
+    <p style="align-self: flex-end; width: 80%; margin-top: 0%;">
+      if you have questions unanswered...
+      <br>
+      if you are excited with an idea...
+      <br>
+      if you want to work together...
+    </p>
+
+    <h2 style="align-self: flex-end; width: 65%; color: #889E5D; margin-top: 0.1vw">
+      i enjoy working with the dedicated creatives who make our world so beautiful
+      <br>
+      we can do so much together
+      
+    </h2>
+    <h1 style="align-self: flex-end; width: 57%; ">Lets Talk!</h1>
     
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
+    <p style="align-self: flex-end; width: 50%;margin-top: 0%;">
+      if you use LinkedIn: doroteab
+      <br>
+      if you want to email: dorbajic@gmail.com
+      <br>
+      if you can share my portfolio, click here
+    
+    </p>
+    
+
+   
+    <div class="connectButton">
+    <a href="mailto:?subject=Sharing a Professional Resume
+    &body=I wanted to share this professional resume with you. Please see the attached file."
+    class="connectButtonS">Easy email template</a>
+    <a href="collect media\Bajic Resume Nov 2023.docx" target="_blank"
+    class="connectButtonS">One page resume</a>
+    <a href="collect media\Bajic Resume Oct 2023 Cosmetic.pdf " target="_blank"
+    class="connectButtonS">Full Resume</a>
+    
+      </div>
+    
+
+
+  </div>
+
+
+
+
+
+  <button class="buttonA" onclick="toggleThemeRollout()" ondblclick="toggleRandomTheme()">
+    <div id="cube" class="spinningObject">
+      <div class="face cubefront"></div>
+      <div class="face cubeback"></div>
+      <div class="face cuberight"></div>
+      <div class="face cubeleft"></div>
+      <div class="face cubetop"></div>
+      <div class="face cubebottom"></div>
+    </div>
+  </button>
+
+  <div id="themeButtonsContainer">
+    <button class="themeButton D" data-translate-x="-50" onclick="changeTheme('./styleD.css')"></button>
+    <button class="themeButton O" data-translate-x="-66" onclick="changeTheme('./styleO.css')"></button>
+    <button class="themeButton R" data-translate-x="-82" onclick="changeTheme('./styleR.css')"></button>
+    <button class="themeButton T" data-translate-x="-98" onclick="changeTheme('./styleT.css')"></button>
+    <button class="themeButton E" data-translate-x="-114" onclick="changeTheme('./styleE.css')"></button>
+    <button class="themeButton A" data-translate-x="-130" onclick="changeTheme('./styleA.css')"></button>
+    <button class="themeButton B" data-translate-x="-146" onclick="changeTheme('./styleB.css')"></button>
+    <button class="themeButton J" data-translate-x="-162" onclick="changeTheme('./styleJ.css')"></button>
+    <button class="themeButton I" data-translate-x="-178" onclick="changeTheme('./styleI.css')"></button>
+    <button class="themeButton C" data-translate-x="-194" onclick="changeTheme('./styleC.css')"></button>
+    <button class="themeButton W" data-translate-x="-210" onclick="changeTheme('./styleW.css')"></button>
+  </div>
+
+
+  <div id="overlay">
+    <div class="otext" id="overlay-message"></div>
+    <audio id="background-music" loop>
+      <source src="the-salami-lid-wont-fit.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+
+  <script>
+
+    function adjustButtonSize() {
+      if (window.innerWidth > 500) { // Check if window width is greater than 500px
+        var menuItem = document.querySelector('.menu-item');
+        var button = document.querySelector('.menu-button');
+
+        if (menuItem && button) {
+          var height = menuItem.offsetHeight; // Get the height of the menu item
+          button.style.width = ((height * 3) / 2) + 'px'; // Set the width of the button
+          button.style.height = height + 'px'; // Set the height of the button
+        }
+      } else {
+        var button = document.querySelector('.menu-button');
+        if (button) {
+          button.style.width = ''; // Reset the width of the button
+          button.style.height = ''; // Reset the height of the button
         }
       }
     }
-    </script>
-</head>
-<body>
- 
-  <div id="pageheader">
-    <a href="../index.html" style="text-decoration: none;"><h1 > Hello, <br>I'm Dorotea Bajic</h1></a>
-    <div class="bar4"></div>
-    <h2>this is how you can connect with me.</h2>
-    </div>
-    <br>&thinsp;<br>
- 
-    <div id="aboutContent">
-      <div id="connectimg">
-        <img id="selfie1" src="Selfie2.png">
-        <img id="selfie1Under" src="Selfie1.png">
-      </div>
-      <br>&thinsp;<br>
-      <p class="connecttext"> You can find me on LinkedIn <a href="https://www.linkedin.com/in/doroteab/" target="_blank" rel="noopener noreferrer">
-        (here)</a> or you can email me <a href="mailto:dorbajic@gmail.com">(here)</a> at dorbajic@gmail.com
-        <br>&thinsp;<br>
-        Looking forward to hearing from you!</p>
-      </div>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-    
-    
-    
-    
-    
-    
-      </div>
-      <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
-    <button class="button" onclick="goBack()">back</button>
-    
-    
-    <script>
-    function goBack() {
-    window.history.back();
+
+    // Run the function on window load and resize
+    window.onload = adjustButtonSize;
+    window.onresize = adjustButtonSize;
+
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+    function toggleThemeRollout() {
+      const container = document.getElementById('themeButtonsContainer');
+      const isRolledOut = container.classList.contains('rolledOut');
+      console.log("Before toggle: isRolledOut =", isRolledOut);
+
+      container.classList.toggle('rolledOut');
+      console.log("After toggle: isRolledOut =", container.classList.contains('rolledOut'));
+
+      document.querySelectorAll('.themeButton').forEach((button, index) => {
+        if (isRolledOut) {
+          // Stack the buttons to their initial positions
+          const initialX = button.getAttribute('data-translate-x');
+          console.log("Stacking button", index, "to", initialX);
+          button.style.transform = `translateX(${initialX}px)`;
+        } else {
+          // Roll out the buttons
+          console.log("Rolling out button", index);
+          button.style.transform = `translateX(5px)`; // Adjust the multiplier as needed for spacing
+        }
+      });
     }
-    
-    function toggleTheme() {
-              // Obtains an array of all <link>
-              // elements.
-              // Select your element using indexing.
-              var theme = document.getElementsByTagName('link')[0];
-    
-              // Change the value of href attribute 
-              // to change the css sheet.
-              if (theme.getAttribute('href') == './style.css') {
-                  theme.setAttribute('href', './styleAccess.css');
-              } else {
-                  theme.setAttribute('href', './style.css');
-              }
+
+    function toggleRandomTheme() {
+      const themes = ['styleD.css', 'styleO.css', 'styleR.css', 'styleT.css', 'styleE.css', 'styleA.css', 'styleB.css', 'styleJ.css', 'styleI.css', 'styleC.css', 'styleW.css']; // ... other themes
+      const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+      console.log("Random theme selected:", randomTheme);
+      changeTheme(randomTheme);
+    }
+
+    function changeTheme(themePath) {
+      var theme = document.getElementsByTagName('link')[0];
+      console.log("Changing theme to:", themePath);
+      theme.setAttribute('href', themePath);
+    }
+
+  </script>
+
+
+  <script>
+
+    const overlayElement = document.getElementById("overlay");
+    const overlayMessageElement = document.getElementById("overlay-message");
+    const backgroundMusic = document.getElementById("background-music");
+
+    const smallHeight = window.matchMedia("(max-height: 200px)");
+    const smallWidth = window.matchMedia("(max-width: 250px)");
+
+    smallHeight.addListener(handleDeviceChange);
+    smallWidth.addListener(handleDeviceChange);
+
+    function handleDeviceChange() {
+      if (smallHeight.matches) {
+        showOverlay("pls use a taller window ur screen is so smol", "short");
+      } else if (smallWidth.matches) {
+        showOverlay("pls use a wider window ur screen is so smol", "skinny");
+      } else {
+        hideOverlay();
+      }
+    }
+
+    function showOverlay(message, className) {
+      overlayElement.style.display = "block";
+      overlayMessageElement.textContent = message;
+      overlayElement.classList.remove("short", "skinny");
+      overlayElement.classList.add(className);
+      backgroundMusic.play();
+    }
+
+    function hideOverlay() {
+      overlayElement.style.display = "none";
+      backgroundMusic.pause();
+      backgroundMusic.currentTime = 0; // Reset the audio to the start
+    }
+
+    // Initial check
+    handleDeviceChange();
+
+
+  </script>
+
+
+
+  <button class="button" id="backButton">
+    <svg id="backButtonSVG" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="none"
+      viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M11 18h3.75a5.25 5.25 0 100-10.5H5M7.5 4L4 7.5 7.5 11" />
+    </svg>
+    <span id="messageText" style="display: none;">This is where you started. <br> Are you sure you want to leave?</span>
+  </button>
+
+  <script>
+    const cube = document.getElementById('cube');
+
+    window.addEventListener('scroll', () => {
+      const rotation = window.pageYOffset * 0.1;
+      cube.style.transform = `rotateX(${40 - (2 * rotation)}deg) rotateY(${0 - (1.5 * rotation)}deg) rotateZ(${70 - (0.7 * rotation)}deg)`;
+
+    });
+    let resizeTimer;
+    let rotationIncrement = 5; // Degrees to rotate on each resize event
+
+    window.addEventListener('resize', function () {
+      const objects = document.querySelectorAll('.spinningObject');
+
+      clearTimeout(resizeTimer);
+
+      objects.forEach(function (object) {
+        const currentTransform = getTransformComponents(object.style.transform);
+        const newYRotation = (parseFloat(currentTransform.rotateY) + rotationIncrement) % 160;
+
+        object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}deg) rotateZ(${currentTransform.rotateZ})`;
+      });
+
+      resizeTimer = setTimeout(function () {
+        // Reset the rotation to the last value after resizing stops
+        objects.forEach(function (object) {
+          const currentTransform = getTransformComponents(object.style.transform);
+          object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}) rotateZ(${currentTransform.rotateZ})`;
+        });
+      }, 150);
+    });
+
+    function getTransformComponents(transformString) {
+      const defaultTransform = { rotateX: '40deg', rotateY: '0deg', rotateZ: '70deg' };
+      if (!transformString || transformString === 'none') return defaultTransform;
+
+      const transformComponents = transformString.match(/rotate[XYZ]\(([^)]+)\)/g);
+      const transform = { ...defaultTransform };
+
+      transformComponents.forEach((component) => {
+        const match = component.match(/rotate([XYZ])\(([^)]+)\)/);
+        if (match && match[1] && match[2]) {
+          transform[`rotate${match[1]}`] = match[2];
+        }
+      });
+
+      return transform;
+    }
+
+
+  </script>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const backButton = document.getElementById("backButton");
+      const messageText = document.getElementById("messageText");
+      const svg = document.getElementById("backButtonSVG");
+      let clicks = 0;
+
+      console.log("Initial state:", {
+        backButtonVisible: backButton.style.display,
+        messageTextVisible: messageText.style.display,
+        svgVisible: svg.style.display
+      });
+
+      backButton.addEventListener("click", () => {
+        clicks++;
+        console.log("Click count:", clicks);
+
+        try {
+          const referrer = document.referrer;
+          const currentDomain = window.location.hostname;
+          // Ensure referrer is a non-empty string before constructing URL
+          const referrerDomain = referrer ? new URL(referrer).hostname : '';
+
+          console.log("Referrer Domain:", referrerDomain, "Current Domain:", currentDomain);
+
+          if (referrerDomain !== currentDomain) {
+            svg.style.display = "none";
+            messageText.style.display = "inline";
+            backButton.classList.add("messageShown");
+            console.log("Condition met: Different domain. SVG hidden, message shown.");
+          } else {
+            history.back();
+            console.log("Condition met: Same domain. Going back in history.");
           }
-    </script> 
-    </body>
-    
-    <footer><br>&thinsp;<br></footer>
-    <br>&thinsp;<br>
-    
-    </html>
+        } catch (error) {
+          console.error("Error processing URL:", error);
+          // Handle the error or fallback behavior here if needed
+        }
+
+        if (clicks === 2) {
+          messageText.innerText = "Really?";
+          console.log("Message changed to 'Really?'");
+        } else if (clicks === 3) {
+          messageText.innerText = "Fine.";
+          backButton.disabled = true;
+          console.log("Message changed to 'Fine.', button disabled.");
+          setTimeout(() => {
+            window.location.href = "https://www.seznam.cz";
+            console.log("Redirecting to seznam.cz");
+          }, 1000);
+        }
+      });
+
+      window.addEventListener("popstate", () => {
+        clicks = 0;
+        messageText.innerText = "This is where you started. <br> Are you sure you want to leave?";
+        messageText.style.display = "none";
+        svg.style.display = "inline";
+        backButton.classList.remove("messageShown");
+        console.log("popstate event: Resetting to initial state.");
+      });
+    });
+
+  </script>
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('menuToggle').querySelector('input[type="checkbox"]').checked = false;
+    });
+  </script>
+
+
+</body>
+
+
+
+</html>

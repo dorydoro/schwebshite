@@ -136,12 +136,20 @@ p {
 
 body {
     font-family: "Avenir Next", "Avenir", sans-serif;
+        background-color: #584036;
+        display: flex; 
+        flex-direction: column;
+        margin: 0;
+        min-height: 100vh;
+    
+    
 }
 
 #menuToggle {
     display: block;
     position: fixed;
-    top: 1vw;
+    top: 10px;
+    left: 10px;
     z-index: 1;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -304,14 +312,12 @@ body {
     display: block;
 }
 
-body {
-    background-color: #584036;
-}
 
 #pageheader {
     position: relative;
     display: inline;
     left: 60px;
+    padding-top: 60px;
 }
 
 .button {
@@ -354,6 +360,7 @@ body {
     cursor: pointer;
     border-radius: 50%;
     z-index: 15;
+    left: 10px;
 }
 
 .buttonA:hover {
@@ -890,7 +897,7 @@ li {
     left: 60px;
     width: 80vw;
     max-width: 1080px;
-    
+    margin-top:1vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1316,6 +1323,7 @@ div.categoryCaption {
     margin-bottom: 15px;
     height: 16px;
     width: 16px;
+   
     background-color: #F49F4F;
     border: 2px solid #F8E6B8;
     border-radius: 5px;
@@ -1390,8 +1398,8 @@ div.categoryCaption {
 
 
 #themeButtonsContainer .themeButton.D {
-    background-color: #584036;
-    border: 2px solid #889E5D;
+    background-color: #E5E5E5;
+    border: 2px solid #966D99;
     transform: translateX(-50px);
 }
 
@@ -1826,21 +1834,143 @@ div.categoryCaption {
 
 
   .menu-item {
-    background-color: #f0f0f0; /* Example background color */
-    margin: 1vw;
-    flex: 0 0 calc(50% - 2vw); /* No grow, no shrink, basis adjusted for margin */
-    height: calc((50% - 2vw) / 2); /* Keeping the aspect ratio */
+    background-color: rgba(136, 158, 93, 0.9); /* Example background color */
+    color: #F49F4F;
+    margin: 1.5vw;
+    margin-top: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 0 calc(50% - 3vw); /* No grow, no shrink, basis adjusted for margin */
+    aspect-ratio: 3/1;
+    max-height: 20vh;
     transition: box-shadow 0.3s;
+    text-align: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: #889E5D;
+    border-width: 7px;
+    text-decoration: none;
+    border-radius: 4px;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .menu-item:hover {
-    box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 10px #F8E6B8;
 }
 
-.last-item {
-    margin-left: auto; /* Push the last item to the center */
+/* Specific style for the button */
+.menu-button {
+    float: inline-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+      text-align: right; /* Right align content */
+      background-color:  rgba(136, 158, 93, 0.9); /* Example background color */
+    color: #F49F4F;
+    border-style: solid;
+    border-color: #889E5D;
+    border-width: 7px;
+    border-radius: 4px;
+      margin: 1vw;
+      margin-top: 1.5vw;
+      height: 12.6vw;
+      justify-content: center;
+    text-align: center;
+      transition: box-shadow 0.3s;
+      box-sizing: border-box; 
+      text-decoration: none;
+}
+
+
+.menu-button:hover {
+    box-shadow: 0px 0px 10px #F8E6B8;
+}
+
+.menu-item h1, .menu-button h1{
+    text-align: center;
+    font-size: min(max(2vw, 2vh) , 25px);
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 0px 0px 2vw  rgba(136, 158, 93, 0.9);
+
+}
+
+/* .last-item {
+    margin-left: auto;
     margin-right: auto;
+} */
+
+@media (max-width: 500px) {
+    .menu-item {
+        flex-basis: calc(100% - 2vw);
+        height: calc((100% - 2vw) / 2);
+    }
+
+    .menu-item, .menu-button {
+        flex-basis: calc(100% - 2vw);
+        max-height: 9.5vh;
+        text-align: center; /* Center align button content on smaller screens */ /* Adjust padding for smaller screens */
+    }
+
+
+
+    #projectcontentC {
+        justify-content: center;
+    }
+ 
+    #pageheader {
+ 
+        left: 50px;
+        padding-top: 40px;
+    }
+}
+
+#connectContent {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 60px;
+    justify-content: flex-end; 
+    left: 60px;
+}
+
+#connectContent h2 {
+    
+  margin-left: 20%;
+}
+.connectButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Aligns the buttons to the right */
+}
+
+
+
+.connectButton .connectButtonS {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+
+    font-family: 'ApercuMono';
+    font-size: min(15px, 1.7vw);
+    color: #F8E6B8;
+    font-weight: normal;
+    background-color: #889E5D;
+    border: none;
+    text-decoration: none;
+
+    text-align: center;
+    margin: min(1vw, 1vh);
+    margin-top:  min(1vw, 1.5vh);
+    border-radius: 10px; /* Curved corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    padding: 1.5vh;
+    max-width: 15%;
+}
+
+/* Optional: Style for hover effect */
+.connectButton .connectButtonS:hover {
+    background-color: #f0f0f0;
 }
 
 @media (max-width: 500px) {
@@ -1849,16 +1979,24 @@ div.categoryCaption {
         height: calc((100% - 2vw) / 2);
     }
 
-    
+    .menu-item, .menu-button {
+        flex-basis: calc(100% - 2vw);
+        max-height: 9.5vh;
+        text-align: center; /* Center align button content on smaller screens */ /* Adjust padding for smaller screens */
+    }
+
+
 
     #projectcontentC {
         justify-content: center;
     }
  
+    #pageheader {
+ 
+        left: 50px;
+        padding-top: 40px;
+    }
 }
-
-
-
 
 
 @media screen and (min-width: 750px) and (min-aspect-ratio: 1/1) {
@@ -2182,6 +2320,12 @@ div.categoryCaption {
 }
 
 @media screen and (max-width: 750px) {
+
+    #connectContent {
+
+    width: 80vw;
+    
+}
 
     #menuToggle input:not(:checked)~.dropbtn {
         transform: scale(80%);

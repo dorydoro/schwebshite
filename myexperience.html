@@ -1,102 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--  Meta  -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width" />
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
   <link id="theme" rel="stylesheet" type="text/css" href="./styleW.css" />
 
-  <title>My Experience</title>
+  <title>my experience</title>
 
-  <style>
 
-  </style>
 
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="index.html">home</a>
-      <a href="aboutme.html">about me</a>
-      <a href="myexperience.html">my experience</a>
-      <a href="myprojects.html">my projects</a>
-      <a href="connect.html">connect</a>
+  <nav role="navigation">
+    <div id="menuToggle">
+
+      <input type="checkbox" />
+      <div class="dropbtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="menu">
+
+        <a href="../index.html">
+          <li>Home</li>
+        </a>
+        <a href="../aboutme.html">
+          <li>About Me</li>
+        </a>
+        <a href="../myexperience.html">
+          <li>My Experience</li>
+        </a>
+        <a href="../myprojects.html">
+          <li>My Projects</li>
+        </a>
+        <a href="../connect.html">
+          <li>Connect</li>
+        </a>
+
+        <div class="cubepointer">
+          <p> Click on this cube to change themes!</p>
+        </div>
+
+      </ul>
+
     </div>
-  </div>
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    </script>
+  </nav>
+
 
 </head>
-<body>
- 
-    <div id="pageheader">
-    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
+
+<body style="overflow-x:hidden;">
+
+  <div id="pageheader">
+    <a href="../index.html" style="text-decoration: none; ">
+      <h1> Hello, <br>I'm Dorotea Bajic</h1>
+    </a>
     <div class="bar4"></div>
-    <h2>this is my experience.</h2>
-    </div>
+    <h2>this is <a href="../myexperience.html">my experience</a> > 
+    </h2>
+  </div>
+
     <br>
 
     <div id="expContent">
       <div id="expTOPbox">
-        <h3>Summary of Qualifications</h3>
+        <br>
+        <h4>
+          i'm seeking oppoturnities with creative teams in research&design in fabrication across mediums, with a focus on packaging and susatinability
+          </h4>
+          <br>
+        <h3 style="margin-top: 1%;">Summary of Qualifications</h3>
+        
 
         <div class="tab">
           <button class="tablinks h2h" onclick="openCity(event, 'London')" id="defaultOpen"><h4>Packaging</h4></button>
           <button class="tablinks h2h" onclick="openCity(event, 'Paris')"><h4>Managerial</h4></button>
-          <button class="tablinks h2h" onclick="openCity(event, 'Tokyo')"><h4>Research</h4></button>
+          <button class="tablinks h2h" onclick="openCity(event, 'Tokyo')" style="border-right: none;"><h4>Research</h4></button>
           <div class="tabend"></div>
         </div>
 
 
         <div id="London" class="tabcontent">
           <h4>
-            ∙ Proficient across wide range of fabrication methods, CAD and visual design software
+          
+            ∙	Adept in a wide range of fabrication methods, CAD and software for packaging prototyping & print, amongst other mediums
             <br>
-            ∙ Adapts easily to new challenges and excels with capturing emerging technologies
+            ∙	Continuously challenging myself to innovate, leading to award-winning designs in paperboard packaging
             <br>
-            ∙ Perpetually challenging myself to innovate,  leading to create award-winning design in paper-board packaging.
-            <br>
-            ∙ Synthesized realistic renders of a variety of packaging products for a research project by learning new 3D software.  
-            
+            ∙	Synthesized realistic 3D renders of packaging products for a research project, followed by creating course content therein
+                                  
           </h4>
         </div>
 
         <div id="Paris" class="tabcontent">
           <h4>
-            ∙ Managed teams and their creative process to deliver ground-breaking designs for international competition
+            ∙	Led and trained a team that repeatedly outperformed our weekly goals by 20% when fundraising for charities
+            <br>
+            ∙ Managed teams throughout creative process to deliver fresh deliberate designs for international competition
             <br>
             ∙ Imparted knowledge upon dozens of trainees and continuously monitored them to provide constructive feedback
-            <br>
-            ∙ Surpassed personal fundraising monthly quotas by 35%
+          
           </h4> 
         </div>
 
         <div id="Tokyo" class="tabcontent" style="border-right: 0px;">
           <h4>
-          ∙ Interpreted results to generate useful insights augmented with my perspective as a member of Gen Z   
+          
+          ∙ Conducted independent thesis research into sustainability of an emerging market
           <br>
-          ∙ Conducted complete independent thesis into sustainability of an emerging market
+          ∙ Interpreted results to generate useful insights augmented with my perspective as a member of Gen Z   
           <br>
           ∙ Collected and examined results where voluntary participation exceeded target by 350% 
           </h4>
@@ -110,21 +127,26 @@
         <div class="expbar"></div>
 
         <a href="https://www.instagram.com/p/CNIhedHA-fC/" target="_blank" rel="noopener noreferrer">
+          <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2022</p>
+          <p class="expPlaceB"style="line-height: 100%;" title="result of WestRock nominating designs for award">Employee Spotlight for Packaging Design Day</p>
+          </a>
+
+        <a href="https://www.instagram.com/p/CNIhedHA-fC/" target="_blank" rel="noopener noreferrer">
         <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2021</p>
-        <p class="expPlaceB"style="line-height: 100%;">CTLxDFZ Grant Recipient</p>
+        <p class="expPlaceB"style="line-height: 100%;" title="fueling experimentation in multimedia technologies">CTLxDFZ Grant Recipient</p>
         </a>
 
         <a href="https://www.ryerson.ca/fcad/news/2020/11/gcm-students-unbox-first-time-international-win-for-canada/" target="_blank" rel="noopener noreferrer">
         <p class="expTimeB" style="line-height: 200%; margin-bottom: -1em;">2020</p>
-        <p class="expPlaceB"style="line-height: 100%;">International Paperboard Packaging Alliance Student Design Challenge First Place Winner</p>
+        <p class="expPlaceB"style="line-height: 100%;" title="click to see article">International Paperboard Packaging Alliance Student Design Challenge First Place Winner</p>
         </a>
         
         <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2019</p>
-        <p class="expPlaceB"style="line-height: 100%;">Prophecy Design Competition Winner</p>
+        <p class="expPlaceB"style="line-height: 100%;" >Prophecy Branding and Structural Packaging Design Competition Winner</p>
 
         <a href="https://www.printaction.com/ryerson-gcm-recognizes-student-talent-at-2019-awards-night/" target="_blank" rel="noopener noreferrer">
         <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2017 - 2021</p>
-        <p class="expPlaceB"style="line-height: 100%;">Canadian Printing Industries Scholarship Trust Fund</p>
+        <p class="expPlaceB"style="line-height: 100%;" title="click to see article">Canadian Printing Industries Scholarship Trust Fund Recipient</p>
         </a>
 
       
@@ -152,15 +174,27 @@
               <li>XD</li>
               <li>Dimension</li>
               <li>Lightroom</li>
+              <li>Premier</li>
+              <li>Aero</li>
             </ul> 
             <p class="tool">
           
             CAD: </p>
             
             <ul class="expList">
-              <li>AutoCAD</li>
-              <li>Fusion 360</li>
               <li>ArtiosCAD</li>
+              <li>Fusion 360</li>
+              <li>Solidworks</li>
+            </ul> 
+            <p class="tool">
+            Prototyping Capabilites: </p>
+            
+            <ul class="expList">
+              <li>Vaccum Forming</li>
+              <li>3D Printing</li>
+              <li>Plotter Table</li>
+              <li>Use Testing</li>
+              <li>Digital UV Printing</li>
             </ul> 
             <p class="tool">GCM Taught:</p>
 
@@ -173,7 +207,8 @@
               <li>Kodak Preps & Prinergy</li>
               <li>Xinet Webflows</li>
               <li>EnFocus Switch & PitStop</li>
-              <li>i1 Profiler</li>              
+              <li>i1 Profiler</li>   
+             
             </ul> 
             <p class="tool">
 
@@ -186,7 +221,8 @@
               <li>CSS</li>
               <li>JavaScript</li>
               <li>jQuery</li>
-              <li>JSON</li>  
+              <li>JSON</li> 
+              <li>Liquefy</li>  
               <li>XML</li>          
             </ul> 
             <p class="tool">
@@ -225,7 +261,14 @@
         </ul>
      
 
-
+   
+        <div class="connectButton">
+                  <a href="collect media\Bajic Resume Nov 2023.docx" target="_blank"
+          class="connectButtonB">One page resume</a>
+          <a href="collect media\Bajic Resume Oct 2023 Cosmetic.pdf " target="_blank"
+          class="connectButtonB" style="margin-right: 0%;">Full Resume</a>
+          
+            </div>
 
 
       </div>
@@ -234,18 +277,42 @@
         <h3>Experience</h3>
         <div class="expbar"></div>
         <br>
+
+        <a href="media/prototypingresearch.html" style="text-decoration: none;">
+          <p class="expTime"> SEPT 2021 -  AUG 2023</p>
+          <p class="expRole">ASSOCIATE DESIGNER</p>  
+          <p class="expPlace">WESTROCK  |  AJAX, ON</p>  </a>
+  
+            <ul>
+              <li>Spearheaded the development of cost-effective and innovative paperboard solutions, with a strategic focus on the food & beverage industry, working on over 550 designs. 6 sent to production in my final month, each slotted for M+ copies annually </li>
+              <li>Pioneered cutting-edge design initiatives at the Ajax production facility, proactively resolving plotter table challenges, implementing testing technologies, and establishing comprehensive design & board libraries.</li>
+              <li>Capitalized on local production site and harnessed WestRock's extensive resources to elevate industry expertise early in my career. Leveraged customer capabilities and machinery insights to drive data-informed product design.</li>
+              <li>Orchestrated the concurrent management of multiple high-stakes projects, achieving remarkable design turnarounds, soliciting feedback from customers on 600+ shipped samples in my final year, 72% sent within 48hours.  </li>
+              <li>Adeptly handling multifaceted responsibilities, including product photography, structural integrity tes¬¬ting, 3D modeling, marketing research, transportation and automation trials. Collaborated seamlessly with my team, customers, and sales, as well as larger cross-functional teams to craft optimal structural design solutions.</li>
+            </ul> 
+
+            <a href="media/prototypingresearch.html" style="text-decoration: none;">
+              <p class="expTime"> MAY 2021 -  NOV 2021</p>
+              <p class="expRole">PACKAGING EXTRAORDINAIRE</p>  
+              <p class="expPlace">TALKMEDIA  |  TORONTO, ON</p>  </a>
+      
+                <ul>
+                  <li>Solely conceptualised intricate package and sensory experience to complement virtual storytelling events </li>
+                  <li>Researched options to produce with low budget, delivering hand-cut versions for trial event of the 10pcs design. 500 copy production cut out by printer, where I configured an assembly line to efficiently prepare to ship in 3 days</li>
+                  <li>Furthered user experience in virtual space with consultations on how to reduce potential user errors, maximise flow and interactions, as well as imagining space concepts to convert journalistic pieces into new medium</li>
+                   </ul> 
         
         <a href="media/prototypingresearch.html" style="text-decoration: none;">
-        <p class="expTime"> DEC 2020 -  APR 2021</p>
+        <p class="expTime"> DEC 2020 -  DEC 2021</p>
         <p class="expRole">PACKAGE PROTOTYPING TEACHING ASSISSTANT</p>  
-        <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+        <p class="expPlace">TORONTO METROPOLITAN UNIVERSITY  |  TORONTO, ON</p>  </a>
 
           <ul>
-            <li>Output over 200 prototypes using Ricoh flatbed UV printer and Esko Kongsberg cutting table </li>
-            <li>Assisted with feedback meetings and with student engagement during scheduled classes in a virtual setting</li>
-            <li>Created efficient workflows for student communication, files and prototyping</li>
-            <li>Produced new course materials to include 3D modelling and CAD tutorials </li>
-            <li>Graded assignments for over 70 students on a quick turnaround with accurate feedback</li>
+            <li>Output over 200 prototypes using Ricoh flatbed UV printer and Esko Kongsberg cutting table. </li>
+            <li>Assisted with feedback meetings and with student engagement during virtual classes. </li>
+            <li>Created efficient workflows for student communication, files, and prototyping. </li>
+            <li>Developed course materials, including 3D modeling and CAD tutorials. </li>
+            <li>Graded assignments for over 70 students semester on a quick turnaround with accurate feedback</li>
           </ul> 
         
           </p>
@@ -253,9 +320,9 @@
           <a href="media/packaging.html#ryepack" style="text-decoration: none;">
           <p class="expTime"> SEP 2020 -  APR 2021</p>
           <p class="expRole">VP OF COMPETITIONS OF RYEPACK</p>  
-          <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+          <p class="expPlace">TORONTO METROPOLITAN UNIVERSITY  |  TORONTO, ON</p>  </a>
 
-          <p class="context">RyePack is a student group dedicated to the exploration and advancement of all things packaging, my primary role was to make the competitions accessible to all year groups (raising participation by 20% this year) and assisting with entries.</p>
+          <p class="expPlaceB"style="line-height: 105%;">RyePack is a student group dedicated to the exploration and advancement of all things packaging, my primary role was to make the competitions accessible to all year groups (raising participation by 20% this year) and assisting with entries.</p>
                       <ul>
               <li>Facilitated research, production, and submission for competition teams</li>
               <li>Helped Ryerson GCM students with packaging related projects</li>
@@ -278,28 +345,27 @@
                   </ul> 
         <br>
                 
-                <p class="expTime"> MAR 2020 -  JUN 20201</p>
+                <p class="expTime"> MAR 2020 -  JUN 2020</p>
                 <p class="expRole">RESEARCH ASSISTANT</p>  
                 <p class="expPlace">DONNA RAZIK  |  TORONTO, ON</p>  </a>
 
                   <ul>
-                    <li>Assisted my professor’s research on the impact of recycling labels on packaging </li>
-                    <li>Developed renders and artwork for the project using CAD and 3D rendering software</li>
-                    <li>Administered surveys via online platforms collecting 110% more responses than expected.  </li>
-                    <li>Analysed results and provided useful insight as a member of Gen Z to help
-                      draw conclusions.
-                    </li>
+                    <li>Played a pivotal role in assisting my professor's research focusing on the impact of recycling labels on packaging, by providing valuable insights and support, including leveraging CAD and 3D rendering software to create visually engaging artwork</li>
+                    <li>Administered surveys via online platforms, achieving a remarkable 110% increase in responses compared to the initial expectations, demonstrating exceptional data collection and engagement skills</li>
+                    <li>Analyzed the extensive survey results and delivered meaningful insights, contributing as a member of the Gen Z demographic, which were instrumental in drawing critical conclusions for the research. </li>
+                    
                   </ul> 
                 <br>
                   </p>
 
                   <a href="media/packaging.html#prophecy" style="text-decoration: none;">
                   <p class="expTime">DEC 2019 -  MAR 2020</p>
-                  <p class="expRole">PACKAGING & BRAND DESIGNER</p>  
+                  <p class="expRole">COSMETIC PACKAGING & BRAND DESIGNER</p>  
                   <p class="expPlace">PROPHECY BOTANICALS  |  TORONTO, ON</p>  </a>
           
                     <ul>
-                      <li>Through my coursework in GCM808 Package Prototyping I was selected to have the opportunity to continue working with Prophecy Botanicals. In my work I designed their logo, labels and structural framework of the primary packaging using Adobe suite.</li>
+                      <li>Distinguished performance in the coursework of GCM808 Package Prototyping led to the unique opportunity to collaborate further with local cometic company, Prophecy Botanicals via freelance work</li>
+                      <li>Spearheaded a comprehensive brand transformation for Prophecy Botanicals, designing their logo, labels, and the structural framework of their primary packaging. Leveraged Adobe Creative Suite to create visually appealing and functional packaging elements that resonated with the brand's identity for the serum product line</li>
                     </ul> 
                   
                     </p>
@@ -310,11 +376,11 @@
                 <br>
                 
                 <a href="media/prototypingresearch.html" style="text-decoration: none;">
-                <p class="expTime"> SEPT 2017 - GRADUATING NOW</p>
+                <p class="expTime"> SEPT 2017 - APR 2021</p>
                 <p class="expRole">GRAPHIC COMMUNICATIONS MANAGEMENT (B. TECH)</p>  
-                <p class="expPlace">RYERSON UNIVERSITY  |  TORONTO, ON</p>  </a>
+                <p class="expPlace">TORONTO METROPOLITAN UNIVERSITY  |  TORONTO, ON</p>  </a>
                   
-                <p class="context">Currently in my fourth year in Canada’s only degree-granting program for the printing industries. The program stresses the application of theory to practical problems with a balance of technology and business management. I am within the Packaging concentration while also undertaking a minor in Advertising and Communication & Design. </p>
+                <p class="expPlaceB" style="line-height: 105%;">Canada’s only degree-granting program for the printing industries, focusing on the application of theory to practical problems with a balance of technology and business management, completed with a 3.4CGPA along with a Packaging concentration while also undertaking minors in Advertising and Communication & Design.</p>
 
                  
                 <br>&thinsp;<br>
@@ -328,7 +394,13 @@
                   <p class="expPlace" style="text-align: right; font-size: 110%;"><a href="mailto:dorbajic@gmail.com">Email</a>  |  <a href="https://www.linkedin.com/in/doroteab/"> LinkedIn </a></p> 
                 </div>
 
-
+                <div class="connectButton">
+                  <a href="collect media\Bajic Resume Nov 2023.docx" target="_blank"
+          class="connectButtonB">One page resume</a>
+          <a href="collect media\Bajic Resume Oct 2023 Cosmetic.pdf " target="_blank"
+          class="connectButtonB" style="margin-right: 0%;">Full Resume</a>
+          
+            </div>
                       
                 
       </div>
@@ -366,32 +438,333 @@
 
 
  </div>
- <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
-<button class="button" onclick="goBack()">back</button>
+ 
+
+ <button class="buttonA" onclick="toggleThemeRollout()" ondblclick="toggleRandomTheme()">
+  <div id="cube" class="spinningObject">
+    <div class="face cubefront"></div>
+    <div class="face cubeback"></div>
+    <div class="face cuberight"></div>
+    <div class="face cubeleft"></div>
+    <div class="face cubetop"></div>
+    <div class="face cubebottom"></div>
+  </div>
+</button>
+
+<div id="themeButtonsContainer">
+  <button class="themeButton D" data-translate-x="-50" onclick="changeTheme('./styleD.css')"></button>
+  <button class="themeButton O" data-translate-x="-66" onclick="changeTheme('./styleO.css')"></button>
+  <button class="themeButton R" data-translate-x="-82" onclick="changeTheme('./styleR.css')"></button>
+  <button class="themeButton T" data-translate-x="-98" onclick="changeTheme('./styleT.css')"></button>
+  <button class="themeButton E" data-translate-x="-114" onclick="changeTheme('./styleE.css')"></button>
+  <button class="themeButton A" data-translate-x="-130" onclick="changeTheme('./styleA.css')"></button>
+  <button class="themeButton B" data-translate-x="-146" onclick="changeTheme('./styleB.css')"></button>
+  <button class="themeButton J" data-translate-x="-162" onclick="changeTheme('./styleJ.css')"></button>
+  <button class="themeButton I" data-translate-x="-178" onclick="changeTheme('./styleI.css')"></button>
+  <button class="themeButton C" data-translate-x="-194" onclick="changeTheme('./styleC.css')"></button>
+  <button class="themeButton W" data-translate-x="-210" onclick="changeTheme('./styleW.css')"></button>
+</div>
+
+
+<div id="overlay">
+  <div class="otext" id="overlay-message"></div>
+  <audio id="background-music" loop>
+    <source src="the-salami-lid-wont-fit.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
 
 
 <script>
-function goBack() {
-window.history.back();
-}
 
-function toggleTheme() {
-         // Obtains an array of all <link>
-         // elements.
-         // Select your element using indexing.
-         var theme = document.getElementsByTagName('link')[0];
+  function adjustButtonSize() {
+    if (window.innerWidth > 500) { // Check if window width is greater than 500px
+      var menuItem = document.querySelector('.menu-item');
+      var button = document.querySelector('.menu-button');
 
-         // Change the value of href attribute 
-         // to change the css sheet.
-         if (theme.getAttribute('href') == './style.css') {
-             theme.setAttribute('href', './styleAccess.css');
-         } else {
-             theme.setAttribute('href', './style.css');
-         }
-     }
-</script> 
+      if (menuItem && button) {
+        var height = menuItem.offsetHeight; // Get the height of the menu item
+        button.style.width = ((height * 3) / 2) + 'px'; // Set the width of the button
+        button.style.height = height + 'px'; // Set the height of the button
+      }
+    } else {
+      var button = document.querySelector('.menu-button');
+      if (button) {
+        button.style.width = ''; // Reset the width of the button
+        button.style.height = ''; // Reset the height of the button
+      }
+    }
+  }
+
+  // Run the function on window load and resize
+  window.onload = adjustButtonSize;
+  window.onresize = adjustButtonSize;
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+  function toggleThemeRollout() {
+    const container = document.getElementById('themeButtonsContainer');
+    const isRolledOut = container.classList.contains('rolledOut');
+    console.log("Before toggle: isRolledOut =", isRolledOut);
+
+    container.classList.toggle('rolledOut');
+    console.log("After toggle: isRolledOut =", container.classList.contains('rolledOut'));
+
+    document.querySelectorAll('.themeButton').forEach((button, index) => {
+      if (isRolledOut) {
+        // Stack the buttons to their initial positions
+        const initialX = button.getAttribute('data-translate-x');
+        console.log("Stacking button", index, "to", initialX);
+        button.style.transform = `translateX(${initialX}px)`;
+      } else {
+        // Roll out the buttons
+        console.log("Rolling out button", index);
+        button.style.transform = `translateX(5px)`; // Adjust the multiplier as needed for spacing
+      }
+    });
+  }
+
+  function toggleRandomTheme() {
+    const themes = ['styleD.css', 'styleO.css', 'styleR.css', 'styleT.css', 'styleE.css', 'styleA.css', 'styleB.css', 'styleJ.css', 'styleI.css', 'styleC.css', 'styleW.css']; // ... other themes
+    const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+    console.log("Random theme selected:", randomTheme);
+    changeTheme(randomTheme);
+  }
+
+  function changeTheme(themePath) {
+    var theme = document.getElementsByTagName('link')[0];
+    console.log("Changing theme to:", themePath);
+    theme.setAttribute('href', themePath);
+  }
+
+</script>
+
+
+<script>
+
+  const overlayElement = document.getElementById("overlay");
+  const overlayMessageElement = document.getElementById("overlay-message");
+  const backgroundMusic = document.getElementById("background-music");
+
+  const smallHeight = window.matchMedia("(max-height: 200px)");
+  const smallWidth = window.matchMedia("(max-width: 250px)");
+
+  smallHeight.addListener(handleDeviceChange);
+  smallWidth.addListener(handleDeviceChange);
+
+  function handleDeviceChange() {
+    if (smallHeight.matches) {
+      showOverlay("pls use a taller window ur screen is so smol", "short");
+    } else if (smallWidth.matches) {
+      showOverlay("pls use a wider window ur screen is so smol", "skinny");
+    } else {
+      hideOverlay();
+    }
+  }
+
+  function showOverlay(message, className) {
+    overlayElement.style.display = "block";
+    overlayMessageElement.textContent = message;
+    overlayElement.classList.remove("short", "skinny");
+    overlayElement.classList.add(className);
+    backgroundMusic.play();
+  }
+
+  function hideOverlay() {
+    overlayElement.style.display = "none";
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0; // Reset the audio to the start
+  }
+
+  // Initial check
+  handleDeviceChange();
+
+
+</script>
+
+
+
+<button class="button" id="backButton">
+  <svg id="backButtonSVG" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="none"
+    viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M11 18h3.75a5.25 5.25 0 100-10.5H5M7.5 4L4 7.5 7.5 11" />
+  </svg>
+  <span id="messageText" style="display: none;">This is where you started. <br> Are you sure you want to leave?</span>
+</button>
+
+<script>
+  const cube = document.getElementById('cube');
+
+  window.addEventListener('scroll', () => {
+    const rotation = window.pageYOffset * 0.1;
+    cube.style.transform = `rotateX(${40 - (2 * rotation)}deg) rotateY(${0 - (1.5 * rotation)}deg) rotateZ(${70 - (0.7 * rotation)}deg)`;
+
+  });
+  let resizeTimer;
+  let rotationIncrement = 5; // Degrees to rotate on each resize event
+
+  window.addEventListener('resize', function () {
+    const objects = document.querySelectorAll('.spinningObject');
+
+    clearTimeout(resizeTimer);
+
+    objects.forEach(function (object) {
+      const currentTransform = getTransformComponents(object.style.transform);
+      const newYRotation = (parseFloat(currentTransform.rotateY) + rotationIncrement) % 160;
+
+      object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}deg) rotateZ(${currentTransform.rotateZ})`;
+    });
+
+    resizeTimer = setTimeout(function () {
+      // Reset the rotation to the last value after resizing stops
+      objects.forEach(function (object) {
+        const currentTransform = getTransformComponents(object.style.transform);
+        object.style.transform = `rotateX(${currentTransform.rotateX}) rotateY(${newYRotation}) rotateZ(${currentTransform.rotateZ})`;
+      });
+    }, 150);
+  });
+
+  function getTransformComponents(transformString) {
+    const defaultTransform = { rotateX: '40deg', rotateY: '0deg', rotateZ: '70deg' };
+    if (!transformString || transformString === 'none') return defaultTransform;
+
+    const transformComponents = transformString.match(/rotate[XYZ]\(([^)]+)\)/g);
+    const transform = { ...defaultTransform };
+
+    transformComponents.forEach((component) => {
+      const match = component.match(/rotate([XYZ])\(([^)]+)\)/);
+      if (match && match[1] && match[2]) {
+        transform[`rotate${match[1]}`] = match[2];
+      }
+    });
+
+    return transform;
+  }
+
+
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backButton = document.getElementById("backButton");
+    const messageText = document.getElementById("messageText");
+    const svg = document.getElementById("backButtonSVG");
+    let clicks = 0;
+
+    console.log("Initial state:", {
+      backButtonVisible: backButton.style.display,
+      messageTextVisible: messageText.style.display,
+      svgVisible: svg.style.display
+    });
+
+    backButton.addEventListener("click", () => {
+      clicks++;
+      console.log("Click count:", clicks);
+
+      try {
+        const referrer = document.referrer;
+        const currentDomain = window.location.hostname;
+        // Ensure referrer is a non-empty string before constructing URL
+        const referrerDomain = referrer ? new URL(referrer).hostname : '';
+
+        console.log("Referrer Domain:", referrerDomain, "Current Domain:", currentDomain);
+
+        if (referrerDomain !== currentDomain) {
+          svg.style.display = "none";
+          messageText.style.display = "inline";
+          backButton.classList.add("messageShown");
+          console.log("Condition met: Different domain. SVG hidden, message shown.");
+        } else {
+          history.back();
+          console.log("Condition met: Same domain. Going back in history.");
+        }
+      } catch (error) {
+        console.error("Error processing URL:", error);
+        // Handle the error or fallback behavior here if needed
+      }
+
+      if (clicks === 2) {
+        messageText.innerText = "Really?";
+        console.log("Message changed to 'Really?'");
+      } else if (clicks === 3) {
+        messageText.innerText = "Fine.";
+        backButton.disabled = true;
+        console.log("Message changed to 'Fine.', button disabled.");
+        setTimeout(() => {
+          window.location.href = "https://www.seznam.cz";
+          console.log("Redirecting to seznam.cz");
+        }, 1000);
+      }
+    });
+
+    window.addEventListener("popstate", () => {
+      clicks = 0;
+      messageText.innerText = "This is where you started. <br> Are you sure you want to leave?";
+      messageText.style.display = "none";
+      svg.style.display = "inline";
+      backButton.classList.remove("messageShown");
+      console.log("popstate event: Resetting to initial state.");
+    });
+  });
+
+</script>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('menuToggle').querySelector('input[type="checkbox"]').checked = false;
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateFavicon() {
+      var stylesheet = document.getElementById('theme').getAttribute('href');
+      var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/svg+xml';
+
+      // Change the href to match the stylesheet
+      if (stylesheet.includes('styleD')) {
+        faviconLink.href = 'path/to/logoD.svg';
+      } else if (stylesheet.includes('styleO')) {
+        faviconLink.href = 'path/to/logoO.svg';
+      } else if (stylesheet.includes('styleR')) {
+        faviconLink.href = 'path/to/logoR.svg';
+      } else if (stylesheet.includes('styleT')) {
+        faviconLink.href = 'path/to/logoT.svg';
+      } else if (stylesheet.includes('styleE')) {
+        faviconLink.href = 'path/to/logoE.svg';
+      } else if (stylesheet.includes('styleA')) {
+        faviconLink.href = 'path/to/logoA.svg';
+      } else if (stylesheet.includes('styleB')) {
+        faviconLink.href = 'path/to/logoB.svg';
+      } else if (stylesheet.includes('styleJ')) {
+        faviconLink.href = 'path/to/logoJ.svg';
+      } else if (stylesheet.includes('styleI')) {
+        faviconLink.href = 'path/to/logoI.svg';
+      } else if (stylesheet.includes('styleC')) {
+        faviconLink.href = 'path/to/logoC.svg';
+      } else if (stylesheet.includes('styleW')) {
+        faviconLink.href = 'logoW.svg';
+      }
+
+      document.head.appendChild(faviconLink);
+    }
+
+    updateFavicon();
+  });
+</script>
+
 </body>
-
 <footer><br>&thinsp;<br></footer>
 <br>&thinsp;<br>
 

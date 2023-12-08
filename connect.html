@@ -8,7 +8,8 @@
 
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link id="theme" rel="stylesheet" type="text/css" href="./styleW.css" />
+  <link id="theme" rel="stylesheet" type="text/css" href="styleW.css">
+
 
   <title>Connect</title>
 
@@ -33,7 +34,7 @@
           <li>About Me</li>
         </a>
         <a href="../myexperience.html">
-          <li>My experience</li>
+          <li>My Experience</li>
         </a>
         <a href="../myprojects.html">
           <li>My Projects</li>
@@ -61,11 +62,11 @@
       <h1> Hello, <br>I'm Dorotea Bajic</h1>
     </a>
     <div class="bar4"></div>
-    <h2>> <a href="../myprojects.html">connect</a> > 
+    <h2>this is <a href="../connect.html">connect</a> > 
     </h2>
   </div>
 
-
+<br>
 
   <div id="connectContent">
 
@@ -95,16 +96,15 @@
     
     </p>
     
-
+    
    
     <div class="connectButton">
-    <a href="mailto:?subject=Sharing a Professional Resume
-    &body=I wanted to share this professional resume with you. Please see the attached file."
-    class="connectButtonS">Easy email template</a>
+      <a href="mailto:?subject=Sharing Dorotea.ca 🤩&body=Hi 👋 %0D%0AThis is a template e-mail from dorotea.ca, the online portfolio for Dorotea Bajic, a freelance designer with an insane passion for packaging and sustainability and talented across many fields of creative production and experience research.%0D%0A %0D%0AI'm going to speak in first person now. I am so grateful someone decided to share my profile as I am currently seeking opportunities to work and learn from a creative team.✨ Much like my history, the breadths of which shown in my project pages, I do not like to limit myself to one form of creation, but creation is consistently at the core, if not the systems of which makes the subject. I am open to a variety of opportunists, but ill list some of my daydream roles: %0D%0A %0D%0A1. Designing systems and products/packaging for cyclic solutions 🔄%0D%0A2. Research in sustainable or packaging systems 🔬%0D%0A3. Manufacturing and testing prototypes across mediums 🧙%0D%0A %0D%0ABeyond career opportunities, I am also open to connect to discuss anything in relation to the content or techniques shown on my website, dorotea.ca . You can find me at dorbajic@gmail.com or on LinkedIn at doroteab.%0D%0A %0D%0AThank you for checking me out 🌞 hope to hear from you soon,%0D%0ADorotea Bajic" class="connectButtonS">Easy email template</a>
+
     <a href="collect media\Bajic Resume Nov 2023.docx" target="_blank"
     class="connectButtonS">One page resume</a>
     <a href="collect media\Bajic Resume Oct 2023 Cosmetic.pdf " target="_blank"
-    class="connectButtonS">Full Resume</a>
+    class="connectButtonS" style="margin-right: 0%;">Full Resume</a>
     
       </div>
     
@@ -209,12 +209,16 @@
       const randomTheme = themes[Math.floor(Math.random() * themes.length)];
       console.log("Random theme selected:", randomTheme);
       changeTheme(randomTheme);
+       // Introduce a slight delay before updating the favicon
+       setTimeout(updateFavicon, 10); // Delay of 10 milliseconds
     }
 
     function changeTheme(themePath) {
       var theme = document.getElementsByTagName('link')[0];
       console.log("Changing theme to:", themePath);
       theme.setAttribute('href', themePath);
+        // Introduce a slight delay before updating the favicon
+    setTimeout(updateFavicon, 10); // Delay of 10 milliseconds
     }
 
   </script>
@@ -401,7 +405,53 @@
     });
   </script>
 
+<script>
 
+    function updateFavicon() {
+      var stylesheet = document.getElementById('theme').getAttribute('href');
+      var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/svg+xml';
+
+          // Use a timestamp to force the browser to fetch the new icon
+    var timestamp = new Date().getTime();
+
+      // Change the href to match the stylesheet
+      if (stylesheet.includes('styleD')) {
+        faviconLink.href = 'logoD.svg';
+      } else if (stylesheet.includes('styleO')) {
+        faviconLink.href = 'logoO.svg';
+      } else if (stylesheet.includes('styleR')) {
+        faviconLink.href = 'logoR.svg';
+      } else if (stylesheet.includes('styleT')) {
+        faviconLink.href = 'logoT.svg';
+      } else if (stylesheet.includes('styleE')) {
+        faviconLink.href = 'logoE.svg';
+      } else if (stylesheet.includes('styleA')) {
+        faviconLink.href = 'logoA.svg';
+      } else if (stylesheet.includes('styleB')) {
+        faviconLink.href = 'logoB.svg';
+      } else if (stylesheet.includes('styleJ')) {
+        faviconLink.href = 'logoJ.svg';
+      } else if (stylesheet.includes('styleI')) {
+        faviconLink.href = 'logoI.svg';
+      } else if (stylesheet.includes('styleC')) {
+        faviconLink.href = 'logoC.svg';
+      } else if (stylesheet.includes('styleW')) {
+        faviconLink.href = 'logoW.svg';
+      }
+
+      document.head.appendChild(faviconLink);
+    }
+
+    updateFavicon();
+
+
+
+</script>
+
+
+</script>
 </body>
 
 

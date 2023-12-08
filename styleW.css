@@ -150,7 +150,7 @@ body {
     position: fixed;
     top: 10px;
     left: 10px;
-    z-index: 1;
+    z-index: 3;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -177,7 +177,7 @@ body {
 
     opacity: 0;
     /* hide this */
-    z-index: 2;
+    z-index: 4;
     /* and place it over the hamburger */
 
     -webkit-touch-callout: none;
@@ -196,7 +196,7 @@ body {
     background-color: #F49F4F;
     border-radius: 1px;
 
-    z-index: 1;
+    z-index: 3;
 
     transform-origin: 20px 20px;
 
@@ -252,6 +252,7 @@ body {
 #menu li {
     padding: 10px 0;
     font-size: 22px;
+    color: #F49F4F;
 }
 
 #menuToggle input:checked~ul {
@@ -590,10 +591,19 @@ div#bmLottie path {
 
 }
 
+.tablinks {
+    margin-right: 0em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+
+}
+
 .h2h:hover {
     color: #889E5D;
     bottom: 0;
 }
+
+
 
 #bc {
     top: 36.4%;
@@ -756,7 +766,7 @@ div.cubebuttons:hover h2 {
 .tab button.active {
     color: #F8E6B8;
     background-color: #889E5D;
-    z-index: 10;
+    z-index: 0.5;
     border-bottom: 0px;
 
 }
@@ -823,7 +833,7 @@ div.cubebuttons:hover h2 {
 .expRole {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #F49F4F;
+    color: #889E5D;
     font-weight: normal;
     line-height: 0%;
 
@@ -832,7 +842,7 @@ div.cubebuttons:hover h2 {
 .expPlace {
     font-family: 'ApercuMedium';
     font-size: 1.5vw;
-    color: #F8E6B8;
+    color: #F49F4F;
     font-weight: normal;
     line-height: 50%;
 }
@@ -858,7 +868,15 @@ div.cubebuttons:hover h2 {
 li {
     font-family: 'ApercuRegular';
     font-size: 1.5vw;
-    color: #F49F4F;
+    color: #889E5D;
+    font-weight: normal;
+}
+
+
+li {
+    font-family: 'ApercuRegular';
+    font-size: 1.5vw;
+    color: #889E5D;
     font-weight: normal;
 }
 
@@ -866,17 +884,22 @@ li {
     position: relative;
     left: -1.5em;
     top: 0em;
+  
+}
+
+.expList li {
+    color: #F49F4F;
 }
 
 .confident {
-    line-height: 0%;
+    line-height: 50%;
     margin-bottom: -1em;
     font-size: 1.2vw;
     color: #889E5D;
 }
 
 .tool {
-    line-height: 0%;
+    line-height: 50%;
     margin-bottom: -0.5em;
     color: #F8E6B8;
 }
@@ -1030,8 +1053,12 @@ div.categoryCaption {
 }
 
 .context {
-    color: #fff;
-    line-height: 95%;
+    font-family: 'ApercuMedium';
+  
+    color: #F8E6B8;
+    font-weight: normal;
+    line-height: 105%;
+    text-decoration: none;
 }
 
 
@@ -1079,6 +1106,28 @@ div.categoryCaption {
 
 .right {
     width: 40vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.aboutcolumn {
+    float: right;
+    position: relative;
+    height: fit-content;
+    object-fit: contain;
+    overflow-y: visible;
+    flex-direction: column-reverse;
+}
+
+.aboutleft {
+    width: 20vw;
+    margin-left: 2vw;
+
+}
+
+
+.aboutright {
+    width: 50vw;
     margin-left: 2vw;
     margin-right: 2vw;
 }
@@ -1852,6 +1901,8 @@ div.categoryCaption {
     border-width: 7px;
     text-decoration: none;
     border-radius: 4px;
+    position: relative;
+    overflow: hidden;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
@@ -1880,6 +1931,7 @@ div.categoryCaption {
       transition: box-shadow 0.3s;
       box-sizing: border-box; 
       text-decoration: none;
+      z-index: 0;
 }
 
 
@@ -1888,17 +1940,246 @@ div.categoryCaption {
 }
 
 .menu-item h1, .menu-button h1{
+    z-index: 2;
+    /* color: #584036; */
     text-align: center;
+    opacity: 80%;
     font-size: min(max(2vw, 2vh) , 25px);
+    outline: 3px #889E5D;
     /* offset-x | offset-y | blur-radius | color */
-    text-shadow: 0px 0px 2vw  rgba(136, 158, 93, 0.9);
-
+    text-shadow: 
+    -2px -2px 2px #889E5D, 
+    2px -2px 2px #889E5D, 
+	  -2px 2px 2px #889E5D, 
+	  2px 2px 2px #889E5D,
+    -5px -5px 5px #889E5D, 
+    5px -5px 5px #889E5D, 
+	  -5px 5px 5px #889E5D, 
+	  5px 5px 5px #889E5D;
 }
+
+.menu-item:hover h1, .menu-button:hover h1 {
+    opacity: 100%
+}
+
+
+.menu-imgs {
+    z-index: 0;
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+  }
+  
+  .menu-imgs img {
+    top: 5%;
+    height: 90%;
+    width: auto;
+    max-width: 90%; /* Ensure images don't exceed parent width */
+    position: absolute;
+    transition: opacity 0.3s ease;
+     /* Ensure images overlap */
+  }
+  
+  .menu-item:hover .menu-imgs img {
+    opacity: 0.25;
+  }
+  
+  .menu-item .menu-imgs img {
+    opacity: 0.70
+    ;
+  }
+  
+
+
+
+
+     .menu-imgs .clip1 {
+       left: -0.5%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip2 {
+       left: 39%;
+       height: 70%;
+       top: 0%;
+     }
+  
+     .menu-imgs .clip3 {
+       left: 26%;
+       top: 17%;
+       height: 85%;
+     }
+  
+     .menu-imgs .clip4 {
+       left: 65%;
+       height: 81%;
+       top: 4%;
+     }
+  
+     .menu-imgs .clip5 {
+       left: 50%;
+       top: 15%;
+     }
+  
+     .menu-imgs .clip6 {
+       left: 80%;
+       top: 15%;
+     }
+  
+     .menu-imgs .clip7 {
+       left: -0.5%;
+       height: 70%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip8 {
+       left: 29%;
+       height: 80%;
+       top: 0%;
+     }
+  
+     .menu-imgs .clip9 {
+       left: 10%;
+       top: 30%;
+       height: 70%;
+     }
+  
+     .menu-imgs .clip10 {
+       left: 60%;
+       height: 81%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip11 {
+       left: 45%;
+       top: 15%;
+     }
+  
+     .menu-imgs .clip12 {
+       left: 75%;
+       height: 80%;
+       top: 16%;
+     }
+  
+     .menu-imgs .clip13 {
+       left: 13%;
+       height: 90%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip14 {
+       left: 52%;
+       height: 51%;
+       top: 7%;
+     }
+  
+     .menu-imgs .clip15 {
+       left: -2%;
+       height: 90%;
+       top: 10%;
+     }
+  
+     .menu-imgs .clip16 {
+       left: 37%;
+       top: 19%;
+       height: 84%;
+     }
+  
+     .menu-imgs .clip17 {
+       left: 75%;
+       top: 7%;
+     }
+  
+     .menu-imgs .clip18 {
+       left: 57%;
+       height: 81%;
+       top: 20%;
+     }
+  
+     .menu-imgs .clip19 {
+       height: 100%;
+       left: 15%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip20 {
+       left: 0%;
+       height: 75%;
+       top: 20%;
+     }
+  
+     .menu-imgs .clip21 {
+       left: 61%;
+       height: 60%;
+       top: 35%;
+     }
+  
+     .menu-imgs .clip22 {
+       left: 45%;
+       top: 6%;
+       height: 60%;
+     }
+  
+     .menu-imgs .clip23 {
+       left: 39%;
+       height: 20%;
+       top: 70%;
+     }
+  
+     .menu-imgs .clip24 {
+       left: 85%;
+       height: 94%;
+       top: 1%;
+     }
+  
+     .menu-imgs .clip25 {
+       left: 52%;
+       height: 70%;
+       top: 10%;
+       transform: rotate(-65deg);
+     }
+  
+     .menu-imgs .clip26 {
+       left: 10%;
+       height: 70%;
+       top: -1%;
+     }
+  
+     .menu-imgs .clip27 {
+       left: 29%;
+       height: 83%;
+     }
+  
+     .menu-imgs .clip28 {
+       left: 3%;
+       height: 100%;
+       top: 2%;
+     }
+  
+     .menu-imgs .clip29 {
+       left: 50%;
+       height: 75%;
+       top: 14%;
+     }
+  
+     .menu-imgs .clip30 {
+       left: 80%;
+       height: 110%;
+       top: -11%;
+     }
+  
+ 
+  
+  Explanation of change
 
 /* .last-item {
     margin-left: auto;
     margin-right: auto;
 } */
+
+.icon path {
+    fill:  #889E5D;
+    color: #222656;
+}
 
 @media (max-width: 500px) {
     .menu-item {
@@ -1932,6 +2213,7 @@ div.categoryCaption {
     margin-left: 60px;
     justify-content: flex-end; 
     left: 60px;
+    margin-top:10px;
 }
 
 #connectContent h2 {
@@ -1942,6 +2224,7 @@ div.categoryCaption {
     display: flex;
     flex-direction: row;
     justify-content: flex-end; /* Aligns the buttons to the right */
+   
 }
 
 
@@ -1950,7 +2233,6 @@ div.categoryCaption {
     display: flex; /* Enables flexbox */
     align-items: center; /* Vertically centers the content */
     justify-content: center; /* Horizontally centers the content */
-
     font-family: 'ApercuMono';
     font-size: min(15px, 1.7vw);
     color: #F8E6B8;
@@ -1968,9 +2250,30 @@ div.categoryCaption {
     max-width: 15%;
 }
 
+.connectButton .connectButtonB {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    font-family: 'ApercuMono';
+    font-size: min(15px, 1.7vw);
+    color: #F8E6B8;
+    font-weight: normal;
+    background-color: #889E5D;
+    border: none; 
+    text-decoration: none;
+
+    text-align: center;
+    margin: min(1vw, 1vh);
+    margin-top:  min(1vw, 1.5vh);
+    border-radius: 10px; /* Curved corners */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    padding: 1.5vh;
+    max-width: 100%;
+}
+
 /* Optional: Style for hover effect */
 .connectButton .connectButtonS:hover {
-    background-color: #f0f0f0;
+    background-color: #F49F4F;
 }
 
 @media (max-width: 500px) {
@@ -2124,7 +2427,7 @@ div.categoryCaption {
     .expPlace {
         font-family: 'ApercuMedium';
         font-size: 17px;
-        color: #F8E6B8;
+        color: #889E5D;
         font-weight: normal;
         line-height: 50%;
     }
@@ -2150,7 +2453,7 @@ div.categoryCaption {
     li {
         font-family: 'ApercuRegular';
         font-size: 17px;
-        color: #F49F4F;
+        color: #889E5D;
         font-weight: normal;
     }
 
@@ -2159,16 +2462,19 @@ div.categoryCaption {
         left: -1.5em;
         top: 0em;
     }
+    .expList li {
+        color: #F49F4F;
+    }
 
     .confident {
-        line-height: 0%;
+        line-height: 50%;
         margin-bottom: -0.8em;
         font-size: 13.5px;
         color: #889E5D;
     }
 
     .tool {
-        line-height: 0%;
+        line-height: 50%;
         margin-bottom: -0.5em;
         color: #F8E6B8;
     }
@@ -2381,6 +2687,7 @@ div.categoryCaption {
     #menu li {
         padding: 2vh 0;
         font-size: 3vw;
+     
     }
 
     .cubepointer p {

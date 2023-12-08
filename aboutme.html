@@ -1,135 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--  Meta  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link id="theme" rel="stylesheet" type="text/css" href="./style.css" />
+  <link id="theme" rel="stylesheet" type="text/css" href="../styleW.css" />
 
   <title>About Me</title>
 
-  <style>
+ 
 
-  </style>
-
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">  <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div></button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="index.html">home</a>
-      <a href="aboutme.html">about me</a>
-      <a href="myexperience.html">my experience</a>
-      <a href="myprojects.html">my projects</a>
-      <a href="connect.html">connect</a>
+  <nav role="navigation">
+    <div id="menuToggle">
+  
+      <input type="checkbox"/>
+      <div class="dropbtn">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </div>
-  <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    </script>
+      
+      <ul id="menu">
+      
+        <a href="../index.html"><li>Home</li></a>
+        <a href="../aboutme.html"><li>About Me</li></a>
+        <a href="../myexperience.html"><li>My Experience</li></a>
+        <a href="../myprojects.html"><li>My Projects</li></a>
+        <a href="../connect.html"><li>Connect</li></a>
+     
+        <div class="cubepointer"><p> Click on this cube to change themes!</p></div>
+
+      </ul>
+
+    </div>
+  </nav>
+
 
 </head>
-<body style="overflow-x:hidden;">
- 
-    <div id="pageheader">
-    <h1 > Hello, <br>I'm Dorotea Bajic</h1>
-    <div class="bar4"></div>
-    <h2>this is a bit about me.</h2>
-    </div>
-    <br>
 
-    <div id="aboutContent">
-    <div id="aboutIMGbox">
-      <img id="selfie" src="Selfie2.png" class="aboutIMG">
-      <img id="selfieUnder" src="Selfie1.png" class="aboutIMG" style="height: auto;">
-      <br>
-      <img src="media/roboticsCaption.png" class="aboutIMG">
-      <br>
-      <img src="media/alladoy.jpg" class="aboutIMG">
-    </div>
+<body style="    max-width: 100%;
+max-height: 100%;
+overflow-x: hidden;">
 
-      <p class="aboutText">
-        
-        My name is Dorotea, check out the top of the page! I'm a new grad with big dreams of becoming a structural packaging designer. 
-        <br>&thinsp;<br>
-        Scratch that.
-       <br>&thinsp;<br>
-        I have become a structural packaging designer, as was established in my PPA win and 4 years of education. I am a web developer. I am a manager. I am a researcher. I am always looking to grow. 
-        <br>&thinsp;<br>
-        I am multicultural to the core. Born in Canada, raised in China, proudly Czech and Serbian, and I speak all those languages too. My stomach is also multi-cultural ;) as I love exploring Toronto food spots. 
-        <br>&thinsp;<br>
-        My interest in packaging comes from a long time fascination with combining technology with design. Growing up, my hobbies could be encapsulated in creating art and following my older brother in robotics. In high school I found the Graphic Communications Management program, offering a concentration in Packaging. It drew my attention, combining the best of both worlds graphics and engineering, and I haven't looked back since.
-        <br>&thinsp;<br>
-        Recently, I have been exploring many mediums which acumen with design methodology. From developing websites to 3D printing. I have spent time configuring how we can produce reliable packaging prototypes using Ryerson’s Creative Technology Lab. 
-        <br>&thinsp;<br>
-        My research in prototyping is still in development but my undergrad thesis isn’t. My paper discussing the potential of a circular environment for the cannabis industry addresses a small part of the gap of knowledge, and I seek to keep contributing to the discovery in this gap.
-        <br>&thinsp;<br>
-        Aside from all that, I like to skate, dye my hair green, and eat my signature breakfast creation, Eggs Aladoy.
-        <br>&thinsp;<br>
-        <br>&thinsp;<br>
-        
-        </p>
-    
-      </div>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-      <br>&thinsp;<br>
-    
-    
-    
-    
-    
-    
-      </div>
-      <button class="buttonA" onclick="toggleTheme()"><img src="media/eye.svg" class="eye"></button>
-    <button class="button" onclick="goBack()">back</button>
-    
-    
-    <script>
-    function goBack() {
-    window.history.back();
+
+
+  <script>
+    function reveal() {
+ var cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card) {
+    var reveals = card.querySelectorAll(".reveal");
+    var isActive = false;
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+            isActive = true;
+        } else {
+            reveals[i].classList.remove("active");
+        }
     }
+
+    // Add or remove the inactive class based on active state
+    if (!isActive) {
+        card.classList.add("inactive");
+    } else {
+        card.classList.remove("inactive");
+    }
+});
+}
+
+// Event listeners
+window.addEventListener("scroll", reveal);
+window.addEventListener("resize", reveal);
+window.addEventListener("load", reveal);
+
+
+
+  </script>
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const arrowContainers = document.querySelectorAll('.arrowcontainer');
+
+      function toggleAccordion(accordion) {
+        accordion.classList.toggle('aactive');
+      }
+
+      function toggleContentState(content) {
+        const accordion = content.previousElementSibling;
+        accordion.classList.toggle('aactive');
+      }
+
+      document.addEventListener('click', function (event) {
+        const accordion = event.target.closest('.accordion');
+        if (accordion) {
+          toggleAccordion(accordion);
+        }
+
+        const content = event.target.closest('.arrowcontent');
+        if (content) {
+          toggleContentState(content);
+        }
+      });
+
+      arrowContainers.forEach(container => {
+        const accordions = container.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+          accordion.addEventListener('touchstart', function (event) {
+            toggleAccordion(accordion);
+            event.preventDefault(); // Prevent touch events from triggering both touchstart and click
+          });
+        });
+
+        const arrowContents = container.querySelectorAll('.arrowcontent');
+        arrowContents.forEach(content => {
+          content.addEventListener('click', function (event) {
+            toggleContentState(content);
+            event.stopPropagation(); // Prevent the click from reaching the section click listener
+          });
+        });
+      });
+    });
+
+  </script>
+
+
+
+
+  <div id="pageheader">
+    <a href="../index.html" style="text-decoration: none; ">
+      <h1> Hello, <br>I'm Dorotea Bajic</h1>
+    </a>
+    <div class="bar4"></div>
+    <h2>this is <a href="../aboutme.html">about me</a>  > 
+    </h2>
+  </div>
+
+
+
+  <div class="arrowcontainer row">
+
+    <div class="aboutcolumn aboutright">
+      
+        <p>My name is Dorotea, check out the top of the page! I had a dream years ago of becoming a structural packaging designer and after a bachelors with a concentration in packaging, being the first Canadian to win the PPA Student Design Challenge and nearly two years designing sustainable solutions for one of the biggest players in the game. One could say I’ve achieved the dream</p>
+      
+        <p>Yet I am more. I am an educator. I am a researcher. I am an explorer of new technologies and mediums. A web developer, a manager, a skater, a friend. Above all, I am looking to grow</p>
+     
+        <p>On with the show, I am multicultural to the core. Born in Canada, raised in China, proudly Czech and Serbian, and I speak all those languages too. My stomach is also multi-cultural ;) as I love exploring Toronto food spots and trying new things in the kitchen (do you know how well hummus goes with caramel popcorn?)
+        </p>
+     
+        <p>My interest in packaging comes from a long time fascination with combining technology with design. Growing up, my hobbies could be encapsulated in creating art and joining my older brother in robotics. There we are winning my first regional. In high school I found the Graphic Communications Management program at Toronto Metropolitan University (then Ryerson), offering a concentration in Packaging. It drew my attention, combining the best of both worlds graphics and engineering, and I haven't looked back since.	 </p>
     
-    function toggleTheme() {
-              // Obtains an array of all <link>
-              // elements.
-              // Select your element using indexing.
-              var theme = document.getElementsByTagName('link')[0];
+        <p>During my time at TMU I have explored many mediums which acumen with design technology. From developing websites like this one to 3D printing and Augmented Reality. I had the great pleasure of assisting on my professors research in recycling symbols and later configuring with them how we can produce reliable packaging prototypes with a myriad of materials using the Design + Technology LAB’s fresh Ricoh UV Flatbed and other technologies. I also was their teaching assistant for Sustainability in Packaging, Advanced Print Production Processes, Prototyping Packaging courses, it was amazing to help educate and encourage students, watching them succeed.</p>
+
+        <p>
+          Following my PPA Student Design Challenge win in 2020 I took this passion to lead others to create into my role as VP of Competitions of MetPack (formerly RyePack) in my final year, where I helped propel their ideas into innovative entries. Mine that year included my first forage into integrated-AR. A dip compared to the dive into my thesis: exploring all the barriers and how to overcome them to instil a reuse system for the Canadian cannabis industry. Inspired by the awe-inducing system which The Beer Store runs here too.
+
+
+        </p>
+        <p>
+          After graduation I landed in my role at WestRock, working remotely from my teams from a production facility just out of Toronto. Independently building my lab out, dancing through plotter troubles to performing finger gymnastics on auto-bottom samples (ifykyk). This role has taught me so much about the industry from board sourcing to automation machinery and designing for efficiency.
+
+        </p>
+        <p>
+          I continue to explore mediums and technologies in my spare time, recently picking up carpet tufting and circuit artwork. I look forward to the future and all the opportunities it may hold
+
+        </p>
+        <p>
+          Still want to know more – reach out !
+        </p>
+      </div>
     
-              // Change the value of href attribute 
-              // to change the css sheet.
-              if (theme.getAttribute('href') == './style.css') {
-                  theme.setAttribute('href', './styleAccess.css');
-              } else {
-                  theme.setAttribute('href', './style.css');
-              }
-          }
-    </script> 
-    </body>
+    </div>
+
+    <div class="aboutcolumn aboutleft" >
+      <br>
+      <!-- Image Cards -->
+<div class="card invisible">
+  <div class="imgbox1" data-textbox=".textbox1">
+    <div class="container">
+      <div class="fillimgrow">
+
+        <img src="../media/photo/fishthatreads (1).jpg" alt="Image 1" class="lightbox-trigger">
+        <img src="../media/photo/fishthatreads (3).jpg" alt="Image 2" class="lightbox-trigger">
+        <img src="../media/photo/fishthatreads (4).jpg" alt="Image 3" class="lightbox-trigger">
+      </div>
+    </div>
+
+
+
+
+    <div class="container reveal">
+      <div class="fillimgrow">
+      <img src="../media/photo/fishthatreads (5).jpg" alt="Image sh1" class="lightbox-trigger" >
+      <img src="../media/photo/fishthatreads (7).jpg" alt="Image 1sd" class="lightbox-trigger" >
+      <img src="../media/photo/fishthatreads (8).jpg" alt="Image bderf1" class="lightbox-trigger" >
+    </div>
+  </div></div>
+
+  <div class="imgbox2" data-textbox=".textbox2">
+    <div class="container reveal">
+    <div class="fillimgrow">
+      <img src="../media/photo/fishthatreads (9).jpg" alt="Image hgyj1" class="lightbox-trigger" >
+      <img src="../media/photo/fishthatreads (11).jpg" alt="Image 1sed" class="lightbox-trigger" >
+      <img src="../media/photo/fishthatreads (12).jpg" alt="Image fs1" class="lightbox-trigger" >
+    </div>
+
+
+   
+      <div class="GalleryCaption accordion">
+        <h1>FishThatReads Instagram</h1>
+        <div class="right-content">
+        <h2>2017-19</h2>
+        <div class="arrow">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                            <g id="Layer_1-2" data-name="Layer 1">
+              <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+            </g>
+          </svg>
+        </div>
+      </div>      
+    </div>
+      
+      
+      
+      <div class="arrowcontent">
+        <p>These are some sample photographs from the (now defunct) FishThatReads Instagram feed
+          which used to be run as a book blogging platform with over 3,000 followers and daily posts which matched
+          the blog identity.</p>
+      </div></div>
+    </div></div>
+  
+
+
+
+  <div class="card invisible">
+  <div class="imgbox3" data-textbox=".textbox3">
+  <div class="container reveal">
+    <div class="fillimgrow">
+      <img src="../media/photo/bwfilm (3).jpg" alt="Image 1ae" class="lightbox-trigger">
+      <img src="../media/photo/bwfilm (2).jpg" alt="Image 133bg" class="lightbox-trigger" >
+      <img src="../media/photo/bwfilm (1).jpg" alt="Image 1rsf" class="lightbox-trigger" >
+    </div>
+
+    <div class="GalleryCaption accordion">
+      <h1>B/W Film</h1>
+      <div class="right-content">
+      <h2>2017</h2>
+      <div class="arrow">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                            <g id="Layer_1-2" data-name="Layer 1">
+              <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+            </g>
+          </svg>
+        </div></div>
+    </div>
+    <div class="arrowcontent">
+      <p> An early exploration of black and white 35mm photography.</p>
+    </div>
+  </div></div>
+</div>
+
+
+
+<div class="card  invisible">
+  <div class="container reveal">
+    <div class="fillimgrow">
+      <img src="../media/photo/expirefilm (1).jpg" alt="Image swetf1" class="lightbox-trigger" >
+      <img src="../media/photo/expirefilm (2).jpg" alt="Image e1" class="lightbox-trigger" >
+      <img src="../media/photo/expirefilm (3).jpg" alt="Image 1reg" class="lightbox-trigger" >
+    </div>
+
+    <div class="GalleryCaption accordion imgbox4" data-textbox=".textbox4">
+      <h1>Self-Expiration</h1>
+      <div class="right-content">
+      <h2>2018</h2>
+      <div class="arrow">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                            <g id="Layer_1-2" data-name="Layer 1">
+              <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+            </g>
+          </svg>
+        </div></div>
+    </div>
+    <div class="arrowcontent">
+      <p>Self-portraits shot using expired 35mm film.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card invisible">
+
+  <div class="container reveal">
+    <div class="fillimgrow">
+      <img src="../media/photo/czech (1).jpg" alt="Image 4567y1" class="lightbox-trigger">
+      <img src="../media/photo/czech (2).jpg"  alt="Image 51" class="lightbox-trigger">
+      <img src="../media/photo/czech (3).jpg" alt="Image ht5r1"  class="lightbox-trigger">
+      <img src="../media/photo/czech (4).jpg" alt="Image jd1" class="lightbox-trigger" >
+    </div>
+
+
+    <div class="GalleryCaption accordion imgbox5" data-textbox=".textbox5">
+      <h1>Bohemia</h1>
+      <div class="right-content">
+      <h2>2017</h2>
+      <div class="arrow">
+          <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                            <g id="Layer_1-2" data-name="Layer 1">
+              <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+            </g>
+          </svg>
+        </div></div>
+    </div>
+    <div class="arrowcontent">
+      <p> B/W 35mm film photos with the white edited to be bright colour to add pop-art, hand
+        painted photographs and a fresh spring feel to these photographs.</p>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="card invisible">
+
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="photo/highschool/yearbooks.jpg"  >
+          <img src="photo/highschool/BajicDory_Candles.jpg"  >
+          <img src="photo/highschool/grad feet.jpg"  >
+        </div>
+
+        <div class="GalleryCaption accordion">
+          <h1>Re-application</h1>
+          <div class="right-content">
+          <h2>2017</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p> For both grade 11 & 12, my art has been repurposed for the schools yearbook cover. Here
+            is the Warhol inspired take on the mascot from my senior yearbook. A photo I took for the "Candles" prompt
+            has also made it to the graduation ceremony booklet cover. </p>
+        </div>
+      </div></div>
+
+
+
+      <div class="card  invisible">
+
+      <div class="container reveal">
+        <div class="fillimgrow">
+          <img src="photo/scanography/Scan 13.jpeg"  >
+          <img src="photo/scanography/Scan 22.jpeg"  >
+          <img src="photo/scanography/green scan_Page_1.png"  >
+          <img src="photo/scanography/note selfie.png"  >
+        </div>
+        <div class="imgbox6" data-textbox=".textbox6"></div>
+        <div class="GalleryCaption accordion ">
+          <h1>Scanography</h1>
+          <div class="right-content">
+          <h2>2016-Now</h2>
+          <div class="arrow">
+              <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+                                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+                </g>
+              </svg>
+            </div></div>
+        </div>
+        <div class="arrowcontent">
+          <p> Early and recent expeditions in scanography. I really love playing with the appearance
+            of fingers and hands, multiplying and distorting simply with movement during exposure. The eerie feel draws
+            me to repeat, posing with odd objects
+            I just think this is a rad medium with its accessibility and unique lighting. Recently I have been tossing
+            my head in the office copier for a little dose of absurd creativity which really helps with the tenser days,
+            before returning to the dark void which is reality. </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="card  invisible">
+
+      <div class="container reveal ">
+
+        <h2>Pic of cameras and with sara on studio floor,
+          find shighschool grad thing with candle feet pics</h2>
+        <p>Some text..</p>
+      </div></div>
+
+    </div></div>
+  </div>
+
+
+
+
+  </div>
+
+ 
+  </div>
+
+
+   
+  </div>
+
+
+<!-- Lightbox Structure -->
+<div id="lightbox">
+  <div id="close-button" class="dropbtn">
+  
+      <span></span>
+      
+      <span></span>
+    </div>
+  <span id="prev-button">
     
-    <footer><br>&thinsp;<br></footer>
-    <br>&thinsp;<br>
+    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+      <g id="Layer_1-2" data-name="Layer 1">
+<polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+</g>
+</svg>
+
+</span>
+  <span id="next-button">
     
-    </html>
+    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810.78 471">
+      <g id="Layer_1-2" data-name="Layer 1">
+<polyline class="cls-1" points="780.78 30 404.95 441 30 30"/>
+</g>
+</svg>
+
+</span>
+  <div id="lightbox-main-content">
+      <div id="lightbox-content">
+          <img id="lightbox-image" src="" alt="">
+      </div>
+      <div id="lightbox-text-content">
+          <p id="lightbox-caption"></p>
+          <div id="lightbox-details">
+              <div id="lightbox-gallery-caption"></div>
+              <div id="lightbox-arrow-content"></div>
+          </div>
+      </div>
+  </div>
+  <div class="thumbnail-strip"></div>
+</div>
+
+
+ 
+
+
+
+  <button class="buttonA" onclick="toggleThemeRollout()" ondblclick="toggleRandomTheme()">
+ <div id="cube">
+    <div class="face cubefront"></div>
+    <div class="face cubeback"></div>
+    <div class="face cuberight"></div>
+    <div class="face cubeleft"></div>
+    <div class="face cubetop"></div>
+    <div class="face cubebottom"></div>
+</div></button>
+
+<div id="themeButtonsContainer" >
+  <button class="themeButton D" data-translate-x="-50" onclick="changeTheme('../styleD.css')"></button>
+  <button class="themeButton O" data-translate-x="-66" onclick="changeTheme('../styleO.css')"></button>
+  <button class="themeButton R" data-translate-x="-82" onclick="changeTheme('../styleR.css')"></button>
+  <button class="themeButton T" data-translate-x="-98" onclick="changeTheme('../styleT.css')"></button>
+  <button class="themeButton E" data-translate-x="-114" onclick="changeTheme('../styleE.css')"></button>
+  <button class="themeButton A" data-translate-x="-130" onclick="changeTheme('../styleA.css')"></button>
+  <button class="themeButton B" data-translate-x="-146" onclick="changeTheme('../styleB.css')"></button>
+  <button class="themeButton J" data-translate-x="-162" onclick="changeTheme('../styleJ.css')"></button>
+  <button class="themeButton I" data-translate-x="-178" onclick="changeTheme('../styleI.css')"></button>
+  <button class="themeButton C" data-translate-x="-194" onclick="changeTheme('../styleC.css')"></button>
+  <button class="themeButton W" data-translate-x="-210" onclick="changeTheme('../styleW.css')"></button>
+</div>
+
+
+<div id="overlay">
+  <div class="otext" id="overlay-message"></div>
+  <audio id="background-music" loop>
+    <source src="the-salami-lid-wont-fit.mp3" type="audio/mpeg">
+</audio>
+
+</div> 
+
+<script>
+
+
+  function toggleThemeRollout() {
+    const container = document.getElementById('themeButtonsContainer');
+    const isRolledOut = container.classList.contains('rolledOut');
+    container.classList.toggle('rolledOut');
+  
+    document.querySelectorAll('.themeButton').forEach((button, index) => {
+      if (isRolledOut) {
+        // Stack the buttons to their initial positions
+        const initialX = button.getAttribute('data-translate-x');
+        button.style.transform = `translateX(${initialX}px)`;
+      } else {
+        // Roll out the buttons
+        button.style.transform = `translateX(5px)`; // Adjust the multiplier as needed for spacing
+      }
+    });
+  }
+  
+  function toggleRandomTheme() {
+    const themes = ['../styleD.css', '../styleO.css','../styleR.css', '../styleT.css','../styleE.css', '../styleA.css','../styleB.css', '../styleJ.css','../styleI.css', '../styleC.css', '../styleW.css', /* ... other themes */];
+    const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+    changeTheme(randomTheme);
+  }
+  
+  function changeTheme(themePath) {
+    var theme = document.getElementsByTagName('link')[0];
+    theme.setAttribute('href', themePath);
+  }
+  
+  </script>
+
+<script>
+
+const overlayElement = document.getElementById("overlay");
+  const overlayMessageElement = document.getElementById("overlay-message");
+  const backgroundMusic = document.getElementById("background-music");
+  
+  const smallHeight = window.matchMedia("(max-height: 150px)");
+  const smallWidth = window.matchMedia("(max-width: 250px)");
+  
+  smallHeight.addListener(handleDeviceChange);
+  smallWidth.addListener(handleDeviceChange);
+  
+  function handleDeviceChange() {
+    if (smallHeight.matches) {
+      showOverlay("pls use a taller window ur screen is so smol", "short");
+    } else if (smallWidth.matches) {
+      showOverlay("pls use a wider window ur screen is so smol", "skinny");
+    } else {
+      hideOverlay();
+    }
+  }
+  
+  function showOverlay(message, className) {
+    overlayElement.style.display = "block";
+    overlayMessageElement.textContent = message;
+    overlayElement.classList.remove("short", "skinny");
+    overlayElement.classList.add(className);
+    backgroundMusic.play();
+  }
+  
+  function hideOverlay() {
+    overlayElement.style.display = "none";
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0; // Reset the audio to the start
+  }
+  
+  // Initial check
+  handleDeviceChange();
+  
+  
+</script>
+
+
+
+  <button class="button" id="backButton">
+    <svg id="backButtonSVG" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 18h3.75a5.25 5.25 0 100-10.5H5M7.5 4L4 7.5 7.5 11"/>
+    </svg>
+    <span id="messageText" style="display: none;">This is where you started. <br> Are you sure you want to leave?</span>
+</button>
+  
+<script>
+  const cube = document.getElementById('cube');
+
+window.addEventListener('scroll', () => {
+    const rotation = window.pageYOffset * 0.1;
+    cube.style.transform = `rotateX(${40-(2*rotation)}deg) rotateY(${0-(1.5*rotation)}deg) rotateZ(${70-(0.7*rotation)}deg)`;
+    
+});
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const backButton = document.getElementById("backButton");
+    const messageText = document.getElementById("messageText");
+    const svg = document.getElementById("backButtonSVG");
+    let clicks = 0;
+
+    console.log("Initial state:", {
+        backButtonVisible: backButton.style.display,
+        messageTextVisible: messageText.style.display,
+        svgVisible: svg.style.display
+    });
+
+    backButton.addEventListener("click", () => {
+        clicks++;
+        console.log("Click count:", clicks);
+
+        try {
+            const referrer = document.referrer;
+            const currentDomain = window.location.hostname;
+            // Ensure referrer is a non-empty string before constructing URL
+            const referrerDomain = referrer ? new URL(referrer).hostname : '';
+
+            console.log("Referrer Domain:", referrerDomain, "Current Domain:", currentDomain);
+
+            if (referrerDomain !== currentDomain) {
+                svg.style.display = "none";
+                messageText.style.display = "inline";
+                backButton.classList.add("messageShown");
+                console.log("Condition met: Different domain. SVG hidden, message shown.");
+            } else {
+                history.back();
+                console.log("Condition met: Same domain. Going back in history.");
+            }
+        } catch (error) {
+            console.error("Error processing URL:", error);
+            // Handle the error or fallback behavior here if needed
+        }
+
+        if (clicks === 2) {
+            messageText.innerText = "Really?";
+            console.log("Message changed to 'Really?'");
+        } else if (clicks === 3) {
+            messageText.innerText = "Fine.";
+            backButton.disabled = true;
+            console.log("Message changed to 'Fine.', button disabled.");
+            setTimeout(() => {
+                window.location.href = "https://www.seznam.cz";
+                console.log("Redirecting to seznam.cz");
+            }, 1000);
+        }
+    });
+
+    window.addEventListener("popstate", () => {
+        clicks = 0;
+        messageText.innerText = "This is where you started. <br> Are you sure you want to leave?";
+        messageText.style.display = "none";
+        svg.style.display = "inline";
+        backButton.classList.remove("messageShown");
+        console.log("popstate event: Resetting to initial state.");
+    });
+});
+
+</script>
+
+
+  
+
+  
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  function animateTextboxesWithImgbox(rightColumnClass, leftColumnClass, totalTextboxElements) {
+    // Animate each textbox when its associated imgbox comes into view
+    for (let i = 1; i <= totalTextboxElements; i++) {
+      const textbox = document.querySelector(`.${rightColumnClass} .textbox${i}`);
+      const imgbox = document.querySelector(`.${leftColumnClass} .imgbox${i}`);
+
+      if (textbox && imgbox) {
+        gsap.fromTo(textbox, { opacity: 0, y: 30 }, {
+          opacity: 1,
+          y: 0,
+          duration: 0.1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: imgbox,
+            start: "top bottom",
+            toggleActions: "play none none none",
+          },
+        });
+        // console.log(`Animation set for textbox ${i}`);
+      }
+    }
+  }
+
+  function setupDynamicPinning(rightColumnClass, leftColumnClass) {
+    const rightColumn = document.querySelector(`.${rightColumnClass}`);
+    const leftColumn = document.querySelector(`.${leftColumnClass}`);
+    const viewportHeight = window.innerHeight;
+    let initialPinPosition = null;
+    let lastScrollY = window.scrollY;
+
+    function calculateTextboxLoad() {
+  let loadedHeight = 0;
+  document.querySelectorAll(`.${rightColumnClass} .container.reveal.active`).forEach(container => {
+    // Get the opacity of the container
+    const computedStyle = window.getComputedStyle(container);
+    const opacity = computedStyle.opacity;
+
+    // Process each p element within the container
+    container.querySelectorAll('p').forEach(p => {
+      const rect = p.getBoundingClientRect();
+      // Check if the p element is within the viewport
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        // If the container is fully opaque, add its height to loadedHeight
+        if (opacity === "1") {
+          loadedHeight += visibleHeight;
+        } 
+      }
+    });
+  });
+
+  const effectiveHeight = loadedHeight;
+  const percentageVisible = (effectiveHeight / viewportHeight) * 100;
+  // console.log(`Effective visible height of p elements: ${effectiveHeight}px, which is ${percentageVisible}% of the viewport`);
+  return percentageVisible;
+}
+
+
+function refreshPinning() {
+      const percentageVisible = calculateTextboxLoad();
+      const isShorterThanViewport = rightColumn.offsetHeight < viewportHeight;
+      // console.log(`Refreshing pinning at scroll position: ${window.scrollY}, percentage visible: ${percentageVisible}%`);
+
+      if (!isShorterThanViewport && percentageVisible >= 60) {
+        if (initialPinPosition === null) {
+          initialPinPosition = window.scrollY;
+          // console.log(`Initial pin position for ${rightColumnClass} set at: ${initialPinPosition}`);
+        } else {
+          const scrollDelta = window.scrollY - lastScrollY;
+          if (scrollDelta > 0) {
+           // Calculate the new top position
+        let newTop = parseInt(rightColumn.style.top || 0) - scrollDelta;
+        // Calculate the maximum top value to keep the bottom of right column aligned with the bottom of the left column
+        const maxTop = leftColumn.offsetHeight - rightColumn.offsetHeight;
+        // Limit the new top position to the maximum allowable value
+        newTop = Math.min(newTop, maxTop);
+        rightColumn.style.top = `${newTop}px`;
+        // console.log(`Adjusted pin position to: ${rightColumn.style.top}`);
+      }
+        }
+      } 
+      lastScrollY = window.scrollY;
+    }
+
+    window.addEventListener('scroll', refreshPinning);
+  }
+
+  function setupInitialPinning(rightColumnClass, leftColumnClass) {
+    const rightColumn = document.querySelector(`.${rightColumnClass}`);
+    const leftColumn = document.querySelector(`.${leftColumnClass}`);
+    const isShorterThanViewport = rightColumn.offsetHeight < window.innerHeight;
+
+    // Initial static pinning setup
+    ScrollTrigger.create({
+      trigger: rightColumn,
+      start: "top top",
+      endTrigger: leftColumn,
+      end: isShorterThanViewport ? "bottom 90%" : `+=${leftColumn.offsetHeight}`,
+      pin: true,
+      pinSpacing: false,
+      markers: true,
+    });
+    // Calculate and log the initial pin position in pixels
+  const initialPinPositionPx = rightColumn.getBoundingClientRect().top + window.scrollY;
+  console.log(`Initial pinning set for ${rightColumnClass} at ${initialPinPositionPx}px`);
+}
+
+  // Initialize animations, dynamic pinning, and initial pinning for each column pair
+  animateTextboxesWithImgbox("right-column-1", "left-column-1", 6);
+  setupDynamicPinning("right-column-1", "left-column-1");
+  setupInitialPinning("right-column-1", "left-column-1");
+
+  animateTextboxesWithImgbox("right-column-2", "left-column-2", 6);
+  setupDynamicPinning("right-column-2", "left-column-2");
+  setupInitialPinning("right-column-2", "left-column-2");
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateImageSizes() {
+      $('.fillimgrow').each(function () {
+        var containerWidth = $(this).width();
+        var totalMarginWidth = ($(this).find('img').length - 1) * parseFloat($(this).find('img').css('margin-right'));
+        var totalImageWidth = 0;
+
+
+        $(this).find('img').each(function () {
+          totalImageWidth += this.naturalWidth;
+        });
+
+        var availcontainerWidth = containerWidth - totalMarginWidth;
+
+        // Calculate the average aspect ratio for images
+        var totalInverseAspectRatio = 0;
+        $(this).find('img').each(function () {
+          totalInverseAspectRatio += this.naturalWidth / this.naturalHeight;
+        });
+
+        // Calculate the rowHeight based on the individual image calculations
+        var rowHeight = availcontainerWidth / (totalInverseAspectRatio / 1);
+
+        // Apply the calculated height to all images
+        $(this).find('img').each(function () {
+          var originalWidth = this.naturalWidth;
+          var newWidth = originalWidth * rowHeight / this.naturalHeight;
+          $(this).css('width', newWidth + 'px');
+          $(this).css('height', rowHeight + 'px');
+        });
+      });
+    }
+
+    $(document).ready(function () {
+      updateImageSizes();
+
+      $(window).on('resize', function () {
+        updateImageSizes();
+      });
+    });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('menuToggle').querySelector('input[type="checkbox"]').checked = false;
+  });
+</script>
+
+ <!-- Include jQuery -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var lightbox = $('#lightbox');
+    var lightboxImage = $('#lightbox-image');
+    var lightboxCaption = $('#lightbox-caption');
+    var closeButton = $('#close-button');
+    var prevButton = $('#prev-button');
+    var nextButton = $('#next-button');
+    var currentImageIndex;
+    var currentCard;
+    var allCards = $('.card'); // Reference to all cards
+
+    $('.lightbox-trigger').css('cursor', 'pointer');
+
+    console.log("Lightbox script initialized.");
+
+    // Function to find the card that contains an image with a matching src
+    function findCardByImageSrc(imgSrc) {
+        var foundCard;
+        allCards.each(function() {
+            if ($(this).find('.lightbox-trigger[src="' + imgSrc + '"]').length > 0) {
+                foundCard = $(this);
+                return false; // Break the loop
+            }
+        });
+        return foundCard;
+    }
+
+    // Function to open the lightbox
+    function openLightbox(index, card) {
+        console.log("Opening lightbox for image at index:", index, "Card:", card);
+        currentImageIndex = index;
+        currentCard = card;
+
+        var imgSrc = currentCard.find('.lightbox-trigger').eq(index).attr('src');
+        var imgAlt = currentCard.find('.lightbox-trigger').eq(index).attr('alt');
+        lightboxImage.attr('src', imgSrc);
+        lightboxImage.attr('alt', imgAlt);
+        lightboxCaption.text(imgAlt);
+
+        var galleryCaptionHTML = currentCard.find('.GalleryCaption').html();
+        var arrowContentHTML = currentCard.find('.arrowcontent').html();
+        $('#lightbox-gallery-caption').html(galleryCaptionHTML);
+        $('#lightbox-arrow-content').html(arrowContentHTML);
+
+        if (currentCard.find('.lightbox-trigger').length <= 1) {
+            prevButton.hide();
+            nextButton.hide();
+        } else {
+            prevButton.show();
+            nextButton.show();
+        }
+
+        lightbox.show();
+        updateThumbnailStrip();
+        adjustThumbnailSizes(); // Adjust thumbnail sizes when lightbox is opened
+    }
+
+    // Function to update the thumbnail strip
+    function updateThumbnailStrip() {
+        var thumbnails = currentCard.find('.lightbox-trigger').clone();
+        $('.thumbnail-strip').empty().append(thumbnails);
+    }
+
+    // Adjust thumbnail sizes based on the number of images
+    function adjustThumbnailSizes() {
+    var thumbnailStrip = $('.thumbnail-strip');
+    var thumbnails = thumbnailStrip.find('img');
+    var containerWidth = (thumbnailStrip.width()-10);
+    var totalMarginWidth = (thumbnails.length - 1) * 2 * parseFloat(thumbnails.css('margin-right'));
+    var totalWidthAtMaxHeight = 0;
+    var maxHeight = 100; // Example max height, adjust as needed
+
+    // Calculate the total width if all thumbnails were at the max height
+    thumbnails.each(function () {
+        var aspectRatio = this.naturalWidth / this.naturalHeight;
+        totalWidthAtMaxHeight += maxHeight * aspectRatio;
+    });
+
+    totalWidthAtMaxHeight += totalMarginWidth;
+
+    // Check if the total width exceeds the container width
+    if (totalWidthAtMaxHeight > containerWidth) {
+        // Adjust max height proportionally
+        maxHeight = maxHeight * containerWidth / totalWidthAtMaxHeight;
+    } 
+
+    // Apply the calculated height to all thumbnails
+    thumbnails.css({
+        'height': maxHeight + 'px',
+        'width': 'auto',
+        'margin': '0 2px'
+    });
+}
+
+$(document).ready(function () {
+    adjustThumbnailSizes();
+    $(window).on('resize', adjustThumbnailSizes);
+});
+
+
+    // Event handler for clicking on an image to open the lightbox
+    $(document).on('click', '.lightbox-trigger', function() {
+        var card = $(this).closest('.card');
+        var allImagesInCard = card.find('.lightbox-trigger');
+        var index = allImagesInCard.index(this);
+        console.log("Image clicked. Card:", card, "Index:", index);
+        openLightbox(index, card);
+        adjustThumbnailSizes(); // Adjust thumbnail sizes when an image is clicked
+    });
+
+    // Event handler for thumbnail strip image clicks
+    $(document).on('click', '.thumbnail-strip img', function() {
+        var clickedThumbnailSrc = $(this).attr('src');
+        var cardContainingThumbnail = findCardByImageSrc(clickedThumbnailSrc);
+        if (cardContainingThumbnail) {
+            var allImagesInCard = cardContainingThumbnail.find('.lightbox-trigger');
+            var index = allImagesInCard.index(allImagesInCard.filter('[src="' + clickedThumbnailSrc + '"]'));
+            openLightbox(index, cardContainingThumbnail);
+            adjustThumbnailSizes(); // Adjust thumbnail sizes when a thumbnail is clicked
+        }
+    });
+
+    // Event handlers for close, previous, and next buttons
+    closeButton.click(function() { 
+        console.log("Closing lightbox.");
+        lightbox.hide(); 
+    });
+
+    prevButton.click(function() {
+        if (currentImageIndex > 0) {
+            openLightbox(currentImageIndex - 1, currentCard);
+            adjustThumbnailSizes(); // Adjust thumbnail sizes when previous button is clicked
+        }
+    });
+
+    nextButton.click(function() {
+        if (currentImageIndex < currentCard.find('.lightbox-trigger').length - 1) {
+            openLightbox(currentImageIndex + 1, currentCard);
+            adjustThumbnailSizes(); // Adjust thumbnail sizes when next button is clicked
+        }
+    });
+
+    // Close the lightbox when clicking outside the image area
+    lightbox.click(function(e) {
+        if ($(e.target).is('#lightbox, #lightbox-main-content, #lightbox-details')) {
+            lightbox.hide();
+        }
+    });
+
+    // Initial call to adjust thumbnail sizes and also when window is resized
+    adjustThumbnailSizes();
+    $(window).resize(adjustThumbnailSizes);
+});
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateFavicon() {
+      var stylesheet = document.getElementById('theme').getAttribute('href');
+      var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/svg+xml';
+
+      // Change the href to match the stylesheet
+      if (stylesheet.includes('styleD')) {
+        faviconLink.href = 'path/to/logoD.svg';
+      } else if (stylesheet.includes('styleO')) {
+        faviconLink.href = 'path/to/logoO.svg';
+      } else if (stylesheet.includes('styleR')) {
+        faviconLink.href = 'path/to/logoR.svg';
+      } else if (stylesheet.includes('styleT')) {
+        faviconLink.href = 'path/to/logoT.svg';
+      } else if (stylesheet.includes('styleE')) {
+        faviconLink.href = 'path/to/logoE.svg';
+      } else if (stylesheet.includes('styleA')) {
+        faviconLink.href = 'path/to/logoA.svg';
+      } else if (stylesheet.includes('styleB')) {
+        faviconLink.href = 'path/to/logoB.svg';
+      } else if (stylesheet.includes('styleJ')) {
+        faviconLink.href = 'path/to/logoJ.svg';
+      } else if (stylesheet.includes('styleI')) {
+        faviconLink.href = 'path/to/logoI.svg';
+      } else if (stylesheet.includes('styleC')) {
+        faviconLink.href = 'path/to/logoC.svg';
+      } else if (stylesheet.includes('styleW')) {
+        faviconLink.href = 'logoW.svg';
+      }
+
+      document.head.appendChild(faviconLink);
+    }
+
+    updateFavicon();
+  });
+</script>
+
+
+
+
+
+
+
+</body>
+
+<footer><br>&thinsp;<br></footer>
+<br>&thinsp;<br>
+
+</html>

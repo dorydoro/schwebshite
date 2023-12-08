@@ -33,7 +33,7 @@
           <li>About Me</li>
         </a>
         <a href="../myexperience.html">
-          <li>My experience</li>
+          <li>My Experience</li>
         </a>
         <a href="../myprojects.html">
           <li>My Projects</li>
@@ -63,32 +63,71 @@
       <h1> Hello, <br>I'm Dorotea Bajic</h1>
     </a>
     <div class="bar4"></div>
-    <h2>><a href="../myprojects.html">my projects</a> > 
+    <h2>this is <a href="../myprojects.html">my projects</a>  > 
     </h2>
   </div>
 
 
 
-  <div id="projectContentC">
-
-
-    <a href="collect media\packaging.html" class="menu-item">
-      <h1>Past in Packaging Design</h1>
-    </a>
-    <a href="collect media\artwork.html" class="menu-item">
-      <h1>Mastery Across Mediums</h1>
-    </a>
-    <a href="collect media\research.html" class="menu-item">
-      <h1>Experiences in Sustainability Engineering</h1>
-    </a>
-    <a href="collect media\websites.html" class="menu-item">
-      <h1>Development of This Site & Others</h1>
-    </a>
-    <a href="collect media\photography.html" class="menu-item">
+<div id="projectContentC">
+  <a href="collect media\packaging.html" class="menu-item">
+    <div class="menu-imgs">
+      <img src="collect media\clips\adventrendercad.png" alt="Image 1" class="clip1">
+      <img src="collect media\clips\prophecy.png" alt="Image 2" class="clip2">
+      <img src="collect media\clips\bbfold.png" alt="Image 2" class="clip3">
+      <img src="collect media\clips\ctltrays.png" alt="Image 2" class="clip4">
+      <img src="collect media\clips\KKbox.png" alt="Image 2" class="clip5">
+      <img src="collect media\clips\startupproto.png" alt="Image 2" class="clip6">
+    </div>
+    <h1>Past in Packaging Design</h1>
+  </a>
+  <a href="collect media\artwork.html" class="menu-item">
+    <div class="menu-imgs">
+      <img src="collect media\clips\pencilleaves.png" alt="Image 1" class="clip7">
+      <img src="collect media\clips\flexowine.png" alt="Image 2" class="clip8">
+      <img src="collect media\clips\ARmap.png" alt="Image 2" class="clip9">
+      <img src="collect media\clips\spidercake.png" alt="Image 2" class="clip10">
+      <img src="collect media\clips\makeup.png" alt="Image 2" class="clip11">
+      <img src="collect media\clips\racconred.png" alt="Image 2" class="clip12">
+    </div>
+    <h1>Mastery Across Mediums</h1>
+  </a>
+  <a href="collect media\research.html" class="menu-item">
+    <div class="menu-imgs">
+      <img src="collect media\clips\thesisclip.png" alt="Image 1" class="clip13">
+      <img src="collect media\clips\paperclip.png" alt="Image 2" class="clip14">
+      <img src="collect media\clips\papertray.png" alt="Image 2" class="clip15">
+      <img src="collect media\clips\whiskeybottle.png" alt="Image 2" class="clip16">
+      <img src="collect media\clips\ppaclip.png" alt="Image 2" class="clip17">
+      <img src="collect media\clips\childcycle.png" alt="Image 2" class="clip18">
+    </div>
+    <h1>Experiences in Sustainability Engineering</h1>
+  </a>
+  <a href="collect media\websites.html" class="menu-item">
+    <div class="menu-imgs">
+      <img src="collect media\clips\nails.png" alt="Image 1" class="clip19">
+      <img src="collect media\clips\snailnail2.png" alt="Image 2" class="clip20">
+      <img src="collect media\clips\rivetingscreenshot.png" alt="Image 2" class="clip21">
+      <img src="collect media\clips\webold.png" alt="Image 2" class="clip22">
+      <img src="collect media\clips\webcube.png" alt="Image 2" class="clip23">
+      <img src="collect media\clips\MummersPlay.png" alt="Image 2" class="clip24">
+    </div>
+    <h1>Development of This Site & Others</h1>
+  </a>
+  <a href="collect media\photography.html" class="menu-item">
+    <div class="menu-imgs">
+      <img src="collect media\clips\squirrelscan.png" alt="Image 2" class="clip25">
+      <img src="collect media\clips\fishclip.png" alt="Image 2" class="clip26">
+      <img src="collect media\clips\babayphoto clip.png" alt="Image 2" class="clip27">
+      <img src="collect media\clips\ppap (2)clip.png" alt="Image 1" class="clip28">
+      <img src="collect media\clips\catfish.png" alt="Image 2" class="clip29">
+         <img src="collect media\clips\bwclip.png" alt="Image 2" class="clip30">
+      </div>
       <h1>Biography in Photography</h1>
     </a>
     <a href="\connect.html" class="menu-button">
       <h1>Still Curious?</h1>
+     
     </a>
 
   </div>
@@ -131,6 +170,50 @@
 
   </div>
 
+
+
+<!-- <script>
+function adjustImages() {
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  menuItems.forEach(menuItem => {
+    const imageContainer = menuItem.querySelector('.menu-imgs');
+    const images = imageContainer.querySelectorAll('img');
+
+    const containerWidth = imageContainer.clientWidth;
+    const totalWidth = Array.from(images).reduce((acc, img) => acc + img.clientWidth, 0);
+
+    if (totalWidth > containerWidth) {
+      images.forEach(image => {
+        image.style.position = 'relative';
+        image.style.width = 'auto'; // Reset width to auto to allow overlap
+        image.style.left = '0';
+      });
+    } else {
+      let spaceBetween = (containerWidth - totalWidth) / (images.length + 2);
+      spaceBetween = Math.max(0, spaceBetween); // Ensure no negative spacing
+
+      let currentPosition = spaceBetween;
+
+      images.forEach(image => {
+        image.style.position = 'relative';
+        const maxHeight = menuItem.clientHeight * 0.9; // Maximum height relative to menu-item
+        image.style.maxHeight = `${maxHeight * 1.1 }px`;
+        image.style.width = 'auto'; // Reset width to auto to allow overlap
+        image.style.left = `${currentPosition}px`;
+        currentPosition += image.clientWidth;
+      });
+    }
+  });
+}
+
+window.addEventListener('resize', adjustImages);
+// Call it initially to adjust images on page load or any immediate window size change
+adjustImages();
+
+
+
+</script> -->
 
   <script>
 
@@ -382,7 +465,45 @@
     });
   </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateFavicon() {
+      var stylesheet = document.getElementById('theme').getAttribute('href');
+      var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/svg+xml';
 
+      // Change the href to match the stylesheet
+      if (stylesheet.includes('styleD')) {
+        faviconLink.href = 'path/to/logoD.svg';
+      } else if (stylesheet.includes('styleO')) {
+        faviconLink.href = 'path/to/logoO.svg';
+      } else if (stylesheet.includes('styleR')) {
+        faviconLink.href = 'path/to/logoR.svg';
+      } else if (stylesheet.includes('styleT')) {
+        faviconLink.href = 'path/to/logoT.svg';
+      } else if (stylesheet.includes('styleE')) {
+        faviconLink.href = 'path/to/logoE.svg';
+      } else if (stylesheet.includes('styleA')) {
+        faviconLink.href = 'path/to/logoA.svg';
+      } else if (stylesheet.includes('styleB')) {
+        faviconLink.href = 'path/to/logoB.svg';
+      } else if (stylesheet.includes('styleJ')) {
+        faviconLink.href = 'path/to/logoJ.svg';
+      } else if (stylesheet.includes('styleI')) {
+        faviconLink.href = 'path/to/logoI.svg';
+      } else if (stylesheet.includes('styleC')) {
+        faviconLink.href = 'path/to/logoC.svg';
+      } else if (stylesheet.includes('styleW')) {
+        faviconLink.href = 'logoW.svg';
+      }
+
+      document.head.appendChild(faviconLink);
+    }
+
+    updateFavicon();
+  });
+</script>
 </body>
 
 

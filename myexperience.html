@@ -126,7 +126,7 @@
         <h3 >Awards</h3>
         <div class="expbar"></div>
 
-        <a href="https://www.instagram.com/p/CNIhedHA-fC/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/p/CdVlu66j3fb/" target="_blank" rel="noopener noreferrer">
           <p class="expTimeB" style="line-height: 200%;   margin-bottom: -1em;">2022</p>
           <p class="expPlaceB"style="line-height: 100%;" title="result of WestRock nominating designs for award">Employee Spotlight for Packaging Design Day</p>
           </a>
@@ -406,6 +406,47 @@
       </div>
     </div>
 
+    <div id="expGallery">
+      <img src="collect media\clips\KKbox.png" alt="Image 1" title="This is advent cad" class="positioned-image tooltip-element">
+      <img src="collect media\clips\adventrendercad.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\GlassBottlePose.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\CTLpopup1.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\spotlight.jpg" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\PlotterPose.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\paperclip.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ppaclip.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\prophecyclass.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\papertray.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ARmap.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\award1.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\CAKE BOX open.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\awards2.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ikeaata (4).png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\TMbox.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\TMProof.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ctltrays.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\TMmap.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\TMbulkcut.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\snailnail2.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\CTL pouch.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\TATime2.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\nestle collage.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ryapk.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ryepack earthdnager.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\ryepackbloom.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\unicef.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\po tablets.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\coffeeogler.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\whiskeybottle.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\coffeeogler bottom.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\prophecy.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\flexowine.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\duolingored.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\thesisclip.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+      <img src="collect media\clips\GCMGrad.png" alt="Image 1" title="This is advent cad" class="positioned-image">
+
+    
+    </div>
 
       <script>
         function openCity(evt, cityName) {
@@ -474,6 +515,8 @@
 
 </div>
 
+  
+<div id="custom-tooltip" class="custom-tooltip"></div>
 
 <script>
 
@@ -582,6 +625,7 @@
 
   // Initial check
   handleDeviceChange();
+
 
 
 </script>
@@ -725,7 +769,7 @@
   });
 </script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
     function updateFavicon() {
       var stylesheet = document.getElementById('theme').getAttribute('href');
       var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
@@ -763,6 +807,97 @@
     updateFavicon();
   });
 </script>
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+  // Get the selected and positioned divs
+const selectedDiv = document.getElementById('expRIGHTbox');
+const positionedDiv = document.getElementById('expGallery');
+
+// Set the initial height of the positioned div to match the selected div
+positionedDiv.style.height = `${selectedDiv.offsetHeight}px`;
+
+function positionToRight() {
+  const selectedDivRect = selectedDiv.getBoundingClientRect();
+
+  // Calculate the position for the top and left of the positioned div
+  const topOffset = selectedDivRect.top + window.scrollY;
+  const leftOffset = selectedDivRect.right + window.scrollX;
+
+  positionedDiv.style.left = `${leftOffset}px`;
+  positionedDiv.style.top = `${topOffset}px`;
+
+  // Calculate the width of the positioned div to fill remaining space
+  const remainingWidth = window.innerWidth - selectedDivRect.right;
+  positionedDiv.style.width = `${remainingWidth - 15}px`;
+}
+
+
+// Call the function initially and on window resize
+positionToRight();
+window.addEventListener('resize', positionToRight);
+
+
+
+});
+
+const positionedDiv = document.getElementById('expGallery');
+const positionedImages = positionedDiv.querySelectorAll('.positioned-image');
+
+positionedImages.forEach((img, index) => {
+  img.style.top = `${(index + 0.1) * 2}%`; // 3% down the height for each image
+
+
+  img.addEventListener('mouseenter', () => {
+    img.style.filter = 'drop-shadow(0 4px 8px #F8E6B8)';
+    img.style.transform = `translateX(-70%)`;
+    img.style.paddingRight = '30%'; // Add padding to the right
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.style.transform = `translateX(-20%)`;
+    img.style.filter = 'drop-shadow(0 0px 0px #F8E6B8)'
+    img.style.paddingRight = '0%'; // Add padding to the right
+  });
+});
+
+</script> 
+
+
+<div id="custom-tooltip" class="custom-tooltip"></div>
+
+ 
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+  $(function() {
+    // Cache the tooltip element
+    var tooltip = $('#custom-tooltip');
+
+    $('.tooltip-element').removeAttr('title')
+    
+    $('.tooltip-element').on('mousemove', function(event) {
+      // Get cursor coordinates
+      var mouseX = event.clientX;
+      var mouseY = event.clientY;
+
+      // Update tooltip content and position
+      var tooltipText = $(this).attr('title');
+      var tooltipWidth = tooltip.width(); // Get the width of the tooltip
+      tooltip.text(tooltipText).css({
+        left: (mouseX) - tooltipWidth - 10,// Adjust the left position to add an offset
+        top: (mouseY) + 20    // Adjust the top position to add an offset
+      }).show();
+    }).on('mouseout', function() {
+      // Hide tooltip on mouse out
+      tooltip.hide();
+    });
+  });
+</script>
+
 
 </body>
 <footer><br>&thinsp;<br></footer>

@@ -25,7 +25,7 @@
       
         <a href="../index.html"><li>Home</li></a>
         <a href="../aboutme.html"><li>About Me</li></a>
-        <a href="../myexperience.html"><li>My experience</li></a>
+        <a href="../myexperience.html"><li>My Experience</li></a>
         <a href="../myprojects.html"><li>My Projects</li></a>
         <a href="../connect.html"><li>Connect</li></a>
      
@@ -40,12 +40,13 @@
 
 
 </head>
-<body style="    max-width: 100%;
+<body style="      max-width: 100%;
 max-height: 100%;
 
 overflow-x: hidden;">
+
   <!-- Our wrapper -->
-  <div id="bm"> 
+  <div id="bm" > 
     <div id="bmLottie"></div> 
     <div id="productionBox" >
       <object type="image/svg+xml" data="productionbox1-01.svg" id="mySVG" ></object>
@@ -57,7 +58,8 @@ overflow-x: hidden;">
     <h2 class="h2h"><br><br><br><br>about me&thinsp;</h2>
   </div></a>
   
-  <div id="cb" style="cursor: pointer;" title="Click here to see a production carton" ></div>
+  <div id="cb" style="cursor: pointer;" data-tooltip="Click here to see a production carton" class="tooltip-element">    </div>
+  
   <div id="cc">
     <img id="selfie" src="Selfie2.png" alt="headshot of Dorotea closed lip smile">
     <img id="selfieUnder" src="Selfie1.png" alt="headshot of Dorotea smile with teeth">
@@ -85,30 +87,70 @@ overflow-x: hidden;">
     <h2>this is my online portfolio.</h2>
   </div>
   
- 
+
 </div>
 </div>
+<div id="custom-tooltip" class="custom-tooltip"></div>
 
-  
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
-  <script>
+<!-- Your existing HTML -->
 
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
+<script>
+  function startAnimationWithOffset() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var isWiderThanSquare = width / height > 1; // Check if the aspect ratio is wider than a square
 
-    var animation = bodymovin.loadAnimation({
+    var animationOptions = {
       container: document.getElementById('bmLottie'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      
       path: 'boxunfolding.json'
-    })
+    };
 
-    lottie.setSpeed(1.5) 
-    
-    
+    if (isWiderThanSquare) {
+      animationOptions.initialSegment = [65, 100]; // For example, play from 30% to 100% of the animation
+    }
 
-  </script>
+    var animation = bodymovin.loadAnimation(animationOptions);
+
+    lottie.setSpeed(1.4);
+
+    var bmOver = document.getElementById('bmOver');
+    bmOver.style.opacity = 0; // Set initial opacity to 0
+
+    animation.addEventListener('enterFrame', function() {
+      var currentFrame = animation.currentFrame;
+      var startFadeFrame = animation.totalFrames * 0.9; // Start fading at the last 5% of the animation
+      var endFadeFrame = animation.totalFrames; // End of the animation
+      var startOpacity = 0.2;
+      var endOpacity = 1;
+
+      if (currentFrame >= startFadeFrame) {
+        var opacity = startOpacity + (endOpacity - startOpacity) * (currentFrame - startFadeFrame) / (endFadeFrame - startFadeFrame);
+        bmOver.style.opacity = opacity > endOpacity ? endOpacity : opacity; // Limit opacity to 1
+        bmOver.style.display = 'block'; // Show #bmOver at 95% of the animation
+        bmLottie.style.opacity = 1.03 - opacity;
+      }
+    });
+
+    animation.addEventListener('complete', function() {
+    setTimeout(function() {
+      updateSVGContent(); // Call the function to update SVG content after a delay
+    }, 10); // Delay of 0.01 seconds (10 milliseconds)
+  });
+  }
+
+
+  // Run the function on page load
+  window.addEventListener('load', startAnimationWithOffset);
+</script>
+
+
+
+
 
 
    
@@ -373,7 +415,15 @@ function getTransformComponents(transformString) {
 
 <script>
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  updateSVGText();
+  window.addEventListener('load', updateSVGText);
+  window.addEventListener('resize', updateSVGText);
+  window.addEventListener('load', function() {
+    updateSVGText();
+    updateSVGContent();
+  });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     var productionBox = document.getElementById('productionBox');
@@ -410,6 +460,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
     }
+
+
 
     function hideProductionBox() {
         console.log("Hiding productionBox");
@@ -450,12 +502,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for the SVG object inside productionBox
     svgObject.addEventListener('load', function() {
         var svgDoc = svgObject.contentDocument;
-        if (svgDoc) {
+       
             svgDoc.addEventListener('click', function(event) {
                 console.log("Clicked inside SVG");
                 hideProductionBox();
             });
-        }
+        
     });
 
     // Event listener for document
@@ -468,30 +520,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
    
     
-});
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  updateSVGContent();
-  window.addEventListener('resize', updateSVGContent);
-});
+    var svgObject = document.getElementById('mySVG');
+    var productionBox = document.getElementById('productionBox');
+    var svgDoc = svgObject.contentDocument;
+       
+       svgDoc.addEventListener('click', function(event) {
+           console.log("Clicked inside SVG");
+           hideProductionBox();
+       });
 
-function updateSVGContent() {
-  var svgObject = document.getElementById('mySVG');
-  var targetDiv = document.getElementById('cc');
-  var targetWidth = targetDiv ? targetDiv.offsetWidth : 0;
-
-  if (svgObject.contentDocument) {
-    updateSVGStyles(svgObject.contentDocument, targetWidth);
-    updateSVGText(svgObject.contentDocument, targetWidth);
-  } else {
-    svgObject.addEventListener('load', function() {
-      updateSVGStyles(svgObject.contentDocument, targetWidth);
-      updateSVGText(svgObject.contentDocument, targetWidth);
+    svgObject.addEventListener('click', function(event) {
+        if (productionBox.style.display === 'block') {
+          hideProductionBox();
+        }
     });
-  }
-}
+});
+
+
 
 function updateSVGText(svgDoc, targetWidth) {
   // Define the settings for groups that need text updates
@@ -505,14 +553,48 @@ function updateSVGText(svgDoc, targetWidth) {
     // Add more groups if needed
   };
 
+
+  // Set a maximum value for targetWidth
+  var limitedTargetWidth = Math.min(targetWidth, 200);
+
   Object.keys(textSettings).forEach(groupId => {
-    var newText = (targetWidth * textSettings[groupId]).toFixed(0) + 'mm';
+    var newText = (limitedTargetWidth * textSettings[groupId]).toFixed(0) + 'mm';
     var textElements = svgDoc.querySelectorAll(groupId + ' text');
     textElements.forEach(element => {
       element.textContent = newText;
     });
   });
 }
+
+
+function updateSVGContent() {
+  var svgObject = document.getElementById('mySVG');
+  var targetDiv = document.getElementById('cc');
+  var targetWidth = targetDiv ? targetDiv.offsetWidth : 0;
+
+  // Log the targetWidth to check if it's getting the correct value
+  console.log("Target Width:", targetWidth);
+
+  if (svgObject.contentDocument) {
+    updateSVGStyles(svgObject.contentDocument, targetWidth);
+    updateSVGText(svgObject.contentDocument, targetWidth);
+  } else {
+    svgObject.addEventListener('load', function() {
+      // Adding a guard to check if svgObject.contentDocument exists
+      if (svgObject.contentDocument) {
+        updateSVGStyles(svgObject.contentDocument, targetWidth);
+        updateSVGText(svgObject.contentDocument, targetWidth);
+      }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Call the function immediately to check the initial width
+  updateSVGContent();
+  window.addEventListener('resize', updateSVGContent);
+  window.addEventListener('load', updateSVGContent);
+});
 
 function updateSVGStyles(svgDoc, targetWidth) {
   // Define selectors for different element types
@@ -553,6 +635,74 @@ function applyColorStyles(element) {
 
 
 
+
+
+
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateFavicon() {
+      var stylesheet = document.getElementById('theme').getAttribute('href');
+      var faviconLink = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      faviconLink.rel = 'icon';
+      faviconLink.type = 'image/svg+xml';
+
+      // Change the href to match the stylesheet
+      if (stylesheet.includes('styleD')) {
+        faviconLink.href = 'path/to/logoD.svg';
+      } else if (stylesheet.includes('styleO')) {
+        faviconLink.href = 'path/to/logoO.svg';
+      } else if (stylesheet.includes('styleR')) {
+        faviconLink.href = 'path/to/logoR.svg';
+      } else if (stylesheet.includes('styleT')) {
+        faviconLink.href = 'path/to/logoT.svg';
+      } else if (stylesheet.includes('styleE')) {
+        faviconLink.href = 'path/to/logoE.svg';
+      } else if (stylesheet.includes('styleA')) {
+        faviconLink.href = 'path/to/logoA.svg';
+      } else if (stylesheet.includes('styleB')) {
+        faviconLink.href = 'path/to/logoB.svg';
+      } else if (stylesheet.includes('styleJ')) {
+        faviconLink.href = 'path/to/logoJ.svg';
+      } else if (stylesheet.includes('styleI')) {
+        faviconLink.href = 'path/to/logoI.svg';
+      } else if (stylesheet.includes('styleC')) {
+        faviconLink.href = 'path/to/logoC.svg';
+      } else if (stylesheet.includes('styleW')) {
+        faviconLink.href = 'logoW.svg';
+      }
+
+      document.head.appendChild(faviconLink);
+    }
+
+    updateFavicon();
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+   $(function() {
+    var tooltip = $('#custom-tooltip');
+      
+
+      $('.tooltip-element').on('mousemove', function(event) {
+         // Get cursor coordinates
+      var mouseX = event.clientX;
+      var mouseY = event.clientY;
+
+        var tooltipText = $(this).attr('data-tooltip');
+        tooltip.text(tooltipText).css({
+          left: mouseX + 10 ,
+          top: mouseY +20
+        }).show();
+      }).on('mouseout', function() {
+        tooltip.hide();
+      });
+    });
+  
 
 </script>
 </body>

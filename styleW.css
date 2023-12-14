@@ -99,7 +99,8 @@ h4 {
 
 p {
     font-family: 'ApercuRegular';
-    font-size: 2vw;
+    font-size: min(2vw, 14px);
+    
     color: #F8E6B8;
     font-weight: normal;
 }
@@ -142,7 +143,7 @@ body {
         margin: 0;
         min-height: 100vh;
     
-    
+  
 }
 
 #menuToggle {
@@ -438,7 +439,7 @@ a {
     position: absolute;
     width: 101.5%;
     height: auto;
-    bottom: -1vh;
+    bottom: -1.7vh;
     overflow-y: visible;
     z-index: 0;
 
@@ -454,21 +455,24 @@ div#bmLottie path {
     position: absolute;
     display: none;
     width: min(185vh, 106%);
+ 
     margin: 0 auto;
     height: auto;
-    bottom: -6.4%;
+    bottom: -6.27%;
     overflow: visible;
     z-index: 10;
-    left: -2.3%;
-
+    left: -2.34%;
+    cursor: pointer;
     transition: opacity 0.5s;
     /* Smooth transition for opacity */
 
 }
 
+
+
 #bmOver {
-    animation-fill-mode: forwards;
-    animation: 3.3s 1 popin;
+
+  
     position: absolute;
     width: 100%;
     margin: 0 auto;
@@ -476,8 +480,10 @@ div#bmLottie path {
     aspect-ratio: 1248 / 712;
     /* Height is twice the width */
     bottom: 0;
-
-    background-color: #584036;
+  
+    background-color: rgba(88, 64, 54, 0.8); /* Adjust background color and opacity as needed */
+    display: none; /* Initially hidden */
+    opacity: 0; /* Initially set to 0 */
 }
 
 #OverAnim {
@@ -724,12 +730,15 @@ div.cubebuttons:hover h2 {
 
 
 #expContent {
+    
+
     position: relative;
     top: 0vw;
     left: 60px;
     width: 80vw;
     max-width: 1400px;
 }
+
 
 
 
@@ -791,7 +800,7 @@ div.cubebuttons:hover h2 {
 #expLEFTbox {
     position: relative;
     display: inline-block;
-    width: 30%;
+    width: 29%;
     top: auto;
     left: 0%;
     overflow-y: visible;
@@ -1880,7 +1889,13 @@ div.categoryCaption {
    
   }
   
-
+  body, #bm, #bmOver, #mySVG {
+    cursor: default;
+  }
+  
+  #mySVG {
+    cursor: pointer;
+  }
 
   .menu-item {
     background-color: rgba(136, 158, 93, 0.9); /* Example background color */
@@ -2169,17 +2184,87 @@ div.categoryCaption {
   
  
   
-  Explanation of change
 
-/* .last-item {
-    margin-left: auto;
-    margin-right: auto;
-} */
 
 .icon path {
     fill:  #889E5D;
     color: #222656;
 }
+
+#expGallery {
+    z-index: 3;
+    width: 20vw;
+    height: 80vh;
+    position:absolute;
+}
+
+.positioned-image {
+    position: absolute;
+    width: min(50% , 7vw);
+    height: auto;
+    transform-origin: center;
+    transition:  0.3s ease-out;
+    left :55%; 
+   transform:translateX(-25%);
+    
+   
+  }
+
+  #doorimg {
+    z-index: 0; 
+     width: auto;
+      position:absolute; 
+      rotate: -1deg; 
+      margin-left: 2%;
+       margin-top: 1%;
+   
+  }
+
+ #doorimg:hover  {
+    filter: drop-shadow(0 4px 8px #F8E6B8);
+}
+
+#connectContent img:hover  {
+    filter: drop-shadow(0 4px 8px #F8E6B8);
+}
+
+ #desireddiv {
+    position:absolute;
+    z-index: -2;
+    width: 24%; 
+}
+
+.targetDiv  {
+    text-shadow: 
+    -2px -2px 2px #584036, 
+    2px -2px 2px #584036, 
+	  -2px 2px 2px #584036, 
+	  2px 2px 2px #584036,
+    -5px -5px 5px #584036, 
+    5px -5px 5px #584036, 
+	  -5px 5px 5px #584036, 
+	  5px 5px 5px #584036;
+
+}
+
+#mySVG.cursor-pointer-visible {
+    cursor: pointer; /* Cursor changes to pointer when mySVG is visible */
+  }
+  #mySVG svg.cursor-pointer-visible {
+    cursor: pointer; /* Cursor changes to pointer when mySVG is visible */
+  }
+
+  .custom-tooltip {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    background-color: #F49F4F;
+    color: #584036;
+    border-radius: 3px;
+    width: fit-content;
+    
+  }
+
 
 @media (max-width: 500px) {
     .menu-item {
@@ -2204,6 +2289,24 @@ div.categoryCaption {
         left: 50px;
         padding-top: 40px;
     }
+
+    #doorimg {
+        z-index: -1;
+         width: auto;
+          position:absolute; 
+          rotate: -1deg; 
+          margin-left: -4%; 
+      }
+}
+
+#aboutContent {
+    display: flex;
+    flex-direction: column;
+    width: calc(90% - 75px);
+    margin-right: 15px;
+    margin-left: 60px;
+    margin-top: 10px;
+    align-items: flex-start; /* Align items at the start of the flex container */
 }
 
 #connectContent {
@@ -2226,6 +2329,9 @@ div.categoryCaption {
     justify-content: flex-end; /* Aligns the buttons to the right */
    
 }
+
+
+
 
 
 
@@ -2741,7 +2847,7 @@ div.categoryCaption {
     }
 
     #productionBox {
-        
+        cursor: pointer;
         bottom: -7.5%;
         left: -2.25%;
     

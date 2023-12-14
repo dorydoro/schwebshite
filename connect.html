@@ -65,13 +65,14 @@
     <h2>this is <a href="../connect.html">connect</a> > 
     </h2>
   </div>
-
+  <br>&thinsp;
 <br>
 
   <div id="connectContent">
-
-    <h1 style="align-self: flex-end; width: 90%;"> Connect with me!</h1>
-    <p style="align-self: flex-end; width: 80%; margin-top: 0%;">
+    <br>
+    <h1 style="align-self: flex-end; width: 90%;" class="other-div"> Connect with me!</h1>
+    
+    <p style="align-self: flex-end; width: 80%; margin-top: 0%;" class="other-div">
       if you have questions unanswered...
       <br>
       if you are excited with an idea...
@@ -79,15 +80,15 @@
       if you want to work together...
     </p>
 
-    <h2 style="align-self: flex-end; width: 65%; color: #889E5D; margin-top: 0.1vw">
+    <h2 style="align-self: flex-end; width: 65%; color: #889E5D; margin-top: 0.1vw" class="other-div">
       i enjoy working with the dedicated creatives who make our world so beautiful
       <br>
       we can do so much together
       
     </h2>
-    <h1 style="align-self: flex-end; width: 57%; ">Lets Talk!</h1>
+    <h1 style="align-self: flex-end; width: 57%; " class="other-div">Lets Talk!</h1>
     
-    <p style="align-self: flex-end; width: 50%;margin-top: 0%;">
+    <p style="align-self: flex-end; width: 50%;margin-top: 0%;" class="other-div">
       if you use LinkedIn: doroteab
       <br>
       if you want to email: dorbajic@gmail.com
@@ -98,7 +99,7 @@
     
     
    
-    <div class="connectButton">
+    <div class="connectButton" class="other-div">
       <a href="mailto:?subject=Sharing Dorotea.ca 🤩&body=Hi 👋 %0D%0AThis is a template e-mail from dorotea.ca, the online portfolio for Dorotea Bajic, a freelance designer with an insane passion for packaging and sustainability and talented across many fields of creative production and experience research.%0D%0A %0D%0AI'm going to speak in first person now. I am so grateful someone decided to share my profile as I am currently seeking opportunities to work and learn from a creative team.✨ Much like my history, the breadths of which shown in my project pages, I do not like to limit myself to one form of creation, but creation is consistently at the core, if not the systems of which makes the subject. I am open to a variety of opportunists, but ill list some of my daydream roles: %0D%0A %0D%0A1. Designing systems and products/packaging for cyclic solutions 🔄%0D%0A2. Research in sustainable or packaging systems 🔬%0D%0A3. Manufacturing and testing prototypes across mediums 🧙%0D%0A %0D%0ABeyond career opportunities, I am also open to connect to discuss anything in relation to the content or techniques shown on my website, dorotea.ca . You can find me at dorbajic@gmail.com or on LinkedIn at doroteab.%0D%0A %0D%0AThank you for checking me out 🌞 hope to hear from you soon,%0D%0ADorotea Bajic" class="connectButtonS">Easy email template</a>
 
     <a href="collect media\Bajic Resume Nov 2023.docx" target="_blank"
@@ -108,6 +109,7 @@
     
       </div>
     
+      <img src="collect media\clips\doorfraME.png"  id="doorimg">
 
 
   </div>
@@ -449,6 +451,27 @@
 
 
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function adjustImageHeightToDivs() {
+    const otherDivs = document.querySelectorAll('.other-div');
+
+    let totalHeight = 0;
+    otherDivs.forEach(div => {
+      totalHeight += div.offsetHeight;
+    });
+
+    const matchingImage = document.getElementById('doorimg');
+    matchingImage.style.height = `${totalHeight * 1.3 }px`;
+    matchingImage.style.top = `${totalHeight * 1.4  }px`;
+  }
+
+  // Initial call when the DOM content is loaded
+  adjustImageHeightToDivs();
+
+  // Recalculate height on window resize
+  window.addEventListener('resize', adjustImageHeightToDivs);
+});
 
 
 </script>

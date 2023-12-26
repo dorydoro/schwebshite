@@ -27,7 +27,7 @@
       
         <a href="../index.html"><li>Home</li></a>
         <a href="../aboutme.html"><li>About Me</li></a>
-        <a href="../myexperience.html"><li>My experience</li></a>
+        <a href="../myexperience.html"><li>My Experience</li></a>
         <a href="../myprojects.html"><li>My Projects</li></a>
         <a href="../connect.html"><li>Connect</li></a>
      
@@ -1212,8 +1212,15 @@ $(document).ready(function() {
     // Function to find the card that contains an image with a matching src
     function findCardByImageSrc(imgSrc) {
         var foundCard;
-        allCards.each(function() {
+        console.log('imgsrc')
+        console.log(imgSrc)
+        console.log('allcards')
+        console.log(allCards)
+        allCards.each(function() {  
+          console.log($(this).find('.lightbox-trigger[src="' + imgSrc + '"]'))
+
             if ($(this).find('.lightbox-trigger[src="' + imgSrc + '"]').length > 0) {
+              console.log('we find a card')
                 foundCard = $(this);
                 return false; // Break the loop
             }

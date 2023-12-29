@@ -446,19 +446,37 @@ a {
     /* or fixed, depending on your layout */
 
 
-    width: min(175vh, 100%);
+    width: min(157vh, 100%);
     overflow: visible;
     aspect-ratio: 1248 / 712;
     transition: width 0.55s ease-in-out,
         height 0.55s ease-in-out;
     margin: auto;
 
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 
 }
+#handwritingAnimation {
+    position: absolute;
+    width: 107%;
+    height: auto;
+    left: -8%;
+    top: 71.5%;
+    overflow-y: visible;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 
+div#handwritingAnimation path {
+    stroke: #65A6AB;
+    stroke-width: 10px;
+
+}
+
+  
 #bmLottie {
     position: absolute;
     width: 101.5%;
@@ -471,8 +489,9 @@ a {
 
 div#bmLottie path {
     stroke: #889E5D;
-    stroke-width: medium;
-    /*transition: opacity 0 3.85s ease-out*/
+    stroke-width: 10px;
+    /* stroke-width: medium; */
+    /* transition: opacity 0 4.5s ease-out */
 }
 
 #productionBox {
@@ -725,8 +744,8 @@ div.cubebuttons:hover h2 {
     position: relative;
     top: 0vw;
     /* left: 60px; */
-    width: 80vw;
-    max-width: 1040px;
+    width: 79vw;
+    max-width: 1080px;
 
     display: flex;
     flex-direction: column;
@@ -818,7 +837,7 @@ div.cubebuttons:hover h2 {
 .tab button.active {
     color: #F8E6B8;
     background-color: #889E5D;
-    z-index: 0.5;
+    z-index: 1;
     border-bottom: 0px;
 
 }
@@ -1863,8 +1882,9 @@ div.categoryCaption {
     display: none;
 }
 
-
 :root {
+
+    --bkg-color: #584036;
     /* Define default colors */
     --main-text-color: #F8E6B8;
     --main-text-shadow-color: #F49F4F;
@@ -2495,7 +2515,7 @@ body,
 
 .aboutLeftGallery {
     float: left;
-    width: 24%;
+    width: 19%;
     /* z-index: -2; */
     position: relative;
     display: flex;
@@ -2505,8 +2525,8 @@ body,
 }
 
 .aboutRightGallery {
-    margin-left: 76%;
-    width: 24%;
+    margin-left: 80%;
+    width: 20%;
     /* z-index: -2; */
     position: relative;
     display: flex;
@@ -3146,6 +3166,19 @@ body,
     #ed {
         border-width: 1vw;
     }
+
+    #handwritingAnimation {
+        top: 78%;
+        left: -5%;
+        width: 105%;
+    }
+
+    div#handwritingAnimation path {
+  
+        stroke-width: 2vw;
+    
+    }
+    
 
     div#bmLottie path {
 

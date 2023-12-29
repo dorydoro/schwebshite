@@ -43,14 +43,18 @@
 <body style="      max-width: 100%;
 max-height: 100%;
 
-overflow-x: hidden;">
+overflow-x: hidden;
+overflow-y: hidden;">
 
   <!-- Our wrapper -->
   <div id="bm" > 
     <div id="bmLottie"></div> 
+    
     <div id="productionBox" >
       <object type="image/svg+xml" data="productionbox1-01.svg" id="mySVG" ></object>
     </div>
+
+    <div id="handwritingAnimation"></div>
   <div id="bmOver">
 
     <a href="aboutme.html">
@@ -98,54 +102,71 @@ overflow-x: hidden;">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js"></script>
 <script>
   function startAnimationWithOffset() {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    var isWiderThanSquare = width / height > 1; // Check if the aspect ratio is wider than a square
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  var isWiderThanSquare = width / height > 1; // Check if the aspect ratio is wider than a square
 
-    var animationOptions = {
-      container: document.getElementById('bmLottie'),
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      path: 'boxunfolding.json'
-    };
+  var animationOptions = {
+    container: document.getElementById('bmLottie'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: true,
+    path: 'boxunfolding.json'
+  };
 
-    if (isWiderThanSquare) {
-      animationOptions.initialSegment = [65, 100]; // For example, play from 30% to 100% of the animation
-    }
-
-    var animation = bodymovin.loadAnimation(animationOptions);
-
-    lottie.setSpeed(1.4);
-
-    var bmOver = document.getElementById('bmOver');
-    bmOver.style.opacity = 0; // Set initial opacity to 0
-
-    animation.addEventListener('enterFrame', function() {
-      var currentFrame = animation.currentFrame;
-      var startFadeFrame = animation.totalFrames * 0.9; // Start fading at the last 5% of the animation
-      var endFadeFrame = animation.totalFrames; // End of the animation
-      var startOpacity = 0.2;
-      var endOpacity = 1;
-
-      if (currentFrame >= startFadeFrame) {
-        var opacity = startOpacity + (endOpacity - startOpacity) * (currentFrame - startFadeFrame) / (endFadeFrame - startFadeFrame);
-        bmOver.style.opacity = opacity > endOpacity ? endOpacity : opacity; // Limit opacity to 1
-        bmOver.style.display = 'block'; // Show #bmOver at 95% of the animation
-        bmLottie.style.opacity = 1.03 - opacity;
-      }
-    });
-
-    animation.addEventListener('complete', function() {
-    setTimeout(function() {
-      updateSVGContent(); // Call the function to update SVG content after a delay
-    }, 10); // Delay of 0.01 seconds (10 milliseconds)
-  });
+  if (isWiderThanSquare) {
+    animationOptions.initialSegment = [65, 100]; // For example, play from 30% to 100% of the animation
   }
 
+  var animation = bodymovin.loadAnimation(animationOptions);
 
-  // Run the function on page load
-  window.addEventListener('load', startAnimationWithOffset);
+  lottie.setSpeed(1.4);
+
+  var bmOver = document.getElementById('bmOver');
+  bmOver.style.opacity = 0; // Set initial opacity to 0
+
+  animation.addEventListener('enterFrame', function () {
+    var currentFrame = animation.currentFrame;
+    var startFadeFrame = animation.totalFrames * 0.95; // Start fading at the last 5% of the animation
+    var endFadeFrame = animation.totalFrames; // End of the animation
+    var startOpacity = 0.2;
+    var endOpacity = 1;
+
+    if (currentFrame >= startFadeFrame) {
+      var opacity = startOpacity + (endOpacity - startOpacity) * (currentFrame - startFadeFrame) / (endFadeFrame - startFadeFrame);
+      bmOver.style.opacity = opacity > endOpacity ? endOpacity : opacity; // Limit opacity to 1
+      bmOver.style.display = 'block'; // Show #bmOver at 95% of the animation
+      bmLottie.style.opacity = 0.86 - opacity;
+    }
+  });
+
+  animation.addEventListener('complete', function () {
+    setTimeout(function () {
+      // Start the handwriting animation after a delay
+      handwritingAnimation.play();
+
+      // Set the opacity to 1 to make it visible when the animation starts
+      document.getElementById('handwritingAnimation').style.opacity = 1;
+
+      updateSVGContent();
+    }, 10); // Delay of 0.01 seconds (10 milliseconds)
+  });
+
+  var handwritingOptions = {
+    container: document.getElementById('handwritingAnimation'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: false, // Set autoplay to false initially
+    path: 'imakethings.json', // Path to the handwriting animation
+    speed: 15, 
+  };
+
+  var handwritingAnimation = bodymovin.loadAnimation(handwritingOptions);
+}
+
+// Run the function on page load
+window.addEventListener('load', startAnimationWithOffset);
+
 </script>
 
 
@@ -240,7 +261,7 @@ overflow-x: hidden;">
      const overlayMessageElement = document.getElementById("overlay-message");
      const backgroundMusic = document.getElementById("background-music");
      
-     const smallHeight = window.matchMedia("(max-height: 200px)");
+     const smallHeight = window.matchMedia("(max-height: 250px)");
      const smallWidth = window.matchMedia("(max-width: 250px)");
      
      smallHeight.addListener(handleDeviceChange);
@@ -428,6 +449,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var productionBox = document.getElementById('productionBox');
     var bd = document.getElementById('bd');
+    var things = document.getElementById('handwritingAnimation');
     var divs = document.querySelectorAll('#bc, #cb, #cc, #dc, #ec, #ed');
     var svgObject = document.getElementById('mySVG'); // SVG object
 
@@ -451,11 +473,13 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', checkAspectRatioAndToggleMessage);
 
     function showProductionBox() {
+      updateSVGContent();
         console.log("Showing productionBox");
         productionBox.style.display = 'block';
         bd.style.opacity = '0';
+        things.style.opacity = '0';
         divs.forEach(div => {
-            div.style.borderColor = '#584036';
+          div.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--bkg-color');
             checkAspectRatioAndToggleMessage();
         });
         
@@ -466,10 +490,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideProductionBox() {
         console.log("Hiding productionBox");
         productionBox.style.display = 'none';
+        things.style.opacity = '1';
         bd.style.opacity = '1';
         divs.forEach(div => {
-          
-            div.style.borderColor = '#889E5D';
+          div.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--crease-stroke-color');
             checkAspectRatioAndToggleMessage();
         })
         
@@ -507,6 +531,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log("Clicked inside SVG");
                 hideProductionBox();
             });
+
+            updateSVGContent();
         
     });
 

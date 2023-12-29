@@ -1046,69 +1046,69 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function setupDynamicPinning(rightColumnClass, leftColumnClass) {
-    const rightColumn = document.querySelector(`.${rightColumnClass}`);
-    const leftColumn = document.querySelector(`.${leftColumnClass}`);
-    const viewportHeight = window.innerHeight;
-    let initialPinPosition = null;
-    let lastScrollY = window.scrollY;
+//   // function setupDynamicPinning(rightColumnClass, leftColumnClass) {
+//     const rightColumn = document.querySelector(`.${rightColumnClass}`);
+//     const leftColumn = document.querySelector(`.${leftColumnClass}`);
+//     const viewportHeight = window.innerHeight;
+//     let initialPinPosition = null;
+//     let lastScrollY = window.scrollY;
 
-    function calculateTextboxLoad() {
-  let loadedHeight = 0;
-  document.querySelectorAll(`.${rightColumnClass} .container.reveal.active`).forEach(container => {
-    // Get the opacity of the container
-    const computedStyle = window.getComputedStyle(container);
-    const opacity = computedStyle.opacity;
+//     function calculateTextboxLoad() {
+//   let loadedHeight = 0;
+//   document.querySelectorAll(`.${rightColumnClass} .container.reveal.active`).forEach(container => {
+//     // Get the opacity of the container
+//     const computedStyle = window.getComputedStyle(container);
+//     const opacity = computedStyle.opacity;
 
-    // Process each p element within the container
-    container.querySelectorAll('p').forEach(p => {
-      const rect = p.getBoundingClientRect();
-      // Check if the p element is within the viewport
-      if (rect.top < viewportHeight && rect.bottom > 0) {
-        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-        // If the container is fully opaque, add its height to loadedHeight
-        if (opacity === "1") {
-          loadedHeight += visibleHeight;
-        } 
-      }
-    });
-  });
+//     // Process each p element within the container
+//     container.querySelectorAll('p').forEach(p => {
+//       const rect = p.getBoundingClientRect();
+//       // Check if the p element is within the viewport
+//       if (rect.top < viewportHeight && rect.bottom > 0) {
+//         const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+//         // If the container is fully opaque, add its height to loadedHeight
+//         if (opacity === "1") {
+//           loadedHeight += visibleHeight;
+//         } 
+//       }
+//     });
+//   });
 
-  const effectiveHeight = loadedHeight;
-  const percentageVisible = (effectiveHeight / viewportHeight) * 100;
-  // console.log(`Effective visible height of p elements: ${effectiveHeight}px, which is ${percentageVisible}% of the viewport`);
-  return percentageVisible;
-}
+//   const effectiveHeight = loadedHeight;
+//   const percentageVisible = (effectiveHeight / viewportHeight) * 100;
+//   // console.log(`Effective visible height of p elements: ${effectiveHeight}px, which is ${percentageVisible}% of the viewport`);
+//   return percentageVisible;
+// }
 
 
-function refreshPinning() {
-      const percentageVisible = calculateTextboxLoad();
-      const isShorterThanViewport = rightColumn.offsetHeight < viewportHeight;
-      // console.log(`Refreshing pinning at scroll position: ${window.scrollY}, percentage visible: ${percentageVisible}%`);
+// function refreshPinning() {
+//       const percentageVisible = calculateTextboxLoad();
+//       const isShorterThanViewport = rightColumn.offsetHeight < viewportHeight;
+//       // console.log(`Refreshing pinning at scroll position: ${window.scrollY}, percentage visible: ${percentageVisible}%`);
 
-      if (!isShorterThanViewport && percentageVisible >= 60) {
-        if (initialPinPosition === null) {
-          initialPinPosition = window.scrollY;
-          // console.log(`Initial pin position for ${rightColumnClass} set at: ${initialPinPosition}`);
-        } else {
-          const scrollDelta = window.scrollY - lastScrollY;
-          if (scrollDelta > 0) {
-           // Calculate the new top position
-        let newTop = parseInt(rightColumn.style.top || 0) - scrollDelta;
-        // Calculate the maximum top value to keep the bottom of right column aligned with the bottom of the left column
-        const maxTop = leftColumn.offsetHeight - rightColumn.offsetHeight;
-        // Limit the new top position to the maximum allowable value
-        newTop = Math.min(newTop, maxTop);
-        rightColumn.style.top = `${newTop}px`;
-        // console.log(`Adjusted pin position to: ${rightColumn.style.top}`);
-      }
-        }
-      } 
-      lastScrollY = window.scrollY;
-    }
+//       if (!isShorterThanViewport && percentageVisible >= 60) {
+//         if (initialPinPosition === null) {
+//           initialPinPosition = window.scrollY;
+//           // console.log(`Initial pin position for ${rightColumnClass} set at: ${initialPinPosition}`);
+//         } else {
+//           const scrollDelta = window.scrollY - lastScrollY;
+//           if (scrollDelta > 0) {
+//            // Calculate the new top position
+//         let newTop = parseInt(rightColumn.style.top || 0) - scrollDelta;
+//         // Calculate the maximum top value to keep the bottom of right column aligned with the bottom of the left column
+//         const maxTop = leftColumn.offsetHeight - rightColumn.offsetHeight;
+//         // Limit the new top position to the maximum allowable value
+//         newTop = Math.min(newTop, maxTop);
+//         rightColumn.style.top = `${newTop}px`;
+//         // console.log(`Adjusted pin position to: ${rightColumn.style.top}`);
+//       }
+//         }
+//       } 
+//       lastScrollY = window.scrollY;
+//     }
 
-    window.addEventListener('scroll', refreshPinning);
-  }
+//     window.addEventListener('scroll', refreshPinning);
+//   }
 
   function setupInitialPinning(rightColumnClass, leftColumnClass) {
     const rightColumn = document.querySelector(`.${rightColumnClass}`);
